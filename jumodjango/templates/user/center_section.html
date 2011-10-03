@@ -1,0 +1,73 @@
+{% load humanize %}
+{% load tags %}
+
+<ul class="bottom_section cont">
+    <!-- ORG FOLLOWING -->
+    {% with entity.get_all_orgs_following|length as num_orgs %}
+    {% if num_orgs %}
+    <li class="section clearfix">
+        <div class="heading">Commited to help <a id="orgs_following" data-title="Organizations {{ entity.get_name }} committed to help" data-url="{% url followed_org_list entity.id %}">{{ num_orgs|intcomma }}</a> organization{{ num_orgs|pluralize }}</div>
+        {% for row in entity.get_all_orgs_following|slice:":6"|partition:"2" %}
+            <ul class="info row clearfix{% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">
+                {% for ent in row %}
+                    {% include "util/recommended_ent.html" %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        {% if num_orgs > 6 %}
+            <a id="orgs_following" data-title="Organizations {{ entity.get_name }} is following" data-url="{% url followed_org_list entity.id %}" class="viewall">View all {{ num_orgs|intcomma }} organization{{ num_orgs|pluralize }}</a>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endwith %}
+
+    <!-- ISSUE FOLLOWING-->
+    {% with entity.get_all_issues_following|length as num_issues %}
+    {% if num_issues %}
+    <li class="section clearfix">
+        <div class="heading">Helping <a id="issues_following" data-title="Issues {{ entity.get_name }} is committed to help" data-url="{% url followed_issue_list entity.id %}">{{ num_issues|intcomma }}</a> issue{{ num_issues|pluralize }}</div>
+        {% for row in entity.get_all_issues_following|slice:":6"|partition:"2" %}
+            <ul class="info row clearfix{% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">
+                {% for ent in row %}
+                    {% include "util/recommended_ent.html" %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        {% if num_issues > 6 %}
+            <a id="issues_following" data-title="Issues {{ entity.get_name }} is following" data-url="{% url followed_issue_list entity.id %}" class="viewall">View all {{ num_issues|intcomma }} issue{{ num_issues|pluralize }}</a>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endwith %}
+
+    {% if not num_orgs and not num_orgs %}
+    <br />
+    <br />
+    {% endif %}
+</ul>
+
+
+<div class="rs bottom">
+    <ul class="cont">
+        <!-- USER FOLLOWING FOLLOWERS-->
+        {% if entity.get_users_following_ids %}
+        <li class="section follows">
+            <div class="heading">
+                <a id="user_following" data-title="People {{ entity.get_name }} is following" data-url="{% url user_followings entity.id %}">{{ entity.get_num_users_following|intcomma }}</a> Following</div>
+            {% for ent in entity.get_sample_users_following %}
+            <a href="{{ ent.get_url }}"><img title="{{ ent.get_name }}" src="{{ ent.get_image_small }}" /></a>
+            {% endfor %}
+        </li>
+        {% endif %}
+
+        {% if entity.get_sample_followers %}
+        <li class="section follows">
+            <div class="heading">
+                <a id="user_followers" data-title="People following {{ entity.get_name }}" data-url="{% url user_followers entity.id %}">{{ entity.get_num_followers|intcomma }}</a> Followers</div>
+            {% for ent in entity.get_sample_followers %}
+            <a href="{{ ent.get_url }}"><img title="{{ ent.get_name }}" src="{{ ent.get_image_small }}" /></a>
+            {% endfor %}
+        </li>
+        {% endif %}
+    </ul>
+</div>

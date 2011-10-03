@@ -1,0 +1,10 @@
+{% load tags %}
+<meta property="og:title" content="{{ entity.get_name }} | Jumo">
+<meta property="fb:app_id" content="{{ settings.FACEBOOK_APP_ID }}">
+<meta property="og:site_name" content="Jumo">
+<meta property="og:image" content="{{ entity.get_image_large }}">
+<meta property="og:url" content="http://www.jumo.com/{{ entity.handle }}">
+<meta property="og:type" content="person">
+<meta property="og:description" content="{% possessive entity.get_name %} Jumo profile. {% if entity.bio %}{{ entity.bio|safe }}{% else %}We connect individuals and organizations working to change the world.{% endif %}">
+<meta property="description" content="{% possessive entity.get_name %} Jumo profile. {% if entity.bio %}{{ entity.bio|safe }}{% else %}We connect individuals and organizations working to change the world.{% endif %}">
+{% include "util/location_meta.html" %}

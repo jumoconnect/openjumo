@@ -1,0 +1,11 @@
+{% load tags %}
+{% load commitment_tags %}
+
+{% if issues|length > 0 %}
+{% for ent in issues %}{% include "util/popup_entity.html" %}{% endfor %}
+{% else %}
+
+{% if start_index == 0 %}
+<p>Not following any issues.</p>
+{% endif %}
+{% endif %}

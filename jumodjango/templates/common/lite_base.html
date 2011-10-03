@@ -1,0 +1,29 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block header %}
+<div id="bg"></div>
+<div id="nav"class="content">
+  {% if not current_user %}
+  <ul id="login_nav">
+    have an account? <a href="/login" class="login_button">login</a>
+    <img class="bottom_left" src="{% static_url 'img/nav_bottom_left.png' %}" />
+    <img class="bottom_right" src="{% static_url 'img/nav_bottom_right.png' %}" />
+  </ul>
+  {% else %}
+  <ul>
+    <li><a href="/" class="bold">Home</a></li>
+    <li><a href="/user/{{ current_user.id }}" class="bold">Profile</a></li>
+    <li><a href="/settings" class="bold">Settings</a></li>
+    <li><a id="logout" class="bold">Logout</a></li>
+    <img class="bottom_left" src="{% static_url 'img/nav_bottom_left.png' %}" />
+    <img class="bottom_right" src="{% static_url 'img/nav_bottom_right.png' %}" />
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "common/footer.html" %}
+{% endblock %}
+

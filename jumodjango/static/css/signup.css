@@ -1,0 +1,122 @@
+/* used for login and password reset */
+
+/*
+   main page sizeing
+   overwrites base.css
+*/
+.content {
+    width:820px;
+    max-width:820px;
+    min-width:820px;
+ }
+
+#page-content {
+    margin-top:80px;
+    overflow:visible;
+}
+
+.form_box {
+    display: block;
+    height: auto;
+    padding: 20px 25px 25px;
+}
+
+.form_box .form_heading {
+    font-size: 24px;
+    line-height: 142%;
+    margin-bottom: 17px;
+    margin-top: 0;
+    color:#222;
+}
+
+.form_box.double #login {
+    width:43%;
+    display:inline-block;
+    margin-right:7%;
+}
+
+.form_box.double #create_account {
+    width:43%;
+    display:inline-block;
+    vertical-align:top;
+    border-left:1px solid #dddddd;
+    padding:0px 0px 44px 44px;
+}
+
+.homeheading {
+    display:inline-block;
+    font-size:18pt;
+    vertical-align:top;
+    width:58%;
+    margin-top:4px;
+    margin-left:8px;
+}
+
+.loading {
+    float: left;
+    margin-left: 56px;
+    margin-top: -34px;
+}
+
+.profile_img {
+    display:none;
+    padding:2px;
+    background: #f3f3f3;
+
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+}
+
+.subhead {
+    padding:8px;
+    padding-left:0px;
+    font-size:12px;
+    color:#666666;
+}
+
+.location {
+    display:inline-block;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+#create_account_form {
+    display:none;
+}
+
+#login_submit, #reset_submit {
+    display:block;
+    font-size:16px;
+    text-align:center;
+    float:none;
+    margin: 10px 0 -2px 26%;
+    height:40px;
+    line-height:142%;
+    padding: 8px 24px 17px 24px;
+}
+
+#reset_submit {
+    display: block;
+    height: 14px;
+    margin-left: 25%;
+    width: 35%;
+}
+
+#login_submit.disabled, #reset_submit.disabled {
+   background:#dddddd;
+}
+
+#fb_login {
+    position: absolute;
+    right: 43px;
+    top: 26px;
+}
+
+form #fb_profile_pic {
+    margin-left:3px;
+}
+
+#fb_single_signin {
+    margin-right:3px;
+}

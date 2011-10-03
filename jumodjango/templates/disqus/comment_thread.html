@@ -1,0 +1,47 @@
+{% load tags %}
+
+<div id="disqus_thread" class="section"></div>
+<script type="text/javascript">
+    var disqus_shortname = "{{ forum_name }}";
+    var disqus_developer = {{ dev_mode }};
+    var disqus_identifier = "{{ thread_uid }}";
+    var disqus_url = "{{ thread_ref_url }}";
+    var disqus_title = "{{ thread_title }}";
+    
+    {% comment %} disqus_config gets invoked by the loaded disqus plugin {% endcomment %}
+    var disqus_config = function() {
+        this.page.remote_auth_s3 = "{{ sso_auth_msg }}";
+        this.page.api_key = "{{ public_api_key }}";
+        this.sso = {
+            name:   "Jumo",
+            button: "{% static_url sign_in_img %}",
+            icon:   "{% static_url small_logo_img %}",
+            url:    "{{ login_url }}",
+            logout: "{{ logout_url }}",
+            width:  "760",
+            height: "620"
+        };
+        {% comment %} setup metrics hooks (view other trackable events on wiki), consider moving to external js {% endcomment %}
+        this.callbacks = {
+            onNewComment: [function(e){
+                                if(JUMO.Modules.Tracking && JUMO.Modules.Tracking.initialized) {
+                                    JUMO.Modules.Tracking.trackActionSYNC("New Comment", 
+                                                {
+                                                    "thread identifier": disqus_identifier,
+                                                    "page title": disqus_title, 
+                                                    "comment id": e.id || ''
+                                                });
+                                }
+                            }
+                        ]
+        };
+    };
+    
+    (function() {
+        var dsq = document.createElement('script'); 
+        dsq.type = 'text/javascript'; 
+        dsq.async = true;
+        dsq.src = 'http://{{ forum_name }}.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>

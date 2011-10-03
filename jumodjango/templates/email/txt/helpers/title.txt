@@ -1,0 +1,3 @@
+
+{% if item.title %}{{ item.title }}
+[http://{{ hostname }}{{ item.get_url }}]{% endif %}

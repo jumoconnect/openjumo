@@ -1,0 +1,43 @@
+{% extends "common/notification.html" %}
+{% load tags %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static_url  'js/forms.js' %}"></script>
+<script type="text/javascript" src="{% static_url  'js/org_verify.js' %}"></script>
+<script type="text/javascript">
+    {% include "org/js/org_verify.js" %}
+    jQuery(document).ready(function(){ Verify.initialize("{{ org.id }}", FORMS, 'verify'); });
+</script>
+{% endblock %}
+
+{% block notification_title %}
+Verify that you are affilitated with:<br /> <span class="faded">{{ org.name }}</span>
+{% endblock %}
+
+{% block notification_body %}
+<p>
+    Please provide your affiliation with {{ org.name }}
+    (e.g. Executive Director, Communications Associate, board member,
+    etc.).
+</p>
+<p>
+    As the organization's administrator, you will be able to edit your
+    profile and access future functionality.
+</p>
+<!-- ADD AFFILIATION -->
+<!-- ADD PHONE NUMBER -->
+<div id="section_nav" class="section_options"></div>
+
+<!-- spacer -->
+<div style="height:15px"></div>
+
+<div id="form"></div>
+
+<div class="submit_spacer">
+    <div class="notification"></div>
+    <div id="save" class="button" style="width:11%;display:inline-block;">Submit</div>
+</div>
+{% comment %}
+{% include "util/form_templates.html" %}
+{% endcomment %}
+{% endblock %}

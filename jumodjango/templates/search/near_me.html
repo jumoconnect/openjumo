@@ -1,0 +1,6 @@
+<div class="heading">Near You</div>
+<ul id="near_me">
+    {% for ent in orgs_near_me|slice:":3" %}
+    {% include "util/recommended_entity_rs.html" %}
+    {% endfor %}
+</ul>

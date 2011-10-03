@@ -1,0 +1,151 @@
+{% load tags %}
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <title>{% if title %}{{ title }} | Jumo{% else %}Jumo | We connect individuals and organizations working to change the world{% endif %}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {% block meta %}{% endblock %}
+        {% block extra_meta %}{% endblock %}
+        <link rel="shortcut icon" href="{% static_url "favicon.ico" %}">
+        <link rel="stylesheet" href="{% static_url "css/base.css" %}">
+        <link rel="stylesheet" href="{% static_url "css/popup.css" %}">
+        {% block styles %}{% endblock %}
+        {% block extra_styles %}{% endblock %}
+
+        <!--[if lte IE 6]><script src="{% static_url "ie6/warning.js" %}"></script><script>window.onload=function(){e("{% static_url "ie6/" %}")}</script><![endif]-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+        {% if not request or not request.is_secure %}<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>{% endif %}
+        {% if user.is_authenticated %}<script type="text/javascript" src="{% static_url 'js/frameworks/jquery.forms.js' %}"></script>{% endif %}
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime();</script>
+    </head>
+    <body>
+        {% block header %}{% endblock %}
+        <noscript id="js-warning">
+            <p>
+                For full functionality of this site it is necessary to enable JavaScript.<br />
+                Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+	                instructions how to enable JavaScript in your web browser</a>.
+            </p>
+        </noscript>
+        <div id="fb-root"></div>
+        <div id="page-content" class="content clearfix">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="notification" class="notification popup"></div>
+        {% block footer %}{% endblock %}
+
+        {% if settings.DEBUG %}
+        <script type="text/javascript" src="{% static_url 'js/base.src.js' %}"></script>
+        <script type="text/javascript" src="{% static_url 'js/lib.js' %}"></script>
+        <script type="text/javascript" src="{% static_url 'js/modules/popup.js' %}"></script>
+        <script type="text/javascript" src="{% static_url 'js/util.js' %}"></script>
+        <script type="text/javascript" src="{% static_url 'js/modules/search.js' %}"></script>
+        <script type="text/javascript" src="{% static_url 'js/modules/tracking.js' %}"></script>
+        {% else %}
+        <script type="text/javascript" src="{% static_url 'js/base.js' %}"></script>
+        {% endif %}
+        {% block scripts %}{% endblock %}
+        <script type="text/javascript">
+    {% block fb_script %}
+window.fbAsyncInit = function() {
+    FB.init({
+                appId: '{{ settings.FACEBOOK_APP_ID }}',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+    JUMOFB.displayLogin();
+};
+(function() {
+     var e = document.createElement('script'); e.async = true;
+     e.src = document.location.protocol +
+         '//connect.facebook.net/en_US/all.js';
+     document.getElementById('fb-root').appendChild(e);
+ }());
+{% endblock %}
+        </script>
+        <script type="text/javascript">
+// MIX PANEL
+var mpq = [];
+mpq.push(["init", "{{ settings.MIXPANEL_TOKEN }}"]);
+mixPanelInit = function() {
+    try {
+        // TODO: email MixPanel about this - to run callbacks they require a global called 'mpmetrics'
+        mpmetrics = new MixpanelLib("{{ settings.MIXPANEL_TOKEN }}");
+        return mpmetrics
+    } catch(err) {
+        var null_fn = function () {};
+        mpmetrics = {
+            track: null_fn,
+            track_funnel: null_fn,
+            register: null_fn,
+            register_once: null_fn,
+            register_funnel: null_fn,
+            identify: null_fn
+        };
+        return mpmetrics
+    }
+};
+
+(function() {
+     var mp = document.createElement("script");
+     mp.type = "text/javascript"; mp.async = true;
+     mp.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//api.mixpanel.com/site_media/js/api/mixpanel.js";
+
+     var s = document.getElementsByTagName("script")[0];
+     s.parentNode.insertBefore(mp, s);
+ })();
+
+jQuery(document).ready(function(){
+                           JUMO.Modules.Tracking.initialize({
+                                                                trackingmodule: mpq,
+                                                                mixPanelInit: mixPanelInit,
+                                                                doNotTrackPageload: {% if title == "Discover" or title == "Setup your account" %}true{% else %}false{% endif %},
+                                                                {% if user.get_name %}
+                                                                userId: "{{ user.id }}",
+                                                                userAgeGroup: {% json_encode user.get_age_group %},
+                                                                userGender: {% json_encode user.gender %},
+                                                                signedIn: "Signed In"
+                                                                {% else %}
+                                                                signedIn: "Signed Out"
+                                                                {% endif %}
+                                                            });
+
+                           JUMO.initialize({
+                                               {% if title %}title: {% json_encode title %},{% endif %}
+                                               {% if entity %}
+                                               entityID: "{{ entity.id }}",
+                                               entityName: {% json_encode entity.get_name %},
+                                               {% endif %}
+
+                                               {% if user.get_name %}
+                                               userID: "{{ user.id }}",
+                                               userHandle: {% json_encode user.username %},
+                                               userName: {% json_encode user.get_name %},
+                                               userAgeGroup: {% json_encode user.get_age_group %},
+                                               userGender: {% json_encode user.gender %},
+                                               fbAccessToken: {% json_encode user.fb_access_token %},
+                                               {% endif %}
+
+                                               {# ideally i could have some kinda of pagetype thing #}
+                                               isErrorPage: {% if not entity and not item %}true{% else %}false{% endif %},
+                                               isOrgDonate: {% if type == 'campaign_donate' %}true{% else %}false{% endif %}
+                                           });
+                           {% block documentready %}{% endblock %}
+                       });
+        </script>
+        <!--Google Analytics-->
+        <script type="text/javascript">
+            var _gaq=[["_setAccount","UA-15081834-1"],["_trackPageview"]];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g,s)}(document,"script"));
+        </script>
+    </body>
+</html>

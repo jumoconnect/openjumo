@@ -1,0 +1,54 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/campaign_share.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc1ab516c758b58"></script>
+{% endblock %}
+
+{% block extra_styles %}<style>.form_box_header { margin-left: 10px; } #page-content {  width: 830px; }</style>{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div id="share" class="form_box bg_shadow clearfix">
+    <div class="clearfix">
+        <div class="left_side" style="float:left;">
+            <div class="spaced">
+                <div class="form_heading">Thanks for your support!</div>
+                <p>
+                    You just donated <b>${{ amount }}</b> to <a href="{{ org.get_url }}">{{ org.get_name }}</a>.
+                </p>
+                <h2>Spread the word!</h2>
+                <br />
+                <div class="clearfix">
+                    <fb:like href="http://www.jumo.com{{ org.get_url }}" send="true" layout="box_count" width="60" show_faces="true" font="lucida grande" style="display:inline;float:left;"></fb:like>
+
+                    <a href="http://twitter.com/share" class="twitter-share-button" data-text="Just donated to {{ org.get_name }} on Jumo" data-url="http://www.jumo.com{{ org.get_url }}" data-count="vertical">Tweet</a>
+                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style" addthis:url="http://www.jumo.com{{ org.get_url }}" addthis:title="{{ org.get_title }} | Jumo">
+                        <a class="addthis_facebook"></a>
+                        <a class="addthis_counter"></a>
+                    </div>
+                    <!-- AddThis Button END -->
+                </div>
+                <h2>Learn more about <a href="{{ org.get_url }}">{{ org.get_name }}</a></h2>
+            </div>
+        </div>
+        <div class="right_side">
+            <h4>Organization Supported</h4>
+            <h5>{{ org.get_name }}</h5>
+            <p>{{ org.vision_statement }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

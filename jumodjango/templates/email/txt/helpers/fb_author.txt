@@ -1,0 +1,1 @@
+[http://{{ hostname }}{{ item.poster.get_url }}] {{ item.poster.get_name }} via Facebook

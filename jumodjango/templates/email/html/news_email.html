@@ -1,0 +1,182 @@
+{% load tags %}
+<html>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor="#fafafa" style="color:#222222;font-family:verdana,sans-serif;">
+        <table width="100%" cellpadding="10" cellspacing="0" bgcolor="#fafafa">
+            <tbody>
+                <tr>
+	                <td valign="top" align="center" style="margin:0px; padding:0px;">
+                        <table width="575" border="0" cellpadding="12" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:center;
+                                               color:#666666;
+			                                   z-index:1;">
+                                        <a style="font-size:10px;
+                                                  text-decoration:none;
+                                                  font-family:verdana, sans-serif;
+                                                  color:#666666;"
+                                           href="http://{{ hostname }}/email/{{ user.username }}">
+                                            If this email is not displaying correctly click here to view in web browser
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="575" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:10px;
+			                                   padding:5px;
+                                               font-weight:bold;
+                                               font-family:verdana, sans-serif;
+                                               color:#333333;
+			                                   z-index:1;">
+                                        Jumo Reader | Top news on the issues you care about
+                                    </td>
+                                    <td style="font-size:10px;
+			                                   padding:5px;
+                                               color:#333333;
+                                               font-weight:bold;
+                                               text-align:right;
+                                               font-family:verdana, sans-serif;
+			                                   z-index:1;">
+                                        {{ current_time|date:"l, F j, Y" }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+	                    <table width="575" cellspacing="0" cellpadding="0" border="0" align="center" style="background-color: #FFFFFF;">
+                            <tbody>
+                                <tr><td valign="top" height="1" colspan="2" bgcolor="#e6e6e6"></td></tr>
+                            </tbody>
+                        </table>
+	                    <table width="575" cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0">
+                            <tbody>
+                                <tr>
+                                    <td width="1" bgcolor="#e6e6e6"><img border="0" src="{% static_url "img/spacer.gif" %}" alt="" width="1" height="1"></td>
+                                    <td valign="top" align="left">
+		                                <table cellpadding="0" cellspacing="12" bgcolor="#FFFFFF" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="http://{{ hostname }}">
+                                                            <img border="0" height="69" width="340" title="Jumo" src="{% static_url 'img/jumo_reader.jpg' %}" alt="Jumo Reader | Top news on the issues you care about" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                                {% if feed_items %}
+                                                <tr>
+                                                    <td style="font-size:12px;
+                                                               font-family:verdana, sans-serif;
+                                                               color:#777777;">
+                                                        Top News
+                                                    </td>
+                                                </tr>
+                                                {% endif %}
+                                                {% for item in feed_items %}
+                                                <tr><td valign="top" height="1" colspan="2" bgcolor="#dedede"></td></tr>
+		                                        <tr>
+			                                        <td bgcolor="#FFFFFF" valign="top" style="font-size:11px;
+                                                                                              color:#444444;
+                                                                                              line-height: 144%;
+                                                                                              font-family:verdana, sans-serif;">
+                                                        {% render_HTML_email_feeditem user item feed_stream hostname %}
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+
+                                                {% for stat in random_stats %}
+                                                {% if stat %}
+		                                        <tr height="5">
+                                                    <td style="font-size:15px;
+                                                               color:#444444;
+                                                               padding:12px;
+                                                               line-height:139%;
+                                                               background:#f3f3f3;
+                                                               font-family:verdana, sans-serif;">
+                                                        <span style="font-size:22px; line-height:144%; font-weight:bold;">Did You Know?</span>
+                                                        <br /><b>{{ stat.header }}</b> {{ stat.description }} <br />
+                                                        <a href="http://{{ hostname }}{{ stat.issue.get_url }}" style="color: #0070D0;
+                                                                                                                       cursor: pointer;
+                                                                                                                       font-size:11px;
+                                                                                                                       font-weight: bold;
+                                                                                                                       text-decoration: underline;">
+                                                            learn more &#187;
+                                                        </a>
+                                                    </td>
+		                                        </tr>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td width="1" bgcolor="#e6e6e6"><img border="0" src="{% static_url "img/spacer.gif" %}" alt="" width="1" height="1"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="575" border="0" cellpadding="0" cellspacing="0" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" background="#ffffff">
+                            <tbody>
+                                <tr>
+                                    <td valign="top">
+                                        <img src="{% static_url 'img/email_bottom.png' %}" alt="" width="585" height="7" border="0" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+	                    <table width="554" cellpadding="0" cellspacing="0" bgcolor="#fafafa">
+                            <tbody>
+	                            <tr>
+		                            <td style="font-size:11px;
+                                               color:#999999;
+                                               font-family:verdana, sans-serif;" valign="top">
+		                                113 Spring St. New York, NY 10012
+                                    </td>
+                                    <td style="text-align:right;" valign="top">
+                                        <a style="vertical-align:top;
+                                                  font-family:verdana, sans-serif;
+                                                  font-size:11px;
+                                                  color:#444444;
+                                                  text-decoration:none;"
+                                           href="http://{{ hostname }}">Home</a>&nbsp;&nbsp;&nbsp;
+		                                <a style="vertical-align:top;
+                                                  font-family:verdana, sans-serif;
+                                                  font-size:11px; color:#444444;
+                                                  text-decoration:none;"
+                                           href="http://{{ hostname }}/{{ user.username }}">Profile</a>&nbsp;&nbsp;&nbsp;
+		                                <a style="vertical-align:top;
+                                                  font-family:verdana, sans-serif;
+                                                  font-size:11px; color:#444444;
+                                                  text-decoration:none;"
+                                           href="http://{{ hostname }}/settings">Settings</a>&nbsp;&nbsp;&nbsp;
+                                        <a style="vertical-align:top;
+                                                  font-family:verdana, sans-serif;
+                                                  font-size:11px;
+                                                  color:#444444;
+                                                  text-decoration:none;"
+                                           href="http://{{ hostname }}/about">About</a>&nbsp;&nbsp;&nbsp;
+                                        <a style="vertical-align:top;
+                                                  font-family:verdana, sans-serif;
+                                                  font-size:11px;
+                                                  color:#444444;
+                                                  text-decoration:none;"
+                                           href="http://{{ hostname }}/unsubscribe/?id={{ user.id }}&id_type=user&code={{ unsub_code }}&pub_id={{ publication_id }}">Unsubscribe</a>
+		                            </td>
+	                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="554" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" height="1" colspan="2" bgcolor="#f8f7f7"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <img height="1" width="1" src="http://www.google-analytics.com/__utm.gif?utmwv=1&utmdt=JumoReader&utmhn=www.jumo.com&utmp=/email/{{ user.username }}&utmac=UA-15081834-1&utmccn=jumoreader&utmcsr=jumoreader&utmctr=email+opened&utmcmd=htmlemail" />
+    </body>
+</html>

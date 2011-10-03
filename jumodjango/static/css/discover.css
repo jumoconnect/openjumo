@@ -1,0 +1,137 @@
+.cs .discover {
+    background: #94CB41;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 800px;
+    border-radius:4px 4px 0px 0px;
+    border: 1px solid #6AAA0B;
+    margin-bottom:35px;
+    position:relative;
+
+    background: #F3F3F3;
+    border: 1px solid #CCCCCC;
+}
+
+.cs .discovery_bottom {
+/*    border:1px solid #ccc;*/
+    border-top:0px solid #ccc;
+}
+
+.cs .discover .info {
+    display:block;
+    padding: 10px;
+    width: 753px;
+    padding-bottom: 0px;
+    border-top: 1px solid #DDD;
+}
+
+.cs .discover ul.info li {
+    display: block;
+    padding: 21px;
+}
+
+
+.cs .discover .more {
+    background: #2F322A;
+    cursor: pointer;
+    height: 50px;
+    padding-top: 19px;
+    position: absolute;
+    right: -43px;
+    text-align: center;
+    top: 218px;
+    width: 33px;
+}
+
+.cs .discover .more:hover {
+    background:cyan;
+    background: #94CB41;
+}
+
+.cs .discover ul li {
+    display:inline;
+}
+
+.cs .discover .categories {
+    height: 29px;
+    padding: 24px 0px 0px;
+    text-align: center;
+    border-bottom: 1px solid #7AAC2F;
+    background: #94CB41;
+}
+
+.cs .discover .categories.sub_categories {
+    background:#fff;
+    padding-top:30px;
+    border-bottom: 1px solid #fff;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cs .discover .categories .sub_category_group {
+    display:none;
+}
+
+.cs .discover .categories .sub_category_group.selected {
+    display:block;
+}
+
+.cs .discover .categories.sub_categories .tab {
+    background:transparent;
+    border-bottom:0px solid;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.cs .discover .categories.sub_categories .tab.selected, .cs .discover .categories.sub_categories .tab:hover {
+    background: #fff;
+    border:1px solid #ddd;
+    border-bottom:1px solid #fff;
+}
+
+.cs .discover .categories .tab {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px;
+    cursor: pointer;
+    border-left: 1px solid #94CB41;
+    border-right: 1px solid #94CB41;
+    padding-bottom:10px;
+}
+
+.ie7 .cs .discover .categories .tab {
+    line-height: 2em;
+}
+
+.cs .discover .categories .tab.selected, .cs .discover .categories .tab:hover {
+    background:#fff;
+    color:#6AAA0B;
+    font-weight:bold;
+    border-radius:5px 5px 0px 0px;
+    border: 1px solid #7AAC2F;
+    border-bottom:0px;
+    text-decoration:none;
+    padding-bottom:13px;
+}
+
+.cs .discover .discovery_item_group {
+    background: white;
+    display:none;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.cs .discover .discovery_item_group.selected {
+    display:block;
+}
+
+.cs .discover .discovery_items li {
+    float: left;
+    width: 340px;
+}
+
+.cs .discover .discovery_items li.odd {
+    border-right: 1px dotted #CCCCCC;
+}

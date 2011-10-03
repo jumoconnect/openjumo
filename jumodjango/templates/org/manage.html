@@ -1,0 +1,58 @@
+{% extends "common/manage_base.html" %}
+{% load tags %}
+
+{% block documentready %}
+JUMO.Manage.initialize({ multiLocation: true });
+{% endblock %}
+
+{% block manage_form %}
+{{ form.media }}
+{% comment %}
+<div class="verified">
+    {% if user.is_authenticated and user.is_staff %}
+    <a onclick="Manage.removeOrg(this);">remove this org</a>
+    {% endif %}
+</div>
+{% endcomment %}
+
+<div class="header">
+    <a href="{{ entity.get_absolute_url }}">{{ entity.get_name }}'s</a> <span class="faded">settings</span>
+</div>
+
+<div id="section_nav" class="section_options">
+    <a class="{% if tab == 'about' %}selected{% endif %}" href="{% url manage_org entity.id %}">about</a>
+    <a class="{% if tab == 'connect' %}selected{% endif %}" href="{% url manage_org_connect entity.id %}">connect</a>
+    <a class="{% if tab == 'more' %}selected{% endif %}" href="{% url manage_org_more entity.id %}">more</a>
+</div>
+
+{% if success %}
+<div class="success_notification">
+    Thanks, your organization's settings have been saved!
+</div>
+{% endif %}
+
+<form id="form" action="{{ form_url }}" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+    {% for field in form.visible_fields %}
+        {{ field.errors }}
+        <div class="form_group">
+            <div class="label">
+                <div class="text">{{ field.label_tag }}:</div>
+            </div>
+
+            {% if field.name == 'img_large_url' %}
+                <img style="vertical-align:middle;" src="{{ entity.get_image_small }}">
+            {% endif %}
+            {{ field }}
+            <div class="help" style="margin-left: 23%;">{{ field.help_text|safe }}</div>
+        </div>
+    {% endfor %}
+    <div class="submit_spacer">
+        <div class="notification"></div>
+        <input id="save" class="button" type="submit" value="Save" />
+    </div>
+</form>
+{% endblock %}

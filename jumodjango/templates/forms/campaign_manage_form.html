@@ -1,0 +1,126 @@
+<form enctype="multipart/form-data" action="/campaign/manage" method="post" autocomplete="off">
+    {% csrf_token %}
+
+    <div class="form_group">
+        <h2>{{ form.name.label }}</h2>
+        <p>
+            Choose a title that's unique to your project. Avoid words
+            like "help" and "support" and generic titles like "Fund my
+            great new project.
+        </p>
+        {{ form.name.errors }}
+        {{ form.name }}
+    </div>
+
+    <div class="form_group">
+        <h2>{{ form.tag_line.label }}</h2>
+        <p>
+            A short summary of your project. This will appear under your project name in small widgets on Jumo.
+        </p>
+        {{ form.tag_line.errors }}
+        {{ form.tag_line }}
+    </div>
+
+
+    <div class="form_group">
+        <h2>{{ form.summary.label }}</h2>
+        <p>
+            Your narrative. How does this money help you accomplish your goals?
+
+            Inspire people by communicating:
+
+            -  What you want to do
+            -  How you plan to do it
+            -  What the money is for
+        </p>
+        {{ form.summary.errors }}
+        {{ form.summary }}
+    </div>
+
+    <div class="form_group">
+        <h2>{{ form.personal_appeal.label }}</h2>
+        <p>
+            personal appeal boobar
+        </p>
+        {{ form.personal_appeal.errors }}
+        {{ form.personal_appeal }}
+    </div>
+
+
+    <div class="form_group">
+       <h2>{{ form.supported_org.label }}</h2>
+       <p>
+           What organization will your project support?  Please enter
+           the name of any 501c3 organization on the Jumo platform.
+       </p>
+       {{ form.supported_org.errors }}
+       {{ form.supported_org_data.errors }}
+
+       {{ form.supported_org }}
+       {{ form.supported_org_data.as_hidden }}
+    </div>
+
+    <div class="form_group">
+        <h2>Image</h2>
+        <p>
+            Foobar image
+        </p>
+        {{ form.image.errors }}
+        {{ form.image }}
+    </div>
+
+    <div class="form_group">
+        <h2>Youtube URL</h2>
+        <p>
+            Foobar video text
+        </p>
+        {{ form.youtube_url.errors }}
+        {{ form.youtube_url }}
+    </div>
+
+    <div class="form_group">
+        <h2>Funding</h2>
+        <p>
+            Funding on JUMO is always all or nothing. If your project
+            doesn't reach its funding goal, you won't receive any
+            funds. In most cases, we recommend you set your funding goal
+            as the minimum amount you need to complete your project.
+        </p>
+        <p>
+            Remember, there's no limit to how much you can raise –
+            projects continue to accept pledges for their entire
+            funding duration.
+        </p>
+        {{ form.end_date.errors }}
+        {{ form.amount.errors }}
+        Raise {{ form.amount }} by {{ form.end_date }} {{ form.time_zone }}
+    </div>
+
+    <div class="form_group">
+        <h2>Links</h2>
+        <p>
+            Foobar links text
+        </p>
+        {{ form.link_1.errors }}
+        {{ form.link_1 }}
+        {{ form.link_2.errors }}
+        {{ form.link_2 }}
+        {{ form.link_3.errors }}
+        {{ form.link_3 }}
+    </div>
+
+    <div class="form_group">
+        <h2>Location</h2>
+        <p>
+            location stuff
+        </p>
+        {{ create_form.location.errors }}
+        {{ create_form.location_data.errors }}
+        {{ create_form.location }}
+        {{ create_form.location_data.as_hidden }}
+    </div>
+
+    <div class="submit_spacer clearfix" style="border-top:1px solid #cccccc">
+        <input type="submit" class="submit button" value="Save Changes &#187;">
+    </div>
+</form>

@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/profile.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static_page.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include "etc/static_header.html" %}
+{% block static_content %}{% endblock %}
+{% endblock %}

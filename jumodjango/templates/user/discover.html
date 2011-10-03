@@ -1,0 +1,211 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static_url 'js/data/recommended_orgs.js' %}"></script>
+{% if settings.DEBUG %}
+    <script type="text/javascript" src="{% static_url 'js/discover.src.js' %}"></script>
+    <script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+{% else %}
+    <script type="text/javascript" src="{% static_url 'js/discover.js' %}"></script>
+    <script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+{% endif %}
+{% endblock %}
+
+{% block documentready %}
+               JUMO.Discover.initialize(CATEGORIES,
+                                  {% if user.is_authenticated and user.get_all_orgs_following %}
+                                  [
+                                      {% for org in user.get_all_orgs_following %}
+                                           {id : {{ org.id }}, type : 'org'}{% if not forloop.last %},{% endif %}
+                                      {% endfor %}
+                                  ]{% else %}[]{% endif %},
+                                  {% if user.location %}{% json_encode user.location %}{% else %}{}{% endif %});
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/setup.css" %}">
+<style>
+.form_box_header {
+    margin-left: 6px;
+}
+.form_box.bg_shadow {
+    width:710px;
+}
+#step { display:block; margin: 19px 24px 10px -70px; }
+</style>
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div class="form_box bg_shadow">
+    <div id="currentstep">2/3</div>
+    <div id="survey">
+        <div class="welcome">Welcome {{ request.user.get_name }}</div>
+        <div class="heading">2. What are you interested in?</div>
+        <div class="subhead">
+            Help us find the best issues and organizations for
+            you. <br />Tell us about your interests in the issue areas
+            below.
+        </div>
+
+        <ul class="rec">
+            <li class="survey_head">
+                <img class="top_left" src="{% static_url 'img/setup_top_left.png' %}" />
+                <img class="top_right" src="{% static_url 'img/setup_top_right.png' %}" />
+
+                <div class="clearfix">
+                    <span class="text">Issue</span>
+                    <span class="options">not interested</span>
+                    <span class="options">interested</span>
+                    <span class="options">very interested</span>
+                </div>
+            </li>
+
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/arts_lr.png" %}">Arts And Culture</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Arts And Culture" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Arts And Culture" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Arts And Culture" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/education_lr.png" %}">Education</div></div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Education" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Education" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Education" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/environment_lr.png" %}">Environment and Animals</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Environment and Animals" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Environment and Animals" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Environment and Animals" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/health_lr.png" %}">Health</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Health" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Health" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Health" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/human_lr.png" %}">Human Rights</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Human Rights" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Human Rights" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Human Rights" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/peace_lr.png" %}">Peace and Governance</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Peace and Governance" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Peace and Governance" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Peace and Governance" value="2" /></div>
+                </div>
+            </li>
+            <li class="survey_row">
+                <div class="row_label">
+                    <div class="back"></div>
+                    <div class="text"><img src="{% static_url "img/poverty_lr.png" %}">Poverty</div>
+                </div>
+                <div class="container">
+                    <div class="row"><input class="styled" type="radio" name="Poverty" value="0" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Poverty" value="1" /></div>
+                    <div class="row"><input class="styled" type="radio" name="Poverty" value="2" /></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="issues" class="nav_hidden">
+        <div class="welcome">Welcome {{ request.user.get_name }}</div>
+        <div class="heading">3. Select projects to <b>follow</b></div>
+        <div class="subhead">Select the issues and organizations you're
+            interested in learning more about.</div>
+
+        <ul class="rec"></ul>
+    </div>
+    <div class="submit_spacer" style="border-top:1px solid #cccccc">
+        <div class="notification"></div>
+        <ul id="step">
+            <li class="checked">1. Create Your Account</li> &#187;
+            <li class="filled">2. Your Interests</li> &#187;
+            <li>3. Create Your Profile</li> &#187;
+        </ul>
+        <div id="next" class="button">next &#187;</div>
+    </div>
+</div>
+
+<div id="templates">
+    {% include "util/popup_template.html" %}
+
+    <div class="follow_item">
+        <span class="text"></span>
+        <img class="remove" src="{% static_url 'img/close.png' %}" />
+    </div>
+
+    <li class="follow_row">
+        <div class="head">
+            <div class="clearfix">
+                <img class="top_left" src="{% static_url 'img/setup_top_left.png' %}" />
+                <img class="top_right" src="{% static_url 'img/setup_top_right.png' %}" />
+                <div class="name"></div>
+            </div>
+        </div>
+        <ul class="follow_boxes">
+            <li class="issues">
+                <ul></ul>
+            </li>
+            <li class="orgs">
+                <ul class="org_container"></ul>
+            </li>
+        </ul>
+        <div class="right_arrow"></div>
+    </li>
+
+    <li class="issue"></li>
+
+    <li class="org">
+        <img src="{% static_url "img/magnifying_glass.png" %}" class="more_info" />
+        <!-- vertical align hack -->
+        <div class="photoholder">
+            <img class="orgphoto"></img>
+        </div>
+        <div class="name"></div>
+        <div class="tags"></div>
+        <span class="notinterested">
+            <input class="styled" type="checkbox"/>
+            <span>click to follow</span>
+        </span>
+    </li>
+</div>
+{% endblock %}

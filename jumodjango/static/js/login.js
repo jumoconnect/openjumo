@@ -1,0 +1,2 @@
+var Login={parent:JUMO,initialize:function(a){jQuery("#id_username").focus();this.setupLogin(a.email_id,a.pw_id,a.login_submit)},setupLogin:function(a,b){jQuery(a+", "+b).keyup(function(a){a.keyCode==13&&jQuery("#login_form").submit()})},_showSubmitError:function(a,b,c){Checker.enableSubmit(b);JUMO.Util.removeLoadingImg(a);c!==void 0&&Checker.showError(b,"your username and password are incorrect")},showSignupForm:function(){jQuery("#areyousignedin").hide();jQuery("#create_account_button").slideUp(350);
+jQuery("#create_account_form").slideDown(350)}};

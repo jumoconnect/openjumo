@@ -1,0 +1,19 @@
+{% with contentitem.get_media_item as media_item %}
+<div class="media_item">
+    {% if media_item.media_type == "photo" %}
+    <img src="{{ media_item.get_image_small }}" data-fullsize="{{ media_item.get_image_large }}" />
+    {% else %}
+    {% if media_item.media_type == "pullquote" %}
+    <blockquote>{{ media_item.get_pullquote }}</blockquote>
+    {% else %}
+    {% if media_item.media_type == "video" %}
+    <img src="{{ media_item.get_image_small }}" class="youtube_thumb" id="youtube_{{ media_item.get_youtube_id }}" />
+    {% endif %}
+    {% endif %}
+    {% endif %}
+
+    {% if media_item.caption %}
+    <div class="caption">{{ media_item.caption }}</div>
+    {% endif %}
+</div>
+{% endwith %}

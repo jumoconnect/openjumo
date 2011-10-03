@@ -1,0 +1,299 @@
+{% load humanize %}
+{% load tags %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+	<title>Jumo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		body {margin:0;}
+		.ExternalClass {display:block !important;}
+		* {
+		-webkit-text-size-adjust: none;
+		-webkit-text-resize: 100%;
+		text-resize: 100%;
+		-ms-text-resize: 100%;
+		}
+	</style>
+	<style type="text/css">a{text-decoration:none;}</style>
+</head>
+<body marginheight="0" marginwidth="0" leftmargin="0" topmargin="0" bgcolor="#f8f7f7" link="#444444" vlink="444444">
+	<style type="text/css">
+	* {
+		-webkit-text-size-adjust: none;
+		-webkit-text-resize: 100%;
+		text-resize: 100%;
+		-ms-text-resize: 100%;
+	}
+	</style>
+	<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0" bgcolor="#f8f7f7">
+		<tr>
+			<td>
+				<table width="667" cellpadding="0" cellspacing="0" border="0" align="center">
+					<tr><td style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="13"></td></tr>
+					<tr>
+						<td>
+							{% include "email/html/notifications/camp_includes/body_header.html" %}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td width="36"></td>
+									<td width="602" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/top-shadow.gif' %}" align="left" vspace="0" hspace="0" width="602" height="13"></td>
+									<td width="29"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td width="36"></td>
+									<td width="1" bgcolor="#e1e1e1"></td>
+									<td width="600">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tr>
+												<td colspan="2">
+													<table width="100%" cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td width="600" bgcolor="#88bd38">
+																<table width="100%" cellpadding="0" cellspacing="0" border="0">
+																	<tr><td colspan="2" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="17"></td></tr>
+																	<tr>
+																		<td width="30"></td>
+																		<td width="570">
+																			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+																				<tr>
+																					<td style="line-height:20px;">
+																						<font face="Helvetica, Arial, sans-serif" size="3" color="#ffffff" style="line-height:20px; font-size:15px;"><strong>Our campaign has reached its goal!</strong></font>
+																					</td>
+																				</tr>
+																				<tr>
+																					<td style="line-height:30px;">
+																						<font face="Helvetica, Arial, sans-serif" size="5" color="#ffffff" style="line-height:30px; font-size:24px;"><strong>
+                                                                            {{ campaign.target_org.name }}
+                                                                         </strong></font>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="1" bgcolor="#e1e1e1"></td>
+									<td width="29"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="font-size:0; line-height:0;">
+							<img src="{% static_url 'img/email/campaign/banner.jpg' %}" width="667" height="131" align="left" vspace="0" hspace="0" alt="Banner" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td width="64" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/banner-b-l.jpg' %}" align="left" vspace="0" hspace="0" width="64" height="63" alt="" /></td>
+									<td width="3" bgcolor="#94cb41"></td>
+									<td width="82" bgcolor="#94cb41">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tr>
+												<td style="line-height:30px;">
+													<font face="Helvetica, Arial, sans-serif" size="3" color="#ffffff" style="line-height:30px; font-size:22px;"><strong>100%</strong></font><br>
+												</td>
+											</tr>
+											<tr>
+												<td style="line-height:20px;">
+													<font face="Helvetica, Arial, sans-serif" size="2" color="#444444" style="line-height:20px; font-size:14px;"><strong>Complete</strong></font>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="382" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/banner-b-c.jpg' %}" align="left" vspace="0" hspace="0" width="382" height="63" alt="" /></td>
+									<td width="75" bgcolor="#94cb41">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tr>
+												<td style="line-height:30px;" align="right">
+													<font face="Helvetica, Arial, sans-serif" size="3" color="#ffffff" style="line-height:30px; font-size:22px;"><strong>
+                                                ${{ campaign.goal|floatformat:"-3"|intcomma }}
+                                            </strong></font><br>
+												</td>
+											</tr>
+											<tr>
+												<td style="line-height:20px;" align="right">
+													<font face="Helvetica, Arial, sans-serif" size="2" color="#444444" style="line-height:20px; font-size:14px;"><strong>Goal</strong></font>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="31" bgcolor="#94cb41">
+									</td>
+									<td width="30" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/banner-b-r.jpg' %}" align="left" vspace="0" hspace="0" width="30" height="63" alt="" /></td>
+								</tr>
+								<tr>
+									<td colspan="7" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/banner-b.jpg' %}" align="left" vspace="0" hspace="0" width="667" height="10" alt="" /></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td width="36"></td>
+									<td width="1" bgcolor="#e1e1e1"></td>
+									<td width="630">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0">
+											<tr>
+												<td bgcolor="#ffffff" width="29"></td>
+												<td bgcolor="#ffffff" width="310" valign="top">
+													<table width="100%" cellpadding="0" cellspacing="0" border="0">
+														<tr><td style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="25"></td></tr>
+														<tr>
+															<td style="line-height:18px;">
+																<font face="'Lucida Sans Unicode','Lucida Grande', Arial, Helvetica, sans-serif" size="2" color="#444444" style="line-height:18px; font-size:13px;">
+																	{% if donor.first_name %}{{ donor.first_name }},<br><br>{% endif %}
+																	Due to your generosity, {{ campaign.target_org.name }}'s campaign has reached its goal!<br><br>
+																	Thank you for your generous gift and work to {{ campaign.title }}.</strong> <br><br>
+																	You will soon receive a confirmation email. <br><br>
+																	Remember to visit <a href="{% full_url campaign.target_org.get_url %}"><strong>{{ campaign.target_org.name }}'s</strong></a> Jumo page to share your experiences from the campaign.<br><br>
+																	We look forward to introducing you to more ways to get involved on Jumo! <br><br>
+																	Thanks, <br><br>
+																	<strong>The Jumo Team </strong>
+																</font>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td bgcolor="#ffffff" width="31"></td>
+												<td width="260" valign="top">
+													<table width="100%" cellpadding="0" cellspacing="0" border="0">
+														<tr>
+															<td width="10" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="39" bgcolor="#ffffff"></td>
+															<td width="140" bgcolor="#ffffff" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="13"></td>
+															<td width="40" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="29"></td>
+														</tr>
+														<tr>
+															<td width="10" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="39" bgcolor="#ffffff"></td>
+															<td width="140" style="font-size:0; line-height:0;">
+																<a href="{% full_url campaign.get_url %}"><img align="left" vspace="0" hspace="0" border="0" src="{{ campaign.get_image_large }}" width="140" alt="{{ campaign.target_org.name }}" /></a>
+															</td>
+															<td width="40" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="29" style="font-size:0; line-height:0;" valign="bottom">
+																<img src="{% static_url 'img/email/campaign/arrow.gif' %}" align="left" vspace="0" hspace="0" width="29" height="38" alt="" />
+															</td>
+														</tr>
+														<tr>
+															<td width="10" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="39" bgcolor="#ffffff"></td>
+															<td width="140" bgcolor="#ffffff" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="30"></td>
+															<td width="40" bgcolor="#ffffff"></td>
+															<td width="1" bgcolor="#e1e1e1"></td>
+															<td width="29"></td>
+														</tr>
+														<tr>
+															<td colspan="7">
+																<table width="100%" cellpadding="0" cellspacing="0" border="0">
+																	<tr>
+																		<td colspan="3" width="240" style="font-size:0; line-height:0;" bgcolor="#efefef"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="15"></td>
+																		<td width="20"></td>
+																	</tr>
+																	<tr>
+																		<td width="19" bgcolor="#efefef"></td>
+																		<td width="214">
+																			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+																				<tr>
+																					<td width="204" style="line-height:21px;" bgcolor="#efefef">
+																						<font face="'Lucida Sans Unicode','Lucida Grande', Arial, Helvetica, sans-serif" size="3" color="#444444" style="line-height:21px; font-size:15px;"><strong>
+                                                                            Visit {{ campaign.target_org.name }}'s Jumo page.
+                                                                         </strong></font>
+																					</td>
+																					<td width="10" bgcolor="#efefef"></td>
+																				</tr>
+																			</table>
+																		</td>
+																		<td width="7" bgcolor="#efefef"></td>
+																		<td width="20"></td>
+																	</tr>
+																	<tr>
+																		<td colspan="3" style="font-size:0; line-height:0;" bgcolor="#efefef"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="16"></td>
+																		<td width="20"></td>
+																	</tr>
+																	<tr>
+																		<td width="19" bgcolor="#efefef"></td>
+																		<td width="214" style="font-size:0; line-height:0;" bgcolor="#efefef">
+																			<a href="{% full_url campaign.target_org.get_url %}"><img src="{% static_url 'img/email/campaign/btn-share.gif' %}" border="0" align="left" vspace="0" hspace="0" width="204" height="44" alt="Share" /></a>
+																		</td>
+																		<td width="7" bgcolor="#efefef"></td>
+																		<td width="20"></td>
+																	</tr>
+																	<tr>
+																		<td colspan="3" width="240" style="font-size:0; line-height:0;" bgcolor="#efefef"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="23"></td>
+																		<td width="20"></td>
+																	</tr>
+																	<tr>
+																		<td colspan="3" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/bottom-block.gif' %}" align="left" vspace="0" hspace="0" width="240" height="36"></td>
+																		<td width="20"></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td width="230" colspan="5" style="font-size:0; line-height:0;" bgcolor="#ffffff">
+																<img align="left" vspace="0" hspace="0" src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="150">
+															</td>
+															<td width="1" bgcolor="#e1e1e1" style="font-size:0; line-height:0;"><img align="left" vspace="0" hspace="0" src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="150"></td>
+															<td width="29"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td width="36"></td>
+									<td width="602" style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/bottom-shadow.gif' %}" align="left" vspace="0" hspace="0" width="602" height="20"></td>
+									<td width="29"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{% include 'email/html/notifications/camp_includes/body_footer.html' %}
+						</td>
+					</tr>
+					<tr><td style="font-size:0; line-height:0;"><img src="{% static_url 'img/email/campaign/blank.gif' %}" width="1" height="20"></td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

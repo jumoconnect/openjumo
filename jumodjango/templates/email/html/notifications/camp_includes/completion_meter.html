@@ -1,0 +1,34 @@
+{% load tags %}
+
+{% with campaign.get_percent_complete as percent %}
+    {% if percent < 20 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-10.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 20 and percent < 30 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-20.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 30 and percent < 40 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-30.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 40 and percent < 50 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-40.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 50 and percent < 60 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-50.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 60 and percent < 70 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-60.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 70 and percent < 80 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-70.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 80 and percent < 90 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-80.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 90 and percent < 100 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-90.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+    {% if percent >= 100 %}
+        <img src="{% static_url 'img/email/campaign/banner-c-100.jpg' %}" width="298" align="left" vspace="0" hspace="0" height="160" alt="" />
+    {% endif %}
+{% endwith %}

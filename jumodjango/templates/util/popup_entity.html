@@ -1,0 +1,17 @@
+{% load tags %}
+{% load commitment_tags %}
+
+<div class="clearfix item">
+    <div class="button_wrapper">
+        {% commitment_button ent 0 %}
+    </div>
+
+    <div class="ent">
+        {% if ent.get_image_small %}
+        <a style="float:left;" href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}"><i style="background-image: url({{ ent.get_image_small }}); background-position: 0px 0px;"></i></a>
+        {% endif %}
+
+        <a class="name" href="{{ ent.get_absolute_url }}">{{ ent.get_name }}</a>
+        {% if ent.summary %}<br /><div class="body">{{ ent.summary|truncatechars:37 }}</div>{% endif %}
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/feed.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+
+<div class="manage_box bg_shadow">
+  <div class="header">
+    You're almost the administrator of <br /> <span class="faded">{{ org.name }}</span>
+  </div>
+
+  <p>
+  Please check your email and follow the link we've sent to finalize the process.
+  </p>
+</div>
+
+{% endblock %}
+
+
+
+

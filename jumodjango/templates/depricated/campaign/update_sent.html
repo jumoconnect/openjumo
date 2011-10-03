@@ -1,0 +1,27 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "campaign/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/campaign.css" %}">
+<link rel="stylesheet" href="{% static_url "css/feed.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+    {% include "campaign/top_section.html" %}
+    <div class="ls">
+		<h2>Update successful</h2>
+		<!-- NEEDS COPY -->
+		<p>Your e-mail is being sent.</p>
+		<p><a href={{ entity.get_url }}>Return to my campaign.</a></p>
+    </div>
+
+    <div class="rs">
+        {% include "campaign/right_section.html" %}
+    </div>
+</div>
+{% endblock %}

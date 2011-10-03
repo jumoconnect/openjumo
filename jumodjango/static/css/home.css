@@ -1,0 +1,516 @@
+/*
+  For the signed out jumo.com
+  */
+
+html, body {
+    height: auto;
+    background: rgb(243,243,243); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(243,243,243,1) 0%, rgba(255,255,255,1) 98%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,243,243,1)), color-stop(98%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(243,243,243,1) 0%,rgba(255,255,255,1) 98%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(243,243,243,1) 0%,rgba(255,255,255,1) 98%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(243,243,243,1) 0%,rgba(255,255,255,1) 98%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, rgba(243,243,243,1) 0%,rgba(255,255,255,1) 98%); /* W3C */
+}
+
+#page-content {
+    margin: 0 auto;
+    margin-top:0px;
+    margin-bottom: 20px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    overflow:visible;
+}
+
+#page-content .content {
+    top:0px;
+    margin-top:-345px;
+    z-index:10;
+}
+
+#footer {
+    border-top:1px solid #D3D3D3;
+    color:#444;
+    display:block;
+    font-size:12px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:8px;
+    padding-top:10px;
+    position:relative;
+    width:827px;
+    padding-bottom: 15px;
+}
+
+#footer ul {
+    top:8px;
+}
+
+
+h2 {
+    border-bottom: 1px solid #ABABAB;
+    color: #94C93D;
+    display: block;
+    font-size: 42px;
+    font-weight: normal;
+    line-height: 140%;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+
+h3 {
+    display: block;
+    font-weight:normal;
+    font-size: 18px;
+    line-height: 140%;
+    margin:0px;
+    padding:0px;
+    padding-bottom: 18px;
+    color:#545454;
+}
+
+h4 {
+    font-size: 24px;
+    padding-bottom: 4px;
+    color:#222;
+    margin-top:31px;
+}
+
+h5 {
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 18px;
+    padding-bottom: 11px;
+    color:#222;
+}
+
+
+/*
+  new button stuff
+  */
+input[type="submit"].button, a.button {
+    border: 1px solid gainsboro;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: whiteSmoke;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+    padding: 9px 12px;
+    margin-top: 4px;
+    color:#666;
+}
+
+
+input[type="submit"].button:hover, a.button:hover {
+    border: 1px solid gainsboro;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    background-color: whiteSmoke;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+    text-decoration:none;
+}
+
+input[type="submit"].button:active, a.button:active {
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    -o-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+
+/* hiding top nav */
+#nav, #bg { display:none; }
+
+.content { overflow:visible; width: 800px; }
+
+.heading .content {
+    /*    overflow:hidden;*/
+    overflow:visible;
+    width:900px;
+}
+
+.signup_login {
+    position: relative;
+    z-index: 10;
+}
+
+input[type="password"], input[type="text"] {
+    color: #777777;
+    font-size: 12px;
+    height: 22px;
+    padding-left: 5px;
+    padding-top: 1px;
+    width: 79px;
+
+    border: 1px solid #cccccc;
+    border-top: 1px solid #999999;
+    border-left: 1px solid #bbbbbb;
+
+    -webkit-box-shadow: 1px 1px 0px #efefef;
+    -moz-box-shadow: 1px 1px 0px #efefef;
+    box-shadow:  1px 1px 0px #efefef;
+
+    margin-top:5px;
+    background:#f9f9f9;
+    margin-right:3px;
+}
+
+.ie7 input[type="password"], .ie7 input[type="text"], .ie8 input[type="password"], .ie8 input[type="text"] {
+    padding-top: 3px;
+    height: 19px;
+}
+
+input[type="password"]:focus, input[type="text"]:focus {
+    background:#fff;
+    color: #333;
+}
+
+.signup_login #fb_login {
+    float: left;
+    margin-right: 49px;
+    margin-top: 5px;
+}
+
+.signup_login form {
+    float:right;
+    margin-top:12px;
+}
+
+.form_group {
+    margin-top:5px;
+}
+
+#fb_name { display:none; }
+
+#fb_profile_pic {
+    border: 1px solid #BBBBBB;
+    display: inline;
+    height: 20px;
+    vertical-align: top;
+    width: 20px;
+}
+
+.homeheading {
+    display: block;
+    font-size: 14px;
+    margin-top: 11px;
+}
+
+.homeheading ol {
+    list-style: decimal outside none;
+}
+
+.homeheading li {
+    font-size: 16px;
+    list-style: none outside none;
+    margin:20px 0px 25px 0px;
+    padding: 0;
+    line-height:152%;
+}
+
+.homeheading li .label {
+    display: block;
+    font-weight: normal;
+    margin: 0px;
+    padding:0px;
+    font-size:16px;
+    color:#222;
+
+    width:91px;
+    float:left;
+    background:#fff;
+}
+
+
+.homeheading li .label .under {
+    margin-top:1px;
+    border:0px solid;
+    background:#fff;
+    height:1px;
+    /*    background:#222;*/
+    border-top:1px solid #ABABAB;
+    width:52px;
+}
+
+.homeheading li .desc {
+    color: #545454;
+    line-height:152%;
+    margin: 0px;
+    float:left;
+    width:450px;
+    margin-top: 1px;
+}
+
+.homeheading li.last {
+    margin-bottom:0px;
+}
+
+#login_submit, #signup_submit {
+    color: #333;
+    display: inline;
+    font-size: 12px;
+    margin: 4px 0 0;
+    padding: 5px 10px 4px 10px;
+    vertical-align: top;
+}
+
+#signup_submit {
+    font-weight:bold;
+    margin-left: 34px;
+    margin-top: 2px;
+    vertical-align: middle;
+    line-height:142%;
+    height:29px;
+}
+
+/* hiding forgot password */
+#login_form .sm_info { display:none; }
+
+.top_section {
+    background:whiteSmoke;
+    background: -moz-gradient(radial,100 36,0,100 -40,120,from(white),to(whiteSmoke));
+    background: -webkit-gradient(radial,100 36,0,100 -40,120,from(white),to(whiteSmoke));
+    border: 0 solid #E5E5E5;
+    position:relative;
+    z-index:20;
+}
+
+.left_section {
+    float: left;
+    margin: 40px 0 31px;
+    width: 439px;
+}
+
+.left_section form {
+    margin-top:9px;
+}
+
+.right_section {
+    background: #F3F3F3;
+    border: 1px solid #CFCFCF;
+    color: #545454;
+    float: right;
+    font-size: 12px;
+    margin: 73px 0px 0 0;
+    padding: 5px 11px 9px 11px;
+    width: 337px;
+    border-radius: 1px;
+    box-shadow: 1px 1px 2px #ddd;
+}
+
+.right_section input[type="text"] {
+    font-size: 13px;
+    height: 29px;
+    margin-right: 9px;
+    padding-left: 7px;
+    padding-top: 3px;
+    margin-top: 6px;
+    width: 232px;
+    vertical-align:top;
+}
+
+.ie7 .right_section input[type="text"], .ie8 .right_section input[type="text"] {
+    padding-top: 6px;
+    height: 23px;
+}
+
+.right_section input[type="submit"].button {
+    background: #6AAA0B;
+    color: #FFFFFF;
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 142%;
+    margin-top: 5px;
+    vertical-align:top;
+    padding: 10px 14px 8px;
+}
+
+
+.bg {
+    background: white;
+    padding-top: 2px;
+    z-index: 1;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #AAA;
+    height: 352px;
+    padding-top: 2px;
+    position: relative;
+    top: 0px;
+    z-index: 0;
+}
+.bg img {
+    background:url('../img/bg.jpg');
+    height: 352px;
+    width:100%;
+}
+
+/* why is this here?? redundent */
+.signup_container .notification {
+    padding:15px;
+    background: lightyellow;
+    display:none;
+    margin-top:8px;
+    margin-bottom:0px;
+    text-align:center;
+    font-size:12px;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+.body {
+    margin-top:19px;
+    margin-bottom:12px;
+    font-size:18px;
+    width:70%;
+    line-height:23px;
+}
+
+.signup:hover { background-color:#333; }
+
+.largelogo {
+    border-bottom: 0 none;
+    display: inline;
+    float: left;
+    height: 45px;
+    margin-bottom: -12px;
+    margin-left: 0;
+    margin-top: 15px;
+    z-index: 20;
+}
+
+
+.ie7 .largelogo {
+    height:45px;
+    margin-bottom:0px;
+}
+
+#bg { padding-bottom: 8px;}
+
+
+/*  new discover */
+.cs .right {
+    margin-top: -46px;
+}
+
+.cs .heading {
+    color: #555555;
+    font-size: 22px;
+    padding: 0 0 18px;
+    position: relative;
+}
+
+
+.cs .recommended {
+    margin-left: 0px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    float: left;
+    width: 379px;
+}
+
+.cs .recommended.last {
+    margin-right:0px;
+    margin-left:0px;
+    float:right;
+}
+
+.cs .recommended .heading {
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.cs .info {
+    padding: 10px;
+    width: 780px;
+    padding-bottom:0px;
+    border-top:1px solid #ddd;
+    border-bottom:0px solid #ddd;
+}
+
+.cs .recommended ul.info {
+    width:auto;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.cs .info li img {
+    height:50px;
+    width:50px;
+}
+
+.cs ul.info li, .cs .discover ul.info li {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #fff;
+}
+
+.cs ul.info li.first, .cs .discover ul.info li.first {
+    border-top: 0px solid #fff;
+/*    border-bottom: 0px solid #fff;*/
+}
+
+.cs .discover ul.info li.first {
+    border-bottom: 0px solid #fff;
+}
+
+.cs .discover ul.info li {
+    display: block;
+    padding: 18px;
+}
+
+.cs ul.info li.last, .cs .discover ul.info li.last {
+    border-bottom: 0px solid #DDDDDD;
+}
+
+.cs .recommended ul.info li {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.cs .info li .name {
+    font-size: 18px;
+    line-height: 142%;
+    vertical-align: middle;
+    display:block;
+}
+
+.cs .info li img {
+    float:left;
+    padding-right:18px;
+}
+
+.cs .info li .body {
+    padding-top: 8px;
+    padding-left: 68px;
+
+    font-size: 13px;
+    line-height: 152%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: auto;
+}
+
+
+.cs .info li .body.noimage {
+    padding-left:0px;
+}

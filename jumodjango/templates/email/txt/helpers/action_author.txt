@@ -1,0 +1,1 @@
+{% comment %} [http://{{ hostname }}/{{ item.poster.username }}] {{ item.poster.get_name }} {{ item.get_humanized_type }} {% endcomment %}

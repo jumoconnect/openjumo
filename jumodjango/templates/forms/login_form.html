@@ -1,0 +1,34 @@
+{% load tags %}
+<form id="login_form" enctype="multipart/form-data" action="/login" method="post">
+    {% csrf_token %}
+
+    {{ login_form.redirect_to.errors }}
+    {{ login_form.username.errors }}
+
+    <div class="form_group clearfix">
+        <div class="label">Email</div>
+        {{ login_form.username }}
+    </div>
+
+    {{ login_form.password.errors }}
+    <div class="form_group clearfix">
+        <div class="label">Password</div>
+        {{ login_form.password }}
+
+        <div class="sm_info" style="margin-left: -54px; margin-top: 9px;">
+            <a href="/forgot_password">forgot your password?</a>
+        </div>
+    </div>
+
+    <input type="hidden" name="redirect_to" value="{% if redirect_to %}{{ redirect_to }}{% endif %}" />
+    <input type="hidden" name="post_auth_action" value="{% if post_auth_action %}{{ post_auth_action }}{% endif %}" />
+
+    <div class="submit_spacer">
+        <input type="submit" id="login_submit" class="button" value="Sign In" />
+
+        <div id="fb_login" style="display: none;">
+            <img style="cursor: pointer;" id="fb_single_signin" src="{% static_url 'img/favicons/fb_login.png' %}" />
+            <img height="22" id="fb_profile_pic" src="" />
+        </div>
+    </div>
+</form>

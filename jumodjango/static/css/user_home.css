@@ -1,0 +1,283 @@
+/*
+  signed in homepage on jumo.com
+  */
+
+.home {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+    margin-top: 0px;
+}
+
+/*
+  CENTER SECTION
+  */
+.cs.user {
+    margin: 0;
+    padding: 0px;
+    position: relative;
+    width: 751px;
+    float: left;
+    background: white;
+    border-bottom: 1px solid #A3A3A3;
+    border-left: 1px solid #A3A3A3;
+    border-right: 1px solid #A3A3A3;
+    padding-right: 37px;
+    padding-left: 37px;
+    padding-top: 33px;
+    padding-bottom: 24px;
+    min-height:671px;
+}
+
+.cs.user h1 {
+    border: 0 none;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 146%;
+    margin-bottom: 0;
+    width: auto;
+}
+
+.cs .discover {
+    margin-left: 0;
+    width: 734px;
+    float:left;
+
+    background: #F3F3F3;
+    border: 0px solid #ccc;
+    margin-bottom:12px;
+    padding:0px;
+}
+
+.cs.user .info li .name {
+    font-size: 16px;
+}
+
+.cs .discover .categories .tab {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.cs .discover .categories.sub_categories .tab {
+    border-left: 1px solid #f3f3f3;
+    border-right: 1px solid #f3f3f3;
+}
+
+
+.cs .discovery_bottom {
+    border:1px solid #ccc;
+    border-top:0px solid #ccc;
+}
+
+.cs .recommended {
+    float:left;
+}
+
+.cs .discover .categories {
+    background:#fff;
+    border-bottom: 1px solid #AAAAAA;
+    height: 28px;
+    padding: 23px 0 0;
+}
+
+
+.cs .discover .categories .tab.selected, .cs .discover .categories .tab:hover {
+    border: 1px solid #aaa;
+    border-bottom: 0px solid #aaa;
+    background:#f3f3f3;
+    color: #222222;
+}
+
+
+.cs .discover .info {
+    width:680px;
+    background:#fff;
+    padding:0px;
+    width:100%;
+}
+
+.cs .discover .discovery_items li:hover {
+    background:#fafafa;
+}
+
+.cs .discover .discovery_items li {
+    float: left;
+    line-height: 164%;
+    width: 296px;
+    border-top:1px solid #fff;
+    border-left:1px solid #fff;
+}
+
+.cs.user .info li.last, .cs.user .info li:last-child {
+    padding-bottom: 28px;
+}
+
+.cs.user .info li.odd {
+    border-right: 1px dotted #DEDEDE;
+    margin-right: 0px;
+    padding-right: 28px;
+}
+
+.cs .discover ul.info li {
+    padding: 28px;
+}
+
+.cs.user .info li .body {
+    padding-bottom:6px;
+}
+
+.cs .recommended {
+    padding:0px;
+    margin:0px;
+}
+
+.cs .discover .info {
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+.cs .discovery_items {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 0 12px 12px;
+}
+
+.cs .discover .categories.sub_categories {
+    background: #F3F3F3;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: 96.7%;
+}
+
+.cs .discover .discovery_item_group {
+    background: #f3f3f3;
+    margin: 0px;
+}
+
+.cs.user .recommended .info.row li {
+    width:65%;
+    border-bottom: 1px solid #DADADA;
+    border-top: 1px solid #FFFFFF;
+    border-right: 0px solid #FFFFFF;
+    padding: 13px 13px 13px 0;
+
+}
+
+.cs.user .recommended .info.row li .location a {
+    color: #607890;
+    margin-right: 4px;
+    background: #F3F3F3;
+    border-radius: 5px 5px 5px 5px;
+    color: #607890;
+    padding: 2px 4px;
+}
+
+.cs.user .recommended .info.row li .name {
+    font-size:16px;
+}
+
+.cs.user .recommended ul.info.row {
+    margin:0px;
+    padding:0px;
+}
+
+.cs.user .recommended .info li.last {
+    border-bottom: 0px dotted #DEDEDE;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+
+.cs .recommended .rec_group {
+    height:100%;
+}
+
+.cs .recommended .heading {
+    text-align:center;
+}
+/*
+  for ?new_user=true
+  */
+.cs .new_user {
+    border: 5px solid #DEE3C5;
+    display: none;
+    margin: 0 0 0px -1px;
+    padding: 15px;
+
+
+    background: #FFFFFF;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-right: 1px solid #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 8px;
+    margin-left: 0;
+    padding: 5px;
+    width: 689px;
+}
+
+.cs .new_user_container {
+    background: #F3F3F3;
+    padding: 11px 20px 20px;
+}
+
+.cs .new_user p {
+    line-height:148%;
+    color: #555555;
+    font-size: 13px;
+}
+
+.cs .new_user li {
+    color: #666666;
+    font-size: 13px;
+    line-height: 148%;
+    list-style: decimal outside none;
+    margin-bottom: 0;
+    margin-left:20px;
+    margin-top: 20px;
+    width: 82%;
+}
+
+.cs .new_user h3 {
+    font-size: 24px;
+    line-height: 142%;
+    margin-bottom: 14px;
+    margin-top: 0;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+
+.ls.user .follows img {
+    height: 34px;
+    width: 34px;
+}
+
+.ls.user .follows {
+    display:block;
+    margin-top:4px;
+}
+
+.ls .user_label {
+    margin-bottom:10px;
+}
+
+.ls .user_label a {
+    font-size: 18px;
+    vertical-align: top;
+    padding-left: 8px;
+    margin-top: 16px;
+    display: block;
+}
+
+.ls .section .info li img {
+    height:18px;
+    width:18px;
+}
+
+.ls .back {
+    top:8px;
+}
+
+.ls li.section {
+    width: 100%;
+}

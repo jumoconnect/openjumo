@@ -1,0 +1,25 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/feed.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+
+<div class="manage_box bg_shadow">
+  <div class="header">
+      {% block notification_title %}{% endblock %}
+  </div>
+
+  {% block notification_body %}{% endblock %}
+</div>
+{% endblock %}

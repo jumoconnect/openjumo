@@ -1,0 +1,57 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block extra_meta %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/donate.css" %}">
+{% endblock %}
+
+{% block scripts %}
+{% if settings.DEBUG %}
+<script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+<script type="text/javascript" src="{% static_url 'js/donate.src.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+<script type="text/javascript" src="{% static_url 'js/donate.js' %}"></script>
+{% endif %}
+{% endblock %}
+
+{% block documentready %}
+Donate.initialize();
+{% endblock %}
+
+{% block content %}
+<div class="form_box donate bg_shadow">
+    <a class="logo" href="/">
+        <img src="{% static_url 'img/logo-jumo_50px.png' %}">
+    </a>
+    <div class="clearfix">
+        <div class="left_side">
+            <h1>
+                Your Donation Matters
+            </h1>
+            <h2>Donate to <a href="{{ org.get_url }}" style="color:#333;">{{ org.get_name }}</a></h2>
+
+            <p>{{ org.summary }}</p>
+
+	        <p>
+	            <b>Please show your support.</b>
+	        </p>
+            <img class="nfg" src="{% static_url 'img/network_for_good.gif' %}">
+        </div>
+        <div class="right_side">
+            {% include "forms/campaign_donate_form.html" %}
+        </div>
+    </div>
+</div>
+<div class="fine-print">
+    <p><b>Frequently Asked Questions:</b> <br />
+        Please see this <a href="{% static_url 'img/NFG_FAQ.pdf' %}">pdf</a>.
+    </p>
+</div>
+{% endblock %}

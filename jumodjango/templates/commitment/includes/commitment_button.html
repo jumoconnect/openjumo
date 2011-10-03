@@ -1,0 +1,22 @@
+{% load tags %}
+<span class="commitment_button">
+{% if button_type == "login" %}
+    <input class="button create_commitment" type="submit" value="{{ button_text }}" />
+{% else %}
+    {% if button_type == "create" %}
+        <form action="{% url create_commitment %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="button create_commitment" type="submit" value="{{ button_text }}" data-with_popup="{{ with_popup }}" data-url="{% url create_commitment %}" />
+        </form>
+    {% else %}
+        {% comment %}
+        <form action="{% url delete_commitment commitment.id %}" method="post">
+            {% csrf_token %}
+            <input class="button delete_commitment" type="submit" value="{{ button_text }}" data-url="{% url delete_commitment commitment.id %}" />
+        </form>
+        {% endcomment %}
+        <a class="button view_actions" data-url="{{ data_url }}" >{{ button_text }}</a>
+    {% endif %}
+{% endif %}
+</span>

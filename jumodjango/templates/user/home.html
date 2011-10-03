@@ -1,0 +1,126 @@
+{% extends "common/base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block meta %}{% include "common/meta.html" %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/profile.css" %}">
+<link rel="stylesheet" href="{% static_url "css/discover.css" %}">
+<link rel="stylesheet" href="{% static_url "css/user_home.css" %}">
+{% endblock %}
+
+{% block scripts %}
+{% if settings.DEBUG %}
+<script type="text/javascript" src="{% static_url 'js/categorydiscover.src.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static_url 'js/categorydiscover.js' %}"></script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div id="profile" class="home clearfix">
+    <ul class="ls user">
+        {% if user.get_image_large %}<img class="profile_image" src="{{ user.get_image_large }}" />{% endif %}
+
+        <!-- PEOPLE FOLLOWING -->
+        {% if user.get_sample_users_following %}
+        <li class="list section">
+            <div class="back"></div>
+            <div class="prop">
+                <a id="user_following" data-title="People you are following" data-url="{% url user_followings user.id %}">{{ user.get_num_users_following|intcomma }}</a>
+                Following
+            </div>
+            <div class="follows">
+	            {% for ent in user.get_sample_users_following %}
+                <a href="{{ ent.get_url }}"><img title="{{ ent.get_name }}" src="{{ ent.get_image_small }}" /></a>
+                {% endfor %}
+            </div>
+        </li>
+        {% endif %}
+
+        {% if user.get_sample_issues_following %}
+        <li class="list section">
+            <!-- ISSUES FOLLOWING -->
+            <ul class="info">
+                <div class="back"></div>
+                <div class="prop">
+                    <a id="issues_following" data-title="Issues you are following" data-url="{% url followed_issue_list user.id %}">{{ user.get_all_issues_following|length|intcomma }}</a>
+                    Issues
+                </div>
+                <ul>
+	            {% for ent in user.get_sample_issues_following|slice:":3" %}
+                {% include "util/recommended_entity_ls.html" %}
+                {% endfor %}
+                </ul>
+            </ul>
+        </li>
+        {% endif %}
+
+        {% if user.get_all_orgs_following %}
+        <li class="list section">
+            <!-- ORGS FOLLOWING -->
+            <ul class="info">
+                <div class="back"></div>
+                <div class="prop">
+                    <a id="orgs_following" data-title="Organizations you are following" data-url="{% url followed_org_list user.id %}">{{ user.get_all_orgs_following|length|intcomma }}</a>
+                    Organizations
+                </div>
+                <ul>
+                    {% for ent in user.get_sample_orgs_following|slice:":3" %}
+                    {% include "util/recommended_entity_ls.html" %}
+                    {% endfor %}
+                </ul>
+            </ul>
+        </li>
+        {% endif %}
+    </ul>
+    <div class="cs user">
+        <div class="new_user">
+            <div class="new_user_container">
+                <h3>Welcome to Jumo!</h3>
+                <p>
+                    Jumo makes it easy for you to find, follow,
+                    and support the issues and organizations that
+                    are important to you. To get started:
+                </p>
+                <ul class="dots">
+                    <li>
+                        Check out the projects, people, and issues you're
+                        following on the lefthand side of your home page.
+                    </li>
+                    <li>
+                        Find new things using the search bar at the top of any page
+                    </li>
+                    <li>
+                        Tell us what interests you in the widget below and
+                        we can recommend you organizations
+                    </li>
+                </ul>
+                <p onlick="jQuery(this).hide();" align=right>
+                    <a onclick="jQuery(this).parent().parent().parent().slideUp('slow');">close</a>
+                </p>
+            </div>
+        </div>
+
+        <h1>What are you interested in?</h1>
+        {% include "discovery/includes/home_discovery.html" %}
+
+        <!-- RECOMMENDED ORGS -->
+        {% if recommended_orgs %}
+        <h1>Recommended Organizations</h1>
+        <div class="recommended clearfix">
+            <ul class="info row clearfix{% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">
+                {% for ent in recommended_orgs %}
+                {% include "util/search_result.html" %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div id="templates">
+    {% include "util/popup_template.html" %}
+</div>
+{% endblock %}

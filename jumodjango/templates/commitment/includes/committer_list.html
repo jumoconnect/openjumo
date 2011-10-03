@@ -1,0 +1,14 @@
+{% load tags %}
+{% load users_tags %}
+
+{% if commitments|length > 0 %}
+{% for commitment in commitments %}
+{% with commitment.user as ent %}{% include "util/popup_user.html" %}{% endwith %}
+{% endfor %}
+{% else %}
+{% if start_index == 0 %}
+<p>
+    THIS ENTITY HAS NO COMMITTERS!!! obviously this is PLACEHOLDER copy...
+</p>
+{% endif %}
+{% endif %}

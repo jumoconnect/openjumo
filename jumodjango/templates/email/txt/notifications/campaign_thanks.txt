@@ -1,0 +1,15 @@
+{% load humanize %}
+
+{% with donation.donor.get_first_name as first_name %}
+    {% if first_name != '' %}
+        {{ first_name }},
+
+    {% endif %}
+{% endwith %}
+Thank you for your generous pledge of ${{ donation.amount }} to {{ campaign.target_org.name }} to {{ campaign.title }}. You will receive a confirmation receipt in a separate email.
+
+Stay tuned for more campaign updates.
+
+Thanks for your support!
+
+The Jumo Team

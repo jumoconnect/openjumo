@@ -1,0 +1,9 @@
+{% if entity.location %}
+<meta property="og:latitude" content="{{ entity.location.latitude }}">
+<meta property="og:longitude" content="{{ entity.location.longitude }}">
+{% if entity.location.locality %}<meta property="og:locality" content="{{ entity.location.locality }}">{% endif %}
+{% if entity.location.region %}<meta property="og:region" content="{{ entity.location.region }}">{% endif %}
+{% if entity.location.address %}<meta property="og:address" content="{{ entity.location.address }}">{% endif %}
+{% if entity.location.postal_code %}<meta property="og:postal-code" content="{{ entity.location.postal_code }}">{% endif %}
+{% if entity.location.country_name %}<meta property="og:country-name" content="{{ entity.location.country_name }}">{% endif %}
+{% endif %}

@@ -1,0 +1,17 @@
+{% load tags %}
+{% load humanize %}
+{% load users_tags %}
+
+{% block rightside %}
+<div class="rs user">
+    <div class="help_out_container user">
+        <div class="help_out">
+            {% if entity == user %}
+            <a class="button" href="/settings">edit your profile</a>
+            {% else %}
+            {% follow_button entity %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

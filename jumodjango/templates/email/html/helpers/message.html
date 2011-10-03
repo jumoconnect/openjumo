@@ -1,0 +1,14 @@
+{% load tags %}
+<span class="desc" style="color: #444444;
+                          font-size: 11px;
+                          font-family:verdana, sans-serif;">
+    {{ item.description|linebreaksbr }}
+
+    {% if item.url %}
+    <a href="{{ item.url }}" style="font-family:verdana, sans-serif;
+                                    color: #0070D0;
+                                    cursor:pointer;
+                                    text-decoration:none;
+                                    font-weight:bold;">[More]</a>
+    {% endif %}
+</span>

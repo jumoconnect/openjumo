@@ -1,0 +1,27 @@
+{% extends 'common/notification.html' %}
+
+{% block notification_title %}
+You have been unsubscribed
+{% endblock %}
+
+{% block notification_body %}
+{% if campaign %}
+<p>You will no longer receive updates from "{{ campaign.get_name }}"</p>
+{% endif %}
+{% if user.is_jumo_user %}
+<ul class="dots">
+    <li>
+        <a href="/login">View your Jumo homepage</a>
+        </li>
+    <li>
+        <a href="{{ user.get_url }}">View your Jumo profile</a>
+    </li>
+    <li>
+        <a href="/discover">Find Projects</a>
+    </li>
+    <li>
+        <a href="/settings">Edit your Jumo settings</a>
+    </li>
+</ul>
+{% endif %}
+{% endblock %}

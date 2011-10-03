@@ -1,0 +1,1 @@
+{{ item.likes|length }} care

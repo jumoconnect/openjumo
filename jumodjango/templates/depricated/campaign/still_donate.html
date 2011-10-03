@@ -1,0 +1,51 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/create.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div class="form_box bg_shadow">
+    <div class="section">
+        <div class="form_heading">Funding was not successful</div>
+        <p>
+            You pledged your support to this campaign. Although it
+            was not successful, your funds would still be greatly
+            appreciated at <a href="{{ entity.target_org.get_url }}">{{ entity.target_org.get_name }}</a>.
+        </p>
+        <p>
+            <b>Campaign</b>: <a href="/campaign/{{ entity.id }}">{{ entity.title }}</a>
+        </p>
+        <p>
+            <b>Goal:</b> {{ entity.tagline }}
+        </p>
+        <p>
+           Raised <b>${{ entity.get_total_donated|floatformat:"-3"|intcomma }}</b>
+           of <b>${{ entity.goal|floatformat:"-3"|intcomma }}</b>
+        </p>
+
+        <h2 style="text-align:center;">Would you like to still donate ${{ donation.amount|intcomma }}?</h2>
+        <form enctype="multipart/form-data" action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            {% if form.errors.unknown %}
+            <div class="errorlist">
+                We're unable to process your donation. Ensure that the address and zipcode provided match the billing address on your credit card and that the CCV number is correct.  If you keep experiencing this problem, <a href="http://jumo.assistly.com/customer/widget/emails/new" target="_blank">drop us a line!</a>
+            </div>
+            {% endif %}
+            <div class="form_group">
+                {{ form.still_donate.errors }}
+                {{ form.still_donate }}
+            </div>
+            <div class="submit_spacer clearfix" style="border-top:1px solid #cccccc">
+                <input type="submit" class="submit button" value="Submit &#187;">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

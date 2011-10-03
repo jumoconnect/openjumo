@@ -1,0 +1,10 @@
+{% extends "email/txt/notifications/base.txt" %}
+
+{%block content %}
+We tried to process your donation to the campaign "{{ campaign.title }}"
+but had a problem charging your credit card.
+
+You can still donate to {{ campaign.target_org.get_name }} at the organization's Jumo page:
+
+http://{{ hostname }}/donate/{{ campaign.target_org.handle }}
+{% endblock %}

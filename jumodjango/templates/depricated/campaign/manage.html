@@ -1,0 +1,31 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static_page.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="form_box bg_shadow">
+    <div id="manage" class="section">
+        <div class="right_side">
+            stuff on the right
+        </div>
+        <div class="left_side">
+            <div class="spaced">
+                <div class="form_heading">Manage your project</div>
+                <p>
+                    helpful text
+                </p>
+            </div>
+            {% include "forms/campaign_manage_form.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

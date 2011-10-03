@@ -1,0 +1,28 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block scripts %}
+{% if settings.DEBUG %}
+<script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static_url 'js/manage.js' %}"></script>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div class="manage_box bg_shadow">
+    {% block manage_form %}{% endblock %}
+</div>
+<div id="templates">
+    {% include "forms/popups.html" %}
+    {% include "util/popup_template.html" %}
+</div>
+{% endblock %}

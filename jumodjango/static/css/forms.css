@@ -1,0 +1,295 @@
+form {
+    display:block;
+}
+input {
+    display:inline-block;
+}
+
+.content select {
+    display: inline;
+    font-size: 11px;
+    padding: 2px 2px 2px 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    height: 27px;
+
+    border: 1px solid #cccccc;
+    border-top: 1px solid #999999;
+    border-left: 1px solid #bbbbbb;
+    -webkit-box-shadow: 1px 1px 0px #efefef;
+    -moz-box-shadow: 1px 1px 0px #efefef;
+    box-shadow:  1px 1px 0px #efefef;
+}
+
+.label {
+    color: #333333;
+    display: block;
+    float: left;
+    margin-top: 4px;
+    padding-right: 11px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+    width: 23%;
+
+/*    color: #444444;*/
+}
+
+.label:after { content: ":"; }
+
+.ie7 .label:after { content: ""; }
+
+.label.small { font-size:13px; }
+
+input[type="password"], input[type="text"],textarea, .editable {
+    color: #222222;
+    font-size: 12px;
+    height: 23px;
+    padding-left: 5px;
+    padding-top: 1px;
+    width: 215px;
+
+    border: 1px solid #cccccc;
+    border-top: 1px solid #999999;
+    border-left: 1px solid #bbbbbb;
+    -webkit-box-shadow: 1px 1px 0px #efefef;
+    -moz-box-shadow: 1px 1px 0px #efefef;
+    box-shadow:  1px 1px 0px #efefef;
+}
+
+.ie7 input[type="password"], .ie7 input[type="text"] {
+    padding-top:6px;
+}
+
+.double input[type="text"] {
+    width: 67%;
+}
+
+.double input[type="password"] {
+    width: 67%;
+}
+
+/* todo: fix this color */
+input[type="password"].highlight {
+    border-left: 3px solid #eeee00;
+}
+
+input[type="text"].highlight {
+    border-left: 3px solid #eeee00;
+}
+
+textarea.highlight, .editable.highlight {
+    border-left: 3px solid #eeee00;
+}
+
+input[type="checkbox"] {
+    margin-top:9px;
+    vertical-align:baseline;
+}
+
+input[type="radio"] {
+    margin-top:9px;
+    margin-right: 5px;
+    vertical-align:baseline;
+}
+
+.ie7 input[type="radio"], .ie8 input[type="radio"]  {
+    margin:0px;
+    padding:0px;
+    vertical-align:baseline;
+    width: 13px; /* for ie */
+    height: 13px; /* For ie */
+}
+.radio_group {
+    display:inline-block;
+    color: #222222;
+    width: 56%;
+}
+
+.manage_box input[type="text"].highlight {
+    border:2px solid #DEDEDE;
+    background: lightyellow;
+}
+
+.manage_box textarea.highlight, .manage_box .editable.highlight {
+    border:2px solid #DEDEDE;
+    background: lightyellow;
+}
+
+.form_group .sm_info {
+    margin-top:4px;
+}
+
+.form_group.highlight {
+    background:lightyellow;
+}
+
+/* TODO remember to define focus styles! */
+:focus { outline: 0; }
+
+input:focus, textarea:focus, .editable:focus {
+    -webkit-box-shadow:	rgba(133, 207, 44, 0.6) 0px 0px 5px;
+    -moz-box-shadow:	rgba(133, 207, 44, 0.6) 0px 0px 5px;
+    box-shadow:	        rgba(133, 207, 44, 0.6) 0px 0px 5px;
+    border:1px solid rgba(133, 207, 44, 0.8);
+}
+
+.hightlight { background: lightyellow; }
+
+textarea, .editable {
+    font-size:13px;
+    height:69px;
+    line-height:138%;
+    padding:6px;
+    width:202px;
+    display:inline-block;
+    overflow-y:auto;
+}
+
+
+/** for signup **/
+.form_box {
+    background-color:#FFFFFF;
+    padding: 19px 25px;
+    width:390px;
+    position:relative;
+
+    margin-top:9px;
+    margin-bottom:30px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.form_box.double {
+    width:780px;
+    z-index:10;
+}
+
+.form_box .form_heading {
+    font-size: 28px;
+    line-height: 142%;
+    margin-bottom: 27px;
+    margin-top: 0;
+}
+
+.form_box .form_group {
+    margin-bottom:10px;
+    clear: both;
+}
+
+
+.form_box .form_group .loc {
+    margin-left:26%;
+    font-weight:bold;
+}
+
+.form_box .submit_spacer {
+    padding-top:6px;
+    margin-top:23px;
+    border-top:1px solid #dddddd;
+    position:relative;
+    width:100%;
+}
+
+.form_box .submit_spacer input[type="submit"] {
+    float:right;
+    margin-top:2px;
+}
+
+.form_group .error_msg {
+    background: lightyellow;
+    color: #444444;
+    display: none;
+    font-size: 13px;
+    margin: 37px 0 -20px 43px;
+    padding: 12px;
+    width: 72%;
+}
+
+
+/* SORTABLE STUFF */;
+.sortable_item input {
+    width:45%;
+    width: 62%;
+}
+
+.sortable_item .txt input {
+    width: 90%;
+}
+
+.manage_box .sortable_item.dependent {
+    width: 98.6%;
+}
+
+.sortable_item.dependent select {
+    width: 30%;
+    display:inline-block;
+}
+
+/* step at the bottom of new user experience */
+#step {
+    display:none;
+    margin:19px 24px 10px 96px;
+    text-align:center;
+}
+
+#step li {
+    border:0;
+    color:#333;
+    display:inline;
+    font-size:12px;
+    font-weight:400;
+    list-style-type:none;
+    text-align:center;
+    width:auto;
+}
+
+#step li:last-child {
+    -moz-border-radius:2px 10px 10px 2px;
+    -webkit-border-radius:2px 10px 10px 2px;
+    border:none;
+    border-radius:2px 10px 10px 2px;
+}
+
+#step li:first-child {
+    -moz-border-radius:10px 2px 2px 10px;
+    -webkit-border-radius:10px 2px 2px 10px;
+    border:none;
+    border-radius:10px 2px 2px 10px;
+}
+
+#step li.filled {
+    background:none;
+    border:0;
+    font-weight:700;
+}
+
+.ie7 #step {
+    margin-left:0;
+}
+
+#your_profile {
+    display: block;
+    float: right;
+    margin-left:0;
+    margin-top: -7px;
+    vertical-align: top;
+    width: 24%;
+    color:white;
+}
+
+.new_user #step {
+    display: inline;
+    float: left;
+    margin: 3px 0 0 -4px;
+    text-align: left;
+    vertical-align: top;
+    width: 310px;
+}
+
+.manage_box .new_user .submit_spacer {
+    padding-top:25px;
+    padding-bottom:0px;
+    height:33px;
+}

@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+0 3 * * * /cloud/src/jumodjango/search/reindex_solr.py

@@ -1,0 +1,65 @@
+{% extends "common/base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block meta %}
+{% include "campaign/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/campaign.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+    {% include "campaign/top_section.html" %}
+    <div class="ls">
+        <form id="campaign_publisher" enctype="multipart/form-data" action="/campaign/{{ entity.id }}/update" method="post" autocomplete="off">
+            {% csrf_token %}
+            <h2>Publish a campaign update</h2>
+
+            {% if entity.get_emails_remaining %}
+            <div class="fb_checkbox">
+                {{ form.send_email }} Email to supporters ({{ entity.get_emails_remaining }} remaining)
+            </div>
+            {% endif %}
+
+            <div class="input_container clearfix">
+                {{ form.title.errors }}
+                {{ form.title }}
+                {{ form.summary.errors }}
+                {{ form.summary }}
+                <br />
+                Attach an image: {{ form.image }}
+            </div>
+
+            <div class="submit_spacer">
+                <div class="notification"></div>
+                {{ form.non_field_errors }}
+                {{ form.send_email.errors }}
+                {{ form.image.errors }}
+                <input type="submit" class="submit button" value="Publish">
+            </div>
+        </form>
+    </div>
+    <div class="rs publisher">
+        <div class="rewards">
+            <br />
+            <h4>Who can view this update?</h4>
+            <br />
+            <p>
+                The update your publish is viewable by anyone. It is
+                published on your campaign page and your organizations
+                page. You can also choose to email the update to
+                people who have supported your campaign.
+            </p>
+            <br />
+            <h4>How many emails do I have left?</h4>
+            <br />
+            <p>
+                Your have <b>{{ entity.get_emails_remaining }}</b> emails remaining.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

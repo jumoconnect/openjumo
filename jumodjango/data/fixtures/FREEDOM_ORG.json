@@ -1,0 +1,288 @@
+[
+ {
+  "pk": 4943, 
+  "model": "org.org", 
+  "fields": {
+   "is_claimed": false, 
+   "revenue": "", 
+   "date_updated": "2011-07-26 15:00:13", 
+   "year_founded": 2003, 
+   "working_locations": [
+    48
+   ], 
+   "is_vetted": true, 
+   "flickr_id": "", 
+   "size": "", 
+   "img_small_url": "", 
+   "site_url": "http://www.freedomtomarry.org/", 
+   "location": 9163, 
+   "img_large_url": "", 
+   "facebook_id": "",
+   "donation_enabled": false, 
+   "email": "", 
+   "phone_number": "", 
+   "handle": "freedomtomarry", 
+   "is_active": true, 
+   "claim_token": "", 
+   "name": "Freedom to Marry", 
+   "twitter_id": "freedomtomarry", 
+   "summary": "Freedom to Marry is the campaign to win marriage nationwide for all loving and committed couples.", 
+   "admins": [
+    18285, 
+    71912
+   ], 
+   "blog_url": "http://www.freedomtomarry.org/blog/", 
+   "youtube_id": "FreedomToMarry", 
+   "date_created": "2011-07-05 18:05:34", 
+   "ein": "1329929770"
+  }
+ }, 
+ {
+  "pk": 8, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-26 14:59:22", 
+   "object_id": 4943, 
+   "date_created": "2011-07-26 14:38:12", 
+   "caption": "", 
+   "thumbnail_url": "http://jumostatic.s3-website-us-east-1.amazonaws.com/static/img/orgs/usa-marriage-map-7-1-11_thumbnail.png", 
+   "content_type": 27, 
+   "position": 0, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3-website-us-east-1.amazonaws.com/static/img/orgs/usa-marriage-map-7-1-11.png", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 10, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-26 15:00:13", 
+   "object_id": 4943, 
+   "date_created": "2011-07-26 14:38:12", 
+   "caption": "", 
+   "thumbnail_url": "http://jumostatic.s3-website-us-east-1.amazonaws.com/static/img/orgs/martha_stewart_freedom_thumbnail.jpg", 
+   "content_type": 27, 
+   "position": 1, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3-website-us-east-1.amazonaws.com/static/img/orgs/martha_stewart_freedom.jpg", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 35, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "The Defense of Marriage Act is signed into law, stating that the federal government defines marriage as a legal union between one man and one woman", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 1996, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 36, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Vermont allows marriage for same-sex couples", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 1999, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 37, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "The National Law Journal names Evan Wolfson one of \u201cthe 100 most influential lawyers in America\u201d following his appearance before the U.S. Supreme Court in Boys Scouts of America v. James Dale", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2000, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 38, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Freedom to Marry is founded by Eric Wolfson", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2003, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 39, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Same-sex marriage is legalized in Massachusetts; voters in Arkansas, Georgia, Kentucky, Louisiana, Michigan, Mississippi, Missouri, Montana, North Dakota, Ohio, Oklahoma, Oregon, and Utah approve state constitutional amendments defining marriage as the union between one man and one woman", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2004, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 40, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Evan Wolfson publishes Why Marriage Matters: America, Equality, and Gay People\u2019s Right to Marry", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2004, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 41, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Voters in Colorado, Idaho, South Carolina, South Dakota, Tennessee, Virginia, and Wisconsin approve state constitutional amendments defining marriage as the union between one man and one woman", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2006, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 42, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Same-sex marriage is legalized in California, Connecticut, and New Hampshire; Proposition 8 passes in California, ending same-sex marriages", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2008, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 43, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Same-sex marriage is legalized in Iowa, New Hampshire, Vermont, and the District of Columbia", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2009, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 44, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Out of state same-sex marriages are recognized in California, Maryland, and New York; federal judge Vaughn R. Walker overturns Proposition 8 in California as an unconstitutional violation of the Fourteenth Amendment", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2010, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 45, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Illinois passes civil unions and New York passes marriage for same-sex couples", 
+   "date_updated": "2011-07-26 14:35:37", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "year": 2011, 
+   "date_created": "2011-07-26 14:35:37"
+  }
+ }, 
+ {
+  "pk": 10805, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "advocacy", 
+   "title": "Methods", 
+   "section": "left", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "<p>advocacy</p>"
+  }
+ }, 
+ {
+  "pk": 28548, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Freedom to Marry is working to ensure that same-sex couples are no longer excluded from marriage. Using the groundbreaking case Loving v. Virginia (1967) that ended race-based marriage discrimination, Freedom to Marry strives to challenge anti-gay constitutional amendments, push for tolerant public education, and change the hearts and minds of Americans to understand the significance of marriage equality.&nbsp;", 
+   "title": "What does this organization do?", 
+   "section": "center", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "<p>Freedom to Marry is working to ensure that same-sex couples are no longer excluded from marriage. Using the groundbreaking case <em>Loving v. Virginia</em> (1967) that ended race-based marriage discrimination, Freedom to Marry strives to challenge anti-gay constitutional amendments, push for tolerant public education, and change the hearts and minds of Americans to understand the significance of marriage equality.&nbsp;<br /><br /></p>"
+  }
+ }, 
+ {
+  "pk": 28549, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Freedom to Marry's Roadmap to Victory outlines the three ways the organization plans to end the exclusion of same-sex couples from marriage. \r\n\r\nWin More States: Currently only six states (Massachusetts, Connecticut, Iowa, Vermont, New Hampshire, and New York) and the District of Columbia recognize marriage equality for same-sex couples, while seven states (Washington, Oregon, California, Nevada, Illinois, and New Jersey) allow civil unions or domestic partnerships. The more states that over turn anti-gay constitutional amendments, the greater the momentum towards countrywide acceptance of same-sex marriage.&nbsp;\r\nGrow The Majority For Marriage: According to a 2010 Associated Press poll, 52% of Americans believe that the government should recognize marriages between same-sex couples, and 58% think that same-sex couples should receive the same government benefits as married couples. Freedom to Marry works to grow this majority of equality through public education and dialogue, believing that an increase in the number of Americans who support the same rights for all couples is the biggest challenge against marriage inequality.&nbsp;\r\nEnd Federal Marriage Discrimination: Freedom to Marry's ultimate goal is the repeal of the \"Defense of Marriage Act\" by creating the right climate for ongoing federal litigation challenging DOMA with a growing majority of Americans supporting marriage equality and additional states extending marriage rights to same-sex couples.      \ufeff\r\n", 
+   "title": "How are they doing it?", 
+   "section": "center", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "position": 1, 
+   "rich_text_body": "<p>Freedom to Marry's Roadmap to Victory outlines the three ways the organization plans to end the exclusion of same-sex couples from marriage. <br /><br /></p>\r\n<ol>\r\n<li><strong>Win More States:</strong> Currently only six states (Massachusetts, Connecticut, Iowa, Vermont, New Hampshire, and New York) and the District of Columbia recognize marriage equality for same-sex couples, while seven states (Washington, Oregon, California, Nevada, Illinois, and New Jersey) allow civil unions or domestic partnerships. The more states that over turn anti-gay constitutional amendments, the greater the momentum towards countrywide acceptance of same-sex marriage.&nbsp;</li>\r\n<li><strong>Grow The Majority For Marriage: </strong>According to a 2010 Associated Press poll, 52% of Americans believe that the government should recognize marriages between same-sex couples, and 58% think that same-sex couples should receive the same government benefits as married couples. Freedom to Marry works to grow this majority of equality through public education and dialogue, believing that an increase in the number of Americans who support the same rights for all couples is the biggest challenge against marriage inequality.&nbsp;</li>\r\n<li><strong>End Federal Marriage Discrimination:</strong> Freedom to Marry's ultimate goal is the repeal of the \"Defense of Marriage Act\" by creating the right climate for ongoing federal litigation challenging DOMA with a growing majority of Americans supporting marriage equality and additional states extending marriage rights to same-sex couples.      \ufeff</li>\r\n</ol>"
+  }
+ }, 
+ {
+  "pk": 28550, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Evan Wolfson launched Freedom to Marry in 2003. Wolfson is considered \"the architect of the national marriage equality movement.\" Wolfson previously served as the marriage project director for Lambda Legal Defense &amp; Education fund, was co-counsel in the Hawaii marriage cases, and participated in numerous gay rights and HIV/AIDS cases. Time named him one of the 100 more influential people in the world. His book, Why Marriage Matters: America, Equality, and Gay People's Right to Marry, was published in 2004.", 
+   "title": "Founder's Story", 
+   "section": "center", 
+   "object_id": 4943, 
+   "content_type": 27, 
+   "position": 2, 
+   "rich_text_body": "<p>Evan Wolfson launched Freedom to Marry in 2003. Wolfson is considered \"the architect of the national marriage equality movement.\" Wolfson previously served as the marriage project director for Lambda Legal Defense &amp; Education fund, was co-counsel in the Hawaii marriage cases, and participated in numerous gay rights and HIV/AIDS cases. <em>Time</em> named him one of the 100 more influential people in the world. His book, <em>Why Marriage Matters: America, Equality, and Gay People's Right to Marry</em>, was published in 2004.<br /><br /></p>"
+  }
+ }, 
+ {
+  "pk": 12, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-22 13:19:17", 
+   "object_id": 28549, 
+   "date_created": null, 
+   "caption": "New York Marriage Equality Happens", 
+   "thumbnail_url": "http://i.ytimg.com/vi/4u2BHXcJc7M/1.jpg", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "video", 
+   "img_url": "", 
+   "metadata": "{\"source_id\": \"4u2BHXcJc7M\", \"url\": \"http://www.youtube.com/watch?v=4u2BHXcJc7M&feature=player_embedded\"}"
+  }
+ }, 
+ {
+  "pk": 11, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 28550, 
+   "date_created": null, 
+   "caption": "", 
+   "thumbnail_url": "", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "pullquote", 
+   "img_url": "", 
+   "metadata": "{\"quote_text\" : \"\\\"architect of the national marriage equality movement\\\"\"}"
+  }
+ }
+]

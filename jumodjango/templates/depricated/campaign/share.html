@@ -1,0 +1,113 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block extra_meta %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/campaign_share.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4dc1ab516c758b58"></script>
+<script type="text/javascript" src="{% static_url "js/zeroclipboard/ZeroClipboard.js" %}"></script>
+{% endblock %}
+
+{% block documentready %}
+if (JUMO.Modules.Tracking && JUMO.Modules.Tracking.trackAction) {
+    JUMO.Modules.Tracking.trackAction('Campaign: Donation Made', {"Donation Amount": {% json_encode amount %} });
+}
+
+//set path
+ZeroClipboard.setMoviePath('https://jumostaticprod.s3.amazonaws.com/static/js/zeroclipboard/ZeroClipboard.swf');
+//create client
+var clip = new ZeroClipboard.Client();
+//event
+clip.addEventListener('mousedown',function() {
+  clip.setText(document.getElementById('box-content').value);
+});
+clip.addEventListener('complete',function(client,text) {
+  jQuery('#copied').show();
+});
+
+//glue it to the button
+clip.glue('copy');
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div id="share" class="form_box bg_shadow clearfix">
+    <div class="clearfix">
+        <div class="left_side" style="float:left;">
+            <div class="spaced">
+                <div class="form_heading">Thanks for your support!</div>
+                <p>
+                    Thank you for your pledge of <b>${{ amount }}</b> to {{ entity.target_org.get_name }}'s campaign: <b>{{ entity.title }}</b>.
+                </p>
+                <h2>
+                    {% if entity.get_percent_complete < 100 %}Your job isn't done!{% endif %} The campaign is {{ entity.get_percent_complete }}% complete.
+                </h2>
+                <br />
+                <div class="clearfix">
+                    <fb:like href="http://www.jumo.com{{ entity.get_url }}" send="true" layout="box_count" width="60" show_faces="true" font="lucida grande" style="display:inline;float:left;"></fb:like>
+
+                    <a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ entity.get_name }} | Jumo" data-url="http://www.jumo.com{{ entity.get_url }}" data-count="vertical">Tweet</a>
+                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+                    <!-- AddThis Button -->
+                    <div class="addthis_toolbox addthis_default_style" addthis:url="http://www.jumo.com{{ entity.get_url }}" addthis:title="{{ entity.get_title }} | Jumo">
+                        <a class="addthis_facebook"></a>
+                        <a class="addthis_counter"></a>
+                    </div>
+                    <!-- END -->
+                </div>
+                <br />
+                <p>
+                    Share this with family and friends, if you’re a
+                    passionate person who wants to change the world,
+                    chances are your friends are too.
+                </p>
+                <h2>Learn more about <a href="{{ entity.target_org.get_url }}">{{ entity.target_org.get_name }}</a></h2>
+            </div>
+            <br />
+        </div>
+        <div class="right_side">
+            <h4>Campaign you supported</h4>
+            <div class="bg_shadow">
+                <div class="clearfix">
+                    <a href="{{ entity.get_url }}">
+                        <img src="{{ entity.img_url }}" />
+                    </a>
+                    <a class="name" href="{{ entity.get_url }}">
+                        <span class="type">Campaign</span>
+                        <span class="title">
+	                        {{ entity.title }}<br />
+                            <span class="clearfix campaign_stats">
+                                <span class="amount_raised">${{ entity.get_total_donated|floatformat:"-3"|intcomma }} raised</span>
+                                <span class="time_left">{{ entity.get_time_remaining.value|intcomma }} {{ entity.get_time_remaining.type }}{{ entity.get_time_remaining.value|pluralize }} left</span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="campaign_progress">
+                    <div class="progress_container">
+                        <span class="percent">{{ entity.get_percent_complete }}%</span>
+                        <div class="progress" style="width:{% if entity.get_percent_complete < 100 %}{{ entity.get_percent_complete }}{% else %}100{% endif %}%">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <textarea name="box-content" id="box-content" rows="5" cols="70">http://jumo.com{{ entity.get_url }}</textarea>
+                <input type="button" id="copy" class="button" name="copy" value="Copy URL" />
+                <div id="copied">copied!</div>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

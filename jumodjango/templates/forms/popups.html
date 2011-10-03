@@ -1,0 +1,22 @@
+{% load tags %}
+{% comment %} this one is for users todo: make a delete user popup {% endcomment %}
+<div class="deactiviate_popup">
+    <h2>
+        Are you sure you want to delete your account?
+    </h2>
+    <center>
+        <div class="notification"></div>
+
+        <div class="sm_info" style="margin-left:0px; text-align:center;">
+            <form id="remove_form" enctype="multipart/form-data" action="/remove" method="post" style="margin-left:42px; text-align:center;">
+                {% csrf_token %}
+                <input type="submit" class="button" value="Please delete my account from Jumo" />
+            </form>
+            <br />
+            No, <a href="/settings/notifications">I would like to change my settings</a>
+        </div>
+    </center>
+    <div class="submit_spacer">
+        <div class="button" style="position:static">Close</div>
+    </div>
+</div>

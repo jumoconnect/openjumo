@@ -1,0 +1,67 @@
+{% extends "common/manage_base.html" %}
+{% load tags %}
+
+{% block documentready %}
+JUMO.Manage.initialize();
+{% endblock %}
+
+{% block manage_form %}
+<div class="header">
+    {{ user.get_name }}'s <span class="faded">settings</span>
+</div>
+
+<div id="section_nav" class="section_options">
+    <a class="selected" href="{% url settings %}">about</a>
+    <a href="{% url settings_notifications %}">notifications</a>
+    <a href="{% url settings_connect %}">connect</a>
+{% comment %}<a href="{% url settings_developer %}">developer</a>{% endcomment %}
+</div>
+{% if success %}
+<div class="success_notification">
+    Thanks, your settings have been saved!
+</div>
+{% endif %}
+
+<form id="form" enctype="multipart/form-data" action="{% url settings %}" method="post">
+    {% csrf_token %}
+
+    {% for field in form.visible_fields %}
+        {# Include the hidden fields in the form #}
+        {% if forloop.first %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+        {% endif %}
+
+        {{ field.errors }}
+        <div class="form_group django">
+            <div class="label">
+                <div class="text">{{ field.label_tag }}:</div>
+            </div>
+
+            {% if field.name == 'profile_pic' %}
+                <img src="{{ user.get_image_small }}" style="vertical-align: middle;">
+            {% endif %}
+
+            {{ field }}
+            <div class="help" style="margin-left: 23%;">{{ field.help_text|safe }}</div>
+        </div>
+    {% endfor %}
+
+
+    <div class="form_group deactivate">
+        <div class="label">
+            <div class="text"></div>
+            <div class="tip"></div>
+        </div>
+        <div style="font-weight:bold; margin-top:10px;">
+            <a onclick="JUMO.Manage.showDeactivatePopup(this);">delete this account</a>
+        </div>
+    </div>
+
+    <div class="submit_spacer">
+        <div class="notification"></div>
+        <input id="save" class="button" type="submit" value="Save" />
+    </div>
+</form>
+{% endblock %}

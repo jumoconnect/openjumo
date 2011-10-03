@@ -1,0 +1,11 @@
+{% extends "email/html/notifications/base.html" %}
+
+{% block content %}
+<p style="font-family:Arial,sans-serif;font-size:12px;margin:0px;padding:0px;font-weight:bold;">
+    We tried to process your donation to the campaign "{{ campaign.title }}"
+    but had a problem charging your credit card.
+    <br/>
+    You can still donate to {{ campaign.target_org.get_name }} at the organization's Jumo page:
+</p>
+<br />
+{% endblock %}

@@ -1,0 +1,19 @@
+{% load tags %}
+{% comment %}
+    Returns markup which will add comment count to anchor tag.  Language used for 
+    when there are 0 commments, 1 comment, or {num} comments is configurable via 
+    Disqus admin console:
+     - dev: jumotest.disqus.com/admin/settings/appearance/
+     - prod: jumoprod.disqus.com/admin/settings/appearance/
+    NOTE: TODO: when we hook into the Disqus api using disqus-python, we should handle getting
+    the count on the backend so we can avoid the client-side fetch
+{% endcomment %}
+<a href="#disqus_thread" class="comment" data-disqus-identifier="{{ thread_uid }}" title="comment on this"></a>
+<script type="text/javascript">
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + '{{ forum_name }}' + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>

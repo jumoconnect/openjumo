@@ -1,0 +1,61 @@
+{% load tags %}
+{% comment %}
+
+We can create template tags for the data-child strings that're generated, so rather than
+explicitly writing the string everywhere like:
+
+data-child='top_category_{{ top_category.id }}'
+
+we can just do something like:
+
+data-child='{% get_class_for_sub_cat_group top_category %}'
+data-child='{% get_class_for_disc_item_group top_category sub_category %}'
+{% endcomment %}
+<div class="discover" id="discover_module">
+    <div class="categories top_categories">
+        {% for top_category in top_categories %}
+        <!-- Display tab for cateogry -->
+        <span class="tab {% if forloop.first %}selected{% endif %}" data-child="top_category_{{ top_category.id }}">
+            {{ top_category.name }}
+        </span>
+        {% endfor %}
+    </div>
+    <div class="discovery_bottom">
+    <div class="categories sub_categories">
+        {% for sub_category_list, top_category in sub_category_groups %}
+        <div class="sub_category_group top_category_{{ top_category.id }} {% if forloop.first %}selected{% endif %}">
+            {% for sub_category in sub_category_list %}
+            <!-- Display tab for sub_category -->
+            <span class="tab {% if forloop.first %}selected{% endif %}" data-child="top_category_{{ top_category.id }}_sub_category_{{ sub_category.id }}" data-search="{{ sub_category.name }}">
+                {{ sub_category.name }}
+            </span>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="discovery_items">
+        {% for discovery_item_list, top_category, sub_category in discovery_item_groups %}
+        <div class="discovery_item_group top_category_{{ top_category.id }}_sub_category_{{ sub_category.id }}{% if forloop.first %} selected{% endif %}">
+            <ul class="info clearfix first">
+                {% for discovery_item in discovery_item_list|slice:":2" %}
+                {% with discovery_item.entity as ent %}
+                {% include "util/recommended_ent.html" %}
+                {% endwith %}
+                {% endfor %}
+            </ul>
+            <ul class="info clearfix last">
+                {% for discovery_item in discovery_item_list|slice:"2:4" %}
+                {% with discovery_item.entity as ent %}
+                {% include "util/recommended_ent.html" %}
+                {% endwith %}
+                {% endfor %}
+            </ul>
+            <a class="more {% if forloop.first %}selected{% endif %}" href="/search?q={% firstof sub_category.name|urlencode top_category.name|urlencode %}">
+                <img class="arrow" src="{% static_url "img/arrow_right_white.png" %}" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>

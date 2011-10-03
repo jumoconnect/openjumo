@@ -1,0 +1,41 @@
+{% extends "common/entity/left_side.html" %}
+{% load tags %}
+
+{% block extra_links %}
+    <li class="section link_list">
+        <div class="back"></div><br />
+        <ul>
+            {% if entity.twitter_id %}
+            <li><a href="http://twitter.com/{{ entity.twitter_id }}" class="twitter-follow-button" data-width="155px" data-show-count="true">Follow @{{ entity.twitter_id }}</a></li>
+            {% endif %}
+
+            {% if entity.facebook_id %}
+            <li><a href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" target="_blank">Facebook</a></li>
+            {% endif %}
+
+            {% if entity.youtube_id %}
+            <li><a href="http://www.youtube.com/user/{{ entity.youtube_id }}" target="_blank">YouTube</a></li>
+            {% endif %}
+
+            {% if entity.blog_url %}
+            <li><a href="{{ entity.blog_url }}" target="_blank">Blog</a></li>
+            {% endif %}
+
+            {% if entity.flickr_id %}
+            <li><a href="http://www.flickr.com/photos/{{ entity.flickr_id }}" target="_blank">Flickr</a></li>
+            {% endif %}
+
+            {% if entity.vimeo_id %}
+            <li><a href="http://vimeo.com/{{ entity.vimeo_id }}" target="_blank">Vimeo</a></li>
+            {% endif %}
+
+            {% if is_allowed_to_edit %}
+            <li><a href="{% url manage_org entity.id %}">Edit this page</a></li>
+            {% endif %}
+
+            {% if entity.donation_enabled %}
+            <li style="text-align:center;"><a href="/donate/{{ entity.handle }}" class="donate button">Donate</a></li>
+            {% endif %}
+        </ul>
+    </li>
+    {% endblock %}

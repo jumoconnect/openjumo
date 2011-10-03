@@ -1,0 +1,9 @@
+{% load tags %}
+<meta property="og:title" content="{% if title %}{{ title|title }} | Jumo{% else %}Jumo | We connect individuals and organizations working to change the world{% endif %}">
+<meta property="og:site_name" content="Jumo">
+<meta property="fb:app_id" content="{{ settings.FACEBOOK_APP_ID }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{% static_url 'img/jumo_logo_beta_white.png' %}">
+<meta property="og:url" content="http://www.jumo.com">
+<meta property="og:description" content="We connect individuals and organizations working to change the world.">
+<meta property="description" content="We connect individuals and organizations working to change the world.">

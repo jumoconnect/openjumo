@@ -1,0 +1,123 @@
+{% load tags %}
+<table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0">
+    <tbody>
+        <tr>
+            <td valign="top" align="left">
+                {% include "email/html/helpers/care.html" %}
+            </td>
+            <td valign="top" bgcolor="#ffffff"><img border="0" src="{% static_url 'img/spacer.gif' %}" alt="" width="13" height="50"></td>
+
+            <td valign="top" align="left">
+                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" style="color: #333333;
+                                                                                           line-height: 142%;
+                                                                                           font-size:11px;
+                                                                                           font-family:verdana, sans-serif;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                {% include "email/html/helpers/author_action.html" %}
+                            </td>
+                        </tr>
+                        {% if event and event.actor != item.poster %}
+                        <tr><td valign="top" height="1" colspan="2" bgcolor="#ffffff"></td></tr>
+                        {% endif %}
+                        <tr>
+                            <td>
+                                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" style="color: #333333;
+                                                                                                           line-height: 142%;
+                                                                                                           font-size:11px;
+                                                                                                           font-family:verdana, sans-serif;">
+                                    <tbody>
+                                        <tr>
+                                            {% if event and event.actor != item.poster %}
+                                            <td valign="top" align="left" bgcolor="#ffffff" style="border-left:2px solid #DEDEDE;">
+                                                <img border="0" src="{% static_url 'img/spacer.gif' %}" alt="" width="13" height="50">
+                                            </td>
+                                            {% endif %}
+                                            <td valign="top" align="left">
+                                                <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" width="476" style="margin:0px;
+                                                                                                                                       padding:0px;
+                                                                                                                                       font-size:11px;
+                                                                                                                                       line-height: 142%;
+                                                                                                                                       font-family:verdana, sans-serif;
+                                                                                                                                       margin-bottom:2px;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                <table width="476" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" style="margin:0px;
+                                                                                                                                                       padding:0px;
+                                                                                                                                                       font-size:11px;
+                                                                                                                                                       line-height: 142%;
+                                                                                                                                                       font-family:verdana, sans-serif;
+                                                                                                                                                       margin-bottom:2px;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td valign="top" align="left">
+                                                                                {% block author %}{% endblock %}
+                                                                            </td>
+                                                                            <td valign="top" align="left" width="200" style="text-align:right;
+                                                                                                                             color: #999999;
+                                                                                                                             line-height: 142%;
+                                                                                                                             font-size:10px;
+                                                                                                                             font-family:verdana, sans-serif;">
+                                                                                {{ item.date_created|timesince }} ago
+                                                                            </td>
+                                                                        </tr>
+                                                                    <tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                {% include "email/html/helpers/title.html" %}
+                                                            </td>
+                                                        </tr>
+                                                        <tr><td valign="top" width="476" height="5" colspan="2" bgcolor="#ffffff"></td></tr>
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                {% include "email/html/helpers/description.html" %}
+                                                            </td>
+                                                        </tr>
+                                                        <tr><td valign="top" width="476" height="5" colspan="2" bgcolor="#ffffff"></td></tr>
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                <table cellpadding="3" cellspacing="0" bgcolor="#fafafa" border="0" width="476" style="margin:0px;
+                                                                                                                                                       padding:0px;
+                                                                                                                                                       font-size:10px;
+                                                                                                                                                       line-height: 142%;
+                                                                                                                                                       font-family:verdana, sans-serif;
+                                                                                                                                                       margin-bottom:2px;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <a href="http://{{ hostname }}{{ item.get_url }}" style="color: #0070D0;
+                                                                                                                                                                                                                     cursor:pointer;
+                                                                                                                                                                                                                     font-weight:bold;
+                                                                                                                                                                                                                     text-decoration:underline;">
+                                                                                    {{ item.comments|length }} comment{{ item.comments|pluralize }}</a>
+                                                                                |
+                                                                                <a href="http://{{ hostname }}{{ item.get_url }}" style="color: #0070D0;
+                                                                                                                                                                                                                     cursor:pointer;
+                                                                                                                                                                                                                     font-weight:bold;
+                                                                                                                                                                                                                     text-decoration:underline;">
+                                                                                    {{ item.cares|length }} care{{ item.cares|pluralize }}</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    <tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    <tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

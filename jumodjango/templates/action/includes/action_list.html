@@ -1,0 +1,36 @@
+{% load tags %}
+<div class="action-list">
+    <div class="heading">Check out what you can do today</div>
+    <ul class="rounded_box noborder">
+        {% if actions|length > 0 %}
+            {% for action in actions|slice:":4" %}
+            <li class="item clearfix{% if forloop.first %} first{% endif %}">
+                <div class="number">{{ forloop.counter }}.</div>
+                <div class="container">
+                <div class="action-right"><a class="button" target="_blank" href="{{ action.link }}">Learn More</a></div>
+                <a target="_blank" href="{{ action.link }}">
+                    <div class="action-left desc">{{ action.title|urlize }}</div>
+                </a>
+                </div>
+            </li>
+            {% endfor %}
+        {% else %}
+            {% if entity.donation_enabled %}
+                <li class="item clearfix first">
+                   <div class="number">1.</div>
+                   <div class="container">
+                    <div class="action-right"><a class="button" target="_blank" href="{% url donate entity.handle %}">Learn More</a></div>
+                    <a target="_blank" href="{% url donate entity.handle %}">
+                        <div class="action-left desc">Donate to {{ entity.name }}</div>
+                    </a>
+                   </div>
+                </li>
+            {% else %}
+                <li class="item clearfix{% if forloop.first %} first{% endif %}">
+                    <div class="blank_action">We don't yet have an opportunity to help here. <br />Suggest one in the comment section.</div>
+                </li>
+            {% endif %}
+        {% endif %}
+    </ul>
+
+</div>

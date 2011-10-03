@@ -1,0 +1,16 @@
+{% load tags %}
+{% load humanize %}
+
+{% if entity.get_image_large %}
+<div id="heading_img_cont" {% if entity.get_video_id %} video-id="{{ entity.get_video_id }}"{% endif %}>
+    <img class="heading_img" src="{{ entity.get_image_large }}"/>
+    {% if entity.get_video_id %}<img src="{% static_url "img/play_large.png" %}" class="play" />{% endif %}
+</div>
+{% endif %}
+
+<div class="share_box clearfix">
+    <fb:like href="http://www.jumo.com{{ entity.get_url }}" send="true" width="430" show_faces="false" font="lucida grande"></fb:like>
+    <a href="http://twitter.com/share" data-url="http://www.jumo.com{{ entity.get_url }}" width="97" class="twitter-share-button" data-count="horizontal">Tweet</a>
+</div>
+
+{% if entity.description %}{{ entity.description|safe }}{% endif %}

@@ -1,0 +1,29 @@
+{% extends "common/entity/base.html" %}
+{% load tags %}
+{% load disqus_tags %}
+
+{% block meta %}
+{% include "issue/meta.html" %}
+{% endblock %}
+
+{% block centersection %}
+<div class="cs issue">
+    {% block rightside %}
+    <div class="rs issue">
+        {% include "common/entity/right_side.html" %}
+    </div>
+    {% endblock %}
+
+    <div class="top_heading">
+        {% if entity.get_related_geo_children or entity.get_related_type_children %}{% include "common/entity/tags.html" %}{% endif %}
+        <h1>{{ entity.get_name }}</h1>
+        {% if entity.content_upgraded %}<img src="{% static_url "img/approved.png" %}" class="jumo_approved" title="This is a top issue on Jumo." />{% endif %}
+        {% if entity.summary %}<h2>{{ entity.summary|safe|urlizetrunc:40 }}</h2>{% endif %}
+    </div>
+
+    <div class="bottom_section">
+        {% include "common/entity/center_section.html" %}
+        {% disqus_comment_thread %}
+    </div>
+</div>
+{% endblock %}

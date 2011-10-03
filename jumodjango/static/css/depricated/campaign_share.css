@@ -1,0 +1,32 @@
+.form_box_header { margin-left: 10px; }
+#page-content {  width: 830px; overflow:visible;}
+
+textarea {
+    height: 31px;
+    width: 260px;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+#copy {
+    display: block;
+    float: right;
+    font-size: 12px;
+    padding: 5px 9px 23px 7px;
+    margin-right: -29px;
+    margin-top: 2px;
+    height:30px;
+}
+
+.ie7 #copy {
+    height:35px;
+}
+
+#copied {
+    float:right;
+    color:#666;
+    margin-top:5px;
+    display:none;
+    margin-right:14px;
+}
+

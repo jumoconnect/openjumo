@@ -1,0 +1,26 @@
+{% extends "common/main_base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ static_url("css/forms.css") }}">
+<link rel="stylesheet" href="{{ static_url("css/signup.css") }}">
+<style>.content { width: 440px; min-width: 440px;max-width: 440px;  }</style>
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+
+<div class="form_box bg_shadow">
+    <div class="form_heading">
+        <b>Unsubscribe Successful</b>
+    </div>
+    <div class="notification"></div>
+    <div class="form_group">
+        <p>{{ message }}</p>
+        <br/>
+        <p>You can change email notification preferences in your <a href="http://{{ hostname }}/settings#notifications"> user settings</a>.</p>
+        <br/>
+        <p>Thank you for using Jumo.</p>
+        <p>The Jumo Team</p>
+    </div>
+</div>
+{% endblock %}

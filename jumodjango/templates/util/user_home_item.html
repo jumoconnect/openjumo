@@ -1,0 +1,4 @@
+<li>
+    <a {% if not ent.get_image_small %}class="noimage"{% endif %} href="/{{ ent.handle }}">{% if ent.get_image_small %}<img src="{{ ent.get_image_small }}"/>{% endif %}</a>
+    <a href="/{{ ent.handle }}" class="name{% if not ent.get_image_small %} noimage{% endif %}">{{ ent.name }}</a>
+</li>

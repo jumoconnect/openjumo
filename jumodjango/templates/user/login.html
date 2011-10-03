@@ -1,0 +1,48 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/signup.css" %}">
+<style>
+    .content { width: 440px; min-width: 440px;max-width: 440px;  }
+    #login_form { display: block; width:385px; }
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+    {% if settings.DEBUG %}
+    <script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+    <script type="text/javascript" src="{% static_url 'js/login.src.js' %}"></script>
+    {% else %}
+    <script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+    <script type="text/javascript" src="{% static_url 'js/login.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
+{% block documentready %}
+Login.initialize({
+				  pw_id:'#login_password',
+				  email_id: '#login_email',
+				  login_submit: '#login_submit'
+			}, 'login');
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div class="form_box bg_shadow">
+    <div class="form_heading">
+        <b>Login</b> or <a href="/setup" class="bold underline">create an account</a>
+    </div>
+    {% include "forms/login_form.html" %}
+</div>
+
+<!-- FACEBOOK -->
+<div id="fb-root"></div>
+{% endblock %}

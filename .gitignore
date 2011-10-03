@@ -1,0 +1,62 @@
+IGNORE
+
+#Jenkins Report Directory
+jumodjango/reports/
+
+#Ignore the distribution directory
+dist
+
+#ignore nohup files
+nohup.out
+
+#Ignore patches and any original files created by patch command
+*.diff
+*.patch
+*.orig
+
+#Ignore hidden files from Dolphin window manager
+.directory
+
+#Ignore all compiled python files
+*.pyc
+*.pyo
+
+#Ignore all photoshop files
+*.psd
+
+#Ignore all emacs crap
+*#
+.#*
+
+#Ignore all Java/Python class files
+*.class
+
+#Ignore ide project files
+*.pydevproject
+*.project
+*.kpf
+*.komodoproject
+
+# ignore editor backup files
+*~
+*.swp
+*.swo
+*.swn
+*.swm
+
+# mac os x finder crap
+**/.DS_STORE
+.DS_STORE
+**/.DS_Store
+.DS_Store
+
+# exuberant (!) ctags
+tags
+
+# araxis diff files
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+
+local_settings.py

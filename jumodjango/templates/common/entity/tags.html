@@ -1,0 +1,70 @@
+{% load tags %}
+<ul class="body tags">
+    <!--    <b>Working On:</b>-->
+    {% for issue in entity.get_all_issues|slice:":3" %}
+    <li class="issue_name">
+        <a href="{% url entity_url issue.handle %} ">{{ issue.name }}</a>
+    </li>
+    {% endfor %}
+
+    {% if entity.get_all_issues and entity.get_all_issues|length > 3 %}
+    {% with entity.get_all_issues|length|add:"-3" as num_issues %}
+    {% for issue in entity.get_all_issues|slice:"3:" %}
+    <li style="display:none;" class="issue_name" ><a href="{% url entity_url issue.handle %}">{{ issue.name }}</a></li>
+    {% endfor %}
+
+    <a class="showall" onclick="jQuery(this).hide().parent().find('.issue_name').slideDown()">+ {{ num_issues }}</a>
+    {% endwith %}
+    {% endif %}
+
+    <!-- Working In: -->
+    {% for location in entity.get_working_locations|slice:":3" %}
+    {% if forloop.first %}<br />{% endif %}
+    <li class="loc_name"><a href="/search?q={{ location }}">{{ location }}</a></li>
+    {% endfor %}
+
+    {% if entity.get_working_locations and entity.get_working_locations|length > 3 %}
+    {% with entity.get_working_locations|length|add:"-3" as num_loc %}
+    {% for location in entity.get_working_locations|slice:"3:" %}
+    <li style="display:none;" class="loc_name"><a href="/search?q={{ location }}">{{ location }}</a></li>
+    {% endfor %}
+
+    <a class="showall" onclick="jQuery(this).hide().parent().find('.loc_name').slideDown()">+ {{ num_loc }}</a>
+    {% endwith %}
+    {% endif %}
+
+    <!--    <b>Related geo children:</b>-->
+    {% for issue in entity.get_related_geo_children|slice:":3" %}
+    <li class="issue_name">
+        <a href="{% url entity_url issue.handle %} ">{{ issue.name }}</a>
+    </li>
+    {% endfor %}
+
+    {% if entity.get_related_geo_children and entity.get_related_geo_children|length > 3 %}
+    {{ entity.get_related_geo_children }} aslfdkjsdf;akljfsd;lakjafds
+    {% with entity.get_related_geo_children|length|add:"-3" as num_issues %}
+    {% for issue in entity.get_related_geo_children|slice:"3:" %}
+    <li style="display:none;" class="issue_name" ><a href="{% url entity_url issue.handle %}">{{ issue.name }}</a></li>
+    {% endfor %}
+
+    <a class="showall" onclick="jQuery(this).hide().parent().find('.issue_name').slideDown()">+ {{ num_issues }}</a>
+    {% endwith %}
+    {% endif %}
+
+    <!--    <b>Related type children:</b>-->
+    {% for issue in entity.get_related_type_children|slice:":3" %}
+    <li class="issue_name">
+        <a href="{% url entity_url issue.handle %} ">{{ issue.name }}</a>
+    </li>
+    {% endfor %}
+
+    {% if entity.get_related_type_children and entity.get_related_type_children|length > 3 %}
+    {% with entity.get_related_type_children|length|add:"-3" as num_issues %}
+    {% for issue in entity.get_related_type_children|slice:"3:" %}
+    <li style="display:none;" class="issue_name" ><a href="{% url entity_url issue.handle %}">{{ issue.name }}</a></li>
+    {% endfor %}
+
+    <a class="showall" onclick="jQuery(this).hide().parent().find('.issue_name').slideDown()">+ {{ num_issues }}</a>
+    {% endwith %}
+    {% endif %}
+</ul>

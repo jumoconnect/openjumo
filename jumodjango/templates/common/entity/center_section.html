@@ -1,0 +1,5 @@
+{% if entity.get_all_media_items %}{% include "common/entity/media_items.html" %}{% endif %}
+
+{% for contentitem in entity.get_center_section_content %}
+{% include "util/contentitem.html" %}
+{% endfor %}

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<schema name="bar" version="1.1">
+  <types>
+    <fieldType class="solr.IntField" name="int" omitNorms="true"/>
+    <fieldType class="solr.TextField" name="title">
+      <analyzer>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+        <filter class="solr.WordDelimiterFilterFactory" catenateAll="0" catenateNumbers="true" catenateWords="true" generateNumberParts="0" generateWordParts="0"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+  </types>
+  <fields>
+    <field name="id" type="int"/>
+    <field name="name" type="title"/>
+  </fields>
+  <uniqueKey>id</uniqueKey>
+</schema>

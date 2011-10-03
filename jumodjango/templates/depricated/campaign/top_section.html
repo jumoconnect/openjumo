@@ -1,0 +1,13 @@
+<div class="top">
+    <h1><a href="{{ entity.get_url }}">{{ entity.title }}</a></h1>
+    <h2>{{ entity.tagline }}</h2>
+    <div class="about">
+        Funds go to: <a href="{{ entity.target_org.get_url }}"><img height="12" width="12"  src="{{ entity.target_org.get_image }}" /></a>
+        <a href="{{ entity.target_org.get_url }}">{{ entity.target_org.get_name }}</a>
+        {% if entity.get_issues %}&#8226; Working on {% for issue in entity.get_issues %}{% if forloop.last and not forloop.first %} and {% else %}{% if not forloop.first %}, {% endif %}{% endif %}<a href="{{ issue.get_url }}">{{ issue.get_name }}</a>{% endfor %}.{% endif %}
+        {% if entity.get_locations %}&#8226; Working in {% for location in entity.get_locations %}{% if forloop.last and not forloop.first %} and {% else %}{% if not forloop.first %}, {% endif %}{% endif %}{{ location }}{% endfor %}{% endif %}
+    </div>
+    <div class="supported_campaign">
+        <fb:like href="http://www.jumo.com{{ entity.get_url }}" send="false" layout="button_count" width="60" show_faces="true" font="lucida grande"></fb:like>
+    </div>
+</div>

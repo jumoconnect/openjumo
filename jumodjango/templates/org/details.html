@@ -1,0 +1,96 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/setup.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/create.css" %}">
+{{ form.media.css }}
+{% endblock %}
+
+{% block scripts %}
+{% if settings.DEBUG %}
+    <script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+{% else %}
+    <script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static_url 'js/manage.js' %}"></script>
+{% endblock %}
+
+{% block documentready %}
+JUMO.Manage.initialize({ multiLocation: true });
+{% endblock %}
+
+{% block content %}
+{{ form.media.js }}
+{% include "util/form_header.html" %}
+<form action="{% url details_org org.id %}" method="post" class="manage_box bg_shadow">
+    {% csrf_token %}
+    <div class="header">
+      Your page has been <b>created</b>!
+    </div>
+
+    <p>
+      Before going to your organization's Jumo page, please tell us
+      more about your work.
+    </p>
+    <p>
+      This will help the Jumo community find your organization.
+    </p>
+
+    <div class="submit_spacer">
+      <div id="tags">
+        {{ form.working_locations.errors }}
+        <div class="form_group">
+            <div class="label">
+                <span class="text">{{ form.working_locations.label_tag }}:</span>
+                <div class="help">{{ form.working_locations.help_text }}</div>
+            </div>
+            {{ form.working_locations }}
+        </div>
+        {{ form.issues.errors }}
+        <div class="form_group">
+            <div class="label">
+                <span class="text">{{ form.issues.label_tag }}:</span>
+                <div class="help">{{ form.issues.help_text }}</div>
+            </div>
+            <br/>
+            {{ form.issues }}
+        </div>
+    </div>
+
+    <div class="submit_spacer">
+      <p>
+        Connect your organization's Facebook and Twitter page to
+        ensure all updates automatically appear on your Jumo
+        page.
+      </p>
+      <br />
+        {{ form.facebook_id.errors }}
+      <div class="form_group">
+        <div class="label">
+          <span class="text">{{ form.facebook_id.label_tag }}:</span>
+        </div>
+        {{ form.facebook_id }}
+      </div>
+
+      {{ form.twitter_id.errors }}
+      <div class="form_group">
+        <div class="label">
+          <span class="text">{{ form.twitter_id.label_tag }}:</span>
+        </div>
+        {{ form.twitter_id }}
+      </div>
+    </div>
+
+    <!-- alot of ie7 compatibility code in here -->
+    <div class="submit_spacer" style="min-height:55px; display:block; position:relative; text-align:right;">
+      <input type='submit' class='button' value='Save'>
+    </div>
+</form>
+{% comment %}
+{% include "util/form_templates.html" %}
+{% endcomment %}
+{% endblock %}

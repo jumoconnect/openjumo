@@ -1,0 +1,55 @@
+{% load tags %}
+{% load humanize %}
+<table width="47" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="color: #333333;
+                                                                           font:arial;
+                                                                           line-height: 10px;
+                                                                           word-wrap: break-word;">
+    {% if event and event.actor %}
+    <tr align="right">
+        <td>
+            <table border="0" cellpadding="2" cellspacing="0">
+                <tr>
+                    <td bgcolor="#bbbbbb">
+                        <a style="border:0px;text-decoration:none;" href="http://{{ hostname }}/{{ event.actor.username }}">
+                            <img border="0" alt="{{ event.actor.get_name }}" height="36" width="36" src="{{ event.actor.get_image }}" /></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% else %}
+    <tr align="right">
+        <td>
+            <table border="0" cellpadding="2" cellspacing="0">
+                <tr>
+                    <td bgcolor="#bbbbbb">
+                        <a style="border:0px;text-decoration:none;" href="http://{{ hostname }}/{{ item.poster.username }}">
+                            <img border="0" alt="{{ item.poster.get_name }}" height="36" width="36" src="{{ item.poster.get_image }}" /></a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% endif %}
+
+    <tr align="right">
+        <td>
+            <a style="margin:0px;padding:0px;border:0px;text-decoration:none;" href="http://{{ hostname }}{{ item.get_url }}">
+                <img alt="Care" border="0" width="40" height="26" src="{% static_url 'img/care.png' %}" style="cursor:pointer;
+                                                                                                               margin:0px;
+                                                                                                               border:0px;
+                                                                                                               text-decoration:none;" /></a></td></tr>
+
+    {% for evt in item.likes|slice:":3" %}
+    <tr align="right">
+        <td>
+            <a style="border:0px;text-decoration:none;" href="http://{{ hostname }}/{{ evt.actor.username }}">
+                <img alt="{{ event.actor.get_name }}" height="22" width="22" style="background: white;
+                                                                                    border: 1px solid #bbbbbb;
+                                                                                    margin: 2px 0px 0 0;
+                                                                                    padding: 1px;" src="{{ evt.actor.get_image }}" />
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

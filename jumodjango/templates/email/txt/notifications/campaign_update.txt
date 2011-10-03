@@ -1,0 +1,22 @@
+{% load tags %}
+{% load humanize %}
+
+{{ donor.first_name }},
+
+{{ feed_item.description }}
+{% if campaign.get_time_remaining.value > 0 %}
+    {% if campaign.get_percent_complete < 100 %}
+
+Our campaign is {{campaign.get_percent_complete }}% complete!
+
+We've got {{ campaign.get_time_remaining.value|intcomma }} more {{ campaign.get_time_remaining.type }}{{ campaign.get_time_remaining.value|pluralize }} to reach our ${{ campaign.goal|floatformat:"-3"|intcomma }} goal.
+    {% else %}
+Thanks to your generous gift and work, our campaign is a success!
+
+We've reached our goal of ${{ campaign.goal|floatformat:"-3"|intcomma }}, but we still have {{ campaign.get_time_remaining.value|intcomma }} more {{ campaign.get_time_remaining.type }}{{ campaign.get_time_remaining.value|pluralize }} to continue raising money to {{ campaign.tagline }}.
+    {% endif %}
+
+You can help by telling others about this {{ campaign.target_org.name }} campaign: {{ campaign_url }}
+{% endif %}
+
+Unsubscribe: {{ unsubscribe_url }}

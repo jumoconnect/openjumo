@@ -1,0 +1,49 @@
+/* styles for the publisher permalink page */
+
+#page-content {
+    width:602px;
+}
+
+#publisher {
+    display:block;
+}
+
+select {
+    height:23px;
+}
+
+.manage_box {
+    background-color:#FFFFFF;
+    margin: 10px auto 40px;
+    position:relative;
+
+    -webkit-box-shadow: 0px 2px 5px #666666;
+    -moz-box-shadow: 0px 2px 5px #666666;
+    box-shadow: 0px 2px 5px #666666;
+
+    padding: 18px 27px 20px;
+
+    width: 553px;
+}
+
+.ie7 .manage_box {
+    top:8px;
+}
+
+.content .notification {
+    display:block;
+    padding:0;
+    height:auto;
+    margin:8px;
+    width:100%;
+}
+
+.ie7 .content .notification {
+    height:0px;
+}
+
+.form_box img {
+    padding:0px;
+    margin:0px;
+    float:none;
+}

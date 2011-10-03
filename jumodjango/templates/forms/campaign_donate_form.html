@@ -1,0 +1,213 @@
+{% load tags %}
+{% load humanize %}
+<form class="clearfix" enctype="multipart/form-data" action="" method="post" autocomplete="on">
+    {% csrf_token %}
+    <div class="border">
+        {{ form.reward.errors }}
+        <div id="errors">
+            {% if form.errors.unknown %}
+            <div class="errorlist">
+                We're unable to process your donation. Ensure that the address and zipcode provided match the billing address on your credit card and that the CCV number is correct.  If you keep experiencing this problem, <a href="http://jumo.assistly.com/customer/widget/emails/new" target="_blank">drop us a line!</a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="donation">
+            <div class="clearfix donate_calc">
+                {{ form.donation_amount.errors }}
+                {{ form.jumo_amount.errors }}
+                <div class="form_group {% if form.donation_amount.errors %}error{% endif %}">
+                    <div class="label" for="{{ form.donation_amount.label }}">{{ form.donation_amount.label }}</div>
+                    <div class="dollar">$</div>
+                    {{ form.donation_amount }}
+                </div>
+
+                <div class="form_group {% if form.jumo_amount.errors %}error{% endif %}">
+                    <div class="label jumo_tip" for="{{ form.jumo_amount.label }}">
+                        {{ form.jumo_amount.label }}
+                        <div class="det">
+                            A tax-deductible donation to cover operational expenses.
+                        </div>
+                    </div>
+
+                    <div class="dollar">$</div>
+                    <div class="percent_container" id="jumo_percent_display">
+                        <a class="percent first" data-val="0">0%</a><a class="percent" data-val="12">12%</a><a class="percent selected" data-val="15">15%</a><a class="percent last" data-val="19">19%</a>
+                    </div>
+                    {{ form.jumo_amount }}
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="total_rewards_container">
+            <div class="total_container">
+                <div class="total" id="total_display">$19.27</div>
+                <div class="label">Total<!-- Donation--></div>
+
+                {% if entity.get_suggested_amounts %}
+                <!--<div class="note">Your pledge provides</div>-->
+                {% endif %}
+
+                {% if entity.get_rewards %}
+                <div class="note">Thank you gifts from {{ entity.target_org.get_name }}</div>
+                {% endif %}
+            </div>
+            {% if entity.get_rewards %}
+            <ul class="rewards">
+                <li class="first">
+                    <input type="radio" name="rewards_fake">No gift - I just want to help out
+                </li>
+                {% for reward in entity.get_rewards %}
+                <li class="{% if forloop.last %}last {% endif %}{% if reward.amount > initial_amount %}inactive{% else %}{% if reward.id == initial_reward %}{% endif %}{% endif %}"
+                    data-val="{{ reward.amount|floatformat:"-3" }}" data-id="{{ reward.id }}">
+                    <div class="clearfix">
+                        <input type="radio" name="rewards_fake" {% if reward.id == initial_reward %}checked{% endif %}/>
+                        <div class="description">{{ reward.description }}</div>
+                        <div class="amount">${{ reward.amount|floatformat:"-3"|intcomma }} donation</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if entity.get_suggested_amounts %}
+            <ul class="rewards_list">
+                {% for reward in entity.get_suggested_amounts %}
+                <li {% if forloop.last %}class="last"{% endif %} data-val="{{ reward.amount|floatformat:"-3" }}">
+                    <div class="clearfix">
+                        <div class="amount">${{ reward.amount|floatformat:"-3"|intcomma }} PLEDGE</div>
+                        <div class="desc">{{ reward.description }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="form_group {% if form.first_name.errors %}error{% endif %}" style="display:inline">
+                <div class="label" for="first_name">{{ form.first_name.label }}</div>
+                {{ form.first_name.errors }}
+                {{ form.first_name }}
+            </div>
+
+            <div class="form_group {% if form.last_name.errors %}error{% endif %}">
+                <div class="label" for="last_name">{{ form.last_name.label }}</div>
+                {{ form.last_name.errors }}
+                {{ form.last_name }}
+            </div>
+
+            <div class="form_group {% if form.donor_email.errors %}error{% endif %}" style="width: 100%;">
+                <div class="label" for="{{ form.donor_email.label }}">
+                    {{ form.donor_email.label }}
+                    <span class="subtext">will not be shared with the organization</span>
+                </div>
+                {{ form.donor_email.errors }}
+                {{ form.donor_email }}
+            </div>
+
+            <div class="form_group {% if form.address_line_one.errors %}error{% endif %}" style="width: 100%;">
+                <div class="label" for="address">{{ form.address_line_one.label }}</div>
+                {{ form.address_line_one.errors }}
+                {{ form.address_line_two.errors }}
+                {{ form.address_line_one }}<br />
+                {{ form.address_line_two }}
+            </div>
+
+            <div class="form_group state" style="width:100%; margin-top:12px;">
+                {{ form.city.errors }}
+                {{ form.state.errors }}
+                {{ form.zip_code.errors }}
+
+                <div class="label left_align" for="{{ form.city.label }}">{{ form.city.label }}</div>
+                <div class="{% if form.city.errors %}error{% endif %}">{{ form.city }}</div>
+                <div class="label left_align {% if form.state.errors %}error{% endif %}" for="{{ form.state.label }}">{{ form.state.label }}</div>
+                <div class="{% if form.state.errors %}error{% endif %}">{{ form.state }}</div>
+                <div class="label left_align {% if form.zip_code.errors %}error{% endif %}" for="{{ form.zip_code.label }}">{{ form.zip_code.label }}</div>
+                <div class="{% if form.zip_code.errors %}error{% endif %}">{{ form.zip_code }}</div>
+            </div>
+
+            <div class="form_group {% if form.phone.errors %}error{% endif %}">
+                <div class="label" for="{{ form.phone.label }}">{{ form.phone.label }}</div>
+                {{ form.phone }}
+
+                {{ form.phone.errors }}
+            </div>
+
+            <div class="form_group {% if form.country.errors %}error{% endif %}">
+                <div class="label" for="{{ form.country.label }}">{{ form.country.label }}</div>
+                {{ form.country.errors }}
+                {{ form.country }}
+            </div>
+        </div>
+
+        <p><b>Credit Card</b></p>
+
+        <div class="clearfix">
+            <div class="form_group {% if form.name_on_card.errors %}error{% endif %}" style="width: 100%;">
+                <div class="label" for="{{ form.name_on_card.label }}">
+                    {{ form.name_on_card.label }}
+                </div>
+                {{ form.name_on_card.errors }}
+                {{ form.name_on_card }}
+            </div>
+            <div class="form_group {% if form.card_number.errors %}error{% endif %}" style="width:60%;margin-right:4px;">
+                <div class="label" for="{{ form.card_number.label }}">{{ form.card_number.label }}</div>
+                {{ form.card_number }}
+                {{ form.card_number.errors }}
+            </div>
+
+            <div class="form_group {% if form.expiry_date.errors %}error{% endif %}" style="width:34%;">
+                <div class="label" for="{{ form.expiry_date.label }}">{{ form.expiry_date.label }}</div>
+                {{ form.expiry_date.errors }}
+                {{ form.expiry_date }}
+            </div>
+
+            <div class="form_group" style="width:100%; margin-top:12px;">
+                {{ form.ccv_code.errors }}
+                {{ form.card_type.errors }}
+                <div class="label left_align" for="{{ form.ccv_code.label }}">{{ form.ccv_code.label }}</div>
+                <div class="{% if form.ccv_code.errors %}error{% endif %}">{{ form.ccv_code }}</div>
+                <div class="label left_align" for="{{ form.card_type.label }}">{{ form.card_type.label }}</div>
+                <div class="{% if form.card_type.errors %}error{% endif %}">{{ form.card_type }}</div>
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <p><b>Share</b></p>
+
+        <div class="clearfix">
+            <div class="form_group" style="width:100%; font-size:11px;">
+                {{ form.post_to_facebook.errors }}
+                {{ form.list_name_publicly.errors }}
+                {{ form.list_name_publicly }} {{ form.list_name_publicly.label }}
+                {% if user.facebook_id %}
+                <br />
+                {{ form.post_to_facebook }} {{ form.post_to_facebook.label }}
+                {% endif %}
+            </div>
+            <div class="form_group {% if form.comment.errors %}error{% endif %}" style="width:100%; margin-top:10px;">
+                <div class="label" for="{{ form.comment.label }}">
+                    {{ form.comment.label }}
+                    <span class="subtext">appears on {% if user.facebook_id %}Facebook and {% endif %}Jumo</span>
+                </div>
+                {{ form.comment.errors }}
+                {{ form.comment }}
+            </div>
+        </div>
+        {% endif %}
+
+        {{ form.reward.as_hidden }}
+
+        {% if entity.is_threshold %}
+        <p style="border:0px none;margin-top:12px;">
+            Your credit card will only be charged if and when the
+            campaign meets its stated goal. In the event that the
+            campaign does not meet its goal, you may elect to charge
+            your credit card for the full donation amount.
+        </p>
+        {% endif %}
+    </div>
+    <div class="submit_spacer clearfix">
+        <div class="notification"></div>
+        <input type="submit" class="submit button" value="Donate &#187;" id="submit_donation">
+    </div>
+</form>

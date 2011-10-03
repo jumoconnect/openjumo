@@ -1,0 +1,76 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/setup.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/create.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static_url 'js/frameworks/jquery.cascade.js' %}"></script>
+<script type="text/javascript" src="/org/categories.js"></script>
+{% if settings.DEBUG %}
+    <script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+{% else %}
+    <script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static_url  'js/org_create.js'  %}"></script>
+<script type="text/javascript">
+  OrgCreate.initialize({}, 'create');
+</script>
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<form action="{% url create_org %}" method="post" class="manage_box bg_shadow">
+    {% csrf_token %}
+    <div class="header">
+      Create a page for an <span class="faded"><b>Organization</b></span>
+    </div>
+    <p>
+      All organizations with a social or environmental mission are
+      welcome on Jumo.
+    </p>
+    <div class="submit_spacer"></div>
+    <div style="height:15px"></div>
+    {{ form.name.errors }}
+    <div class='form_group'>
+        <div class="label">
+          <span class="text">{{ form.name.label_tag }}:</span>
+          <div id="counter" class="help" style="text-align:right"></div>
+        </div>
+        {{ form.name }}
+    </div>
+    {{ form.summary.errors }}
+    <div class='form_group'>
+        <div class="label">
+          <span class="text">{{ form.summary.label_tag }}:</span>
+          <div id="counter" class="help" style="text-align:right"></div>
+        </div>
+        {{ form.summary }}
+    </div>
+    <div class="submit_spacer">
+        {{ form.social_mission.errors }}
+        <div class="radio_form form_group">
+            <div class="label">
+                <span class="text">
+                Does your organization seek to achieve a social or
+                environmental mission?
+                </span>
+            <div class="tip"></div>
+        </div>
+        {{ form.social_mission }}
+    </div>
+
+    <!-- alot of ie7 compatibility code in here -->
+    <div class="submit_spacer" style="min-height:55px; display:block; position:relative; text-align:right;">
+      <input type='submit' class='button' value='Create &#187;'>
+    </div>
+</form>
+{% comment %}
+{% include "util/form_templates.html" %}
+{% endcomment %}
+{% endblock %}

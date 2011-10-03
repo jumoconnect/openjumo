@@ -1,0 +1,11 @@
+{% if item.title %}
+<a href="http://{{ hostname }}{{ item.get_url }}" style="color: #333333;
+                                                         font-size: 18px;
+                                                         font-weight: normal;
+                                                         line-height: 135%;
+                                                         font-family:verdana, sans-serif;
+                                                         text-decoration:none;">
+    {{ item.title }}
+</a>
+<br />
+{% endif %}

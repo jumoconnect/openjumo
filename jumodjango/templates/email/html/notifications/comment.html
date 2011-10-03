@@ -1,0 +1,21 @@
+{% extends "email/html/notifications/base.html" %}
+{% load tags %}
+
+{% block content %}
+<p style="font-size:12px;
+                   font:Arial,
+                   sans-serif;
+                   line-height:142%;">
+    &#8220;{{ comment|urlize|linebreaksbr }} &#8221;
+</p>
+<p style="font-weight:bold;font-size:12px;margin:0px;padding:0px;">
+    View or reply by following the link below:
+</p>
+<a style="font-family:Arial,sans-serif;
+          font-size:12px;
+          text-decoration:underline;
+          margin:0;
+          padding:0;
+          color: #0070d0;
+          line-height: 148%;" href="http://{{ hostname }}/story/{{ feed_item.id }}">http://{{ hostname }}/story/{{ feed_item.id }}</a>
+{% endblock %}

@@ -1,0 +1,106 @@
+#page-content.content, .content {
+    min-width: 530px;
+    width: 490px;
+    overflow: visible;
+}
+
+.form_box_header {
+    margin-left: 13px;
+}
+
+input[type="password"], input[type="text"] {
+    width: 62%;
+}
+
+.radio_form.form_group .label {
+    margin-left: 3%;
+    margin-right: 1%;
+    text-align: left;
+    width: 80%;
+    font-weight:bold;
+}
+
+.radio_form.form_group ul {
+    border: none;
+    display: inline;
+}
+
+.radio_form.form_group li {
+    display: inline;
+    border: none;
+    font-size: 12px;
+    padding: 0;
+}
+
+.radio_group {
+   margin-left:33%;
+   font-weight:normal;
+}
+
+.form_group .error_msg {
+    margin: 9px 0 0 10px;
+    width: 87%;
+}
+
+.manage_box .submit_spacer .loading {
+    bottom: 17px;
+    position: absolute;
+    right: 30%;
+    left:auto;
+}
+
+.manage_box .form_group {
+    color: #444444;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 17px;
+    min-height: 45px;
+}
+
+.ie7 .manage_box .radio_form {
+    vertical-align:top;
+}
+
+.ie7 .manage_box .radio_form input[type="radio"] {
+    margin-bottom:0px;
+}
+
+.manage_box .button {
+    display: block;
+    float: right;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-top: 7px;
+}
+
+.manage_box .label {
+    width: 31%;
+}
+
+.manage_box textarea {
+    height: 89px;
+    width: 288px;
+}
+
+/* tags */
+#tags .form_group .label {
+    width: 100%;
+    text-align:left;
+    float: none;
+}
+
+#tags .form_group .label .text {
+    width:19%;
+    font-weight:bold;
+}
+
+#tags .form_group .label .help {
+    color:#444444;
+    font-size:12px;
+    padding-bottom:12px;
+}
+
+#tags .sortable_cont {
+    width: 99%;
+    min-height: 50px;
+}

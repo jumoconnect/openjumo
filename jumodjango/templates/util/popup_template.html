@@ -1,0 +1,88 @@
+{% load tags %}
+<div class="fb_connect_login">
+    <div class="heading">
+        Get started changing the world
+    </div>
+    <center>
+        <div class="notification"></div>
+        <div id="fb_login" class="button" style="width:85%;">
+            Connect your Facebook account
+        </div>
+        <!--  <div class="sm_info" style="margin-left:0px"></div> -->
+    </center>
+</div>
+
+<div class="loginCreateAccount">
+    <div class="heading">
+       Get started changing the world
+    </div>
+    <br />
+    <br />
+    <a href="/login{% if entity %}?redirect_to={{ entity.get_url }}{% endif %}"
+       class="button"
+       style="margin:0px;margin-right:12px;display:inline;padding-bottom: 12px;">Login
+    </a>
+    or
+    <a href="/setup{% if entity %}?redirect_to={{ entity.get_url }}{% endif %}" class="button" style="margin:0px;margin-left:12px;display:inline;padding-bottom: 12px;">Create an account</a>
+    <br />
+    <br />
+    <br />
+    <!-- <div class="sm_info" style="margin-left:0px"></div>-->
+    <div class="submit_spacer">
+        <div class="button">Close</div>
+    </div>
+</div>
+
+{% if user_photo_upload_form %}
+<div class="photo_upload_popup">
+    <a class="close"><img src="{% static_url "img/delete.png" %}" /></a>
+    <div class="heading">Upload a photo</div>
+
+    <div class="notification">{{ user_photo_upload_form.errors }}</div>
+    <form enctype="multipart/form-data" action="/upload_photo" method="post" autocomplete="off">
+        {% csrf_token %}
+        <br />
+        Profile image: {{ user_photo_upload_form.profile_pic }}
+        <br />
+        <br />
+
+        <div class="submit_spacer">
+            <input type="submit" class="button submit button" style="margin-top:10px;height:41px;" value="Upload">
+        </div>
+    </form>
+</div>
+{% endif %}
+
+<div class="photo_viewer_popup">
+    <a class="close"><img src="{% static_url "img/delete.png" %}" /></a>
+    <img class="fullsize" src="" />
+    <div class="heading caption"></div>
+</div>
+
+<div class="error_popup">
+    <div class="heading">Error</div>
+    <center>
+        <div class="sm_info error_text" style="margin-left:0px"></div>
+    </center>
+    <div class="submit_spacer">
+        <div class="button">Close</div>
+    </div>
+</div>
+
+<div class="action_popup">
+    <div class="small_text">Thanks for committing to help</div>
+<!--    <div class="heading">Ways you can help</div>-->
+<!--    <div class="subheading">You are committed to making a difference on {{ entity.get_name }}. Thank you.</div>-->
+    <div class="actions sm_info"></div>
+    <div class="submit_spacer">
+        <div class="button">Close</div>
+    </div>
+</div>
+
+<div class="entitylist_popup">
+    <div class="heading"></div>
+    <div class="rounded_box noborder" style="margin-left:0px; text-align:left;"></div>
+    <div class="submit_spacer">
+        <div class="button">Close</div>
+    </div>
+</div>

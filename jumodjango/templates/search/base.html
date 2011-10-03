@@ -1,0 +1,88 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "search/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/profile.css" %}">
+<link rel="stylesheet" href="{% static_url "css/search.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
+<script type="text/javascript" src="{% static_url "js/search.src.js" %}"></script>
+{% endblock %}
+
+{% block documentready %}
+JUMO.SearchResults.initialize();
+{% endblock %}
+
+{% block content %}
+<div class="ls">
+    <ul class="info">
+        <ul id="facets">
+            <!--
+            <li class="section">
+                <div class="back"></div>
+                <div class="prop">Type</div>
+            </li>
+            -->
+
+            {% include "search/facets.html" %}
+        </ul>
+        <li class="section filters clearfix" id="location_filters">
+            <ul>
+                <li class="section">
+                    <div class="back"></div>
+                    <div class="prop">Location</div>
+                </li>
+                <li><a class="selected filter" data-val="All">Global</a></li>
+                <li><a class="filter" data-val="US">United States</a></li>
+                <li><a class="filter" data-val="International">International</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main_content clearfix">
+    <div class="border clearfix">
+        <div class="cs">
+            <div class="top clearfix">
+                <div class="top_heading">
+                    <h1>All Results</h1>
+                </div>
+                <form action="/search" method="get" class="right">
+                    <input id="search_box" class="termcomplete" type="text" name="q" placeholder="e.g. Charter Schools in New York" value="{% if query %}{{ query }}{% endif %}" />
+                    <input id="search_button" type="submit" class="button" value="Search"/>
+                </form>
+            </div>
+            <div class="related_search clearfix">
+		        {% if related_searches %}
+                {% include "search/related_searches.html" %}
+                {% endif %}
+            </div>
+
+            <ul class="search_results">
+		        {% include "search/search_items.html" %}
+            </ul>
+	        {% include "search/more_results.html" %}
+        </div>
+        <div class="rs search">
+            <ul class="cont">
+                <li id="near_me" class="section">
+                    {% if orgs_near_me %}
+                    {% include "search/near_me.html" %}
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="templates">
+    {% include "util/popup_template.html" %}
+    {% block extrapopups %}{% endblock %}
+</div>
+{% endblock %}

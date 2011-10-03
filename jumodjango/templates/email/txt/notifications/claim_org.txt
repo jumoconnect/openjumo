@@ -1,0 +1,4 @@
+{% extends "email/txt/notifications/base.txt" %}
+{% block content %}
+Click the following link to verify your affiliation with {{ entity.get_name }}: http://{{ hostname }}/claim/{{ entity.id }}/confirm/{{ org_claim_token }}
+{% endblock %}

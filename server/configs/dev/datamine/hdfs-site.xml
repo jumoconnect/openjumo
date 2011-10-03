@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+     <name>dfs.permissions</name>
+     <value>false</value>
+  </property>
+  <property>
+     <!-- specify this so that running 'hadoop namenode -format' formats the right dir -->
+     <name>dfs.name.dir</name>
+     <value>/cloud/data/dfs/name</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/cloud/data/dfs/data</value>
+  </property>
+
+</configuration>

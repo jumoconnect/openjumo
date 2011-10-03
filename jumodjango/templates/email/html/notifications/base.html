@@ -1,0 +1,119 @@
+{% load tags %}
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor="#ffffff" style="color: #6E6F6D;
+                                                                                                            font-family:Arial,sans-serif;
+                                                                                                            font-size: 12px;
+                                                                                                            line-height: 148%;">
+        <style>table,tr,td { font-size:12px; font-family:Arial,sans-serif; color:#444444; } a { color: #0070d0; text-decoration:underline; }</style>
+        <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="color:#6e6f6d;font-family:Arial,sans-serif;">
+            <tbody>
+                <tr><td valign="top" height="5" width="50" colspan="2" bgcolor="#ffffff"></td></tr>
+                <tr>
+	                <td valign="top" align="left" style="margin:0px; padding:0px;">
+	                    <table width="575" cellpadding="20" cellspacing="0" bgcolor="#ffffff" border="0" style="color:#6e6f6d;font-family:Arial,sans-serif;">
+                            <tbody>
+                                <tr>
+                                    <td valign="top">
+                                        <a href="http://www.jumo.com">
+                                            <img src="{% static_url "img/logo-jumo-email.png" %}" title="Jumo | Find. Follow. Support." alt="Jumo" border="0" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" style="margin:0px; padding:0px;">
+	                    <table width="542" cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" style="color:#444444;font-family:Arial,sans-serif;">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" align="left">
+                                        <img src="{% static_url "img/spacer.gif" %}" border="0" title="" alt="" height="50" width="65" />
+                                    </td>
+                                    <td valign="top" align="left">
+	                                    <table width="450" cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0" style="color:#444444;font-family:Arial,sans-serif;">
+                                            <tbody>
+                                                {% if subject %}
+                                                <tr>
+                                                    <td valign="top" style="font-family:Arial,sans-serif;
+                                                                            color:#444444;
+                                                                            margin:0;
+                                                                            padding:0;
+                                                                            font-size:16px;
+                                                                            font-weight:bold;
+                                                                            line-height: 148%;">
+                                                            {% block title %}{{ subject }}.{% endblock %}
+                                                    </td>
+                                                </tr>
+                                                <td valign="top" height="15" width="50" colspan="2" bgcolor="#ffffff"></td>
+                                                {% endif %}
+                                                <tr>
+                                                    <td valign="top" style="font-family:Arial,sans-serif;
+                                                                            font-size:12px;
+                                                                            color:#444444;
+                                                                            margin:0;
+                                                                            padding:0;
+                                                                            line-height: 148%;">
+                                                            {% block content %}{% endblock %}
+                                                    </td>
+                                                </tr>
+                                                <tr><td valign="top" height="15" width="50" colspan="2" bgcolor="#ffffff"></td></tr>
+                                                <tr>
+                                                    <td valign="top" style="font-family:Arial,sans-serif;
+                                                                            font-size:12px;
+                                                                            color:#444444;
+                                                                            margin:0;
+                                                                            padding:0;
+                                                                            line-height: 141%;">
+                                                        Thanks,<br />
+                                                        The Jumo Team
+                                                    </td>
+                                                </tr>
+                                                <tr><td valign="top" height="14" width="50" colspan="2" bgcolor="#ffffff"></td></tr>
+                                                <tr><td valign="top" height="1" width="50" colspan="2" bgcolor="#e6e6e6"></td></tr>
+                                                <tr><td valign="top" height="10" width="50" colspan="2" bgcolor="#ffffff"></td></tr>
+                                                <tr>
+                                                    <td style="font-family:Arial,sans-serif;
+                                                               font-size:11px;
+                                                               line-height:140%;
+                                                               color:#777777;">
+                                                        Edit your Jumo email settings:
+                                                        <a href="http://{{ hostname }}/settings#notifications" style="font-family:Arial,sans-serif;
+                                                                                                                      font-size:11px;
+                                                                                                                      text-decoration:underline;
+                                                                                                                      margin:0;
+                                                                                                                      padding:0;
+                                                                                                                      color: #0070d0;">
+                                                            http://{{ hostname }}/settings#notifications</a>
+                                                        <br />
+                                                        <br />
+                                                        If you do not want to receive these emails, you can
+							                            <a href="http://{{ hostname }}/unsubscribe/?id={{ user.id }}&id_type=user&code={{ unsub_code }}&pub_id={{ publication_id }}"
+                                                           style="font-family:Arial,sans-serif;
+                                                                  font-size:11px;
+                                                                  text-decoration:underline;
+                                                                  margin:0;
+                                                                  padding:0;
+                                                                  color: #0070d0;">unsubscribe</a>
+                                                        <br />This email was sent to <a href="mailto:{{ user.email }}" style="font-family:Arial,sans-serif;
+                                                                                                                              font-size:11px;
+                                                                                                                              text-decoration:underline;
+                                                                                                                              margin:0;
+                                                                                                                              padding:0;
+                                                                                                                              color: #0070d0;">{{ user.email }}</a> by Jumo. 113 Spring St. New York, NY 10012
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

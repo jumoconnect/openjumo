@@ -1,0 +1,170 @@
+/* DONATE SHARE */
+
+#share .spaced {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#share .left_side {
+    padding-top: 5px;
+    padding-left: 15px;
+    width: 460px;
+}
+
+#share .right_side h5 {
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+    padding:0px;
+
+}
+
+#share .right_side .progress_container {
+    padding: 0;
+    width: 100%;
+    position:relative;
+    background:#222;
+}
+
+#share .right_side .progress {
+    background:#8BCE25;
+    padding: 0;
+    height:23px;
+}
+
+#share .right_side {
+    font-size: 11px;
+    line-height: 142%;
+    margin-right: 15px;
+    margin-top: 49px;
+    padding-top: 0;
+    width: 275px;
+}
+
+#share .right_side h4 {
+    margin-top:0px;
+    font-size:16px;
+}
+
+#share .right_side p {
+    font-size:11px;
+    margin:0px;
+    margin-bottom:4px;
+}
+
+#share .right_side img {
+    width:275px;
+    height:200px;
+    margin-right:0px;
+    max-width:1000px;
+    max-height:1000px;
+}
+
+#share .right_side {
+    height: 185px;
+}
+
+#share .right_side a {
+    display: block;
+    height: 185px;
+    float:left;
+}
+
+#share .right_side a.name {
+    position: absolute;
+    bottom: 19px;
+    left:0px;
+    width: 100%;
+    height:auto;
+}
+
+#share .right_side img {
+    display: block;
+    height: 185px;
+}
+
+#share .right_side .bg_shadow {
+    display:block;
+    position:relative;
+}
+
+#share .right_side .title {
+    display: block;
+    font-size: 15px;
+    line-height: 139%;
+    vertical-align: top;
+    color:#fff;
+    background: url("../img/bg_black_85.png?v=1");
+    padding:12px;
+    font-weight:bold;
+    width:91.5%;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+#share .right_side .type {
+    background: url("../img/bg_black_85.png?v=1");
+    color: white;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 11px 0px 11px;
+    z-index: 10;
+    width:57px;
+}
+
+#share .right_side .campaign_stats {
+    display:block;
+    padding:0px;
+    padding-top:3px;
+}
+
+#share .right_side .campaign_stats span {
+    width:50%;
+    display:block;
+    float:left;
+    font-size:11px;
+}
+
+#share .right_side .time_left {
+    text-align:right;
+}
+
+#share .right_side .amount_raised {
+    text-align:left;
+}
+
+#share .right_side a:hover, #share .right_side .title:hover {
+    text-decoration:underline;
+}
+
+#share .right_side .campaign_text, #share .right_side .campaign_progress {
+    border-bottom:0px;
+}
+
+#share .right_side .progress_container {
+    position:relative;
+    background:#222;
+    width:100%;
+    padding:0px;
+}
+
+.ie7 #share .right_side .progress_container {
+    width:100.8%;
+}
+
+#share .right_side .progress {
+    padding:0px;
+    background:#8BCE25;
+    height:20px;
+}
+#share .right_side .progress_container .percent {
+    background:#8BCE25;
+    color:white;
+    font-size:13px;
+    font-weight:bold;
+    padding:1px 5px 4px 12px;
+    position:absolute;
+    top:0px;
+    left:0px;
+}

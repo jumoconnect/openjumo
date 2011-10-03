@@ -1,0 +1,15 @@
+<span style="font-size:11px;
+             font-weight:normal;
+             color:#999999;
+             font-family:arial;">
+    {{ item.date_created|timesince }} ago</span>&nbsp;&nbsp;
+<a href="http://{{ hostname }}{{ item.get_url }}" style="font-size:12px;
+                                                                                                                                   font-family:arial;
+                                                                                                                                   cursor:pointer;
+                                                                                                                                   color: #71AFE5;
+                                                                                                                                   text-decoration: none;">share</a>&nbsp;&nbsp;
+<a href="http://{{ hostname }}{{ item.get_url }}" style="font-size:12px;
+                                                                                                                                   font-family:arial;
+                                                                                                                                   color: #71AFE5;
+                                                                                                                                   cursor:pointer;
+                                                                                                                                   text-decoration: none;">comment</a>

@@ -1,0 +1,74 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block header %}
+<div id="bg"></div>
+<div id="nav" class="content">
+    <a href="/" class="logo_container">
+        <img class="logo" src="{% static_url 'img/jumo_logo_header.png' %}" />
+    </a>
+
+    <form enctype="multipart/form-data" action="/search" method="get" class="search_container">
+        <input type="text" id="searchbar" name="q" class="placeholder" placeholder="Find Projects, Issues and Supporters" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+
+    <div class="login {% if not user.is_authenticated %}loggedout{% endif %}">
+        {% if not user.is_authenticated %}
+        <a id="fb_login">
+            <!-- redirect_to is a hidden field that gets popuplated by the template and passed to the render -->
+            {% if entity or item %}<input type="hidden" name="redirect_to" value="{% if entity %}{{ entity.get_url }}{% else %}{% if item %}{{ item.get_url }}{% endif %}{% endif %}" />{% endif %}
+            <img id="fb_single_signin" src="{% static_url 'img/favicons/fb_login.png' %}" />
+        </a>
+        <a href="/login{% if entity or item %}?redirect_to={% if entity %}{{ entity.get_url }}{% else %}{% if item %}{{ item.get_url }}{% endif %}{% endif %}{% endif %}" class="bold login_button noselect">Sign In</a>
+        <a href="/setup" class="bold login_button noselect">Create an Account</a>
+        {% else %}
+        <a href="/" class="bold noselect">Home</a>
+        <a href="/{{ user.username }}" class="bold noselect">Profile</a>
+        <a id="nav_account_tab" class="bold noselect">
+            <img class="profile_img" src="{{ user.get_image_small }}" />
+            Account
+            <span class="down_arrow" src="{% static_url 'img/down_arrow.png' %}"></span>
+        </a>
+
+        <ul id="nav_menu">
+            {% if user.get_badges %}
+            <li>
+                <div class="back"></div>
+                <h5>Top Advocate For</h5>
+                <ul>
+                    {% for badge in user.get_badges|slice:":4" %}
+                    <li {% if forloop.last %}class="last"{% endif %}>
+                        <a href="{{ badge.entity.get_url }}">{{ badge.entity.get_name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li style="border-top:1px solid #ddd"></li>
+            {% endif %}
+
+            {% if user.get_orgs_admin_of %}
+            <li>
+                <div class="back"></div>
+                <h5>Page Admin For</h5>
+                <ul>
+                    {% for org in user.get_orgs_admin_of|slice:":5" %}
+                    <li><a href="{{ org.get_url }}">{{ org.get_name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li style="border-top:1px solid #ddd"></li>
+            {% endif %}
+
+            <li><a href="/org/create">Add An Organization</a></li>
+            <li><a href="/settings">My Settings</a></li>
+            <li class="last"><a href="/logout">Log Out</a></li>
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "common/footer.html" %}
+{% endblock %}

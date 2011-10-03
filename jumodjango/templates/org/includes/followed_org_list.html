@@ -1,0 +1,10 @@
+{% load tags %}
+
+{% if orgs|length > 0 %}
+{% for ent in orgs %}{% include "util/popup_entity.html" %}{% endfor %}
+{% else %}
+
+{% if start_index == 0 %}
+<p>Not following any organizations.</p>
+{% endif %}
+{% endif %}

@@ -1,0 +1,65 @@
+{% load tags %}
+{% load disqus_tags %}
+{% load commitment_tags %}
+{% load humanize %}
+
+{% comment %}{% if entity.get_all_issues or entity.get_working_locations %}{% endcomment %}
+<div class="top_spacer">
+    {% if entity.facebook_id %}
+    <fb:like style="float:right;margin-right:25px;" href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" send="false" layout="button_count" width="60" show_faces="true" font="lucida grande"></fb:like>
+    {% else %}
+    <fb:like style="float:right;margin-right:25px;" href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" send="false" layout="button_count" width="60" show_faces="true" font="lucida grande"></fb:like>
+    {% endif %}
+</div>
+
+<div class="help_out_container">
+    <div class="help_out">
+        <div class="title">Get Involved</div>
+        <p>Commit to making a difference & find out how you can help today.</p>
+        {% commitment_button entity %}
+    </div>
+</div>
+
+<ul class="cont">
+    {% disqus_comment_count %}
+
+    {% if entity.get_sample_followers %}
+    <li class="section follows">
+        <div class="heading">{% link_to_commitments entity %} Supporters</div>
+        {% for ent in entity.get_sample_followers %}
+        <a href="{{ ent.get_url }}"><img title="{{ ent.get_name }}" src="{{ ent.get_image_small }}" /></a>
+        {% endfor %}
+    </li>
+    {% endif %}
+
+    {% for contentitem in entity.get_left_section_content %}
+    <li class="section">
+        <div class="heading">{{ contentitem.title }}</div>
+        <div class="body">{{ contentitem.rich_text_body|safe }}</div>
+    </li>
+    {% endfor %}
+
+    {% if entity.get_all_timeline_items %}
+    <li class="section">
+        <div class="heading">Timeline</div>
+        <ul>
+            {% for item in entity.get_all_timeline_items|slice:":3" %}
+            <li class="timeline {% if forloop.last %}last{% endif %}">
+                <div class="year">{{ item.year }}</div>
+                <div class="body">{{ item.description }}</div>
+            </li>
+            {% endfor %}
+
+            {% if entity.get_all_timeline_items|length > 3 %}
+            {% for item in entity.get_all_timeline_items|slice:"3:" %}
+            <li style="display:none" class="timeline {% if forloop.last %}last{% endif %}">
+                <div class="year">{{ item.year }}</div>
+                <div class="body">{{ item.description }}</div>
+            </li>
+            {% endfor %}
+            <a class="viewall"  onclick="jQuery(this).hide().parent().find('.timeline').slideDown().removeClass('last').last().addClass('last')">show all {{ entity.get_all_timeline_items|length }}</a>
+            {% endif %}
+        </ul>
+    </li>
+    {% endif %}
+</ul>

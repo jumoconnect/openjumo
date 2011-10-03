@@ -1,0 +1,33 @@
+{% load tags %}
+{% if item.thumbnail_url %}
+<a align="right" style="margin:0px;border:0px;text-decoration:none;" href="http://{{ hostname }}{{ item.get_url }}">
+    <img src="{{ item.thumbnail_url }}" align="right" width="140" style="border:none;
+                                                                         float:right;
+                                                                         margin-left:10px;
+                                                                         margin-bottom:3px;
+                                                                         vertical-align: top;" />
+</a>
+{% endif %}
+
+{% if item.source_url %}
+<a href="{{ item.url }}" style="font-size:11px;
+                                font-family:verdana, sans-serif;
+                                color: #999999;
+                                cursor:pointer;
+                                text-decoration: none;">{{ item.source_url }}</a>
+<span class="desc" style="color: #777777;">&#149;</span>
+{% endif %}
+
+<span class="desc" style="color: #444444;
+                          font-size: 11px;
+                          font-family:verdana, sans-serif;">
+    {{ item.description|linebreaksbr }}
+
+    {% if item.url %}
+    <a href="{{ item.url }}" style="font-family:verdana, sans-serif;
+                                    color: #0070D0;
+                                    cursor:pointer;
+                                    text-decoration:none;
+                                    font-weight:bold;">[More]</a>
+    {% endif %}
+</span>

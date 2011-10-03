@@ -1,0 +1,50 @@
+{% load tags %}
+<table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0">
+    <tbody>
+        <tr>
+            <td valign="top" align="left">
+                {% include "email/html/helpers/care.html" %}
+            </td>
+            <td valign="top" width="13" height="50" colspan="2" bgcolor="#ffffff"></td>
+            <td valign="top" align="left">
+                <table cellpadding="0" bgcolor="#FFFFFF" border="0" style="color: #333333;
+                                                                           font:arial;
+                                                                           line-height: 142%;
+                                                                           word-wrap: break-word;">
+                    <tr>
+                        <td valign="top" align="left">
+                            {% include "email/html/helpers/author_action.html" %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left">
+                            <table cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" style="margin:0px;
+                                                                                                       padding:0px;
+                                                                                                       margin-bottom:2px;">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" align="left">
+                                            {% block author %}{% endblock %}
+                                        </td>
+                                        <td valign="top" align="left" width="200" style="text-align:right;
+                                                                                         color: #999999;
+                                                                                         line-height: 142%;
+                                                                                         font-size:10px;
+                                                                                         font-family:verdana, sans-serif;">
+                                            {{ item.date_created|timesince }} ago
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left">
+                            {% include "email/html/helpers/message.html" %}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

@@ -1,0 +1,32 @@
+{% extends "common/base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block meta %}
+{% include "campaign/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/campaign.css" %}">
+{% endblock %}
+
+{% block documentready %}
+jQuery('#heading_img_cont').click(function(){
+    id = jQuery(this).attr('video-id');
+    if (id) {
+       JUMO.Util.showYoutubeVideo("heading_img_cont", "video_" + id, id, 560, 420);
+    }
+})
+{% endblock %}
+
+{% block content %}
+<div class="content clearfix">
+    {% include "campaign/top_section.html" %}
+    <div class="ls">{% include "campaign/content.html" %}</div>
+    <div class="rs">{% include "campaign/right_section.html" %}</div>
+</div>
+
+<div id="templates">
+    {% include "util/popup_template.html" %}
+</div>
+{% endblock %}

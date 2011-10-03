@@ -1,0 +1,278 @@
+[
+ {
+  "pk": 9, 
+  "model": "issue.issue", 
+  "fields": {
+   "handle": "obesity", 
+   "name": "Obesity", 
+   "date_updated": "2011-07-06 12:25:01", 
+   "is_active": true, 
+   "img_small_url": "", 
+   "summary": "Obesity affects more than two-thirds of the U.S. population. However recent nationwide educational efforts have encouraged many Americans to make healthier exercise and nutrition decisions in order to decrease their family's risk for obesity", 
+   "location": null, 
+   "img_large_url": "", 
+   "date_created": "2011-07-05 18:03:43", 
+   "content_upgraded": false
+  }
+ }, 
+ {
+  "pk": 28541, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "More than 190 million Americans\u2014two-thirds of the U.S. population\u2014are overweight or obese. In the past 30 years, obesity rates have more than doubled while childhood obesity rates have tripled. Obesity is associated with an increased risk for cardiovascular diseases, hypertension, stroke, Type 2 diabetes, asthma, and coronary heart disease.\n\nChildhood Obesity\nMore than 17% of children in the U.S. today are affected by obesity. While parents are responsible for modeling eating and exercise habits, lack of nutritious food options in public schools and changing standards of play are important factors in the increase of childhood obesity.\n\nMore than 55 million children are enrolled in public schools, however, many schools allow advertising and sale of sugary soft drinks, candy, and other high caloric food. In addition, more than 12 million children participate in some form of daycare outside the home, where licensing regulations around physical activity and healthy food are often relaxed.\n\nOn average, children spend 7.5 hours a day devoted to media, including computers and television. For some children, this passive viewing time may be a result of living in a neighborhood without easy access to community centers, parks, or even sidewalks for walking and biking. Many children also receive little to no physical exercise at school. While 60 minutes of aerobic exercise is recommended a day, in 2009 only 33% of students attended a daily physical education class. Living in a environment which endorses sedentary activity and unhealthy food choices is having a profound affect on our nation\u2019s children\u2014one study cited by the Center of Disease control found that 70% of obese children had at least one risk factor for cardiovascular diseases.\n\nThe root causes of obesity lie in interlocking systems of economic inequality, lack of access to healthcare, and lack of education. These inequalities support the two biggest contributors to obesity: lack of proper nutrition and lack of exercise.\n\nLack of Proper Nutrition\nInadequate nutrition in the U.S. has two main components: lack of access to healthy food and lack of accountability on the part of the food industry. As more Americans move to urban environments, many are forced to live in areas without access to community gardens, farmer\u2019s markets, or other sources of fresh produce. Between traveling longer distances to procure fresh food or using convenience stores and fast-food chains with little fresh produce or locally-soured whole foods, many are forced by economic and time constraints to choose the latter.\n\nFood today is engineered to be grown quickly, shipped long distances, and stocked on shelves for extended periods of time; this mean less fresh produce and whole foods, and more processed foods packed with preservatives. In addition, the food industry remains largely unregulated. Many foods full of high-fructose corn syrup and other processed ingredients are able to apply \u201chealthy\u201d or \u201corganic\u201d labels, misleading consumers. Governments may recommend one set of eating habits, yet endorse or overlook regulations that promote another entirely. A 2010 article in The New York Times displayed a graph that compared the federal recommendations for the number of servings of protein per day including meat and dairy (6 servings, compared to 9 of fruits and vegetables and 11 of whole grains) with the percentage of federal subsidies for food production (73.8% for meat and dairy compared to 13.23% for grains).\n\nLack of Exercise\nDue to urban sprawl, many families live in neighborhoods where they are unable to walk to school, parks, community events, or grocery stores. This promotes a culture in which families increasingly rely on cars for transportation, forgoing a healthy walk for a 5-minute drive. More so than ever, the American working life involves sitting at a desk for up to 10 hours a day. A sedentary working life combined with a dependence on cars for transportation and the amount of time spent walking or engaging in exercise on a daily basis has quickly become negligent.", 
+   "title": "What is the problem?", 
+   "section": "center", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "position": 0, 
+   "rich_text_body": "More than 190 million Americans\u2014two-thirds of the U.S. population\u2014are overweight or obese. In the past 30 years, obesity rates have more than doubled while childhood obesity rates have tripled. Obesity is associated with an increased risk for cardiovascular diseases, hypertension, stroke, Type 2 diabetes, asthma, and coronary heart disease.<br/><br/><i>Childhood Obesity</i><br/>More than 17% of children in the U.S. today are affected by obesity. While parents are responsible for modeling eating and exercise habits, lack of nutritious food options in public schools and changing standards of play are important factors in the increase of childhood obesity.<br/><br/>More than 55 million children are enrolled in public schools, however, many schools allow advertising and sale of sugary soft drinks, candy, and other high caloric food. In addition, more than 12 million children participate in some form of daycare outside the home, where licensing regulations around physical activity and healthy food are often relaxed.<br/><br/>On average, children spend 7.5 hours a day devoted to media, including computers and television. For some children, this passive viewing time may be a result of living in a neighborhood without easy access to community centers, parks, or even sidewalks for walking and biking. Many children also receive little to no physical exercise at school. While 60 minutes of aerobic exercise is recommended a day, in 2009 only 33% of students attended a daily physical education class. Living in a environment which endorses sedentary activity and unhealthy food choices is having a profound affect on our nation\u2019s children\u2014one study cited by the Center of Disease control found that 70% of obese children had at least one risk factor for cardiovascular diseases.<br/><br/>The root causes of obesity lie in interlocking systems of economic inequality, lack of access to healthcare, and lack of education. These inequalities support the two biggest contributors to obesity: lack of proper nutrition and lack of exercise.<br/><br/><i>Lack of Proper Nutrition</i><br/>Inadequate nutrition in the U.S. has two main components: lack of access to healthy food and lack of accountability on the part of the food industry. As more Americans move to urban environments, many are forced to live in areas without access to community gardens, farmer\u2019s markets, or other sources of fresh produce. Between traveling longer distances to procure fresh food or using convenience stores and fast-food chains with little fresh produce or locally-soured whole foods, many are forced by economic and time constraints to choose the latter.<br/><br/>Food today is engineered to be grown quickly, shipped long distances, and stocked on shelves for extended periods of time; this mean less fresh produce and whole foods, and more processed foods packed with preservatives. In addition, the food industry remains largely unregulated. Many foods full of high-fructose corn syrup and other processed ingredients are able to apply \u201chealthy\u201d or \u201corganic\u201d labels, misleading consumers. Governments may recommend one set of eating habits, yet endorse or overlook regulations that promote another entirely. A 2010 article in The New York Times displayed a graph that compared the federal recommendations for the number of servings of protein per day including meat and dairy (6 servings, compared to 9 of fruits and vegetables and 11 of whole grains) with the percentage of federal subsidies for food production (73.8% for meat and dairy compared to 13.23% for grains).<br/><br/><i>Lack of Exercise</i><br/>Due to urban sprawl, many families live in neighborhoods where they are unable to walk to school, parks, community events, or grocery stores. This promotes a culture in which families increasingly rely on cars for transportation, forgoing a healthy walk for a 5-minute drive. More so than ever, the American working life involves sitting at a desk for up to 10 hours a day. A sedentary working life combined with a dependence on cars for transportation and the amount of time spent walking or engaging in exercise on a daily basis has quickly become negligent."
+  }
+ }, 
+ {
+  "pk": 28544, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "\n<ul>\n<li>Obesity is one of the leading causes of preventable death in the world </li>\n<li>17% of children in the US age 2-19 are obese, this number is triple the rate it was 30 years ago</li>\n<li>$147,000,000,000 is spent annually on obesity-related diseases</li>\n<li>Two thirds, or more than 190,000,000, Americans are obese </li>\n<li>There has been a 30% increase in the amount of sweetener intake in the past 40 years</li>\n<li>55% of Diabetes Type 2 patients are obese when diagnosed</li>\n</ul>\n", 
+   "title": "Statistics", 
+   "section": "left", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "position": 0, 
+   "rich_text_body": "\n<ul>\n<li>Obesity is one of the leading causes of preventable death in the world </li>\n<li>17% of children in the US age 2-19 are obese, this number is triple the rate it was 30 years ago</li>\n<li>$147,000,000,000 is spent annually on obesity-related diseases</li>\n<li>Two thirds, or more than 190,000,000, Americans are obese </li>\n<li>There has been a 30% increase in the amount of sweetener intake in the past 40 years</li>\n<li>55% of Diabetes Type 2 patients are obese when diagnosed</li>\n</ul>\n"
+  }
+ }, 
+ {
+  "pk": 28542, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Reducing obesity requires a diet and exercise program. The Center for Disease Control and First Lady Michelle Obama\u2019s Let\u2019s Move initiatives are great resources for individuals trying to develop healthy eating and exercise practices. However, truly solving the obesity epidemic will require long-term lifestyle changes for Americans. These changes necessitate an increase in healthy food and exercise education and significant changes to the food industry:\n\nEducation: While information surrounding healthy eating and exercise habits is available, it can be hard to discern what advice to follow.  Conflicting sources promote calorie counting vs. portion control, cardio vs. strength training.  Americans spend $40 million a year on weight-loss programs , however, according to a study in The New England Journal of Medicine, within a year most individuals will gain back one-third of the weight they lose. Under the Obama administration, the USDA has released a new set of basic dietary guidelines and replaced the food pyramid with Choose My Plate, an easy way for Americans to understand what they should be eating. Educating youth about good eating and exercise habits is also an important step to creating life-long practices that promote a healthy life-style.\nRewarding Production of Healthy Food: Fresh fruits and vegetables make minimal profits for food companies. However cash crops like corn, soybeans, and wheat used to make sweeteners and preservatives are highly profitable due to government subsidies. Even when producing fresh produce, like tomatoes, growers may use chemicals instead of healthy soil, or pick the produce before it\u2019s ripe, diminishing its health benefits in the process. In order to promote eating healthy, government subsidies need to reward produce growers and farmers using sustainable, eco-friendly practices and communities must invest in supporting locally sourced organic food.\nRegulations on Food: The interests of the food industry can often effect government regulations. The American Dietetic Association\u2014a trusted source of nutrition information that produces guidelines for healthy eating\u2014lists the Coca-Cola Company and Mars Incorporated as sponsors. While the USDA recommends drinking water instead of soda, which can have up to 10 packets of sugar in one can , The ADA supports having a can of soda a day.  An article published in the Public Library of Science\u2019s medical journal found that 0% of industry-funded reports addressing the biomedical effects of milk, juice, and soft drinks reported unfavorable conclusions, compared to 37% of reports with no industry funding. Stricter regulations on how foods are labeled (for instance, a \u201clow-fat\u201d option for kids may be pumped full of cancer-causing sugar substitutes) are needed in order to empower consumers to make healthy decisions. The FDA is currently working to redesign nutritional information on food products, increasing consumer awareness of what they\u2019re really buying.\n\nMany communities are also banding together to create environments and life-style practices that promote healthy decisions. Here are some innovative new approaches to curbing obesity:\n\nWalkable neighborhoods: Urban planners, real-estate developers, and homeowners and renters are increasingly advocating for walkable neighborhoods. Walkable neighborhoods seek to create communities where children are able to walk to school, families can walk to stores adequately supplied with healthy foods and household needs, and housing is diverse enough to accommodate people with different socio-economic, age, and family planning realities. By living in walkable neighborhoods, residents of all ages and socio-economic means are able to integrate exercise into their daily routines by walking to the store to buy food for dinner, or having a park 3 blocks from home to play in after school.\nSlow Food Movement: This holistic approach to agriculture and eating advocates biodiversity, locally sourced food, conservation, fair trade, and above all access to healthy food. The slow food movement believes every one has a right to food that is good, clean, and fair. Good food is delicious and promotes healthy eating habits like a balanced diet and moderate portion sizes. Clean food is grown in season, locally, without the use of harmful chemicals. And fair food is accessible for all and grown by people treated with dignity and respect.", 
+   "title": "How do we solve the problem?", 
+   "section": "center", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "position": 1, 
+   "rich_text_body": "Reducing obesity requires a diet and exercise program. The Center for Disease Control and First Lady Michelle Obama\u2019s Let\u2019s Move initiatives are great resources for individuals trying to develop healthy eating and exercise practices. However, truly solving the obesity epidemic will require long-term lifestyle changes for Americans. These changes necessitate an increase in healthy food and exercise education and significant changes to the food industry:<br/><ul><li><b>Education</b>: While information surrounding healthy eating and exercise habits is available, it can be hard to discern what advice to follow.  Conflicting sources promote calorie counting vs. portion control, cardio vs. strength training.  Americans spend $40 million a year on weight-loss programs , however, according to a study in The New England Journal of Medicine, within a year most individuals will gain back one-third of the weight they lose. Under the Obama administration, the USDA has released a new set of basic dietary guidelines and replaced the food pyramid with Choose My Plate, an easy way for Americans to understand what they should be eating. Educating youth about good eating and exercise habits is also an important step to creating life-long practices that promote a healthy life-style.</li><li><b>Rewarding Production of Healthy Food:</b> Fresh fruits and vegetables make minimal profits for food companies. However cash crops like corn, soybeans, and wheat used to make sweeteners and preservatives are highly profitable due to government subsidies. Even when producing fresh produce, like tomatoes, growers may use chemicals instead of healthy soil, or pick the produce before it\u2019s ripe, diminishing its health benefits in the process. In order to promote eating healthy, government subsidies need to reward produce growers and farmers using sustainable, eco-friendly practices and communities must invest in supporting locally sourced organic food.</li><li><b>Regulations on Food:</b> The interests of the food industry can often effect government regulations. The American Dietetic Association\u2014a trusted source of nutrition information that produces guidelines for healthy eating\u2014lists the Coca-Cola Company and Mars Incorporated as sponsors. While the USDA recommends drinking water instead of soda, which can have up to 10 packets of sugar in one can , The ADA supports having a can of soda a day.  An article published in the Public Library of Science\u2019s medical journal found that 0% of industry-funded reports addressing the biomedical effects of milk, juice, and soft drinks reported unfavorable conclusions, compared to 37% of reports with no industry funding. Stricter regulations on how foods are labeled (for instance, a \u201clow-fat\u201d option for kids may be pumped full of cancer-causing sugar substitutes) are needed in order to empower consumers to make healthy decisions. The FDA is currently working to redesign nutritional information on food products, increasing consumer awareness of what they\u2019re really buying.</li></ul><br/><br/>Many communities are also banding together to create environments and life-style practices that promote healthy decisions. Here are some innovative new approaches to curbing obesity:<br/><ul><li><b>Walkable neighborhoods:</b> Urban planners, real-estate developers, and homeowners and renters are increasingly advocating for walkable neighborhoods. Walkable neighborhoods seek to create communities where children are able to walk to school, families can walk to stores adequately supplied with healthy foods and household needs, and housing is diverse enough to accommodate people with different socio-economic, age, and family planning realities. By living in walkable neighborhoods, residents of all ages and socio-economic means are able to integrate exercise into their daily routines by walking to the store to buy food for dinner, or having a park 3 blocks from home to play in after school.</li><li><b>Slow Food Movement:</b> This holistic approach to agriculture and eating advocates biodiversity, locally sourced food, conservation, fair trade, and above all access to healthy food. The slow food movement believes every one has a right to food that is good, clean, and fair. Good food is delicious and promotes healthy eating habits like a balanced diet and moderate portion sizes. Clean food is grown in season, locally, without the use of harmful chemicals. And fair food is accessible for all and grown by people treated with dignity and respect.</li></ul>"
+  }
+ }, 
+ {
+  "pk": 28543, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "<ul><li>Obesity.org statistics: <a href='http://www.obesity.org/resources-for/obesity-statistics.htm'>http://www.obesity.org/resources-for/obesity-statistics.htm</a></li><li>CDC obesity page: <a href='http://www.cdc.gov/obesity/'>http://www.cdc.gov/obesity/</a></li><li>Weight management and obesity resources: <a href='http://www.nal.usda.gov/fnic/pubs/bibs/topics/weight/consumer.pdf'>http://www.nal.usda.gov/fnic/pubs/bibs/topics/weight/consumer.pdf</a></li></ul>", 
+   "title": "Outside Resources", 
+   "section": "center", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "position": 2, 
+   "rich_text_body": "<ul><li>Obesity.org statistics: <a href='http://www.obesity.org/resources-for/obesity-statistics.htm'>http://www.obesity.org/resources-for/obesity-statistics.htm</a></li><li>CDC obesity page: <a href='http://www.cdc.gov/obesity/'>http://www.cdc.gov/obesity/</a></li><li>Weight management and obesity resources: <a href='http://www.nal.usda.gov/fnic/pubs/bibs/topics/weight/consumer.pdf'>http://www.nal.usda.gov/fnic/pubs/bibs/topics/weight/consumer.pdf</a></li></ul>"
+  }
+ }, 
+ {
+  "pk": 20, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Spain and Portugal being to grow sugar cane, opening up the consumption of sugar, previously only available to the nobility, to Europeans of all classes", 
+   "date_updated": "2011-07-08 14:30:42", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 1400, 
+   "date_created": "2011-07-08 14:29:59"
+  }
+ }, 
+ {
+  "pk": 21, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Availability of both tea and sugar rises in the western hemisphere, gradually decreasing the previous starch and whole grain-based diet", 
+   "date_updated": "2011-07-08 14:31:01", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 1700, 
+   "date_created": "2011-07-08 14:31:01"
+  }
+ }, 
+ {
+  "pk": 22, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "250,000 tons of sugar are produced worldwide", 
+   "date_updated": "2011-07-08 14:31:58", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 1800, 
+   "date_created": "2011-07-08 14:31:58"
+  }
+ }, 
+ {
+  "pk": 23, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "High-fructose corn syrup added to American diet", 
+   "date_updated": "2011-07-08 14:33:08", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 1970, 
+   "date_created": "2011-07-08 14:33:08"
+  }
+ }, 
+ {
+  "pk": 24, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Annual hospital costs for treating obesity-related diseases reaches $127,000,000", 
+   "date_updated": "2011-07-08 14:34:32", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 1999, 
+   "date_created": "2011-07-08 14:34:32"
+  }
+ }, 
+ {
+  "pk": 25, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "US airlines industry spends $275,000,000, including cost of wider seats and extra fuel, on obese passengers", 
+   "date_updated": "2011-07-08 14:34:51", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 2000, 
+   "date_created": "2011-07-08 14:34:51"
+  }
+ }, 
+ {
+  "pk": 26, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "American Beverage Association agrees to ban sale of high-calorie beverages in containers larger than 12 ounces in all elementary, middle, and high schools", 
+   "date_updated": "2011-07-08 14:35:18", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 2006, 
+   "date_created": "2011-07-08 14:35:18"
+  }
+ }, 
+ {
+  "pk": 27, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "U.S. Department of Health estimated that 57,000,000 US adults are pre-diabetic", 
+   "date_updated": "2011-07-08 14:36:31", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 2008, 
+   "date_created": "2011-07-08 14:36:31"
+  }
+ }, 
+ {
+  "pk": 28, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "The food industry spends $30,000,000,000 on advertising", 
+   "date_updated": "2011-07-08 14:36:50", 
+   "object_id": 9, 
+   "content_type": 21, 
+   "year": 2009, 
+   "date_created": "2011-07-08 14:36:50"
+  }
+ }, 
+ {
+  "pk": 1, 
+  "model": "entity_items.advocate", 
+  "fields": {
+   "name": "Michelle Obama", 
+   "url": "http://www.letsmove.gov/", 
+   "twitter_id": "letsmove", 
+   "object_id": 9, 
+   "date_updated": "2011-07-08 14:44:22", 
+   "user": null, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:44:22"
+  }
+ }, 
+ {
+  "pk": 2, 
+  "model": "entity_items.advocate", 
+  "fields": {
+   "name": "Mark Bittman", 
+   "url": "http://en.wikipedia.org/wiki/Mark_Bittman", 
+   "twitter_id": "bittman", 
+   "object_id": 9, 
+   "date_updated": "2011-07-08 14:44:47", 
+   "user": 92601, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:44:47"
+  }
+ }, 
+ {
+  "pk": 7, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 28542, 
+   "date_created": null, 
+   "caption": "Video about a thing", 
+   "thumbnail_url": "http://i.ytimg.com/vi/v8cpvTdNmTA/1.jpg", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "video", 
+   "img_url": "", 
+   "metadata": "{\"source_id\": \"v8cpvTdNmTA\", \"url\": \"http://www.youtube.com/v/v8cpvTdNmTA?f=videos&app=youtube_gdata\"}"
+  }
+ }, 
+ {
+  "pk": 8, 
+  "model": "action.action", 
+  "fields": {
+   "title": "a.Create a healthy cookbook with your community that includes whole food recipes to help raise money for research or other education programs", 
+   "date_updated": "2011-07-08 14:27:00", 
+   "object_id": 9, 
+   "link": "", 
+   "rank": 0, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:27:00", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 9, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Host a farmers market at your organization, community center or place of worship", 
+   "date_updated": "2011-07-08 14:28:02", 
+   "object_id": 9, 
+   "link": "http://www.ams.usda.gov/AMSv1.0/FARMERSMARKETS", 
+   "rank": 1, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:28:02", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 10, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Start a CSA (community supported agriculture) by teaming up with a local farmer to provide produce shares to those in the community.", 
+   "date_updated": "2011-07-08 14:28:35", 
+   "object_id": 9, 
+   "link": "http://www.nal.usda.gov/afsic/pubs/csa/csa.shtml", 
+   "rank": 2, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:28:35", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 11, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Start a community garden to help educate the community, bring people together and get people up and moving.", 
+   "date_updated": "2011-07-08 14:29:03", 
+   "object_id": 9, 
+   "link": "", 
+   "rank": 3, 
+   "content_type": 21, 
+   "date_created": "2011-07-08 14:29:03", 
+   "type": "link"
+  }
+ }
+]

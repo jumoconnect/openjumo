@@ -1,0 +1,6 @@
+{% extends "email/txt/notifications/base.txt" %}
+
+{%block content %}
+Click the following link to visit their profile:
+[http://{{hostname}}{{entity.get_url}}]
+{% endblock %}

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config>
+  <requestHandler class="solr.SearchHandler" name="dismax"/>
+  <requestHandler class="solr.DirectUpdateHandler2" name="/update"/>
+  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
+</config>

@@ -1,0 +1,11 @@
+{% if subject %}{% block title %}{{ subject }}.{% endblock %}{% endif %}
+{% block content %}{% endblock %}
+Thanks,
+The Jumo Team
+[http://{{ hostname }}]
+
+Edit your Jumo email settings:
+[http://{{ hostname }}/settings#notifications]
+
+If you do not want to recieve these emails, you can unsubscribe [http://{{ hostname }}/unsubscribe/?id={{ user.id }}&id_type=user&code={{ unsub_code }}&pub_id={{ publication_id }}]
+This email was sent to {{ user.email }} by Jumo. 113 Spring St. New York, NY 10012

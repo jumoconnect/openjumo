@@ -1,0 +1,2 @@
+{% extends "email/txt/thoughtbase.txt" %}
+{% block author %}{% include "email/txt/helpers/tw_author.txt" %}{% endblock %}

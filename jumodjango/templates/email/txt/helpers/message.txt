@@ -1,0 +1,2 @@
+{% load tags %}
+{{ item.description|linebreaksbr }}

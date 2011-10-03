@@ -1,0 +1,157 @@
+a.related-lookup {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-left: 10px;
+}
+
+
+/*  Basic Float & Margin ......................................... */
+
+.span-1, .span-2, .span-3, .span-4, .span-5, .span-6, 
+.span-7, .span-8, .span-9, .span-10, .span-11, .span-12, 
+.span-13, .span-14, .span-15, .span-16, .span-17, .span-18, 
+.span-19, .span-20, .span-21, .span-22, .span-23, .span-24 {
+/*    float: left;*/
+    margin-right: 20px;
+}
+.column.last { margin-right: 0; }
+
+
+/*  Column Widths ......................................... */
+
+.span-1  { width: 10px; }
+.span-2  { width: 30px; }
+.span-3  { width: 50px; }
+.span-4  { width: 70px; }
+.span-5  { width: 90px; }
+.span-6  { width: 110px; }
+.span-7  { width: 130px; }
+.span-8  { width: 150px; }
+.span-9  { width: 170px; }
+.span-10 { width: 190px; }
+.span-11 { width: 210px; }
+.span-12 { width: 230px; }
+.span-13 { width: 250px; }
+.span-14 { width: 270px; }
+.span-15 { width: 580px; }
+.span-16 { width: 310px; }
+.span-17 { width: 330px; }
+.span-18 { width: 350px; }
+.span-19 { width: 370px; }
+.span-20 { width: 390px; }
+.span-21 { width: 410px; }
+.span-22 { width: 430px; }
+.span-23 { width: 450px; }
+.span-24 { width: 470px; margin: 0; }
+
+
+/*  Append empty columns ......................................... */
+
+.append-1  { padding-right: 20px; }
+.append-2  { padding-right: 40px; }
+.append-3  { padding-right: 60px; }
+.append-4  { padding-right: 80px; }
+.append-5  { padding-right: 100px; }
+.append-6  { padding-right: 240px; }
+.append-7  { padding-right: 140px; }
+.append-8  { padding-right: 160px; }
+.append-9  { padding-right: 180px; }
+.append-10 { padding-right: 200px; }
+.append-11 { padding-right: 220px; }
+.append-12 { padding-right: 240px; }
+.append-13 { padding-right: 260px; }
+.append-14 { padding-right: 280px; }
+.append-15 { padding-right: 300px; }
+.append-16 { padding-right: 320px; }
+.append-17 { padding-right: 340px; }
+.append-18 { padding-right: 360px; }
+.append-19 { padding-right: 380px; }
+.append-20 { padding-right: 400px; }
+.append-21 { padding-right: 420px; }
+.append-22 { padding-right: 440px; }
+.append-23 { padding-right: 460px; }
+
+
+/*  Prepend empty columns ......................................... */
+
+.prepend-1  { padding-left: 20px; }
+.prepend-2  { padding-left: 40px; }
+.prepend-3  { padding-left: 60px; }
+.prepend-4  { padding-left: 80px; }
+.prepend-5  { padding-left: 100px; }
+.prepend-6  { padding-left: 240px; }
+.prepend-7  { padding-left: 140px; }
+.prepend-8  { padding-left: 160px; }
+.prepend-9  { padding-left: 180px; }
+.prepend-10 { padding-left: 200px; }
+.prepend-11 { padding-left: 220px; }
+.prepend-12 { padding-left: 240px; }
+.prepend-13 { padding-left: 260px; }
+.prepend-14 { padding-left: 280px; }
+.prepend-15 { padding-left: 300px; }
+.prepend-16 { padding-left: 320px; }
+.prepend-17 { padding-left: 340px; }
+.prepend-18 { padding-left: 360px; }
+.prepend-19 { padding-left: 380px; }
+.prepend-20 { padding-left: 400px; }
+.prepend-21 { padding-left: 420px; }
+.prepend-22 { padding-left: 440px; }
+.prepend-23 { padding-left: 460px; }
+
+
+/*  Span-X + Span-Flexible ......................................... */
+
+.span-1 + .span-flexible  { margin-left: 20px; }
+.span-2 + .span-flexible  { margin-left: 40px; }
+.span-3 + .span-flexible  { margin-left: 60px; }
+.span-4 + .span-flexible  { margin-left: 80px; }
+.span-5 + .span-flexible  { margin-left: 100px; }
+.span-6 + .span-flexible  { margin-left: 240px; }
+.span-7 + .span-flexible  { margin-left: 140px; }
+.span-8 + .span-flexible  { margin-left: 160px; }
+.span-9 + .span-flexible  { margin-left: 180px; }
+.span-10 + .span-flexible { margin-left: 200px; }
+.span-11 + .span-flexible { margin-left: 220px; }
+.span-12 + .span-flexible { margin-left: 240px; }
+.span-13 + .span-flexible { margin-left: 260px; }
+.span-14 + .span-flexible { margin-left: 280px; }
+.span-15 + .span-flexible { margin-left: 300px; }
+.span-16 + .span-flexible { margin-left: 320px; }
+.span-17 + .span-flexible { margin-left: 340px; }
+.span-18 + .span-flexible { margin-left: 360px; }
+.span-19 + .span-flexible { margin-left: 380px; }
+.span-20 + .span-flexible { margin-left: 400px; }
+.span-21 + .span-flexible { margin-left: 420px; }
+.span-22 + .span-flexible { margin-left: 440px; }
+.span-23 + .span-flexible { margin-left: 460px; }
+.span-24 + .span-flexible { margin-left: 960px; }
+
+
+/*  Columns in Cells ......................................... */
+
+.cell.span-1  { width: 0px; }
+.cell.span-2  { width: 20px; }
+.cell.span-3  { width: 40px; }
+.cell.span-4  { width: 60px; }
+.cell.span-5  { width: 80px; }
+.cell.span-6  { width: 100px; }
+.cell.span-7  { width: 240px; }
+.cell.span-8  { width: 140px; }
+.cell.span-9  { width: 330px; }
+.cell.span-10 { width: 180px; }
+.cell.span-11 { width: 200px; }
+.cell.span-12 { width: 220px; }
+.cell.span-13 { width: 240px; }
+.cell.span-14 { width: 260px; }
+.cell.span-15 { width: 280px; }
+.cell.span-16 { width: 300px; }
+.cell.span-17 { width: 320px; }
+.cell.span-18 { width: 340px; }
+.cell.span-19 { width: 360px; }
+.cell.span-20 { width: 380px; }
+.cell.span-21 { width: 400px; }
+.cell.span-22 { width: 420px; }
+.cell.span-23 { width: 440px; }
+.cell.span-24 { width: 460px; margin: 0; }

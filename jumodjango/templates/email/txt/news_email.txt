@@ -1,0 +1,34 @@
+{% load tags %}
+Hello {{ user.get_name }},
+
+Jumo Reader: Top news on the issues you care about
+{{ current_time|date:"l, F j, Y" }}
+
+===============================================
+TOP NEWS
+===============================================
+
+{% for item in feed_items %}{% render_TXT_email_feeditem user item feed_stream hostname %}{% if not forloop.last %}---{% endif %}{% endfor %}
+
+===============================================
+STATS
+===============================================
+{% for stat in random_stats %}
+{{ stat.header }}: {{ stat.description }}
+learn more [http://{{ hostname }}{{ stat.issue.get_url }}]
+{% if not forloop.last %}___{% endif %}
+{% endfor %}
+
+===============================================
+Copyright (C) 2010 Jumo http://jumo.com
+113 Spring St. New York, NY 10012
+===============================================
+
+Home         [http://{{ hostname }}]
+Profile      [http://{{ hostname }}/user{{ user.id }}]
+Settings     [http://{{ hostname }}/settings]
+About        [http://{{ hostname }}/about]
+Unsubscribe  [http://{{ hostname }}/unsubscribe/?id={{ user.id }}&id_type=user&code={{ unsub_code }}&pub=reader]
+
+If you have trouble reading this e-mail,
+go to: http://{{ hostname }}/email/{{ user.id }}

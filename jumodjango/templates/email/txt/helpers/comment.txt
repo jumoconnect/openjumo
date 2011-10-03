@@ -1,0 +1,2 @@
+{{ comment.actor.get_name }} wrote {{ comment.data }}
+{{ comment.date_created|timesince }} ago

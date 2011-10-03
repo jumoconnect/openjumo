@@ -1,0 +1,197 @@
+[
+ {
+  "pk": 10180, 
+  "model": "org.org", 
+  "fields": {
+   "is_claimed": false, 
+   "revenue": "", 
+   "date_updated": "2011-07-26 14:27:17", 
+   "year_founded": null, 
+   "working_locations": [
+    35018, 
+    38149, 
+    40960, 
+    40973, 
+    42758
+   ], 
+   "is_vetted": true, 
+   "flickr_id": "", 
+   "size": "", 
+   "img_small_url": "", 
+   "site_url": "http://www.hrw.org/", 
+   "location": 7772, 
+   "img_large_url": "", 
+   "facebook_id": , 
+   "donation_enabled": false, 
+   "email": "", 
+   "phone_number": "", 
+   "handle": "humanrightswatch", 
+   "is_active": true, 
+   "claim_token": "", 
+   "name": "Human Rights Watch", 
+   "twitter_id": "hrw", 
+   "summary": "Human Rights Watch\u2019s goal is to provide the most timely information about human rights crises and developments in some 90 countries around the world.", 
+   "admins": [], 
+   "blog_url": "", 
+   "youtube_id": "humanrightswatch", 
+   "date_created": "2011-07-05 18:07:24", 
+   "ein": ""
+  }
+ }, 
+ {
+  "pk": 29, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Helsinki Watch is formed to monitor government compliance with the 1975 Helsinki Accords", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1978, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 30, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Americas Watch is formed following civil wars in Central America", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1981, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 31, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Asia Watch is formed", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1985, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 32, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Africa Watch is formed; the various committees adopt the name Human Rights Watch ", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1988, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 33, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Middle East Watch is formed", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1989, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 34, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Human Rights Watch receives a Nobel Peace Prize for its position as a founding member of the International Campaign to Ban Landmines", 
+   "date_updated": "2011-07-26 13:45:10", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "year": 1997, 
+   "date_created": "2011-07-26 13:45:10"
+  }
+ }, 
+ {
+  "pk": 23040, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "advocacy", 
+   "title": "Methods", 
+   "section": "left", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "<p>advocacy</p>"
+  }
+ }, 
+ {
+  "pk": 28545, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Human Rights Watch is an independent, non-profit organization that brings attention to oppressed individuals around the world. The organization challenges governments to end discrimination, uphold political freedom, and protect victims of war.&nbsp;\r\n\r\n&nbsp;", 
+   "title": "What does this org do?", 
+   "section": "center", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "<p>Human Rights Watch is an independent, non-profit organization that brings attention to oppressed individuals around the world. The organization challenges governments to end discrimination, uphold political freedom, and protect victims of war.&nbsp;</p>\r\n<!--EndFragment-->\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 28546, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Human Rights Watch employs researchers who work in the field to investigate human rights conditions in over 80 countries around the world. Incorporating interviews with victims of abuse as well as local advocates, journalists, and officials, Human Rights Watch&rsquo;s studies provide up-to-date information to world leaders across an immense range of human rights topics. Human Rights Watch reports have been cited in the press, as well as government and United Nations findings. These documentations lead the legal and moral groundwork for important change. The ultimate goal is for human rights abusers to be brought to justice through government intervention and sanctions that do not target those who are affected by crisis.\r\n&nbsp;\r\nHuman Rights Watch is a four-star charity on Charity Navigator, the highest rating possible. They are also a Better Business Bureau accredited charity.&nbsp;\r\n\r\n&nbsp;", 
+   "title": "How are they doing it?  ", 
+   "section": "center", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "position": 1, 
+   "rich_text_body": "<p>Human Rights Watch employs researchers who work in the field to investigate human rights conditions in over 80 countries around the world. Incorporating interviews with victims of abuse as well as local advocates, journalists, and officials, Human Rights Watch&rsquo;s studies provide up-to-date information to world leaders across an immense range of <a href=\"http://www.hrw.org/en/topics\">human rights topics</a>. Human Rights Watch reports have been cited in the press, as well as government and United Nations findings. These documentations lead the legal and moral groundwork for important change. The ultimate goal is for human rights abusers to be brought to justice through government intervention and sanctions that do not target those who are affected by crisis.</p>\r\n<p>&nbsp;</p>\r\n<p>Human Rights Watch is a <a href=\"http://www.charitynavigator.org/index.cfm?bay=search.summary&amp;orgid=3845\">four-star charity</a> on Charity Navigator, the highest rating possible. They are also a Better Business Bureau <a href=\"http://charityreports.bbb.org/public/seal.aspx?ID=34521032010\">accredited charity</a>.&nbsp;</p>\r\n<!--EndFragment-->\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 28547, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Helsinki Watch was formed in 1978 to support citizens groups throughout the Soviet bloc that monitored government compliance with the 1975 Helsinki Accords. By pushing out alerts of abusive government action to the media, Helsinki Watch raised international awareness and contributed to the Eastern European democratic uprisings in the late 1980s. Ten years later, after continental-focused groups like Americas Watch, Asia Watch, Africa Watch, and Middle East Watch formed, the groups officially adopted an inclusive name &ndash; Human Rights Watch.\r\n\r\n&nbsp;", 
+   "title": "Founder's Story", 
+   "section": "center", 
+   "object_id": 10180, 
+   "content_type": 27, 
+   "position": 2, 
+   "rich_text_body": "<p>Helsinki Watch was formed in 1978 to support citizens groups throughout the Soviet bloc that monitored government compliance with the 1975 Helsinki Accords. By pushing out alerts of abusive government action to the media, Helsinki Watch raised international awareness and contributed to the Eastern European democratic uprisings in the late 1980s. Ten years later, after continental-focused groups like Americas Watch, Asia Watch, Africa Watch, and Middle East Watch formed, the groups officially adopted an inclusive name &ndash; Human Rights Watch.</p>\r\n<!--EndFragment-->\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 14, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-22 13:19:17", 
+   "object_id": 28545, 
+   "date_created": null, 
+   "caption": "Schools as Battlegrounds", 
+   "thumbnail_url": "http://i.ytimg.com/vi/_179fzp5jTM/1.jpg", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "video", 
+   "img_url": "", 
+   "metadata": "{\"source_id\": \"_179fzp5jTM\", \"url\": \"http://www.youtube.com/watch?v=_179fzp5jTM&feature=player_embedded\"}"
+  }
+ }, 
+ {
+  "pk": 13, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 28546, 
+   "date_created": null, 
+   "caption": "", 
+   "thumbnail_url": "", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "pullquote", 
+   "img_url": "", 
+   "metadata": "{\"quote_text\" : \"\\\"lead the legal and moral groundwork for important change\\\"\"}"
+  }
+ }
+]

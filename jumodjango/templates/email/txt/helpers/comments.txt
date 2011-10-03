@@ -1,0 +1,3 @@
+{% if item.comments %}
+{% for comment in item.comments|slice:":2" %}{% include "email/txt/helpers/comment.txt" %}
+{% endfor %}{% else %}{% endif %}

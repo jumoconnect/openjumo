@@ -1,0 +1,29 @@
+{% extends "common/base.html" %}
+{% load tags %}
+{% load humanize %}
+
+{% block meta %}
+{% include "campaign/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/campaign.css" %}">
+{% endblock %}
+
+{% block documentready %}
+{% endblock %}
+
+{% block content %}
+
+<div class="content clearfix">
+    <div>Campaign Status: {{campaign.status}}</div>
+    <div>Num Donations: {{num_donations}}</div>
+    <div>Num Donors: {{num_donors}}</div>
+    <div>Total Donated: {{total_donated}}</div>
+    <div>Avg Donated: {{avg_donated}}</div>
+    <br/>
+    {%if campaign.status == campaign.CampaignStatus.COMPLETE %}
+        <a href='/campaign/dashboard/reports/{{campaign.id}}/campaign_data.csv'>Download CSV</a>
+    {%endif%}
+</div>
+{% endblock %}

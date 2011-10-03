@@ -1,0 +1,348 @@
+{% extends 'common/static_page.html' %}
+{% load tags %}
+
+{% block extra_styles %}
+<style>.form_box { padding-left:0px; }</style>
+{% endblock %}
+
+{% block static_content %}
+<div id="jobs" class="main_content clearfix">
+    <div class="border clearfix">
+        <img class="heading_img" src="{% static_url "img/jobs_003.jpg" %}" />
+        <div class="trans_heading">Want to change the world? Change it @Jumo</div>
+        <div class="cs static">
+            <div class="top_heading">
+                <h1>Why Jumo?</h1>
+                <h2>
+                    Want to make the world a better place? Excited about using
+                    technology to further social causes you care passionately
+                    about?
+                </h2>
+
+            </div>
+            <div class="bottom_section">
+                <div class="section">
+                    <div class="body">
+                        <p>
+                            As part of the Jumo team, you have
+                            the opportunity to make an impact in the U.S. and across the globe
+                            on a whole host of urgent social issues, from maternal health in
+                            the developing world to unemployment in the United
+                            States.
+                        </p>
+                        <p>
+                            Jumo connects everyday people to causes and organizations that
+                            are meaningful to them. We build smart social technology to help
+                            the people working to change the world gain more followers,
+                            supporters, volunteers, and donors.
+                        </p>
+                        <p>
+                            Today, Jumo provides thousands of non-profits and
+                            NGOs social, dynamic presences on the web and has
+                            helped hundreds of thousands of people find and
+                            connect to organizations working in over 250 issue
+                            areas in regions around the world.
+                        </p>
+                        <p>
+                            If you have that itching feeling that you want to do something
+                            more meaningful with your life, Jumo is the place for you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="heading" id="culture">Culture and workplace</div>
+                    <div class="body">
+                        <div class="media_item">
+                            <img src="{% static_url "img/office.jpg" %}" />
+                        </div>
+                        <p>
+                            Our office is a sunny loft in downtown Manhattan. We don't
+                            just work together here.  We're a small group of friends and
+                            intellectual partners interested in developing solutions to social
+                            problems.
+                        </p>
+                        <p>
+                            We value passion and thoughtfulness just as much as we do hard
+                            workers.
+                        </p>
+
+                        <p>
+                            We're both a start-up and a non-profit organization. We have
+                            the heart of a charity, but with the urgency of your typical
+                            start-up.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="heading" id="meet">Meet the Jumo Team</div>
+                    <div class="body">
+                        <p>
+                            We're not your normal start-up, and we like it that
+                            way. Jumo was founded by Chris Hughes, co-founder of
+                            Facebook. Meet Chris, and the rest of
+                            the <a href="/team">Jumo team</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="heading">Positions</div>
+                </div>
+
+                <div class="section">
+                    <div class="subheading" id="frontend">Front End Developer</div>
+                    <div class="body">
+                        <b>As a front-end developer at Jumo, you'll be:</b>
+                        <ul class="sm_bullet">
+                            <li>
+                                Responsible for the overall design, guaranteeing
+                                cross-browser support and a high level of aesthetic
+                                integrity.
+                            </li>
+                            <li>
+                                Writing reusable, modular code for the front-end layer of
+                                the Jumo website.
+                            </li>
+                            <li>
+                                Concepting, prototyping and developing new functionality for
+                                Jumo.com
+                            </li>
+                            <li>
+                                Advocating for a consistent, simple user experience.
+                            </li>
+                        </ul>
+                        <b>You should:</b>
+                        <ul class="sm_bullet">
+                            <li>
+                                Be passionate about world-changing and working to help
+                                non-profits and charities
+                            </li>
+                            <li>
+                                Live and breathe HTML, CSS and Javascript
+                            </li>
+                            <li>
+                                Have an understanding of good UI design. While it's
+                                not critical that you're a designer, you should be
+                                able to pull together prototypes, and have a
+                                familiarity with the concepts behind good usability.
+                            </li>
+                            <li>Experience with Django and Python is a plus</li>
+                        </ul>
+                    </div>
+                    <div class="submit_spacer">
+                        <div class="sm_info">
+                            <a href="mailto:jobs@jumo.com?subject=Front End Developer Position" class="button" align="right">Apply &raquo;</a>
+                            Shoot us an email at <a href="mailto:jobs@jumo.com?subject=Front End Developer Position">jobs@jumo.com</a>. Tell us a
+                            bit about yourself, and send along any examples of your work.
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="subheading" id="sysadmin">Systems Administrator</div>
+                    <div class="body">
+                        <b>As a systems administrator at Jumo, you'll be:</b>
+                        <ul class="sm_bullet">
+                            <li>
+                                Maintaining our Linux and ec2-based environment
+                            </li>
+                            <li>
+                                Working hand-in-hand with developers to improve application
+                                and database performance
+                            </li>
+                            <li>
+                                Managing our deployment process
+                            </li>
+                        </ul>
+
+                        <b>You should be:</b>
+
+                        <ul class="sm_bullet">
+                            <li>A total linux geek</li>
+                            <li>Able to program in Python</li>
+                            <li>Willing to script yourself out of a job (mostly!)</li>
+                            <li>Paranoid about security</li>
+                            <li>Organized</li>
+                            <li>Very familiar administering MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="submit_spacer">
+                        <div class="sm_info">
+                            <a href="mailto:jobs@jumo.com?subject=Systems Administrator Position" class="button" align="right">Apply &raquo;</a>
+                            Shoot us an email at <a href="mailto:jobs@jumo.com?subject=Systems Administrator Position">jobs@jumo.com</a>. Tell us a
+                            bit about yourself, and send along any examples of your work.
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="subheading" id="software">Software Engineer</div>
+                    <div class="body">
+                        <b>As an Engineer at Jumo, you'll be:</b>
+                        <ul class="sm_bullet">
+                            <li>Building out the core of the Jumo platform</li>
+                            <li>Prototyping and building new features</li>
+                            <li>Working with the rest of the team to define the future of
+                                our product</li>
+                            <li>Coordinating closely with our front-end developers, and
+                                systems engineers, and our outreach team</li>
+                        </ul>
+
+                        <b>You should:</b>
+
+                        <ul class="sm_bullet">
+                            <li>Be equally passionate about working to change the world and
+                                writing great software.</li>
+
+                            <li>Have experience with a range of back-end and front-end
+                                technologies. This includes, but is not limited to Python (and
+                                the Django framework). You should know these technologies
+                                backwards and forward.</li>
+
+                            <li>Familiarity with MySQL, other relational databases, and
+                                NoSQL data stores.</li>
+
+                            <li>Have an understanding of various
+                                Agile methodologies and Test-Driven Development</li>
+
+                            <li>Experience developing on iOS and
+                                Android is a plus but not necessary.</li>
+
+                            <li>Have experience working with
+                                high-traffic web applications.</li>
+
+                            <li>Be creative.</li>
+                        </ul>
+                    </div>
+                    <div class="submit_spacer">
+                        <div class="sm_info">
+                            <a href="mailto:jobs@jumo.com?subject=Software Engineer Position" class="button" align="right">Apply &raquo;</a>
+                            Shoot us an email at <a href="mailto:jobs@jumo.com?subject=Software Engineer Position">jobs@jumo.com</a>.
+                            Tell us a bit about yourself, and send along any
+                            examples of your work. Link us to your github
+                            profile.
+                        </div>
+                    </div>
+                </div>
+                <div class="section last">
+                    <div class="subheading" id="analytics">Analytics Manager</div>
+                    <div class="body">
+                        <b>As an analytics manager at Jumo, you'll be:</b>
+
+                        <ul class="sm_bullet">
+                            <li>Responsible for developing and
+                                implementing top-quality analytics, measurement and data
+                                strategies to inform our work, our offers and the user
+                                experience.</li>
+                            <li>
+                                Integrate existing analytics
+                                tools to track user acquisition, retention and
+                                engagement
+                            </li>
+                            <li>
+                                Work closely with both the
+                                non-technical and engineering teams to develop and implement
+                                valuable data analyses. This information should inform both
+                                Jumo's development life-cycles as well as the work of the
+                                organizations on Jumo
+                            </li>
+                        </ul>
+                        <b>You should:</b>
+                        <ul class="sm_bullet">
+                            <li>Live and breathe data</li>
+
+                            <li>Have a talent for visualizing
+                                complexity</li>
+
+                            <li>Be self-directed, and confident
+                                in searching for insights within large data sets</li>
+
+                            <li>Have previous experience in
+                                analytics role or web development</li>
+
+                            <li>Skilled in analyzing large,
+                                complex, multi-dimensional data sets, and an ability to create a
+                                compelling story with the data</li>
+
+                            <li>Experience in creating insights
+                                and analysis for advertising and marketing campaigns</li>
+
+                            <li>Demonstrated ability to manage
+                                multiple priorities, projects and deadlines</li>
+
+                            <li>Be proficient in SQL, and have
+                                used a variety of statistical packages (including but not limited
+                                to R, SPSS, STATA)</li>
+                        </ul>
+                    </div>
+                    <div class="submit_spacer">
+                        <div class="sm_info">
+                            <a href="mailto:jobs@jumo.com?subject=Analytics Manager Position" class="button" align="right">Apply &raquo;</a>
+                            Shoot us an email at <a href="mailto:jobs@jumo.com?subject=Analytics Manager Position">jobs@jumo.com</a>.
+                            Tell us a bit about yourself, and send along any
+                            examples of your work. Link us to your github
+                            profile.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rs">
+            <div class="top_spacer"></div>
+            <div class="help_out_container">
+                <div class="help_out">
+                    <div class="title nopadding">Benefits</div>
+                    <ul class="small">
+                        <li>
+                            <b>Meaning</b>
+                            The satisfaction of knowing that you're working to
+                            help the world in a meaningful way; we're not just working on the
+                            shiniest new tech trend or to pay the bills.
+                        </li>
+                        <li>
+                            <b>Location</b>
+                            The Jumo offices are located in Soho in the middle
+                            of downtown Manhattan, a short ride away from Brooklyn and the
+                            Village.
+                        </li>
+                        <li>
+                            <b>Equipment</b>
+                            On your first day, you get a healthy stipend to buy
+                            what you need to do your work well. There's an Apple store
+                            one block away. Seriously.
+                        </li>
+                        <li class="last">
+                            <b>Compensation</b>
+                            We may be a non-profit, but we pay just as
+                            well as our for-profit brethren.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="cont dots">
+                <div class="heading">Positions</div>
+                <li>
+                    <a href="#frontend">Front End Developer</a>
+                </li>
+                <li>
+                    <a href="#sysadmin">Systems Administrator</a>
+                </li>
+                <li>
+                    <a href="#software">Software Engineer</a>
+                </li>
+                <li>
+                    <a href="#analytics">Analytics Manager</a>
+                </li>
+            </ul>
+            <ul class="cont">
+                <li>
+                    Shoot us an email
+                    at <a href="mailto:jobs@jumo.com">jobs@jumo.com</a>. Tell
+                    us a bit about yourself, and send along any
+                    examples of your work.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

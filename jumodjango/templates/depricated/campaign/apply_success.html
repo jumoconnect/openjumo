@@ -1,0 +1,21 @@
+{% extends "common/main_base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div id="success" class="form_box bg_shadow clearfix">
+    <div class="form_group">
+        <h2>Thanks for your campaign submission!</h2>
+        <p>
+            We’ll be reviewing potential campaigns in the coming
+            months and look forward to working with you!
+        </p>
+    </div>
+</div>
+{% endblock %}

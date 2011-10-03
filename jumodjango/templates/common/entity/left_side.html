@@ -1,0 +1,151 @@
+{% load tags %}
+{% load commitment_tags %}
+{% load humanize %}
+
+{% if entity.get_image_large %}
+<img class="profile_image" src="{{ entity.get_image_large }}" />
+{% else %}
+<div class="nophoto">&nbsp;</div>
+{% endif %}
+
+<ul class="info">
+
+    <li class="section links">
+        <img src="{% static_url "img/left_arrow.png" %}" class="arrow" />
+        <ul>
+            <li class="section fb_section">
+                {% if entity.facebook_id %}
+                    <fb:like style="margin-bottom:5px; margin-top:5px" href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" send="false" layout="button_count" width="60" show_faces="true" font="lucida grande"></fb:like>
+                {% else %}
+                    <fb:like style="margin-bottom:5px; margin-top:5px" send="false" layout="button_count" width="60" show_faces="true" font="lucida grande"></fb:like>
+                {% endif %}
+            </li>
+        </ul>
+    </li>
+
+    {% if entity.get_all_advocates %}
+    <li class="section advocates">
+        <div class="back"></div>
+        <div class="prop">Advocates</div>
+        <ul>
+            {% for advocate in entity.get_all_advocates %}
+            <li class="ent">
+                <div class="name noimage">
+                    {% if advocate.user and advocate.user.get_url %}<a href="{{ advocate.user.get_url }}">{% endif %}{{ advocate.name }}{% if advocate.user and advocate.user.get_url %}</a>{% endif %}
+                    {% if advocate.twitter_id %}<a href="http://twitter.com/{{ advocate.twitter_id }}" target="_blank"><img src="{% static_url "img/twitter.png" %}" /></a>{% endif %}
+                    {% if advocate.facebook_id %}<a href="http://www.facebook.com/profile.php?id={{ advocate.fbid }}" target="_blank"><img src="{% static_url "img/facebook.gif" %}" /></a>{% endif %}
+                    {% if advocate.url %}<a href="{{ advocate.url }}" target="_blank"><img src="{% static_url "img/leave_site.png" %}" /></a>{% endif %}
+                </div>
+                {% comment %}
+                <div class="desc noimage">Something about the advocate</div>
+                {% endcomment %}
+            </li>
+        {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if related_orgs %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Similar Orgs</div>
+        <ul>
+            {% for ent in related_orgs|slice:":3" %}
+            {% include "util/recommended_entity_ls.html" %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if entity.get_sample_orgs_working_in %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Related Orgs</div>
+        <ul>
+            {% for ent in entity.get_sample_orgs_working_in %}
+            {% include "util/recommended_entity_ls.html" %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if entity.get_orgs_admin_of %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Page Admin For</div>
+
+        <ul>
+            {% for ent in entity.get_orgs_admin_of|slice:":4" %}
+            <li><a href="{{ ent.get_url }}">{{ ent.get_name }}</a></li>
+            {% endfor %}
+            {% if entity.get_orgs_admin_of|length > 4 %}
+            {% for ent in entity.get_orgs_admin_of|slice:"4:" %}
+            <li style="display:none;"><a href="{{ ent.get_url }}">{{ ent.get_name }}</a></li>
+            {% endfor %}
+            <li style="list-style:none;">
+                <a class="showall" onclick="jQuery(this).hide().parent().parent().find('li').slideDown('slow')">
+                    show all {{ entity.get_orgs_admin_of|length }}
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if user.is_staff and entity.get_admins %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Page Admins</div>
+        <ul>
+            {% for ent in entity.get_admins %}
+            {% include "util/recommended_entity_ls.html" %}
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% comment %}
+    <li class="section link_list">
+        <div class="back"></div><br />
+        <ul>
+            {% if entity.twitter_id %}
+            <li><a href="http://twitter.com/{{ entity.twitter_id }}" class="twitter-follow-button" data-width="155px" data-show-count="true">Follow @{{ entity.twitter_id }}</a></li>
+            {% endif %}
+
+            {% if entity.facebook_id %}
+            <li><a href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" target="_blank">Facebook</a></li>
+            {% endif %}
+
+            {% if entity.youtube_id %}
+            <li><a href="http://www.youtube.com/user/{{ entity.youtube_id }}" target="_blank">YouTube</a></li>
+            {% endif %}
+
+            {% if entity.blog_url %}
+            <li><a href="{{ entity.blog_url }}" target="_blank">Blog</a></li>
+            {% endif %}
+
+            {% if entity.flickr_id %}
+            <li><a href="http://www.flickr.com/photos/{{ entity.flickr_id }}" target="_blank">Flickr</a></li>
+            {% endif %}
+
+            {% if entity.vimeo_id %}
+            <li><a href="http://vimeo.com/{{ entity.vimeo_id }}" target="_blank">Vimeo</a></li>
+            {% endif %}
+
+            {% block extra_links %}{% endblock %}
+
+            {% if entity.donation_enabled %}
+            <li style="text-align:center;"><a href="{% url donate entity.handle %}" class="donate button">Donate</a></li>
+            {% endif %}
+        </ul>
+    </li>
+    {% endcomment %}
+
+    {% block extra_links %}{% endblock %}
+    <li class="section">
+        <div class="back"></div><br />
+        <ul>
+            <li><a target="_blank" class="feedback" href="http://jumo.assistly.com/customer/widget/emails/new?ticket[labels_new]=pagefeedback&ticket[custom_sitelocation]={{ entity.get_name }}">Leave Feedback</a></li>
+        </ul>
+    </li>
+</ul>

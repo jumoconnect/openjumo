@@ -1,0 +1,132 @@
+#page-content, #page-content.content {
+    margin-top:70px;
+    overflow:visible;
+}
+
+
+h1 {
+    color: #444444;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: 80%;
+    position: relative;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 138%;
+}
+
+h2 {
+    font-size:18px;
+    line-height:140%;
+    display:block;
+}
+
+p {
+    margin-top:12px;
+    margin-bottom:22px;
+    color:#444444;
+    line-height:140%;
+    width: 80%;
+    font-size:14px;
+    display:block;
+}
+
+ul {
+    display:inline-block;
+}
+
+input[type="text"] {
+    border: 1px solid #A9A9A9;
+    color: #222222;
+    font-size: 17px;
+    height: 32px;
+    padding-left: 5px;
+    padding-top: 3px;
+    width: 39%;
+    display:inline-block;
+}
+
+img.largelogo {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    height:65px;
+}
+
+.button {
+    display:inline-block;
+    margin-left: 18px;
+    margin-top: -1px;
+    vertical-align: top;
+}
+
+input[type="submit"].button {
+    height: 39px;
+    margin-top:3px;
+}
+
+.label {
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin-top: 9px;
+    padding-right: 12px;
+    text-align: right;
+    vertical-align: top;
+    width: 188px;
+    font-weight:bold;
+}
+
+.bg_shadow {
+    -webkit-box-shadow: 0px 2px 5px #666666;
+    -moz-box-shadow: 0px 2px 5px #666666;
+    box-shadow: 0px 2px 5px #666666;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#666666')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#666666');
+}
+
+.pre_heading {
+    color: green;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.sm_info {
+    margin-left:0px;
+    text-align:left;
+}
+
+.form_box.double {
+    width: 645px;
+}
+
+.form_box_header {
+    top: -37px;
+    left: 126px;
+}
+
+.ie7 .form_box_header {
+    top:-5px;
+}
+
+.container {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #CCCCCC;
+    margin: 22px;
+    padding: 15px 20px 20px;
+}
+
+.double input[type="text"] {
+    margin-left: 6px;
+    margin-top: 4px;
+    width: 70%;
+}
+
+#subForm {
+    background: #F8FAF0;
+    border: 1px solid #94CB41;
+    padding: 19px 19px 27px;
+    width: 95%;
+}

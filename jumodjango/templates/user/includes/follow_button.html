@@ -1,0 +1,12 @@
+{% load users_tags %}
+
+<span class="follow_button">
+    {% if post_url %}
+        <form action="{{ post_url }}" method="post">
+            {% csrf_token %}
+            {{ button|safe }}
+        </form>
+    {% else %}
+        {{ button|safe }}
+    {% endif %}
+</span>

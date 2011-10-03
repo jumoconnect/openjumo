@@ -1,0 +1,179 @@
+/* story permalink page */
+#page-content {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 0px;
+    position: relative;
+    width:auto; /*910px;*/
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+#page-content .content {
+    background: #fff;
+    border-bottom: 1px solid #BBBBBB;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    left: 39px;
+    margin-top: 1px;
+    max-width: 981px;
+    min-width: 581px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    padding-top: 15px;
+    width: 906px;
+    overflow:visible;
+}
+
+
+#nav .logo_container {
+    margin-left: 0px;
+    width: 77px;
+}
+
+.background {
+    background: #F3F3F3;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    height: 313px;
+    left: 0;
+    position: absolute;
+    top: 104px;
+    width: 100%;
+    z-index: -1;
+}
+
+.heading {
+    font-size: 28px;
+    margin: 29px;
+    color: #79AF2C;
+    font-weight: normal;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 18px;
+    margin-bottom:0px;
+}
+
+ul.rs  {
+    padding:0px;
+    width:292px;
+    float:right;
+}
+
+ul.rs ul {
+    background:#f3f3f3;
+
+    border:1px solid #ddd;
+    border-right:2px solid #ddd;
+    padding-top:17px;
+    font-size:14px;
+    line-height:152%;
+
+    color: #444;
+    padding: 18px;
+    border-bottom: 4px solid #bbb;
+    margin-right: -11px;
+    margin-top: -25px;
+
+    padding: 16px 10px 18px 20px;
+    width: 92%;
+}
+
+.ie7 ul.rs ul {
+    margin-top:0px;
+    margin-right: 22px;
+    width: 80%;
+}
+
+.ie7 ul.rs li {
+    margin-left:0px;
+    padding-left:0px;
+}
+
+ul.rs ul a {
+    color:#333;
+    font-size:14px;
+}
+
+.right_sm_tri {
+    width: 10px;
+    height: 17px;
+    margin-right: -10px;
+}
+
+.ie7 .right_sm_tri {
+    display:none;
+}
+
+ul.rs #actions li {
+    margin-top:10px;
+}
+
+.rs .section li.org .name a {
+    font-style: normal;
+}
+
+ul.rs h4 {
+    color:#333;
+    font-size:22px;
+    width:100%;
+}
+
+#feed, .ie7 #feed, .ie8 #feed {
+    border: 0 none;
+    float: left;
+    margin: 0px 0 0 19px;
+    padding: 16px 10px 0px 10px;
+    position: relative;
+    width: 542px;
+}
+
+.ie7 #feed li {
+    border-bottom:0px solid #ddd !important;
+}
+
+/* what you can do section on the left */
+#actions {
+    text-align:left;
+}
+
+.feed li:last-child {
+    padding-top:0px;
+}
+
+#actions li {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    margin-top: 0;
+}
+
+#actions li a {
+    background-position: -1px -1px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding: 0 0 3px 0px;
+    font-size:13px;
+}
+
+#actions .action_comment {
+/*    background-image: url("/static/img/comment.png");*/
+}
+
+#actions .action_share {
+/*    background-image: url("/static/img/conversation.png");*/
+}
+
+#actions .action_fb_post {
+    background-image: url("/static/img/twitter.gif");
+}
+
+#actions .action_tw_post {
+    background-image: url("/static/img/facebook.gif");
+}

@@ -1,0 +1,40 @@
+{% extends "common/entity/base.html" %}
+{% load tags %}
+{% load disqus_tags %}
+
+{% block meta %}
+{% include "org/meta.html" %}
+{% endblock %}
+
+{% block centersection %}
+<div class="cs org">
+    {% block rightside %}
+    <div class="rs org">
+        {% include "common/entity/right_side.html" %}
+    </div>
+    {% endblock %}
+
+    <div class="top_heading clearfix">
+        {% if entity.get_all_issues or entity.get_working_locations %}{% include "common/entity/tags.html" %}{% endif %}
+        <div class="clearfix">
+            <h1>{{ entity.get_name|safe }}</h1>
+            {% if entity.is_vetted %}<img src="{% static_url "img/approved.png" %}" class="jumo_approved" title="Jumo recommends this organization based on consultations with experts in its field. This is an ongoing process and we welcome all input." />{% endif %}
+        </div>
+        {% if entity.summary %}<h2>{{ entity.summary|safe|urlizetrunc:40 }}</h2>{% endif %}
+
+        <div class="sub_heading">
+            {{ entity.get_sub_heading_text|urlizetrunc:38|url_target_blank|url_sans_http }}
+        </div>
+    </div>
+    <div class="bottom_section">
+        {% include "common/entity/center_section.html" %}
+        {% disqus_comment_thread %}
+    </div>
+</div>
+{% endblock %}
+
+{% block leftside %}
+<div class="ls">
+    {% include "org/includes/left_side.html" %}
+</div>
+{% endblock %}

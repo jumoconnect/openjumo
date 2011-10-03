@@ -1,0 +1,19 @@
+{% extends "common/base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ static_url("css/feed.css") }}">
+<link rel="stylesheet" href="{{ static_url("css/profile.css") }}">
+{% end %}
+
+{% block content %}
+{% include "story/publisher.html" %}
+<div id="templates">
+    {% include "util/feed_template.html" %}
+    {% include "util/popup_template.html" %}
+    {% if entity.type !== "user" %}
+    {% include "util/entity_popups.html" %}
+    {% else %}
+    {% include "user/profile_popups.html" %}
+    {% endif %}
+</div>
+{% endblock %}

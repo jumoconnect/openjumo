@@ -1,0 +1,53 @@
+{% load tags %}
+{% if item.comments %}
+<table cellpadding="4" cellspacing="2" bgcolor="#FFFFFF" border="0" style="color: #333333;
+                                                           font-size: 11px;
+                                                           line-height: 142%;
+                                                           word-wrap: break-word;">
+    <tr style="background: #F3F3F3;">
+        <td>            
+            <table cellpadding="0" cellspacing="0" border="0" style="color: #333333;
+                                                     width:100%;
+                                                     font-size: 11px;">
+                <tr>
+                    {% if not show_all_comments and item.comments and item.comments|length > 2 %}
+                    <td align="left">
+                        <a href="http://{{ hostname }}{{ item.get_url }}" style="font-weight: bold;
+                                                                                  color: #0070D0;
+                                                                                  text-decoration:none;
+                                                                                  vertical-align: super;">
+                            view all {{ item.comments|length }} comment{{ item.comments|length|pluralize }}
+                        </a>
+                    </td>
+                    {% endif %}
+                    <td align="right">
+                        {% include "email/html/helpers/actions.html" %}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    {% if item.comments %}
+    {% for comment in item.comments|slice:":2" %}
+    <tr height="0"></tr>
+    <tr style="background: #F3F3F3;">
+        <td>
+            {% include "email/html/helpers/comment.html" %}
+        </td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+{% else %} 
+<table width="478" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" border="0" style="color: #999999;
+                                                                                       font-size: 11px;
+                                                                                       line-height: 142%;
+                                                                                       word-wrap: break-word;">
+    <tr>
+        <td align="left">&nbsp;</td>    
+        <td align="right">            
+            {% include "email/html/helpers/actions.html" %}
+        </td>            
+    </tr> 
+</table>
+{% endif %}

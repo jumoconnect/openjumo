@@ -1,0 +1,40 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/error.css" %}">
+{% endblock %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "util/form_header.html" %}
+<div class="form_box double bg_shadow">
+    <h1>Sorry, an error has occured</h1>
+    <div class="submit_spacer" style="border-top:1px solid #cccccc"></div>
+    <p>
+        <div class="container">
+            <input type="text" id="errorsearchbar" name="text" class="placeholder" placeholder="Find Projects, Issues and Supporters" />
+            <input type="submit" class="button" value="Go" />
+        </div>
+    </p>
+
+    <a onclick="history.back(-1);">&laquo; go back to the previous page</a>
+    <a style="margin-left:321px;" href="/">go to your homepage &raquo;</a>
+
+    <div class="submit_spacer" style="border-top:1px solid #cccccc">
+	    <div class="sm_info">
+            If you reached this page because of a problem, please <a target="_blank"href="http://jumo.assistly.com/customer/emails/new?ticket[labels_new]=support">report a bug</a>.
+            <!--If the problem persists, contact us at: <a href="mailto:support@jumo.com">support@jumo.com</a>-->
+        </div>
+	    <div class="sm_info align-right">
+            Thanks,<br />
+            The Jumo Team
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% load tags %}
+<li class="clearfix{% if forloop.last %} last{% endif %}{% if forloop.first %} first{% endif %}{% if forloop.counter|divisibleby:2 %} even{% else %} odd{% endif %}">
+    {% if ent.get_image_small %}
+    <a style="float:left;" href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}"><i style="background-image: url({{ ent.get_image_small }}); background-position: 0px 0px;"></i></a>
+    {% endif %}
+    {% if ent.type %}<div class="type">{% get_humanized_type ent.type %}</div><br />{% endif %}
+    <a href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}" class="name">{{ ent.get_name }}</a>
+
+    {% if ent.is_vetted %}<img src="{% static_url "img/approved.png" %}" class="jumo_approved" title="Jumo recommends this organization based on consultations with experts in its field. This is an ongoing process and we welcome all input."/>{% endif %}
+    {% if ent.jumo_vetted %}<img src="{% static_url "img/approved.png" %}" class="jumo_approved" title="Jumo recommends this organization based on consultations with experts in its field. This is an ongoing process and we welcome all input." />{% endif %}
+    <br />
+
+    {% if ent.summary %}
+    <div class="body {% if not ent.image_url and not ent.get_image_small %}noimage{% endif %}">{{ ent.summary|safe }}</div>
+    {% endif %}
+    {% if ent.get_all_issues %}
+    <div class="body location {% if not ent.image_url and not ent.get_image_small %}noimage{% endif %}">{% for issue in ent.get_all_issues|slice:":3" %}<a href="{{ issue.get_url }}">{{ issue.name }}</a>{% endfor %}</div>
+    {% endif %}
+    {% if ent.locations %}
+    <div class="body location {% if not ent.image_url and not ent.get_image_small %}noimage{% endif %}">{% for loc in ent.locations|slice:":3" %}<a href="/search?q={{ loc }}">{{ loc }}</a>{% endfor %}</div>
+    {% endif %}
+</li>

@@ -1,0 +1,48 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/feed.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/manage.css" %}">
+<link rel="stylesheet" href="{% static_url "css/publisher_permalink.css" %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static_url 'js/frameworks/jquery.cascade.js' %}"></script>
+<script type="text/javascript" src="/org/categories.js"></script>
+
+{% if settings.DEBUG %}
+<script type="text/javascript" src="{% static_url 'js/forms.src.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static_url 'js/forms.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static_url 'js/manage.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include "util/form_header.html" %}
+<div class="manage_box bg_shadow">
+    {% if user_photo_upload_form %}
+    <div class="photo_upload_popup">
+        <h2>Upload a photo</h2>
+
+        <div class="notification">{{ user_photo_upload_form.errors }}</div>
+        <form enctype="multipart/form-data" action="/upload_photo" method="post" autocomplete="off">
+            {% csrf_token %}
+            <br />
+            Profile image: {{ user_photo_upload_form.profile_pic }}
+            <br />
+            <br />
+
+            <div class="submit_spacer">
+                <input type="submit" class="button submit button" style="margin-left: 0px;
+width: 104px; margin-top:10px;height:41px;" value="Upload">
+            </div>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

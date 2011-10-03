@@ -1,0 +1,1 @@
+by {% if item.poster == item.target %}{{ item.poster.get_name }}{% else %}{{ item.poster.get_name }} to {{ item.target.get_name }}{% endif %}

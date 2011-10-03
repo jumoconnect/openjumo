@@ -1,0 +1,12 @@
+{% load tags %}
+{% load users_tags %}
+
+{% if users|length > 0 %}
+{% for ent in users %}{% include "util/popup_user.html" %}{% endfor %}
+{% else %}
+{% if start_index == 0 %}
+<p>
+    PLACEHOLDER Nobody Following or Following Nobody.  PLACEHOLDER
+</p>
+{% endif %}
+{% endif %}

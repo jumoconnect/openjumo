@@ -1,0 +1,79 @@
+<div class="submit_spacer"></div>
+<div style="height:15px"></div>
+<div class="tweet_form form_group">
+  <div class="label">
+    <span class="text">Organization Name:</span>
+    <div class="tip"></div>
+    <div class="help"></div>
+  </div>
+
+  <input name="organization_name" class="value" type="text" id="organization_name" default="" value=""/>
+</div>
+
+<div class="text_form form_group">
+  <div class="label">
+    <span class="text">Vision Statement:</span>
+    <div class="help"></div>
+    <div id="counter" class="help" style="text-align:right"></div>
+  </div>
+
+  <textarea id="vision_statement"
+            class="placeholder"
+            name="vision_statement"
+            style="height:89px;width:288px;"
+            placeholder="Describe the organization's vision.">
+  </textarea>
+</div>
+
+<div class="submit_spacer">
+  <div class="radio_form form_group">
+    <div class="label">
+      <span class="text">
+        Does your organization seek to achieve a social or
+        environmental mission?
+      </span>
+      <div class="tip"></div>
+    </div>
+
+    <input type="radio" name="social_mission" value="yes" />Yes <br />
+    <input type="radio" name="social_mission" value="no" />No
+
+    <div id="social_error" class="error_msg" style="font-weight:normal;">
+      We appreciate your interest in Jumo. Unfortunately we cannot
+      accept your organization on the platform. Jumo is a registered
+      501(c)(3) and accepting organizations that are not mission-driven
+      could violate our IRS status.</div>
+  </div>
+</div>
+
+<div class="submit_spacer">
+  <div class="radio_form form_group">
+    <div class="label">
+      <span class="text">
+        What type of mission-driven organization are you?
+      </span>
+      <div class="tip"></div>
+    </div>
+
+    <div class="radio_group">
+      <input type="radio" name="profit" value="501(c)(3)" />501(c)(3) <br />
+      <input type="radio" name="profit" value="international" />International <br />
+      <input type="radio" name="profit" value="for-profit" />For-Profit <br />
+      <input type="radio" name="profit" value="other" />Other
+    </div>
+  </div>
+</div>
+
+<div class="submit_spacer"></div>
+
+<div class="radio_form form_group">
+  <div class="label">
+    <span class="text">Would you like to be the administrator of this page?</span>
+    <div class="tip">
+      As the organization's administrator, you can edit the page
+      and access future functionality.
+    </div>
+  </div>
+  <input type="radio" name="admin" value="yes" />Yes <br />
+  <input type="radio" name="admin" value="no" />No
+</div>

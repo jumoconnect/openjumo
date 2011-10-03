@@ -1,0 +1,26 @@
+{% load tags %}
+<ul id="id_working_locations" class="working_locations">
+    {% for location in location_data %}
+    <li class="location_item">
+        <input type="text" value="{{ location.0 }}" class="location_input">
+        <input type="hidden" value="{{ location.1 }}" class="location_data" name="{{ name }}">
+        <img class="remove" src="{% static_url "img/close.png" %}" />
+        <!-- <img src="{% static_url "img/moveable.png" %}" />-->
+    </li>
+    {% endfor %}
+    {% if location_data|length < 1 %}
+    <li class="location_item">
+        <input type="text" value="" class="location_input">
+        <input type="hidden" value="" class="location_data" name="{{ name }}">
+        <img class="remove" src="{% static_url "img/close.png" %}" />
+       <!-- <img src="{% static_url "img/moveable.png" %}" />-->
+    </li>
+    {% endif %}
+
+    <li><a class="add">Add a location</a></li>
+    <li class="location_item empty-item">
+        <input type="text" value="" class="location_input">
+        <input type="hidden" value="" class="location_data" name="{{ name }}">
+        <img class="remove" src="{% static_url "img/close.png" %}" />
+    </li>
+</ul>

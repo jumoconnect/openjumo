@@ -1,0 +1,25 @@
+<div class="discover" id="discover_module">
+    <ul class="options top_options">
+        <li>Arts & Culture</li>
+        <li>Education</li>
+        <li class="selected">Health</li>
+        <li>Human Rights</li>
+        <li>Peace & Governance</li>
+        <li>Poverty</li>
+    </ul>
+    <ul class="options second_options">
+        <li>Early Childhood Health</li>
+        <li>Child Slavery</li>
+        <li class="selected">Reproductive Rights</li>
+        <li>Mental Health</li>
+        <li>Malaria</li>
+    </ul>
+
+    <div class="clearfix">
+        <ul class="rec_group">
+            {% for ent in user.get_recommended_orgs|slice:":3" %}
+            {% include "util/search_result.html" %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

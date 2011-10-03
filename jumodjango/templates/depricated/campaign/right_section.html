@@ -1,0 +1,238 @@
+{% load tags %}
+{% load humanize %}
+<div class="campaign_progress">
+    <div class="heading">
+        <div class="amount">${{ entity.get_total_donated|floatformat:"0"|intcomma }}</div>
+        <div class="desc">pledged toward <b>${{ entity.goal|floatformat:"0"|intcomma }}</b> goal</div>
+    </div>
+    <div class="clearfix">
+        <div class="left">
+            <div class="number">{{ entity.get_time_remaining.value|intcomma }}</div>
+            <div class="name">{{ entity.get_time_remaining.type }}{{ entity.get_time_remaining.value|pluralize }} to go</div>
+        </div>
+        <div class="right">
+            <div class="name">supporter{{ entity.get_all_donors|length|pluralize }}</div>
+            <div class="number">{{ entity.get_all_donors|length|intcomma }}</div>
+        </div>
+    </div>
+</div>
+
+<div class="grey_container">
+    <div class="rewards">
+        <div class="block first">
+            {% if entity.status == entity.CampaignStatus.READY or entity.status == entity.CampaignStatus.IN_PROGRESS %}
+            <a class="button support" href="/campaign/donate/{{ entity.id }}">Pledge your support</a>
+            {% endif %}
+
+            <!-- finished -->
+            {% if entity.status == entity.CampaignStatus.CLOSED or entity.status == entity.CampaignStatus.COMPLETE %}
+            <!-- succeeded -->
+            {% if entity.is_successful %}
+            <div class="notice succeeded">
+                <div class="amount">Campaign Successful</div>
+                <p>
+                    This campaign has ended and reached its goal!<br />
+                    Please support this organization <a href="/donate/{{ entity.target_org.handle }}">here</a>
+                </p>
+            </div>
+            {% else %}
+            <!-- failed -->
+            <div class="notice failed">
+                <div class="amount">Campaign Unsuccessful</div>
+                <p>
+                    Unfortunately this campaign didn't meet it's goal, but you can still support this organization <a href="/donate/{{ entity.target_org.handle }}">here</a>
+                </p>
+            </div>
+            {% endif %}
+            {% endif %}
+
+            <!-- preview -->
+            {% if entity.status == entity.CampaignStatus.PREVIEW %}
+            <div class="notice preview">
+                <div class="amount">Campaign Preview</div>
+                This campaign is in preview mode</div>
+            {% endif %}
+
+            <!-- canceled -->
+            {% if entity.status == entity.CampaignStatus.CANCELLED %}
+            <div class="notice canceled">
+                <div class="amount">Campaign Canceled</div>
+                <p>
+                    This campaign was canceled
+                </p>
+            </div>
+            {% endif %}
+
+            {% if entity.jumo_match_amount and entity.status != entity.CampaignStatus.CLOSED and entity.status != entity.CampaignStatus.COMPLETE%}
+            <div class="info">
+                <b>Note:</b>
+                Jumo has pledged <b>${{ entity.jumo_match_amount|floatformat:"-3"|intcomma }}</b> in matching funds to {{ entity.target_org.get_name }}.
+                This campaign will only be funded if it reaches its goal of <b>${{ entity.goal|floatformat:"-3"|intcomma }}</b>.
+            </div>
+            {% endif %}
+
+            {% if entity.get_rewards %}
+            {% if entity.status == entity.CampaignStatus.CLOSED or entity.status == entity.CampaignStatus.COMPLETE %}
+            <br />
+            <b>Thank you gifts</b>
+            {% else %}
+            <b>Thank you gifts</b>
+            {% endif %}
+            {% endif %}
+        </div>
+        {% if entity.get_suggested_amounts %}
+        <ul class="reward_list suggested">
+            {% for reward in entity.get_suggested_amounts %}
+            <li class="clearfix block {% if forloop.last %}last{% endif %}">
+                <!-- finished -->
+                {% if entity.status == entity.CampaignStatus.CLOSED or entity.status == entity.CampaignStatus.COMPLETE %}
+                <!-- succeeded -->
+                {% if entity.is_successful %}
+                    <a href="/donate/{{ entity.target_org.handle }}?amount={{ reward.amount|floatformat:"-3" }}">
+                {% else %}
+                    <a href="/campaign/donate/{{ entity.id }}?amount={{ reward.amount|floatformat:"-3" }}">
+                {% endif %}
+                {% else %}
+                    <a href="/campaign/donate/{{ entity.id }}?amount={{ reward.amount|floatformat:"-3" }}">
+                {% endif %}
+                    <div class="clearfix">
+                        <div class="amount">${{ reward.amount|floatformat:"-3"|intcomma }} PLEDGE</div>
+                        <div class="desc">{{ reward.description }}</div>
+                    </div>
+            </a></li>
+            {% endfor %}</ul>
+        {% endif %}
+
+        {% if entity.get_rewards %}
+        <ul class="reward_list">
+            {% for reward in entity.get_rewards %}
+            <li class="clearfix block {% if forloop.last %}last{% endif %}">
+                <!-- finished -->
+                {% if entity.status == entity.CampaignStatus.CLOSED or entity.status == entity.CampaignStatus.COMPLETE %}
+                <!-- succeeded -->
+                {% if entity.is_successful %}
+                    <a href="/donate/{{ entity.target_org.handle }}?amount={{ reward.amount|floatformat:"-3" }}">
+                {% else %}
+                    <a href="/campaign/donate/{{ entity.id }}?amount={{ reward.amount|floatformat:"-3" }}">
+                {% endif %}
+                {% else %}
+                <a href="/campaign/donate/{{ entity.id }}?amount={{ reward.amount|floatformat:"-3" }}&reward_id={{ reward.id }}">
+                {% endif %}
+                    <div class="clearfix">
+                        <div class="amount">${{ reward.amount|floatformat:"-3"|intcomma }} DONATION</div>
+                        <div class="desc">{{ reward.description }}</div>
+                    </div>
+            </a></li>
+            {% endfor %}</ul>
+        {% endif %}
+    </div>
+</div>
+<img align="right" class="right_tri" src="{% static_url "img/right_tri.png" %}" />
+
+{% if friends_supporting %}
+<div class="supported_org friends block">
+    <p>
+        <div class="num_friends">{{ friends_supporting|length }}{% if friends_supporting|length > 1 %} friends support{% else %} friend supports{% endif %} this campaign</div>
+        {% for friend in friends_supporting %}
+        {% if friends_supporting|length > 1 and forloop.last and not friends_supporting|slice:"5:"|length %}and {% endif %}
+        <a href="{{ friend.get_url }}">{{ friend.get_name }}</a>{% if not forloop.last %},{% endif %}
+        {% if forloop.last and friends_supporting|slice:"5:"|length %} and {{ friends_supporting|slice:"5:"|length }} others{% endif %}
+        {% endfor %}
+    </p>
+</div>
+{% endif %}
+{% if friends_following_org %}
+<div class="supported_org friends block">
+    <p>
+        <div class="num_friends">{{ friends_following_org|length }}{% if friends_following_org|length > 1 %} friends follow{% else %} friend follows{% endif %} this organization</div>
+        {% for friend in friends_following_org|slice:":5" %}
+        {% if friends_following_org|length > 1 and forloop.last and not friends_following_org|slice:"5:"|length %}and {% endif %}
+        <a href="{{ friend.get_url }}">{{ friend.get_name }}</a>{% if not forloop.last %},{% endif %}
+        {% if forloop.last and friends_following_org|slice:"5:"|length %} and {{ friends_following_org|slice:"5:"|length }} others{% endif %}
+        {% endfor %}
+    </p>
+</div>
+{% endif %}
+
+{% if entity.get_public_donor_users %}
+<div class="supported_org block">
+    <div class="label">{{ entity.get_all_donors|length|intcomma }} {% if entity.get_all_donors|length > 1 %}people support{% else %}person supports{% endif %} this campaign</div>
+    <ul>
+        {% for supporter in entity.get_public_donor_users|slice:":10" %}
+        <a href="{{ supporter.get_url }}">
+            <img src="{{ supporter.get_image }}" title="{{ supporter.get_name }}" />
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if feed_items %}
+<div class="supported_org block">
+    <div class="num_friends">Campaign Updates</div>
+    <ul class="updates">
+        {% for update in feed_items %}
+        <li {% if forloop.last %}class="last"{% else %}{% if forloop.first %}class="first"{% endif %}{% endif %}>
+            <a class="title break_word" href="/campaign/{{ entity.id }}/update/{{ update.id }}">{{ update.title }}</a>
+            <div class="summary break_word">{{ update.description|truncatechars:100 }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="supported_org block">
+    <div class="label">Supported Organization</div>
+    <div class="ent">
+        <div class="clearfix name">
+            <a class="photo_container" href="{{ entity.target_org.get_url }}">
+                <img class="photo" src="{{ entity.target_org.get_image }}" />
+            </a>
+            <a class="org_name" href="{{ entity.target_org.get_url }}">{{ entity.target_org.get_name }}</a>
+            {% if entity.target_org.vision_statement %}
+        </div>
+        <div class="desc">{{ entity.target_org.vision_statement }}</div>
+        {% endif %}
+
+        {% if not user.is_authenticated %}
+        <a class="follow" data-type="{{ entity.target_org.get_type }}"  data-id="{{ entity.target_org.id }}">Follow</a>
+        {% else %}
+        {% if entity.target_org.get_type == 'org' %}
+        {% if entity.target_org in user.get_all_orgs_following %}
+        <a class="unfollow" data-type="{{ entity.target_org.get_type }}"  data-id="{{ entity.target_org.id }}">Unfollow</a>
+        {% else %}
+        <a class="follow" data-type="{{ entity.target_org.get_type }}"  data-id="{{ entity.target_org.id }}">Follow</a>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        <span class="num_followers">{{ entity.target_org.get_num_followers|intcomma }} follower{{ entity.target_org.get_num_followers|pluralize }}</span>
+
+        {% if forloop and not forloop.last %}
+        <div class="spacer border">&nbsp;</div>
+        {% endif %}
+    </div>
+</div>
+
+{% if entity.get_links %}
+<div class="supported_org block">
+    <div class="label">Links</div>
+    <ul class="working">
+        {% for media in entity.get_links %}
+        <li>{{ media.url|urlizetrunc:60|url_target_blank|url_sans_http }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if request.user == campaign.owner or request.user.is_staff %}
+<div class="supported_org block">
+    <ul class="working">
+        <li>
+            <a href="/campaign/{{ entity.id }}/update">Send an update to your supporters</a>
+        </li>
+        <li>
+            <a href="https://spreadsheets.google.com/spreadsheet/viewform?hl=en_US&formkey=dHY1a2VBRHlldVVEZkFVaWlFZlBpNFE6MQ&ndplr=1#gid=0">Apply to create a campaign</a>
+        </li>
+    </ul>
+</div>
+{% endif %}

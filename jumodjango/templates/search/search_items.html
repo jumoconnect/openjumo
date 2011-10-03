@@ -1,0 +1,9 @@
+{% if not search_results %}
+<li class="first last">
+    <div class="name noimage">No Results Found</div>
+    <div class="body noimage">Try searching for something like "Health" or "Charter Schools in New York"</div>
+</li>
+{% endif %}
+{% for ent in search_results %}
+{% include "util/search_result.html" %}
+{% endfor %}

@@ -1,0 +1,6 @@
+PATH=/cloud/virtual/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+# m h  dom mon dow   command
+# 0 */4 * * * /cloud/src/jumodjango/services/fetch_feeds.py facebook
+# 0 */4 * * * /cloud/src/jumodjango/services/fetch_feeds.py twitter
+# 0 */2 * * * /cloud/src/jumodjango/services/gen_related_orgs.py
+#* * * * * /cloud/src/jumodjango/manage.py sendmail --send

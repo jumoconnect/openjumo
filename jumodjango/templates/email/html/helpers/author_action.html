@@ -1,0 +1,17 @@
+{% if event.actor != item.poster %}
+{% if event %}
+<span style="font-size:11px;
+             line-height: 135%;
+             max-width: 93%;
+             font-family:verdana;
+             cursor: pointer;
+             text-decoration: none;">
+    <a style="font-weight: bold;
+              text-decoration:none;
+              color: #0070D0;"
+       href="http://{{ hostname }}/{{ event.actor.username }}">
+        {{ event.actor.get_name }}</a>
+        {% if comment %}commented on {% else %} cares about {% endif %}
+</span>
+{% endif %}
+{% endif %}

@@ -1,0 +1,23 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/profile.css" %}">
+{% endblock %}
+
+{% block content %}
+{% block leftside %}<div class="ls {% block type %}{% endblock %}">{% include "common/entity/left_side.html" %}</div>{% endblock %}
+
+<div class="main_content clearfix">
+    <div class="border clearfix">
+        {% block centersection %}{% endblock %}
+    </div>
+</div>
+
+<div id="templates">
+    {% include "util/popup_template.html" %}
+    {% block extrapopups %}{% endblock %}
+</div>
+{% endblock %}

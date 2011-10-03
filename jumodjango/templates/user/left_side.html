@@ -1,0 +1,68 @@
+{% load tags %}
+{% load humanize %}
+{% load users_tags %}
+
+{% if entity.get_image_large %}<img class="profile_image" src="{{ entity.get_image_large }}" />{% endif %}
+
+<ul class="info">
+    {% if entity.site_url or entity.blog_url or entity.facebook_id or entity.flickr_id or entity.twitter_id or entity.vimeo_id or entity.youtube_id %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Links</div>
+        <ul>
+            {% if entity.site_url %}
+            <li>{{ entity.site_url|urlizetrunc:38|url_target_blank|url_sans_http }}</li>
+            {% endif %}
+
+            {% if entity.blog_url %}
+            <li><a href="{{ entity.blog_url }}" target="_blank">Blog</a></li>
+            {% endif %}
+
+            {% if entity.facebook_id %}
+            <li><a href="http://www.facebook.com/profile.php?id={{ entity.facebook_id }}" target="_blank">Facebook</a></li>
+            {% endif %}
+
+            {% if entity.flickr_id %}
+            <li><a href="http://www.flickr.com/photos/{{ entity.flickr_id }}" target="_blank">Flickr</a></li>
+            {% endif %}
+
+            {% if entity.twitter_id %}
+            <li><a href="http://twitter.com/{{ entity.twitter_id }}" target="_blank">Twitter</a></li>
+            {% endif %}
+
+            {% if entity.vimeo_id %}
+            <li><a href="http://vimeo.com/{{ entity.vimeo_id }}" target="_blank">Vimeo</a></li>
+            {% endif %}
+
+            {% if entity.youtube_id %}
+            <li><a href="http://www.youtube.com/user/{{ entity.youtube_id }}" target="_blank">YouTube</a></li>
+            {% endif %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% if entity.get_orgs_admin_of %}
+    <li class="section">
+        <div class="back"></div>
+        <div class="prop">Page Admin For</div>
+
+        <ul>
+            {% for ent in entity.get_orgs_admin_of|slice:":4" %}
+            <li><a href="{{ ent.get_url }}">{{ ent.get_name }}</a></li>
+            {% endfor %}
+            {% if entity.get_orgs_admin_of|length > 4 %}
+            {% for ent in entity.get_orgs_admin_of|slice:"4:" %}
+            <li style="display:none;"><a href="{{ ent.get_url }}">{{ ent.get_name }}</a></li>
+            {% endfor %}
+            <li style="list-style:none;">
+                <a class="showall" onclick="jQuery(this).hide().parent().parent().find('li').slideDown('slow')">
+                    show all {{ entity.get_orgs_admin_of|length }}
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </li>
+    {% endif %}
+
+    {% block extra_links %}{% endblock %}
+</ul>

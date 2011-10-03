@@ -1,0 +1,912 @@
+/*
+  css for new user experience
+*/
+
+.content {
+    width:770px;
+    min-width: 770px;
+    max-width: 770px;
+}
+
+#page-content {
+    margin-top:45px;
+    position: static;
+}
+
+h2 {
+    background:#F8F8F8;
+    font-size:17px;
+    margin:12px 0 13px;
+    padding:9px 9px 9px 20px;
+    width:55%;
+    display:block;
+}
+
+h3 {
+    font-size:18px;
+    margin:12px 0;
+    width:92%;
+}
+
+ul { margin-left:0px; }
+
+ul .title {
+    color:#333333;
+    display:block;
+    font-size:14px;
+    font-weight:normal;
+    width:75%;
+}
+
+ul .tags {
+    color:#999999;
+    font-size:12px;
+    padding:0;
+}
+
+.form_box form ul li {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+    width: 105%;
+}
+
+.form_box form .form_group.gender ul li {
+    display:inline;
+    margin-right:10px;
+}
+
+.form_box .submit_spacer input[type="submit"] {
+    float: none;
+    height: 40px;
+    margin: 10px 0 0 23%;
+}
+
+.ie7 .form_box .submit_spacer input[type="submit"] {
+    padding: 5px 0;
+}
+
+.form_box img {
+    float:none;
+}
+
+#signup .errorlist {
+    width: 74%;
+}
+
+/*
+  for custom form elements @requires custom.js
+*/
+.checkbox, .radio {
+    background: url("/static/img/checkbox.gif") no-repeat;
+    clear: left;
+    display: inline;
+    float: none;
+    height: 21px;
+    margin-left: 32px;
+    margin-top: 9px;
+    padding: 0 26px 0 0;
+    vertical-align: bottom;
+}
+
+.gender ul, .gender li { display:inline; }
+
+.checkbox {
+    display: inline;
+    margin: 0 -2px 0 0;
+    padding-bottom: 9px;
+    padding-top: 0;
+    vertical-align: super;
+}
+
+.radio {
+	background: url("/static/img/radio.gif") no-repeat;
+}
+
+.select {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background: url(select.gif) no-repeat;
+	overflow: hidden;
+}
+
+.org {
+    display:block;
+    vertical-align:top;
+    width: 76%;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.nav_hidden { display:none; }
+
+.dropshadow {
+    -moz-border-radius: 0px 2px 2px 0px;
+    -webkit-border-radius: 0px 2px 2px 0px;
+    border-radius: 0px 2px 2px 0px;
+
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+}
+
+#create_account_form {
+    margin-top: 25px;
+}
+
+.ie7 #create_account_form {
+    margin-top: -5px;
+}
+
+.profile_img_cont {
+    display: none;
+    padding: 6px;
+    position: absolute;
+    right: 22px;
+    background: #DDDDDD;
+    width: 55px;
+}
+
+.profile_img_cont .profile_img {
+    display: none;
+    width: 55px;
+    padding:0px;
+    margin:0px;
+}
+
+#page-content ul img {
+    margin-right:5px;
+    vertical-align:middle;
+
+    float: none;
+    margin-top: 0px;
+    max-height: 188px;
+    max-width: 191px;
+    padding-left: 0px;
+    margin-top: 10px;
+}
+
+.form_box ul li, .form_box ol li {
+    display: inline;
+}
+
+#signup .loc { margin-left:102px; }
+
+#signup, #orgs { width:392px;}
+
+/* experimental for animations */
+input[type="password"], input[type="text"] {
+    width: 54%;
+}
+
+.form_box {
+    padding: 20px 25px 25px;
+}
+
+#currentstep {
+    color: #bbbbbb;
+    font-size: 17px;
+    position: absolute;
+    right: 28px;
+    top: 17px;
+}
+
+#change_account {
+    color: #666666;
+    display: block;
+    font-size: 11px;
+}
+
+#fb_exists {
+    text-align:center;
+    display:none;
+    background: #FFEBE8;
+    border: 1px solid #DD3C10;
+    padding:8px;
+    margin-bottom:12px;
+}
+
+#next.button {
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    bottom: 21px;
+    position: absolute;
+    right: 30px;
+}
+
+#get_started.button {
+    margin-left: 39%;
+    width: 47%;
+}
+
+#get_started.button.disabled, #next.button.disabled {
+    background:#dddddd;
+}
+
+
+#following {
+    display:none;
+    background:#FBFAFA;
+    padding:12px 7px 2px 12px;
+    width:97%;
+}
+
+#id_post_to_facebook {
+    margin-left:75px;
+}
+
+/*
+  section options ??
+*/
+.section_options {
+    border-bottom:1px solid #94CB41;
+    font-size:17px;
+    margin-bottom:24px;
+    margin-top:24px;
+    z-index:20;
+}
+
+.section_options a {
+    border:1px solid #CCCCCC;
+    color:#555555;
+    margin-right:9px;
+    opacity:0.6;
+    padding:9px 14px 2px;
+}
+
+.section_options a.selected {
+    background:none repeat scroll 0 0 white;
+    border-color:#94CB41 #94CB41 -moz-use-text-color;
+    border-style:solid solid none;
+    border-width:1px 1px medium;
+    color:#555555;
+    font-weight:bold;
+    margin-left:4px;
+    opacity:1;
+    padding-bottom:3px;
+}
+
+
+/*
+  end section options
+
+  begin form box
+*/
+.form_box_header {
+    margin-left:170px;
+    top: 41px;
+}
+
+.ie7 .form_box_header {
+    top: 8px;
+    margin-left:0px;
+}
+
+.ie8 .form_box_header {
+    top: 19px;
+}
+
+.form_box .info {
+    display:block;
+    vertical-align:top;
+}
+
+.form_box .heading {
+    font-size:30px;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.ie7 .form_box .heading {
+    padding-top:10px;
+}
+
+#fb_signup {
+    cursor:pointer;
+}
+
+#fb_signup:hover {
+    opacity:0.8;
+}
+
+
+.form_box .subhead {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    color: #555555;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 12px;
+    margin-left: 2px;
+    margin-top: -6px;
+    padding: 18px;
+    width: 90%;
+}
+
+.label {
+    width:21%;
+}
+
+.form_box .welcome {
+    display:block;
+    margin-bottom: 10px;
+    margin-left: 31px;
+    margin-top: -3px;
+    color: #444444;
+}
+
+.form_box .form_group .loc {
+    font-weight:bold;
+    margin-left:0%;
+    margin-top:5px;
+}
+
+.form_box .follow, .form_box .unfollow {
+    cursor: pointer;
+    height: 19px;
+    margin-right: 0;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: auto;
+    height: 15px;
+}
+
+/*
+  end form_box
+
+  begin spacer -- todo rename
+*/
+.sm_info {
+    color:#777777;
+    display:block;
+    margin-left:60px;
+}
+
+.form_box .submit_spacer {
+    border-top: 0px solid #DDDDDD;
+    position:static;
+}
+
+.submit_spacer .sm_info {
+    margin-left:0px;
+}
+
+.submit_spacer .inset {
+    padding-left: 33px;
+    padding-right: 37px;
+    text-align: left;
+}
+
+.submit_spacer .step {
+    color:#999999;
+    float:left;
+    font-size:18px;
+    padding:22px;
+}
+
+/*
+  end spacer
+
+  begin issue panel
+*/
+
+#issues ul.org_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:2000px;
+}
+
+#issues li.orgs {
+    overflow: hidden;
+}
+
+#issues {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: auto;
+}
+
+#issues ul {
+    width: auto;
+}
+
+#issues .more {
+    text-align:right;
+    display:block;
+    width:100%;
+}
+
+#issues .rec li.follow_row {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+}
+
+#issues .rec li.follow_row .name {
+    font-size:14px;
+    padding: 9px 0 2px 12px;
+}
+
+#issues .rec li.follow_row .name img {
+    margin-right: 9px;
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+#issues .rec li.follow_row .head, #issues .rec li ul.follow_boxes {
+    width:97%;
+    display:block;
+    vertical-align: top;
+}
+
+#issues .follow_row .right_arrow {
+    background: url("/static/img/right_arrow.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 185px;
+    position: absolute;
+    right: -1px;
+    top: 39px;
+    width: 25px;
+    z-index: 0;
+}
+
+#issues .follow_row .right_arrow:hover {
+    background: url("/static/img/right_arrow_lite.jpg") no-repeat scroll 0 0 transparent;
+    cursor:pointer;
+}
+
+#issues .rec li ul.follow_boxes {
+    border: 1px solid #94CB41;
+    border-right:none;
+    position:relative;
+    height: 190px;
+}
+
+#issues .rec li ul.follow_boxes li {
+    display:block;
+    height: 100%;
+    width: 25.7%;
+
+    list-style: none outside none;
+    margin: 0px;
+    width: auto;
+}
+
+#issues .rec li ul.follow_boxes li.org .follow {
+    top: 8px;
+}
+
+#issues .rec li ul.follow_boxes li.issues li {
+    border-bottom: 1px solid #94CB41;
+    display: block;
+    height: auto;
+    margin-left: 0;
+    padding-bottom: 9px;
+    padding-top: 8px;
+    position: relative;
+    cursor:pointer;
+    color: #333333;
+
+    font-size: 12px;
+    padding: 0;
+    padding-left: 10px;
+    line-height:36px;
+    font-weight:bold;
+
+    overflow: hidden;
+    height: 36px;
+    width: 94%;
+}
+
+#issues .rec li ul.follow_boxes li.issues li:hover {
+    background: #94CB41;
+    font-weight:bold;
+    color:white;
+}
+
+#issues .rec li ul.follow_boxes li.issues {
+    border-top: 7px solid #94CB41;
+    height: 100%;
+    margin-right: -5px;
+    overflow: hidden;
+    width: 26%;
+}
+
+#issues .rec li ul.follow_boxes li.orgs {
+    border-left: 5px solid #94CB41;
+
+    border-right: 1px solid #94CB41;
+    width: 73.5%;
+
+    height: 100%;
+    overflow: hidden;
+    vertical-align: top;
+
+    position:absolute;
+    top:0px;
+    left:175px;
+}
+
+#issues .rec li ul.follow_boxes li.issues li:last-child {
+   border-bottom: none;
+}
+
+#issues .rec li ul.follow_boxes li.issues li.selected {
+    background: #94CB41;
+    font-weight:bold;
+    color:white;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+
+#issues ul.follow_boxes .org .name {
+    color: #333333;
+    font-size: 13px;
+    line-height:14px;
+    padding: 2px;
+    padding-bottom:0px;
+    text-align: center;
+    width: 95%;
+}
+
+#issues ul.follow_boxes .org .tags {
+    color: #999999;
+    font-size: 11px;
+    height: 18px;
+    margin-top: -3px;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    display:none;
+}
+
+#issues .rec li ul.follow_boxes li.org {
+    border-left: 1px solid #94CB41;
+    position: relative;
+    width: 33.1%;
+    width: 167px;
+    height:192px;
+    cursor: pointer;
+    list-style: none outside none;
+    display:inline;
+    display: block;
+    float: left;
+}
+
+#issues .rec li ul.follow_boxes li.org:hover {
+    background:#ecffc6;
+    -webkit-box-shadow:inset 1px 1px 3px #94CB41;
+    -moz-box-shadow:inset 1px 1px 3px #94CB41;
+    box-shadow:inset 1px 1px 3px #94CB41;
+}
+
+#issues .rec li.checked {
+    background:#ecffc6;
+
+    -webkit-box-shadow:inset 0px 0px 4px #94CB41;
+    -moz-box-shadow:inset 0px 0px 4px #94CB41;
+    box-shadow:inset 0px 0px 4px #94CB41;
+}
+
+#issues .follow_row .locationdiv {
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    color:white;
+    font-weight:bold;
+}
+
+#issues .follow_row input {
+    border: 1px solid #CCCCCC;
+    height: 12px;
+    padding: 1px;
+    margin-right: 5px;
+}
+
+#issues .follow_row input[type="checkbox"] {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+
+#issues .follow_row input:focus {
+    -webkit-box-shadow:0px 0px 0px lightgrey;
+    -moz-box-shadow:0px 0px 0px lightgrey;
+    box-shadow:0px 0px 0px lightgrey;
+    border:1px solid #cccccc;
+}
+
+#issues ul.follow_boxes .org .photoholder {
+    height: 104px;
+    width: 155px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+}
+
+#issues ul.follow_boxes .org .orgphoto {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 104px;
+    max-width: 155px;
+    vertical-align: middle;
+    width: auto;
+}
+
+#issues ul.follow_boxes .org .more_info {
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    position: absolute;
+    right: 2px;
+    top: 6px;
+    width: 16px;
+}
+
+#issues ul.follow_boxes .org .notinterested {
+    background: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e3e3e3));
+    background: -moz-linear-gradient(top, #ffffff,  #e3e3e3);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e3e3e3');
+
+    border: 1px solid #CCCCCC;
+    border-radius: 2px 2px 2px 2px;
+    bottom: 8px;
+    color: #444444;
+    font-size: 11px;
+    font-weight: bold;
+    left: 29px;
+    line-height: 18px;
+    padding: 0 4px;
+    position: absolute;
+
+    -webkit-box-shadow: 0 1px 1px cccccc;
+    -moz-box-shadow: 0 1px 1px cccccc;
+    box-shadow: 0 1px 1px cccccc;
+    cursor:pointer;
+}
+
+#issues ul.follow_boxes .org .notinterested.disabled {
+    opacity:1;
+    margin-left:14px;
+
+    background:#E1E1E1;
+
+    -webkit-box-shadow:inset 1px 1px 3px #cccccc;
+    -moz-box-shadow:inset 1px 1px 3px #cccccc;
+    box-shadow:inset 1px 1px 3px #cccccc;
+
+    color:#666666;
+}
+
+#issues ul.follow_boxes .org:hover {
+    background:#f7fbef;
+}
+
+#issues ul.follow_boxes .org .notinterested img {
+    height: 10px;
+    width: 10px;
+    margin-right:3px;
+    margin-left:3px;
+}
+
+/*
+  begin location section
+*/
+#location_org {
+    background:#f7fbef;
+    display:block;
+    margin-left:16%;
+    margin-top:-15px;
+    padding:15px;
+    text-align:left;
+    width:60%;
+
+    margin-left: 8%;
+    margin-top: -15px;
+    padding: 15px;
+    text-align: left;
+    width: 74%;
+}
+
+#location_org input[type="text"] {
+    border:1px solid #A9A9A9;
+    color:#222222;
+    font-size:16px;
+    height:22px;
+    padding-left:4px;
+    padding-top:3px;
+    width:71%;
+}
+
+#location_org .loc {
+    font-size:11px;
+    font-weight:bold;
+    height:14px;
+    overflow:hidden;
+}
+
+/*
+ end location secion
+
+ begin survey
+*/
+#survey ul.rec {
+    width:100%;
+
+    position:relative;
+
+    margin-top:15px;
+    margin-bottom:7px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+
+    background: none repeat scroll 0 0 #F8FAF0;
+    border-bottom:1px solid #94CB41;
+
+    display: block;
+    float: none;
+}
+
+#survey .survey_head, #issues .follow_row .head {
+    width:auto;
+    padding:0px;
+    background:#94CB41;
+    color:#333333;
+    position:relative;
+}
+
+#survey .survey_head .top_left, #issues .follow_row .head .top_left {
+    float: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#survey .survey_head .top_right, #issues .follow_row .head .top_right {
+    float: none;
+    margin-top: 0px;
+
+    position:absolute;
+    right:-5px;
+    top:0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#survey ul, #survey .container {
+    display: block;
+    float: left;
+    margin-top: 18px;
+    vertical-align: top;
+    width: 62%;
+}
+
+#survey li {
+    width:auto;
+    color:#333333;
+
+    display: block;
+    list-style: none outside none;
+    margin: 0px;
+}
+
+#survey li .back {
+    border-top: 1px solid #DDDDDD;
+    height: 1.5em;
+    left: 0;
+    margin-left: 251px;
+    position: absolute;
+    top: 30px;
+    width: 7px;
+    z-index: 0;
+}
+
+#survey li .text, #survey .survey_row .text {
+    font-size:14px;
+    font-weight:bold;
+    display:block;
+}
+
+#survey .survey_row .row {
+    background: #F7FBEF;
+    display: inline;
+    font-size: 14px;
+    list-style-type: none;
+    padding: 0 0 0 101px;
+    text-align: center;
+    width: 134.9px;
+}
+
+#survey li .row .radio {
+    margin-top:0px;
+}
+
+#survey .survey_row .row_label .text img {
+    margin-right: 10px;
+}
+
+#survey .survey_row {
+    border-left: 1px solid #94CB41;
+    border-right: 1px solid #94CB41;
+    height: 74px;
+    position: relative;
+}
+
+#survey .survey_row .text {
+    color: #555555;
+    font-size: 14px;
+    background:#f7fbef;
+
+    margin-top:0;
+    padding-right:3px;
+    position:relative;
+    z-index:2;
+    display:block;
+}
+
+#survey .row_label {
+    border-right: 1px solid #DDDDDD;
+    display: block;
+    float: left;
+    padding: 16px;
+    width: 32%;
+}
+
+#survey .survey_head .text, #issues .follow_row .name {
+    font-size:18px;
+    font-weight:bold;
+    width:223px;
+    padding: 13px 13px 10px 18px;
+    color:white;
+    float:left;
+}
+
+#survey .survey_head .options {
+    background: transparent;
+    border: medium none;
+    color: white;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 56px;
+    margin-top: 0;
+    padding-top: 15px;
+}
+
+#survey .spacer {
+    width:90%;
+}
+
+#survey li .options.selected {
+    list-style: none circle inside;
+    background:#f7fbef;
+
+    -webkit-box-shadow:inset 1px 1px 3px #94CB41;
+    -moz-box-shadow:inset 1px 1px 3px #94CB41;
+    box-shadow:inset 1px 1px 3px #94CB41;
+}

@@ -1,0 +1,10 @@
+{% load tags %}
+<li class="ent {{ ent.type }} clearfix {% if forloop.last %}last{% endif %}" data-id="{{ ent.id }}">
+    <div class="name {% if not ent.get_image_small %}noimage{% endif %}"><a href="{{ ent.get_url }}">{{ ent.get_name|safe }}</a></div>
+    {% if ent.summary %}
+    <div class="desc {% if not ent.get_image_small %}noimage{% endif %}">{{ ent.summary }}</div>
+    {% endif %}
+    {% if ent.bio %}
+    <div class="desc {% if not ent.get_image_small %}noimage{% endif %}">{{ ent.bio }}</div>
+    {% endif %}
+</li>

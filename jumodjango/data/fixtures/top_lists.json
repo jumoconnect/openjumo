@@ -1,0 +1,338 @@
+[
+    {
+        "pk": 6,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 5,
+            "entity_content_type": 55,
+            "entity_type": "campaign",
+            "list": 1,
+            "rank": 0,
+            "last_modified": "2011-05-03 21:31:48",
+            "date_created": "2011-05-03 21:31:48"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 3,
+            "entity_content_type": 55,
+            "entity_type": "campaign",
+            "list": 1,
+            "rank": 1,
+            "last_modified": "2011-05-04 20:19:50",
+            "date_created": "2011-05-03 21:32:18"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 2,
+            "entity_content_type": 55,
+            "entity_type": "campaign",
+            "list": 1,
+            "rank": 2,
+            "last_modified": "2011-05-03 21:32:18",
+            "date_created": "2011-05-03 21:32:18"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 5787,
+            "entity_content_type": 27,
+            "entity_type": "org",
+            "list": 2,
+            "rank": 0,
+            "last_modified": "2011-05-03 23:06:38",
+            "date_created": "2011-05-03 23:06:38"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 5560,
+            "entity_content_type": 27,
+            "entity_type": "org",
+            "list": 2,
+            "rank": 1,
+            "last_modified": "2011-05-03 23:06:38",
+            "date_created": "2011-05-03 23:06:38"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 5906,
+            "entity_content_type": 27,
+            "entity_type": "org",
+            "list": 2,
+            "rank": 2,
+            "last_modified": "2011-05-03 23:06:38",
+            "date_created": "2011-05-03 23:06:38"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 9347,
+            "entity_content_type": 27,
+            "entity_type": "org",
+            "list": 2,
+            "rank": 3,
+            "last_modified": "2011-05-03 23:06:38",
+            "date_created": "2011-05-03 23:06:38"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 10188,
+            "entity_content_type": 27,
+            "entity_type": "org",
+            "list": 2,
+            "rank": 4,
+            "last_modified": "2011-05-03 23:06:38",
+            "date_created": "2011-05-03 23:06:38"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 37,
+            "entity_content_type": 21,
+            "entity_type": "issue",
+            "list": 3,
+            "rank": 0,
+            "last_modified": "2011-05-03 23:13:15",
+            "date_created": "2011-05-03 23:13:15"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 137,
+            "entity_content_type": 21,
+            "entity_type": "issue",
+            "list": 3,
+            "rank": 1,
+            "last_modified": "2011-05-03 23:13:15",
+            "date_created": "2011-05-03 23:13:15"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 153,
+            "entity_content_type": 21,
+            "entity_type": "issue",
+            "list": 3,
+            "rank": 2,
+            "last_modified": "2011-05-03 23:13:15",
+            "date_created": "2011-05-03 23:13:15"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 95,
+            "entity_content_type": 21,
+            "entity_type": "issue",
+            "list": 3,
+            "rank": 3,
+            "last_modified": "2011-05-03 23:21:49",
+            "date_created": "2011-05-03 23:13:15"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 223,
+            "entity_content_type": 21,
+            "entity_type": "issue",
+            "list": 3,
+            "rank": 4,
+            "last_modified": "2011-05-03 23:13:15",
+            "date_created": "2011-05-03 23:13:15"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 67163,
+            "entity_content_type": 18,
+            "entity_type": "user",
+            "list": 4,
+            "rank": 0,
+            "last_modified": "2011-05-04 15:30:32",
+            "date_created": "2011-05-03 23:15:14"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 58805,
+            "entity_content_type": 18,
+            "entity_type": "user",
+            "list": 4,
+            "rank": 1,
+            "last_modified": "2011-05-03 23:15:14",
+            "date_created": "2011-05-03 23:15:14"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 92633,
+            "entity_content_type": 18,
+            "entity_type": "user",
+            "list": 4,
+            "rank": 2,
+            "last_modified": "2011-05-03 23:15:14",
+            "date_created": "2011-05-03 23:15:14"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 97122,
+            "entity_content_type": 18,
+            "entity_type": "user",
+            "list": 4,
+            "rank": 3,
+            "last_modified": "2011-05-03 23:15:14",
+            "date_created": "2011-05-03 23:15:14"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "popularity.toplistitem",
+        "fields": {
+            "entity_id": 102092,
+            "entity_content_type": 18,
+            "entity_type": "user",
+            "list": 4,
+            "rank": 4,
+            "last_modified": "2011-05-03 23:15:14",
+            "date_created": "2011-05-03 23:15:14"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "popularity.listtype",
+        "fields": {
+            "name": "Top Campaigns"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "popularity.listtype",
+        "fields": {
+            "name": "Top Organizations"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "popularity.listtype",
+        "fields": {
+            "name": "Top Issues"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "popularity.listtype",
+        "fields": {
+            "name": "Top Activists"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "popularity.toplist",
+        "fields": {
+            "valid_from": "2011-05-01",
+            "title": "Top Campaigns - 2011-05",
+            "section": 1,
+            "valid_to": "9999-12-31",
+            "last_modified": "2011-05-04 20:19:50",
+            "is_current": true,
+            "list_type": 1,
+            "date_created": "2011-05-02 18:25:42",
+            "position": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "popularity.toplist",
+        "fields": {
+            "valid_from": "2011-05-02",
+            "title": "Top Organizations - 2011-05",
+            "section": 1,
+            "valid_to": "9999-12-31",
+            "last_modified": "2011-05-04 17:56:31",
+            "is_current": true,
+            "list_type": 2,
+            "date_created": "2011-05-03 20:42:15",
+            "position": 2
+        }
+    },
+    {
+        "pk": 3,
+        "model": "popularity.toplist",
+        "fields": {
+            "valid_from": "2011-05-02",
+            "title": "Top Issues - 2011-05",
+            "section": 1,
+            "valid_to": "9999-12-31",
+            "last_modified": "2011-05-04 17:57:10",
+            "is_current": true,
+            "list_type": 3,
+            "date_created": "2011-05-03 20:43:16",
+            "position": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "popularity.toplist",
+        "fields": {
+            "valid_from": "2011-05-02",
+            "title": "Top Activists - 2011-05",
+            "section": 1,
+            "valid_to": "9999-12-31",
+            "last_modified": "2011-05-04 17:57:16",
+            "is_current": true,
+            "list_type": 4,
+            "date_created": "2011-05-03 20:43:53",
+            "position": 4
+        }
+    },
+    {
+        "pk": 1,
+        "model": "popularity.section",
+        "fields": {
+            "name": "Homepage"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "popularity.section",
+        "fields": {
+            "name": "Discovery"
+        }
+    }
+]

@@ -1,0 +1,23 @@
+{% extends "common/entity/base.html" %}
+{% load tags %}
+{% load humanize %}
+{% load users_tags %}
+
+{% block meta %}
+{% include "user/meta.html" %}
+{% endblock %}
+
+{% block leftside %}
+<div class="ls user">
+    {% include "user/left_side.html" %}
+</div>
+{% endblock %}
+
+{% block centersection %}
+<div class="cs user">
+    {% include "user/right_side.html" %}
+    <div class="top_heading clearfix"><h1>{{ entity.get_name }}</h1>{% if entity.bio %}<h2>{{ entity.bio|safe|urlizetrunc:40 }}</h2>{% endif %}</div>
+    {% include "user/center_section.html" %}
+</div>
+{% endblock %}
+

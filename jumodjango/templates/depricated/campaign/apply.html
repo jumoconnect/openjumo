@@ -1,0 +1,62 @@
+{% extends "common/base.html" %}
+{% load tags %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/forms.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static.css" %}">
+<link rel="stylesheet" href="{% static_url "css/static_page.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="content form_box">
+    <div id="apply" class="section">
+        <br />
+        <div class="right_side">
+            <h4>Why Jumo?</h4>
+            <ul class="small">
+                <li>
+                    <b>Social</b>
+                    The satisfaction of knowing that you're working to
+                    help the world in a meaningful way; we're not just working on the
+                    shiniest new tech trend or to pay the bills.
+                </li>
+                <li>
+                    <b>Awesomeness</b>
+                    The Jumo offices are located in Soho in the middle
+                    of downtown Manhattan, a short ride away from Brooklyn and the
+                    Village.
+                </li>
+                <li>
+                    <b>Winning</b>
+                    On your first day, you get a healthy stipend to buy
+                    what you need to do your work well. There's an Apple store
+                    one block away. Seriously.
+                </li>
+                <li>
+                    <b>Compensation</b>
+                    We may be a non-profit, but we pay just as
+                    well as our for-profit brethren.
+                </li>
+            </ul>
+        </div>
+        <div class="left_side">
+            <div class="form_heading">Apply to create a campaign</div>
+            <p>
+                Thanks for your interest in Jumo’s new campaign
+                functionality! We’re excited to work with you to grow
+                your support base and solicit funding for
+                project-based work.
+            </p>
+            <p>
+                To apply to be part of a Jumo
+                campaign, please answer the following:
+            </p>
+            {% include "forms/campaign_apply_form.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

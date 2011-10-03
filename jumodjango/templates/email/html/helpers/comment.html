@@ -1,0 +1,35 @@
+{% load tags %}
+<table cellpadding="0" cellspacing="0" bgcolor="#f3f3f3" border="0" style="color:#333333;
+                                                                           font:arial;">
+    <tbody>
+        <tr>
+            <td valign="top" align="left">
+                <a style="margin:0px;border:0px;text-decoration:none;" href="http://{{ hostname }}/{{ comment.actor.username }}">
+                    <img align="left" height="32" width="32" style="vertical-align: top;
+                                                                    margin: 0;
+                                                                    margin-right:6px;
+                                                                    border:0px;
+                                                                    padding: 0;" src="{{ comment.actor.get_image }}" />
+                </a>
+            </td>
+            <td valign="top" align="left">
+                <p style="font-size:12px;
+                          color:#444444;
+		                  z-index:1;
+                          margin:0px;
+                          line-height:144%;
+                          font-family:arial;
+                          vertical-align:top;">
+                    <a href="http://{{ hostname }}/{{ comment.actor.username }}" style="display: inline-block;
+                                                                                        font-weight: bold;
+                                                                                        color: #0070D0;
+                                                                                        text-decoration: none;">
+                        {{ comment.actor.get_name }}</a><b>:</b>
+                    <span class="comment_text">{{ comment.message|urlize|linebreaksbr }}</span>
+                    <span style="color: #999999;">
+                        {{ comment.date_created|timesince }} ago</span>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>

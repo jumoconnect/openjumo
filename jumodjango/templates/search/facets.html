@@ -1,0 +1,23 @@
+{% load tags %}
+{% if search_results.facet_fields %}
+<li><a class="filter {% if not selected_facet %}selected{% endif %}">
+    {% if query %}
+    <span class="num">{% if search_results %}{{ search_results.all_results }}{% endif %}</span>
+    {% endif %}
+    <span class="name" data-type="All Results">All Results</span>
+</a></li>
+{% for facet, count in search_results.facet_fields.type.items %}
+<li><a class="filter {% if facet == selected_facet %}selected{% endif %}">
+    {% if query %}
+    <span class="num">{{ count }}</span>
+    {% endif %}
+    <span class="name" data-type="{{ facet }}">{% get_humanized_type facet %}</span>
+</a></li>
+{% endfor %}
+
+{% if not query %}
+<li><a class="filter">
+    <span class="name" data-type="User">People</span>
+</a></li>
+{% endif %}
+{% endif %}

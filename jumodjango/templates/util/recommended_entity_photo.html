@@ -1,0 +1,7 @@
+{% load tags %}
+<div class="item clearfix">
+    {% if ent.get_image_small %}
+    <a style="float:left;" href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}"><i style="background-image: url({{ ent.get_image_small }}); background-position: 0px 0px;"></i></a>
+    {% endif %}
+    <div class="name"><a href="{{ ent.get_url }}">{{ ent.get_name }}</a></div>
+</div>

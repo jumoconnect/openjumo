@@ -1,0 +1,108 @@
+{% extends 'common/lite_base.html' %}
+{% load tags %}
+{% load humanize %}
+
+{% block meta %}
+{% include "common/meta.html" %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static_url "css/discover.css" %}">
+<link rel="stylesheet" href="{% static_url "css/home.css" %}">
+{% endblock %}
+
+{% block scripts %}
+{% if settings.DEBUG %}
+<script type="text/javascript" src="{% static_url 'js/categorydiscover.src.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static_url 'js/categorydiscover.js' %}"></script>
+{% endif %}
+{% endblock %}
+
+{% block documentready %}
+if (JUMO.browserIsIE) {
+    var initPlaceholder = function(jObj) {
+        var val = jObj.val() || jObj.text();
+        if (val && val.length > 0) {
+            return;
+        } else {
+            JUMO.Util.initPlaceholder(jObj);
+            jObj.bind('focus blur', function(evt) {
+                          JUMO.Util.fixPlaceHolder(jObj, evt.type);
+                      });
+        }
+    }
+    var usernameDiv = jQuery('#id_username');
+    var passwordDiv = jQuery('#id_password');
+
+    initPlaceholder(usernameDiv);
+    initPlaceholder(passwordDiv);
+    initPlaceholder(jQuery('#homesearchbar'));
+
+    jQuery('#login_submit').click(function() {
+                                      var usernamePlaceholder = JUMO.Util.trim(usernameDiv.attr('placeholder'));
+                                      var passwordPlaceholder = JUMO.Util.trim(passwordDiv.attr('placeholder'));
+
+                                      if (usernameDiv.val() == usernamePlaceholder) {
+                                          usernameDiv.val('');
+                                      }
+
+                                      if (passwordDiv.val() == passwordPlaceholder) {
+                                          passwordDiv.val('');
+                                      }
+                                  });
+}
+{% endblock %}
+
+{% block header %}
+<div class="top_section clearfix">
+    <div class="signup_login content">
+        <a href="/"><img class="largelogo" src="{% static_url 'img/jumo_logo_homepage.png' %}" /></a>
+        <form id="login_form" enctype="multipart/form-data" action="/login" method="post">
+            <div id="fb_login" style="display: none;">
+                <img height="22" id="fb_profile_pic" src="" />
+                <span id="fb_name"></span>
+                <img style="cursor: pointer;" id="fb_single_signin" src="{% static_url 'img/favicons/fb_login.png' %}" />
+            </div>
+
+            {% csrf_token %}
+            <input type="hidden" name="redirect_to" value="{% if redirect_to %}{{ redirect_to }}{% endif %}" />
+            {{ login_form.username }}
+            {{ login_form.password }}
+            <input type="submit" id="login_submit" class="button" value="Sign In" />
+            <a id="signup_submit" href="/setup">Sign Up</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="bg"><img src="{% static_url 'img/bg.jpg' %}" /></div>
+<div class="cs content">
+    <div class="clearfix" style="position:relative">
+        <div class="left_section">
+            <h2>Get Involved</h2>
+            <h3>Find high-quality nonprofits <br />Take meaningful action</h3>
+        </div>
+        <form enctype="multipart/form-data" action="/search" method="get" class="right_section">
+            <input type="text" id="homesearchbar" class="termcomplete" placeholder="e.g: Charter Schools in New York" name="q" />
+            <input type="submit" class="button" value="Search" />
+        </form>
+    </div>
+
+    <div class="heading">What are you interested in?</div>
+    {% include "discovery/includes/home_discovery.html" %}
+    <div class="recommend">
+        {% for key, value in top_lists.items|slice:":2" %}
+        <div class="recommended clearfix {% if forloop.last %}last{% endif %}">
+            <div class="heading">{{ key }}</div>
+            <ul class="info">
+                {% for ent in value %}
+                {% include "util/recommended_ent.html" %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+{% include "email/txt/helpers/title.txt" %}{% if event and event.actor != item.poster %}{% endif %}{% include "email/txt/helpers/description.txt" %}{% if event and event.actor != item.poster %}{% endif %}
+posted {{ item.date_created|timesince }} ago {% block author %}{% endblock %}{% include "email/txt/helpers/comments.txt" %}

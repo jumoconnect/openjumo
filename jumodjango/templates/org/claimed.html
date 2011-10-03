@@ -1,0 +1,9 @@
+{% extends "common/notification.html" %}
+
+{% block notification_title %}
+You're now the administrator of <br /> <span class="faded">{{ org.name }}</span>
+{% endblock %}
+
+{% block notification_body %}
+<p><a href="{% url manage_org org.id %}">Click here</a> to manage the page.</p>
+{% endblock %}

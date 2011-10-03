@@ -1,0 +1,10 @@
+<div class="actions">
+    <span class="date">{{ item.date_created|timesince }} ago &nbsp;&nbsp;</span> | 
+    {% if user.is_authenticated and user == item.poster %}
+    <a class="action">remove</a>
+    {% endif %}
+
+    {% if user.is_staff %}
+    <a class="action">remove</a>
+    {% endif %}
+</div>

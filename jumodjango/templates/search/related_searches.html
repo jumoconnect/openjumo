@@ -1,0 +1,9 @@
+{% if related_searches %}
+<div class="related_search_queries">
+    <div class="heading">Related:</div>
+    {% for search_term in related_searches|slice:":7" %}
+    <a href="/search?q={{ search_term }}">{{ search_term }}</a>
+    {% endfor %}
+</div>
+{% endif %}
+

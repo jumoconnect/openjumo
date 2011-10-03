@@ -1,0 +1,7 @@
+<div {% if forloop.last %}id="#refs"{% endif %} class="section {% if forloop.last %}last{% endif %}">
+    <div class="heading">{{ contentitem.title }}</div>
+    <div class="body">
+        {% include "util/media_item.html" %}
+        {{ contentitem.rich_text_body|safe }}
+    </div>
+</div>

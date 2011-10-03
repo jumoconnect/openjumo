@@ -1,0 +1,4 @@
+
+{% if not user or item.poster.username != user.username %}[http://{{ hostname }}{{ item.poster.get_url }}]
+{{ item.poster.get_name }} is{% else %}You are{% endif %} now following {% if not user or item.target.username != user.username %}{{ item.target.get_name }}
+[http://{{ hostname }}{{ item.target.get_url }}]{% else %}you{% endif %}

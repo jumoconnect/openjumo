@@ -1,0 +1,3 @@
+{% load tags %}
+{{ item.description }}
+{% if item.url %}read more: [{{ item.url }}]{% endif %}

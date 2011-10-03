@@ -1,0 +1,495 @@
+[
+ {
+  "pk": 4303, 
+  "model": "org.org", 
+  "fields": {
+   "is_claimed": false, 
+   "revenue": "$3,194,279", 
+   "date_updated": "2011-07-06 12:26:25", 
+   "year_founded": 1982, 
+   "working_locations": [
+    10768
+   ], 
+   "is_vetted": false, 
+   "flickr_id": "", 
+   "size": "", 
+   "img_small_url": "", 
+   "site_url": "http://www.nyawc.org", 
+   "location": 52, 
+   "img_large_url": "", 
+   "facebook_id": "", 
+   "donation_enabled": false, 
+   "email": "", 
+   "phone_number": "", 
+   "handle": "newyorkasianwomenscenter", 
+   "is_active": true, 
+   "claim_token": "", 
+   "name": "New York Asian Women's Center", 
+   "twitter_id": "", 
+   "summary": "Empowers Asian women in NYC to make the positive choices for themselves and their children necessary to escape domestic violence and other forms of abuse.", 
+   "admins": [], 
+   "blog_url": "", 
+   "youtube_id": "", 
+   "date_created": "2011-07-05 18:05:20", 
+   "ein": ""
+  }
+ }, 
+ {
+  "pk": 28538, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "New York Asian Women\u2019s Center seeks to empower Asian women in New York living with domestic violence and other forms of abuse.  NYAWC\u2019s services honor their clients\u2019 diverse cultural experiences to create a comprehensive support system, encompassing everything from counseling to legal support in their native dialect. Through NYAWC\u2019s emergency shelter, child support, and continued education assistance programs, women and children from abusive environments transition to lives that are empowered and independent.", 
+   "title": "What does this organization do?", 
+   "section": "center", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "New York Asian Women\u2019s Center seeks to empower Asian women in New York living with domestic violence and other forms of abuse.  NYAWC\u2019s services honor their clients\u2019 diverse cultural experiences to create a comprehensive support system, encompassing everything from counseling to legal support in their native dialect. Through NYAWC\u2019s emergency shelter, child support, and continued education assistance programs, women and children from abusive environments transition to lives that are empowered and independent."
+  }
+ }, 
+ {
+  "pk": 28540, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "24-Hour Multilingual Hotline\nCrisis Intervention and Counseling\nEmergency Residential Program\nChildren\u2019s Support groups and counseling\nProject Free: Ending Modern-Day Slavery", 
+   "title": "Key Programs/Initiatives", 
+   "section": "left", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "<ul><li>24-Hour Multilingual Hotline</li><li>Crisis Intervention and Counseling</li><li>Emergency Residential Program</li><li>Children\u2019s Support groups and counseling</li><li>Project Free: Ending Modern-Day Slavery</li></ul>"
+  }
+ }, 
+ {
+  "pk": 9133, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "direct service\n", 
+   "title": "Methods", 
+   "section": "left", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "position": 0, 
+   "rich_text_body": "direct service<br/>"
+  }
+ }, 
+ {
+  "pk": 28539, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "NYAWC works both as an advocacy and direct service organization. As a direct service organization, NYAWC provides a confidential, 24-hour hotline for women in need of emergency interpretation, referrals, or counseling services.  85% of NYAWC clients speak a primary language other than English; its 24-hour hotline uses counselors who speak over a dozen Asian languages and dialects. Every year, NYAWC receives 3,000 calls on the hotline.\n\nNYAWC also provides support groups, crisis intervention, children\u2019s services, and education assistance. By creating a community and network for domestic abuse survivors, NYAWC helps women continue their education and create positive futures for themselves and their children.\n\nMost importantly, NYAWC provides safe housing for women and children in need. Women and children are able to stay in NYAWC\u2019s emergency residential program for up to 135 days, where they have full access to all of NYAWC\u2019s support systems. After leaving NYAWC\u2019s emergency housing, women are able to participate in continuing care programs. NYAWC currently operates two facilities with a total capacity of 40 beds.\n\nAs an advocacy organization, NYAWC educates communities about the realities of domestic violence, advocates for clients within the legal system, and coordinates with key law enforcement and legal officials for special projects like \u201cProject Free: Ending Modern-day Slavery.\u201d NYAWC runs multilingual programs and provides translators in order to help clients stay informed and in control of their lives.", 
+   "title": "How are they doing it?", 
+   "section": "center", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "position": 1, 
+   "rich_text_body": "NYAWC works both as an advocacy and direct service organization. As a direct service organization, NYAWC provides a confidential, 24-hour hotline for women in need of emergency interpretation, referrals, or counseling services.  85% of NYAWC clients speak a primary language other than English; its 24-hour hotline uses counselors who speak over a dozen Asian languages and dialects. Every year, NYAWC receives 3,000 calls on the hotline.<br/><br/>NYAWC also provides support groups, crisis intervention, children\u2019s services, and education assistance. By creating a community and network for domestic abuse survivors, NYAWC helps women continue their education and create positive futures for themselves and their children.<br/><br/>Most importantly, NYAWC provides safe housing for women and children in need. Women and children are able to stay in NYAWC\u2019s emergency residential program for up to 135 days, where they have full access to all of NYAWC\u2019s support systems. After leaving NYAWC\u2019s emergency housing, women are able to participate in continuing care programs. NYAWC currently operates two facilities with a total capacity of 40 beds.<br/><br/>As an advocacy organization, NYAWC educates communities about the realities of domestic violence, advocates for clients within the legal system, and coordinates with key law enforcement and legal officials for special projects like \u201cProject Free: Ending Modern-day Slavery.\u201d NYAWC runs multilingual programs and provides translators in order to help clients stay informed and in control of their lives."
+  }
+ }, 
+ {
+  "pk": 2, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 4303, 
+   "date_created": "2011-07-14 16:39:02", 
+   "caption": "Passing out literature", 
+   "thumbnail_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/passing_out_lit_nyawc_thumbnail.jpg", 
+   "content_type": 27, 
+   "position": 1, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/passing_out_lit_nyawc.jpg", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 3, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 4303, 
+   "date_created": "2011-07-14 16:41:05", 
+   "caption": "Passing out literature", 
+   "thumbnail_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/person_holding_sign_nyawc_thumbnail.jpg", 
+   "content_type": 27, 
+   "position": 2, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/person_holding_sign_nyawc.jpg", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 4, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 4303, 
+   "date_created": "2011-07-14 16:41:05", 
+   "caption": "Passing out literature", 
+   "thumbnail_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/sign_nyawc_thumbnail.jpg", 
+   "content_type": 27, 
+   "position": 3, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/sign_nyawc.jpg", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 5, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-15 10:49:52", 
+   "object_id": 28538, 
+   "date_created": "2011-07-15 10:49:52", 
+   "caption": "Sign", 
+   "thumbnail_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/sign_nyawc_thumbnail.jpg", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "photo", 
+   "img_url": "http://jumostatic.s3.amazonaws.com/static/img/orgs/sign_nyawc.jpg", 
+   "metadata": ""
+  }
+ }, 
+ {
+  "pk": 6, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-15 10:53:26", 
+   "object_id": 28539, 
+   "date_created": "2011-07-15 10:53:26", 
+   "caption": "", 
+   "thumbnail_url": "", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "pullquote", 
+   "img_url": "", 
+   "metadata": "{\"quote_text\" : \"NYAWC provides a confidential, 24-hour hotline\"}"
+  }
+ }, 
+ {
+  "pk": 1, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Run the ING marathon on November 6th for NYAWC", 
+   "date_updated": "2011-07-08 11:57:56", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/events/ingmarathon", 
+   "rank": 0, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 11:57:56", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 2, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Become trained to answer calls on 24-hour hotline", 
+   "date_updated": "2011-07-08 11:59:00", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/files/Hotline%20Volunteer%20Description.pdf", 
+   "rank": 1, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 11:59:00", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 3, 
+  "model": "action.action", 
+  "fields": {
+   "title": "If you speak Mandarin or Chinese, volunteer to assist clients at Court and Public Assistance appoint", 
+   "date_updated": "2011-07-08 12:00:16", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/involved/volunteer.html", 
+   "rank": 2, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 12:00:16", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 4, 
+  "model": "action.action", 
+  "fields": {
+   "title": "If you speak Mandarin or Chinese, volunteer to assist clients at Court and Public Assistance appoint", 
+   "date_updated": "2011-07-08 12:00:29", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/involved/volunteer.html", 
+   "rank": 2, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 12:00:29", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 5, 
+  "model": "action.action", 
+  "fields": {
+   "title": "If you speak Mandarin or Chinese, volunteer to help clients at Court and Public Assistance appointme", 
+   "date_updated": "2011-07-08 12:02:11", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/involved/volunteer.html", 
+   "rank": 2, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 12:02:11", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 6, 
+  "model": "action.action", 
+  "fields": {
+   "title": "If you speak Mandarin or Chinese, volunteer to help at Court and Public Assistance appointment", 
+   "date_updated": "2011-07-08 12:16:17", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/involved/volunteer.html", 
+   "rank": 2, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 12:16:17", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 7, 
+  "model": "action.action", 
+  "fields": {
+   "title": "Help plan activities and provide homework support for children in NYAWC's program", 
+   "date_updated": "2011-07-08 12:17:29", 
+   "object_id": 4303, 
+   "link": "http://www.nyawc.org/involved/volunteer.html", 
+   "rank": 3, 
+   "content_type": 27, 
+   "date_created": "2011-07-08 12:17:29", 
+   "type": "link"
+  }
+ }, 
+ {
+  "pk": 1, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC launches a community awareness campaign on domestic violence issues", 
+   "date_updated": "2011-07-08 11:39:35", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1983, 
+   "date_created": "2011-07-08 11:39:35"
+  }
+ }, 
+ {
+  "pk": 2, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Volunteers personally take battered women and children into their homes during emergency situations, effectively creating the first organized shelter program for battered Asian women on the East Coast", 
+   "date_updated": "2011-07-08 11:40:23", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1985, 
+   "date_created": "2011-07-08 11:40:23"
+  }
+ }, 
+ {
+  "pk": 3, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "In response to a physical assault of a woman at a community space, NYAWC and other groups mobilize the community with the first major undertaking to raise public awareness through the Coalition Against Violence in the Community", 
+   "date_updated": "2011-07-08 11:40:51", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1986, 
+   "date_created": "2011-07-08 11:40:51"
+  }
+ }, 
+ {
+  "pk": 4, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC establishes safe apartments for battered women and children", 
+   "date_updated": "2011-07-08 11:41:18", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1988, 
+   "date_created": "2011-07-08 11:41:18"
+  }
+ }, 
+ {
+  "pk": 5, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC and other community groups organize the \"Cultural Defense\" forum in response to the sentencing of Dong Lu Chen, an immigrant man who had beaten his wife to death with a hammer and was sentenced to only a five-year probation", 
+   "date_updated": "2011-07-08 11:42:04", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1989, 
+   "date_created": "2011-07-08 11:42:04"
+  }
+ }, 
+ {
+  "pk": 6, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Establishes the first ever 24-hour Asian multilingual hotline in NYC, staffed solely by volunteers. Governor Mario Cuomo awards NYAWC with the Eleanor Roosevelt Community Service Award. Receives Susan B. Anthony Award from NOW-NYC", 
+   "date_updated": "2011-07-08 11:42:30", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1990, 
+   "date_created": "2011-07-08 11:42:30"
+  }
+ }, 
+ {
+  "pk": 7, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "President George Bush awards NYAWC with the President's Volunteer Action Award. Inaugural issue of Center's trilingual newsletter is published", 
+   "date_updated": "2011-07-08 11:42:49", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1991, 
+   "date_created": "2011-07-08 11:42:49"
+  }
+ }, 
+ {
+  "pk": 8, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "City officials award NYAWC and its volunteers for 10 years of unrelenting efforts to combat violence against women in \"A Tribute to Volunteers\" ceremony held at City Hall. Receives Gloria Steinem \"Women of Vision\" Award from Ms. Foundation For Women. Receives Woman Warrior Award from Asian Pacific Women's Network", 
+   "date_updated": "2011-07-08 11:43:16", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1992, 
+   "date_created": "2011-07-08 11:43:16"
+  }
+ }, 
+ {
+  "pk": 9, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Receives Celebrating Women's Lives Award from Sakhi for South Asian Women", 
+   "date_updated": "2011-07-08 11:43:37", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1994, 
+   "date_created": "2011-07-08 11:43:37"
+  }
+ }, 
+ {
+  "pk": 10, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Children's Program is established, offering counseling, play-therapy and parenting skills services", 
+   "date_updated": "2011-07-08 11:43:55", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 1995, 
+   "date_created": "2011-07-08 11:43:55"
+  }
+ }, 
+ {
+  "pk": 11, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC opens second emergency shelter facility NYAWC establishes first 24-hour shelter facility. Receives Nav Nirmaan Community Service Award", 
+   "date_updated": "2011-07-08 11:44:21", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2001, 
+   "date_created": "2011-07-08 11:44:21"
+  }
+ }, 
+ {
+  "pk": 12, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Governor George Pataki presents Justice, Freedom and Courage Awards to End Domestic Violence Award. Adds a third residential facility for battered women and children", 
+   "date_updated": "2011-07-08 11:44:47", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2002, 
+   "date_created": "2011-07-08 11:44:47"
+  }
+ }, 
+ {
+  "pk": 13, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC makes its first purchase of a shelter facility. Executive Director Tuhina De O'Connor receives the Hero Award from Robin Hood Foundation", 
+   "date_updated": "2011-07-08 11:45:18", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2003, 
+   "date_created": "2011-07-08 11:45:18"
+  }
+ }, 
+ {
+  "pk": 14, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC's first owned shelter, known as Rose House, opens to serve battered women and their children", 
+   "date_updated": "2011-07-08 11:45:40", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2004, 
+   "date_created": "2011-07-08 11:45:40"
+  }
+ }, 
+ {
+  "pk": 15, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC is awarded 20-bed facility from the New York State Homeless Housing and Assistance Corporation. Honored as a Community Champion by Newsday. Launches Project Free: Ending Modern-day Slavery program for victims of human trafficking", 
+   "date_updated": "2011-07-08 11:45:58", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2005, 
+   "date_created": "2011-07-08 11:45:58"
+  }
+ }, 
+ {
+  "pk": 16, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC receives Caring for Children Award from the Coalition for Asian Children and Families. Selected as New Yorker of the Week by NY1 News", 
+   "date_updated": "2011-07-08 11:46:15", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2006, 
+   "date_created": "2011-07-08 11:46:15"
+  }
+ }, 
+ {
+  "pk": 17, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "NYAWC launches the project Hitting Home. Becomes the first domestic violence agency to partner with child welfare agencies to address domestic violence in NYC", 
+   "date_updated": "2011-07-08 11:46:39", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2008, 
+   "date_created": "2011-07-08 11:46:39"
+  }
+ }, 
+ {
+  "pk": 18, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Peace House, NYAWC\u2019s second owned emergency shelter, opens. NYAWC receives its first federal grant to launch Safety First with Lutheran Medical Center. Launches Home Court Advantage with the Children\u2019s Law Center in NYC", 
+   "date_updated": "2011-07-08 11:46:59", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2009, 
+   "date_created": "2011-07-08 11:46:59"
+  }
+ }, 
+ {
+  "pk": 19, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Center for Asian Women Crime Victims, NYAWC's first community office, opens in Elmhurst, Queens", 
+   "date_updated": "2011-07-08 11:47:33", 
+   "object_id": 4303, 
+   "content_type": 27, 
+   "year": 2010, 
+   "date_created": "2011-07-08 11:47:33"
+  }
+ }
+]

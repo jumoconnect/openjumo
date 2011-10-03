@@ -1,0 +1,16 @@
+{% extends "email/html/notifications/base.html" %}
+
+{% block content %}
+<p style="font-size:12px;
+          font-weight:bold;
+          margin:0px;padding:0px;">
+    To view {{ entity.get_name }}'s Jumo profile, click here:
+</p>
+<a style="font-family:Arial,sans-serif;
+          font-size:12px;
+          text-decoration:underline;
+          margin:0;
+          padding:0;
+          color: #0070d0;
+          line-height: 148%;" href="http://{{ hostname }}{{ entity.get_url }}">http://{{ hostname }}{{ entity.get_url }}</a>
+{% endblock %}

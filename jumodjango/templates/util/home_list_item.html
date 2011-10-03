@@ -1,0 +1,8 @@
+<li {% if forloop.last %}class="last"{% endif %}>
+    <a href="{{ ent.get_url }}">
+        <img src="{{ ent.get_image }}" />
+    </a>
+    <a href="{{ ent.get_url }}">
+	    {{ ent.get_name }}
+    </a>
+</li>

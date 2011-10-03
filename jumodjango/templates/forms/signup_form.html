@@ -1,0 +1,89 @@
+<form enctype="multipart/form-data" action="/setup" method="post" autocomplete="off">
+    {% csrf_token %}
+
+    {% if not sans_facebook %}
+    <div id="fb_exists">
+        Your Facebook account is already using Jumo. Please <a href="/login">login</a>.
+    </div>
+
+    <div class="profile_img_cont">
+        <img src="" class="profile_img" />
+        <a id="change_account">change account</a>
+    </div>
+    {% endif %}
+
+    {{ create_form.redirect_to }}
+
+    <div class="form_group">
+        {{ create_form.first_name.errors }}
+        <div class="label" for="{{ create_form.first_name.label }}">{{ create_form.first_name.label }}</div>
+        {{ create_form.first_name }}
+    </div>
+
+    <div class="form_group">
+        {{ create_form.last_name.errors }}
+        <div class="label" for="{{ create_form.last_name.label }}">{{ create_form.last_name.label }}</div>
+        {{ create_form.last_name }}
+    </div>
+
+    <div class="form_group">
+        {{ create_form.email.errors }}
+        <div class="label" for="{{ create_form.email.label }}">{{ create_form.email.label }}</div>
+        {{ create_form.email }}
+    </div>
+
+    <div class="form_group">
+        {{ create_form.password.errors }}
+        <div class="label" for="{{ create_form.password.label }}">{{ create_form.password.label }}</div>
+        {{ create_form.password }}
+    </div>
+
+    <div class="form_group">
+        {{ create_form.birth_year.errors }}
+        <div class="label" for="{{ create_form.birth_year.label }}">{{ create_form.birth_year.label }}</div>
+        {{ create_form.birth_year }}
+    </div>
+
+    <div class="form_group">
+        {{ create_form.location_input.errors }}
+        {{ create_form.location_data.errors }}
+        <div class="label" for="{{ create_form.location_input.label }}">{{ create_form.location_input.label }}</div>
+        {{ create_form.location_input }}
+        {{ create_form.location_data.as_hidden }}
+    </div>
+
+    <div>
+        {{ create_form.gender.errors }}
+    </div>
+    <div class="form_group gender">
+        <div class="label" for="{{ create_form.gender.label }}">{{ create_form.gender.label }}</div>
+        {{ create_form.gender }}
+    </div>
+
+    <div class="form_group post_to_fb" style="display:none;">
+        {{ create_form.post_to_facebook }}
+        Share with my friends on Facebook.
+    </div>
+
+    {{ create_form.fb_access_token.as_hidden }}
+    {{ create_form.fbid.as_hidden }}
+    {{ create_form.bio.as_hidden }}
+    {{ create_form.friends.as_hidden }}
+
+    {{ create_form.fb_access_token.errors }}
+    {{ create_form.fbid.errors }}
+    {{ create_form.bio.errors }}
+    {{ create_form.friends.errors }}
+
+    <input type="hidden" name="sans_facebook" value="{{ sans_facebook }}" />
+    <div class="submit_spacer" style="border-top:1px solid #cccccc">
+        <div class="sm_info inset">
+            By clicking "Create my account", you are agreeing to
+            the <a target="_blank" href="/terms">Terms of Service</a>
+            and the <a target="_blank" href="/privacy">Privacy Policy</a>.
+        </div>
+    </div>
+    <div class="submit_spacer" style="border-top:1px solid #cccccc">
+        <input type="submit" class="submit button" value="Create my Account &#187;">
+    </div>
+</form>

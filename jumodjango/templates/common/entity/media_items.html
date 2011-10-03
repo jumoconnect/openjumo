@@ -1,0 +1,8 @@
+<ul class="section photos clearfix">
+    {% for item in entity.get_all_photos|slice:":3" %}
+    <li data-fullsize="{{ item.get_image_large }}" {% if item.caption %}data-caption="{{ item.caption }}"{% endif %}>
+        <img src="{{ item.get_image_small }}" />
+        {% comment %}<i style="background-image: url({{ item.get_image_small }}); background-position: 0px 0px;"></i>{% endcomment %}
+    </li>
+    {% endfor %}
+</ul>

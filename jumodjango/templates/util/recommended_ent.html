@@ -1,0 +1,15 @@
+{% load tags %}
+<li class="clearfix{% if forloop.last %} last{% endif %}{% if forloop.first %} first{% endif %}{% if forloop.counter|divisibleby:2 %} even{% else %} odd{% endif %}">
+    {% if ent.get_image_small %}
+    <a style="float:left;" href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}"><i style="background-image: url({{ ent.get_image_small }}); background-position: 0px 0px;"></i></a>
+    {% endif %}
+    <a href="{% if ent.url %}{{ ent.url }}{% else %}{{ ent.get_url }}{% endif %}" class="name">{{ ent.get_name|safe }}</a>
+    {% if ent.summary %}
+    <div class="body {% if not ent.image_url and not ent.get_image_small %}noimage{% endif %}">{{ ent.summary|safe }}</div>
+    {% endif %}
+    {% comment %}
+    {% if ent.issues %}
+    <div class="body location">{% for issue in ent.issues.all|slice:":3" %}<a href="{{ issue.get_url }}">{{ issue.name }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</div>
+    {% endif %}
+    {% endcomment %}
+</li>

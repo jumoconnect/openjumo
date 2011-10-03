@@ -1,0 +1,754 @@
+/* css for the campaign page */
+#page-content {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 0px;
+    position: relative;
+    width: 981px;
+    overflow: visible;
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+}
+
+#page-content .content {
+    background: #FFF;
+    border: 1px solid #A3A3A3;
+    border-top: 0px solid #A3A3A3;
+    left: 38px;
+    margin-top: 1px;
+
+    padding-bottom: 15px;
+    padding-left: 26px;
+    padding-top: 15px;
+    width: 879px;
+    overflow-y: visible;
+    overflow-x: visible;
+    margin-bottom:22px;
+}
+
+#campaign_publisher {
+    display:block;
+    margin-top:17px;
+}
+
+.top {
+    border-bottom: 1px solid #A3A3A3;
+    width: 98%;
+}
+
+.top h1 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 132%;
+    margin: 13px 0px 5px 0;
+    padding: 0;
+    width: 722px;
+    width:100%;
+    font-weight: bold;
+    color: #333;
+}
+
+.top h1 a {
+    color: #333;
+}
+
+.top h2 {
+    font-size:14px;
+    font-weigh:normal;
+    padding:0px;
+    margin:0px;
+    margin-bottom:8px;
+    width:100%;
+}
+
+.top .about {
+    padding:0px;
+    margin:0px;
+    margin-bottom:11px;
+    width: 584px;
+    line-height: 152%;
+    font-size:11px;
+}
+
+.top .about img {
+    vertical-align:text-bottom;
+}
+
+.top .verified {
+    color: green;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 142%;
+    text-transform: uppercase;
+}
+
+.top .supported_campaign {
+    position: absolute;
+    top: 7px;
+    right: 0px;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+}
+
+.top .supported_campaign img {
+    max-height:50px;
+    max-width:50px;
+}
+
+.ls {
+    width:560px;
+    float:left;
+    margin-bottom:0px;
+    font-size:13px;
+    color:#333;
+}
+
+
+.ls #heading_img_cont {
+    position:relative;
+}
+
+.ls #heading_img_cont .play {
+    left: 42%;
+    opacity: 0.7;
+    position: absolute;
+    top: 42%;
+    cursor:pointer;
+}
+
+.ls #heading_img_cont:hover .play {
+    opacity:1.0;
+}
+
+.ls .heading_img, .ls object {
+    width:560px;
+    margin-top:21px;
+}
+
+.ls #feed {
+    border:0px solid;
+}
+
+.ls p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 152%;
+}
+
+.ls li p {
+    margin:0px;
+}
+
+.ls h3 {
+    color: #444444;
+    display: block;
+    font-size: 12px;
+    font-weight:normal;
+    line-height: 144%;
+    margin-bottom: 13px;
+    padding: 0;
+}
+
+.ls h4 {
+    color: #444444;
+    display: block;
+    font-size: 12px;
+    font-weight:bold;
+    line-height: 144%;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding: 0;
+}
+
+.ls .share_box {
+    padding:5px;
+    background:#f3f3f3;
+    border:1px solid #ccc;
+}
+
+.ls .twitter-share-button {
+    float: right;
+    vertical-align: text-bottom;
+}
+
+.ls .addthis_toolbox .addthis_button_email {
+    float:right;
+}
+
+.ls ul {
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.ls ul li {
+    display: list-item;
+    list-style: disc outside none;
+    margin-left: 18px;
+    padding-left: 0;
+    padding-bottom:6px;
+    line-height:152%;
+}
+
+.ls ul.errorlist li {
+    display: block;
+    list-style: none outside none;
+    margin-left:0px;
+}
+
+.ls .thanks img {
+    max-height:50px;
+    max-width:50px;
+    float:left;
+    display:block;
+    margin-right:5px;
+    margin-top:3px;
+}
+
+.ls .thanks .author {
+    display:block;
+}
+
+.ls #campaign_publisher .submit_spacer {
+    border-top:1px solid #aaa;
+    width:auto;
+    padding: 12px 12px 0;
+}
+
+.ls #campaign_publisher  {
+    width:480px;
+    position:relative;
+}
+
+.ls #campaign_publisher .button {
+    margin: 8px 0 0 356px;
+    font-size:16px;
+}
+
+.ls #campaign_publisher .fb_checkbox {
+    color: #555555;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 3px 1px 3px 5px;
+    position: absolute;
+
+    bottom: 9px;
+    left: 5px;
+}
+
+.ie7 .feed .story_container {
+    padding-left: 65px;
+}
+
+.ls #campaign_publisher textarea, .ls #campaign_publisher input[type=text] {
+    border-color: #999999 #CCCCCC #CCCCCC #BBBBBB;
+    border-right: 1px solid #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 0 #EFEFEF;
+    font-size: 12px;
+    height: auto;
+    line-height: 142%;
+    margin: 0;
+    overflow: hidden;
+    padding: 3px 5px;
+
+    width: 97%;
+    margin-bottom:9px;
+}
+.ls #campaign_publisher #id_image {
+    margin-bottom:9px;
+    vertical-align:top;
+}
+
+.rs {
+    float: right;
+    margin-right: 0px;
+    margin-top: -29px;
+    margin-right: -12px;
+    padding-top: 0px;
+    width: 306px;
+    color: #333;
+}
+
+.rs.publisher {
+    margin-right:20px;
+    margin-top:20px;
+    width: 299px;
+}
+
+.rs .grey_container {
+    background:#f3f3f3;
+    border-right:2px solid #c7c7c7;
+    border-left:1px solid #c7c7c7;
+    padding-top:14px;
+    font-size:14px;
+    line-height:152%;
+}
+
+.rs .right_tri {
+    width: auto;
+    height: auto;
+    margin-right: 1px;
+}
+
+.ie7 .rs .right_tri {
+    display:none;
+}
+
+.rs .notice {
+    background:#ff00ff;
+    color: #222;
+    font-size: 14px;
+    padding: 18px;
+    margin-left: -18px;
+    margin-bottom: -9px;
+    width: 100.5%;
+}
+
+.rs .notice a {
+    font-weight:bold;
+}
+
+.rs .notice.preview, .rs .notice.failed, .rs .notice.canceled {
+    background: #FF9180;
+}
+
+.rs .notice.succeeded {
+    background: #6AAA0B;
+}
+
+.rs .right_sm_tri {
+    width: 5px;
+    height: 14px;
+    margin-right: -4px;
+}
+
+.rs .left_tri {
+    margin-left: -10px;
+    width: 10px;
+    height: 14px;
+}
+
+.rs ol {
+    padding-left:19px;
+    list-style:outside decimal none;
+}
+
+.rs ol li {
+    list-style:outside decimal none;
+    margin-top:5px;
+}
+
+.rs .updates li {
+    font-size:14px;
+    padding-top:12px;
+    padding-bottom:12px;
+    border-bottom:1px solid #A3A3A3;
+}
+
+.rs .updates li.last {
+    padding-bottom:0px;
+    border-bottom:0px solid #A3A3A3;
+}
+
+.rs .updates li.first {
+    padding-top:6px;
+}
+
+.rs .updates .title {
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:6px;
+    display:block;
+    line-height: 152%;
+}
+
+.rs .updates .summary {
+    color:#666666;
+    font-size:11px;
+    line-height:142%;
+}
+
+.rs a.showall {
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    color: #607890;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    height: 16px;
+    line-height: 14px;
+    margin-top: -22px;
+    padding: 1px 5px 0;
+    text-align: center;
+    top: 0;
+    vertical-align: text-top;
+}
+
+.rs .friends p {
+    margin:0px;
+    margin-bottom:5px;
+    padding:0px;
+}
+
+.rs .friends a {
+    font-weight:bold;
+}
+
+.rs .num_friends {
+    font-size:14px;
+    font-weight:bold;
+    display:block;
+    margin-bottom:5px
+}
+
+.rs .amounts {
+    background: #53584B;
+    border: 0px solid #10110D;
+    color: white;
+    margin-left: -10px;
+    padding: 13px;
+    padding-bottom: 8px;
+    width: 96%;
+    border-bottom: 3px solid #10110E;
+    text-transform: uppercase;
+}
+
+.rs .campaign_progress {
+    background:#f3f3f3;
+    border-right:2px solid #c7c7c7;
+    border-left:1px solid #c7c7c7;
+    border-top:1px solid #c7c7c7;
+    padding-top:26px;
+    font-size:14px;
+    line-height:152%;
+}
+
+.rs .campaign_progress p b, .rs .friends p b {
+    margin-bottom:2px;
+    display:block;
+}
+
+.rs .campaign_progress .fancy_chart {
+    width:271px;
+}
+
+.rs .campaign_progress p {
+    margin:0px;
+    margin-bottom:5px;
+    padding:0px;
+}
+
+.rs .campaign_progress p:last-child {
+    margin:0px;
+}
+
+.rs .campaign_progress .heading {
+    text-align:left;
+    padding-left:18px;
+}
+
+.rs .campaign_progress .heading .amount {
+    font-size:36px;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+.rs .campaign_progress .heading .desc {
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 3px solid #2F322A;
+    width: 95.5%;
+    margin-bottom: 7px;
+}
+
+.rs  .campaign_progress .left {
+    float: left;
+    padding-left: 18px;
+    width: 148px;
+}
+
+.rs .campaign_progress .right {
+    text-align:right;
+    padding-right:12px;
+    width: 124px;
+}
+
+.rs .campaign_progress .right .number, .rs .campaign_progress .right .name {
+    float:right;
+}
+
+.rs .campaign_progress .number {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 0px;
+    float:left;
+    font-size: 14px;
+}
+
+.rs .campaign_progress .name {
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+/*    margin-top: 6px;*/
+    margin-left: 4px;
+    text-transform:uppercase;
+}
+
+.rs .rewards h4 {
+    font-weight:bold;
+    display:block;
+    border-bottom:1px solid #bbbbbb;
+    padding-bottom:4px;
+    padding-top:6px;
+}
+
+.rs .rewards .reward_list {
+    border-bottom:3px solid #666;
+}
+
+.rs .rewards .reward_list li:hover {
+    background:#AABEDC;
+    cursor:pointer;
+}
+
+.rs .rewards .reward_list li a:hover {
+    text-decoration:none;
+}
+
+.rs .rewards .reward_list li {
+    border-right:1px solid #fff;
+}
+
+.rs .rewards .reward_list a .amount, .rs .notice .amount {
+    text-transform:uppercase;
+    color: #222;
+    font-size:24px;
+    font-size:18px;
+    display:block;
+    float:left;
+    font-weight: bold;
+    margin-right: 0px;
+    /*    margin-top:8px;*/
+    vertical-align: top;
+}
+
+.rs .notice .amount {
+    margin-bottom:8px;
+    width:100%;
+    float:none;
+}
+
+.rs .rewards .reward_list a:last-child {
+    border-bottom:0px solid #bbbbbb;
+}
+
+.rs .rewards .reward_list a .desc {
+    display: block;
+    margin-left: 6px;
+    margin-right: 5px;
+    float: left;
+    vertical-align: top;
+    width: 70%;
+    color:#333;
+
+    width: 100%;
+    margin:6px 0px 0px 0px;
+    font-size:14px;
+    line-height:152%;
+}
+
+
+.rs .rewards .reward_list a .num {
+    color: #555555;
+    font-weight: bold;
+    padding: 2px;
+    position: absolute;
+    right: -3px;
+    top: 6px;
+    background:#bbde82;
+}
+
+.rs .rewards a.support {
+    color: white;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 11px;
+    margin-top: 0px;
+    padding: 10px 6px 22px 8px;
+    text-transform: uppercase;
+    -moz-box-shadow: 0px 0px 0px #777;
+    -webkit-box-shadow: 0px 0px 0px #777;
+    box-shadow: 0px 0px 0px #777;
+
+    margin-left: -6px;
+    width: 99%;
+}
+
+.ie7 .rs .rewards a.support {
+    height:20px;
+}
+
+.rs .rewards a.support:visited, .rs .rewards a.support:hover {
+    color:#fff;
+}
+
+.rs .block {
+    padding:15px;
+    padding:18px;
+
+    border-bottom:1px solid #bbbbbb;
+    border-top:1px solid #fff;
+    color: #333;
+}
+
+.rs .rewards .block.first {
+    padding-bottom:8px;
+    border-bottom:1px solid #A3A3A3;
+}
+
+.rs .block.no_border {
+    border-bottom:0px solid #bbbbbb;
+    border-top:0px solid #fff;
+}
+
+.rs .supported_org.block {
+    border-top:1px solid #bbbbbb;
+    border-bottom:0px solid #bbbbbb;
+    width: 84%;
+    padding-right: 20px;
+}
+
+.rs .supported_org.block .label {
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.rs .supported_org.block a img {
+    height:50px;
+    width:50px;
+}
+
+.rs .info {
+    font-size: 12px;
+/*    color: #424242;*/
+    line-height: 142%;
+    margin-bottom: 20px;
+}
+
+.rs .block.first {
+    border-top:0px solid;
+    padding-top:0px;
+}
+
+.rs h5 {
+    color: #444444;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 142%;
+}
+
+.rs .ent {
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+.rs .ent a.photo_container {
+    display: block;
+    float: left;
+    height: 50px;
+    margin-right: 9px;
+    width: 50px;
+}
+
+.rs .ent .photo {
+    max-height: 50px;
+    max-width: 50px;
+    padding: 0;
+    top: 0;
+    vertical-align: top;
+}
+
+.rs .ent .name a {
+    display: inline;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+    vertical-align: top;
+}
+
+.rs .ent .name a.org_name {
+    display:block;
+    margin-bottom:5px;
+    line-height:142%;
+    text-transform:capitalize;
+}
+
+.rs .ent a.follow, .rs .ent a.unfollow {
+    font-size:11px;
+    float:none;
+    margin:0px;
+
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+
+    -moz-box-shadow:1px 1px 1px #777777;
+    -webkit-box-shadow:1px 1px 1px #777777;
+    box-shadow:1px 1px 1px #777777;
+
+    -moz-text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);
+    -webkit-text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);
+    text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);
+
+    border: 1px solid DarkGreen;
+    color:#FFF;
+    cursor:pointer;
+    line-height:148%;
+    font-weight:bold;
+    text-align:center;
+    text-decoration:none;
+    padding: 1px 7px 2px 6px;
+
+    background: #6aaa0b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8bce25), to(#6aaa0b));
+    background: -moz-linear-gradient(top, #8bce25,  #6aaa0b);
+}
+
+.rs .ent .num_followers {
+    color:#666666;
+    padding-left:5px;
+}
+
+.rs .ent .desc {
+    font-size:13px;
+    display:block;
+    color:#222;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height:146%;
+}
+
+.rs .ent a.follow, .rs .ent a.unfollow {
+    font-size:14px;
+}
+
+.rs .supporters {
+    margin-top:5px;
+}
+
+.rs .supporters ul {
+    margin-top:5px;
+}

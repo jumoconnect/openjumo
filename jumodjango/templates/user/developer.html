@@ -1,0 +1,40 @@
+{% extends "common/manage_base.html" %}
+{% load tags %}
+
+{% block manage_form %}
+<div class="header">
+    {{ user.get_name }}'s <span class="faded">settings</span>
+</div>
+
+<div id="section_nav" class="section_options">
+    <a href="{% url settings %}">about</a>
+    <a href="{% url settings_notifications %}">notifications</a>
+    <a href="{% url settings_connect %}">connect</a>
+    <a class="selected" href="{% url settings_developer %}">developer</a>
+</div>
+
+{% if success %}
+<div class="success_notification">
+    Thanks, your settings have been saved!
+</div>
+{% endif %}
+
+<form id="form" action="{% url settings_developer %}" method="post">
+    {% csrf_token %}
+    <div class="text">
+        Here's a bunch of SHORT text explaining there's an API and keys and crap.  Has link to docs and such.
+    </div>
+    <div class="form_group">
+        <div class="label">
+            <div class="text">API Key</div>
+        </div>
+        {% if user.get_api_key %}
+        <input type='text' readonly='true' value='{{ user.get_api_key }}'/>
+        <input id="generate_key" class="button" type="submit" value="Regenerate Key" />
+        {% else %}
+        <input type='text' readonly='true' value=''/>
+        <input id="generate_key" class="button" type="submit" value="Generate Key" />
+        {% endif %}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,1874 @@
+-- MySQL dump 10.13  Distrib 5.5.14, for osx10.7 (i386)
+--
+-- Host: localhost    Database: jumodjango
+-- ------------------------------------------------------
+-- Server version	5.5.14-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `actions`
+--
+
+DROP TABLE IF EXISTS `actions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `actions` (
+  `action_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `link` varchar(200) NOT NULL,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `date_created` datetime DEFAULT NULL,
+  `date_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`action_id`),
+  KEY `entity` (`content_type_id`,`object_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `advocates`
+--
+
+DROP TABLE IF EXISTS `advocates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `advocates` (
+  `advocate_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `name` varchar(200) NOT NULL DEFAULT '',
+  `twitter_id` varchar(32) NOT NULL DEFAULT '',
+  `date_created` datetime DEFAULT NULL,
+  `date_updated` datetime DEFAULT NULL,
+  `url` varchar(200) NOT NULL DEFAULT '',
+  PRIMARY KEY (`advocate_id`),
+  KEY `entity` (`content_type_id`,`object_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_group`
+--
+
+DROP TABLE IF EXISTS `auth_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_group_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_group_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `group_id` (`group_id`,`permission_id`),
+  KEY `auth_group_permissions_bda51c3c` (`group_id`),
+  KEY `auth_group_permissions_1e014c8f` (`permission_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_message`
+--
+
+DROP TABLE IF EXISTS `auth_message`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `message` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `auth_message_fbfc09f1` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_permission`
+--
+
+DROP TABLE IF EXISTS `auth_permission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_permission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `content_type_id` int(11) NOT NULL,
+  `codename` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `content_type_id` (`content_type_id`,`codename`),
+  KEY `auth_permission_e4470c6e` (`content_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_user`
+--
+
+DROP TABLE IF EXISTS `auth_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `email` varchar(75) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `is_staff` tinyint(1) NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `is_superuser` tinyint(1) NOT NULL,
+  `last_login` datetime NOT NULL,
+  `date_joined` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=125008 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_user_groups`
+--
+
+DROP TABLE IF EXISTS `auth_user_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`group_id`),
+  KEY `auth_user_groups_fbfc09f1` (`user_id`),
+  KEY `auth_user_groups_bda51c3c` (`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `auth_user_user_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_user_user_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_user_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`permission_id`),
+  KEY `auth_user_user_permissions_fbfc09f1` (`user_id`),
+  KEY `auth_user_user_permissions_1e014c8f` (`permission_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_applications`
+--
+
+DROP TABLE IF EXISTS `campaign_applications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_applications` (
+  `application_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `org_id` int(10) unsigned NOT NULL,
+  `approved` tinyint(1) DEFAULT '0',
+  `campaign_id` int(10) unsigned DEFAULT NULL,
+  `goal` decimal(19,2) NOT NULL,
+  `completion_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`application_id`),
+  KEY `campaign_id` (`campaign_id`),
+  KEY `user_id` (`user_id`,`approved`),
+  KEY `org_id` (`org_id`,`approved`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_issues`
+--
+
+DROP TABLE IF EXISTS `campaign_issues`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_issues` (
+  `campaign_issue_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `issue_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`campaign_issue_id`),
+  KEY `campaign_id` (`campaign_id`,`issue_id`),
+  KEY `campaign_id_2` (`campaign_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_locations`
+--
+
+DROP TABLE IF EXISTS `campaign_locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_locations` (
+  `campaign_location_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `location_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`campaign_location_id`),
+  UNIQUE KEY `campaign_id` (`campaign_id`,`location_id`),
+  KEY `campaign_id_2` (`campaign_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_media`
+--
+
+DROP TABLE IF EXISTS `campaign_media`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_media` (
+  `campaign_media_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `type` enum('photo','video','slideshow','link') NOT NULL,
+  `position` int(10) unsigned NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `metadata` text NOT NULL,
+  PRIMARY KEY (`campaign_media_id`),
+  KEY `campaign_id` (`campaign_id`,`type`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_rewards`
+--
+
+DROP TABLE IF EXISTS `campaign_rewards`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_rewards` (
+  `reward_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `lower_bound` decimal(19,2) DEFAULT NULL,
+  `upper_bound` decimal(19,2) DEFAULT NULL,
+  `reward_type` enum('standard','limited') DEFAULT 'standard',
+  `description` varchar(255) DEFAULT NULL,
+  `total_available` int(10) unsigned DEFAULT NULL,
+  `total_claimed` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`reward_id`),
+  KEY `campaign_id` (`campaign_id`,`lower_bound`,`upper_bound`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_statistics`
+--
+
+DROP TABLE IF EXISTS `campaign_statistics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_statistics` (
+  `stat_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `type` enum('statistic','question') NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(2303) NOT NULL,
+  `issue_statistic_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`stat_id`),
+  KEY `campaign_id` (`campaign_id`,`type`),
+  KEY `issue_statistic_id` (`issue_statistic_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaign_suggested_amounts`
+--
+
+DROP TABLE IF EXISTS `campaign_suggested_amounts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_suggested_amounts` (
+  `suggested_amount_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(10) unsigned NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `amount` decimal(19,2) NOT NULL,
+  `reward_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`suggested_amount_id`),
+  KEY `campaign_id` (`campaign_id`,`amount`),
+  KEY `reward_id` (`reward_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `campaigns`
+--
+
+DROP TABLE IF EXISTS `campaigns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaigns` (
+  `campaign_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `owner_id` int(10) unsigned NOT NULL,
+  `target_type` enum('org','issue','fund') DEFAULT NULL,
+  `target_id` int(10) unsigned NOT NULL,
+  `created_by` enum('org','user') DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `tagline` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `appeal` text NOT NULL,
+  `goal` decimal(19,2) NOT NULL,
+  `jumo_match_amount` decimal(19,2) NOT NULL DEFAULT '0.00',
+  `start_date` datetime NOT NULL,
+  `completion_date` datetime NOT NULL,
+  `campaign_type` enum('threshold','standard') NOT NULL DEFAULT 'threshold',
+  `status` enum('preview','ready','in_progress','cancelled','closed','complete') NOT NULL DEFAULT 'preview',
+  `collection_status` enum('not_charging','collecting_payments','complete') DEFAULT 'not_charging',
+  `is_successful` tinyint(4) NOT NULL,
+  `publication_id` int(10) unsigned DEFAULT NULL,
+  `staff_approved` tinyint(4) NOT NULL DEFAULT '0',
+  `target_approved` tinyint(4) NOT NULL DEFAULT '0',
+  `reputation_score` decimal(6,2) DEFAULT '0.00',
+  `total_donated` decimal(19,2) NOT NULL DEFAULT '0.00',
+  `date_created` datetime NOT NULL,
+  `img_url` varchar(200) NOT NULL DEFAULT '',
+  `thumbnail_url` varchar(200) NOT NULL DEFAULT '',
+  PRIMARY KEY (`campaign_id`),
+  KEY `owner_id` (`owner_id`,`completion_date`),
+  KEY `target_type` (`target_type`,`target_id`,`created_by`,`status`,`completion_date`),
+  KEY `status` (`status`,`is_successful`,`completion_date`),
+  KEY `reputation_score` (`reputation_score`,`completion_date`),
+  KEY `collection_status` (`collection_status`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `celery_taskmeta`
+--
+
+DROP TABLE IF EXISTS `celery_taskmeta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `celery_taskmeta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `task_id` varchar(255) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `result` longtext,
+  `date_done` datetime NOT NULL,
+  `traceback` longtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `task_id` (`task_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1878498 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `celery_tasksetmeta`
+--
+
+DROP TABLE IF EXISTS `celery_tasksetmeta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `celery_tasksetmeta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `taskset_id` varchar(255) NOT NULL,
+  `result` longtext NOT NULL,
+  `date_done` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `taskset_id` (`taskset_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `commitments`
+--
+
+DROP TABLE IF EXISTS `commitments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `commitments` (
+  `commitment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `status` enum('pending','completed') NOT NULL,
+  `goal_date` datetime DEFAULT NULL,
+  `date_created` datetime DEFAULT NULL,
+  `date_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`commitment_id`),
+  KEY `entity` (`content_type_id`,`object_id`),
+  KEY `user_id_index` (`user_id`,`status`,`goal_date`)
+) ENGINE=InnoDB AUTO_INCREMENT=1507309 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `content_items`
+--
+
+DROP TABLE IF EXISTS `content_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `content_items` (
+  `content_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `object_id` int(10) unsigned NOT NULL,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `section` enum('left','center') NOT NULL,
+  `position` int(10) unsigned NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `body` text NOT NULL,
+  `rich_text_body` text NOT NULL,
+  PRIMARY KEY (`content_item_id`),
+  KEY `entity` (`content_type_id`,`object_id`,`section`,`position`)
+) ENGINE=InnoDB AUTO_INCREMENT=28555 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `credit_cards`
+--
+
+DROP TABLE IF EXISTS `credit_cards`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `credit_cards` (
+  `credit_card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donor_id` int(10) unsigned NOT NULL,
+  `nfg_card_on_file_id` int(10) unsigned DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `donor_address_id` int(10) unsigned DEFAULT NULL,
+  `date_last_charged` datetime DEFAULT NULL,
+  `nfg_cof_is_active` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`credit_card_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `discovery_items`
+--
+
+DROP TABLE IF EXISTS `discovery_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `discovery_items` (
+  `discovery_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sub_category_id` int(10) unsigned NOT NULL,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`discovery_item_id`),
+  KEY `entity_idx` (`content_type_id`,`object_id`),
+  KEY `sub_category_id` (`sub_category_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `django_admin_log`
+--
+
+DROP TABLE IF EXISTS `django_admin_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_admin_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `action_time` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `content_type_id` int(11) DEFAULT NULL,
+  `object_id` longtext,
+  `object_repr` varchar(200) NOT NULL,
+  `action_flag` smallint(5) unsigned NOT NULL,
+  `change_message` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `django_admin_log_fbfc09f1` (`user_id`),
+  KEY `django_admin_log_e4470c6e` (`content_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1053 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `django_content_type`
+--
+
+DROP TABLE IF EXISTS `django_content_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_content_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `app_label` varchar(100) NOT NULL,
+  `model` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `app_label` (`app_label`,`model`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `django_session`
+--
+
+DROP TABLE IF EXISTS `django_session`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_session` (
+  `session_key` varchar(40) NOT NULL,
+  `session_data` longtext NOT NULL,
+  `expire_date` datetime NOT NULL,
+  PRIMARY KEY (`session_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `django_site`
+--
+
+DROP TABLE IF EXISTS `django_site`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_site` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `domain` varchar(100) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_crontabschedule`
+--
+
+DROP TABLE IF EXISTS `djcelery_crontabschedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_crontabschedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `minute` varchar(64) NOT NULL,
+  `hour` varchar(64) NOT NULL,
+  `day_of_week` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_intervalschedule`
+--
+
+DROP TABLE IF EXISTS `djcelery_intervalschedule`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_intervalschedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `every` int(11) NOT NULL,
+  `period` varchar(24) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_periodictask`
+--
+
+DROP TABLE IF EXISTS `djcelery_periodictask`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_periodictask` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `task` varchar(200) NOT NULL,
+  `interval_id` int(11) DEFAULT NULL,
+  `crontab_id` int(11) DEFAULT NULL,
+  `args` longtext NOT NULL,
+  `kwargs` longtext NOT NULL,
+  `queue` varchar(200) DEFAULT NULL,
+  `exchange` varchar(200) DEFAULT NULL,
+  `routing_key` varchar(200) DEFAULT NULL,
+  `expires` datetime DEFAULT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `last_run_at` datetime DEFAULT NULL,
+  `total_run_count` int(10) unsigned NOT NULL,
+  `date_changed` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `djcelery_periodictask_17d2d99d` (`interval_id`),
+  KEY `djcelery_periodictask_7aa5fda` (`crontab_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_periodictasks`
+--
+
+DROP TABLE IF EXISTS `djcelery_periodictasks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_periodictasks` (
+  `ident` smallint(6) NOT NULL,
+  `last_update` datetime NOT NULL,
+  PRIMARY KEY (`ident`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_taskstate`
+--
+
+DROP TABLE IF EXISTS `djcelery_taskstate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_taskstate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `state` varchar(64) NOT NULL,
+  `task_id` varchar(36) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `tstamp` datetime NOT NULL,
+  `args` longtext,
+  `kwargs` longtext,
+  `eta` datetime DEFAULT NULL,
+  `expires` datetime DEFAULT NULL,
+  `result` longtext,
+  `traceback` longtext,
+  `runtime` double DEFAULT NULL,
+  `worker_id` int(11) DEFAULT NULL,
+  `hidden` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `task_id` (`task_id`),
+  KEY `djcelery_taskstate_52094d6e` (`name`),
+  KEY `djcelery_taskstate_f0ba6500` (`tstamp`),
+  KEY `djcelery_taskstate_20fc5b84` (`worker_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `djcelery_workerstate`
+--
+
+DROP TABLE IF EXISTS `djcelery_workerstate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `djcelery_workerstate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hostname` varchar(255) NOT NULL,
+  `last_heartbeat` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `hostname` (`hostname`),
+  KEY `djcelery_workerstate_eb8ac7e4` (`last_heartbeat`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donation_beneficiaries`
+--
+
+DROP TABLE IF EXISTS `donation_beneficiaries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donation_beneficiaries` (
+  `donation_beneficiary_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donation_id` int(10) unsigned NOT NULL,
+  `org_id` int(10) unsigned NOT NULL,
+  `amount` decimal(19,2) NOT NULL,
+  PRIMARY KEY (`donation_beneficiary_id`),
+  UNIQUE KEY `donation_orgs` (`donation_id`,`org_id`),
+  KEY `org_id` (`org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donations`
+--
+
+DROP TABLE IF EXISTS `donations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donations` (
+  `donation_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donor_id` int(10) unsigned NOT NULL,
+  `credit_card_id` int(10) unsigned NOT NULL,
+  `entity_type` enum('campaign','org','issue','fund') DEFAULT NULL,
+  `entity_id` int(10) unsigned NOT NULL,
+  `amount` decimal(19,2) DEFAULT '0.00',
+  `charge_status` enum('do_not_attempt','ready','attempting_payment','payment_complete') DEFAULT 'do_not_attempt',
+  `payment_status` enum('unpaid','paid','failed','permafailed') DEFAULT 'unpaid',
+  `last_payment_attempt` datetime DEFAULT NULL,
+  `street1` varchar(255) DEFAULT NULL,
+  `street2` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `region` varchar(255) DEFAULT NULL,
+  `postal_code` varchar(14) DEFAULT NULL,
+  `country` char(2) NOT NULL DEFAULT '',
+  `phone` varchar(50) DEFAULT NULL,
+  `charge_id` int(11) DEFAULT NULL,
+  `reward_id` int(10) unsigned DEFAULT NULL,
+  `comment` varchar(2000) NOT NULL,
+  `donation_date` datetime DEFAULT NULL,
+  `version` int(11) NOT NULL DEFAULT '1',
+  `jumo_amount` decimal(19,2) DEFAULT NULL,
+  `list_publicly` tinyint(4) NOT NULL DEFAULT '1',
+  `is_anonymous` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`donation_id`),
+  KEY `donor_donations` (`donor_id`,`donation_date`),
+  KEY `donor_entity` (`donor_id`,`entity_type`,`entity_id`),
+  KEY `charge_id` (`charge_id`),
+  KEY `credit_card_id` (`credit_card_id`),
+  KEY `entity_payment_status` (`entity_type`,`entity_id`,`payment_status`),
+  KEY `entity_list_publicly` (`entity_type`,`entity_id`,`list_publicly`,`donor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donor_addresses`
+--
+
+DROP TABLE IF EXISTS `donor_addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donor_addresses` (
+  `donor_address_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donor_id` int(10) unsigned NOT NULL,
+  `street1` varchar(255) DEFAULT NULL,
+  `street2` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `region` varchar(255) DEFAULT NULL,
+  `postal_code` varchar(14) DEFAULT NULL,
+  `country` char(2) DEFAULT NULL,
+  `is_shipping` tinyint(4) NOT NULL DEFAULT '0',
+  `is_billing` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`donor_address_id`),
+  KEY `donor_id` (`donor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donor_phone_numbers`
+--
+
+DROP TABLE IF EXISTS `donor_phone_numbers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donor_phone_numbers` (
+  `donor_phone_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donor_id` int(10) unsigned NOT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`donor_phone_id`),
+  KEY `donor_id` (`donor_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donors`
+--
+
+DROP TABLE IF EXISTS `donors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donors` (
+  `donor_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `email_crc32` int(10) unsigned NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`donor_id`),
+  KEY `user_id` (`user_id`),
+  KEY `email_crc32` (`email_crc32`)
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_discovery`
+--
+
+DROP TABLE IF EXISTS `issue_discovery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_discovery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `top_issue_id` int(11) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `issue_discovery_ddef7dcc` (`top_issue_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_discovery_desired_sub_issues`
+--
+
+DROP TABLE IF EXISTS `issue_discovery_desired_sub_issues`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_discovery_desired_sub_issues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `discovery_id` int(11) NOT NULL,
+  `issue_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `discovery_id` (`discovery_id`,`issue_id`),
+  KEY `issue_discovery_desired_sub_issues_a8572819` (`discovery_id`),
+  KEY `issue_discovery_desired_sub_issues_18752524` (`issue_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_discovery_spotlight_orgs`
+--
+
+DROP TABLE IF EXISTS `issue_discovery_spotlight_orgs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_discovery_spotlight_orgs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `discovery_id` int(11) NOT NULL,
+  `org_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `discovery_id` (`discovery_id`,`org_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_issue`
+--
+
+DROP TABLE IF EXISTS `issue_issue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_issue` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `handle` varchar(60) NOT NULL,
+  `mongo_id` varchar(24) NOT NULL,
+  `img_file` varchar(32) NOT NULL,
+  `description` longtext NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `parent_issue_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `handle` (`handle`),
+  KEY `issue_issue_de9600d0` (`parent_issue_id`),
+  KEY `issue_issue_fec6bd93` (`mongo_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_locsearchlookupstore`
+--
+
+DROP TABLE IF EXISTS `issue_locsearchlookupstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_locsearchlookupstore` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `search` varchar(255) NOT NULL,
+  `result` longtext NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `issue_locsearchlookupstore_d00194b7` (`search`)
+) ENGINE=MyISAM AUTO_INCREMENT=2410 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_relations`
+--
+
+DROP TABLE IF EXISTS `issue_relations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_relations` (
+  `issue_relation_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `parent_id` int(10) unsigned NOT NULL,
+  `child_id` int(10) unsigned NOT NULL,
+  `relation_type` enum('geo','type') NOT NULL,
+  PRIMARY KEY (`issue_relation_id`),
+  KEY `parent_id` (`parent_id`,`child_id`,`relation_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_searchterm`
+--
+
+DROP TABLE IF EXISTS `issue_searchterm`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_searchterm` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `issue_id` int(11) NOT NULL,
+  `term` varchar(128) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `issue_id` (`issue_id`,`term`),
+  KEY `issue_searchterm_18752524` (`issue_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_socialidlookupstore`
+--
+
+DROP TABLE IF EXISTS `issue_socialidlookupstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_socialidlookupstore` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `search` varchar(128) NOT NULL,
+  `result` varchar(32) NOT NULL,
+  `type` varchar(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `issue_socialidlookupstore_d00194b7` (`search`)
+) ENGINE=InnoDB AUTO_INCREMENT=13286 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_statistic`
+--
+
+DROP TABLE IF EXISTS `issue_statistic`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_statistic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `issue_id` int(11) NOT NULL,
+  `header` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `link` varchar(200) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `issue_statistic_18752524` (`issue_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=607 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issue_usertoissuefollow`
+--
+
+DROP TABLE IF EXISTS `issue_usertoissuefollow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issue_usertoissuefollow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `following` tinyint(1) NOT NULL,
+  `started_following` datetime NOT NULL,
+  `stopped_following` datetime DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `issue_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`issue_id`),
+  KEY `issue_usertoissuefollow_930459fb` (`following`),
+  KEY `issue_usertoissuefollow_fbfc09f1` (`user_id`),
+  KEY `issue_usertoissuefollow_18752524` (`issue_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2029730 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `issues`
+--
+
+DROP TABLE IF EXISTS `issues`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `issues` (
+  `issue_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `handle` varchar(60) NOT NULL,
+  `summary` varchar(255) NOT NULL DEFAULT '',
+  `img_large_url` varchar(200) NOT NULL DEFAULT '',
+  `img_small_url` varchar(200) NOT NULL DEFAULT '',
+  `is_active` tinyint(1) NOT NULL,
+  `content_upgraded` tinyint(1) NOT NULL DEFAULT '0',
+  `location_id` int(10) unsigned DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`issue_id`),
+  KEY `handle` (`handle`),
+  KEY `is_active` (`is_active`),
+  KEY `content_upgraded` (`content_upgraded`)
+) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `locations`
+--
+
+DROP TABLE IF EXISTS `locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `locations` (
+  `location_id` int(11) NOT NULL AUTO_INCREMENT,
+  `raw_geodata` text,
+  `geodata_hash` char(32) DEFAULT NULL,
+  `longitude` float(10,6) DEFAULT NULL,
+  `latitude` float(10,6) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `region` varchar(255) DEFAULT NULL,
+  `locality` varchar(255) DEFAULT NULL,
+  `postal_code` varchar(255) DEFAULT NULL,
+  `country_name` varchar(255) DEFAULT NULL,
+  `classification` enum('US','International') DEFAULT NULL,
+  PRIMARY KEY (`location_id`),
+  KEY `geodata_hash` (`geodata_hash`)
+) ENGINE=MyISAM AUTO_INCREMENT=52934 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mailer_email`
+--
+
+DROP TABLE IF EXISTS `mailer_email`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mailer_email` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sent` tinyint(1) NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `from_address` varchar(255) DEFAULT 'no-reply@jumo.com',
+  `recipient` varchar(75) NOT NULL,
+  `headers` text,
+  `subject` varchar(255) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_sent` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sent` (`sent`)
+) ENGINE=InnoDB AUTO_INCREMENT=754534 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `media_items`
+--
+
+DROP TABLE IF EXISTS `media_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `media_items` (
+  `media_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `media_type` enum('photo','video','slideshow','link','pullquote') NOT NULL,
+  `caption` text NOT NULL,
+  `thumbnail_url` varchar(200) NOT NULL DEFAULT '',
+  `position` int(10) unsigned NOT NULL,
+  `metadata` text NOT NULL,
+  `date_created` datetime DEFAULT NULL,
+  `date_updated` datetime DEFAULT NULL,
+  `img_url` varchar(200) NOT NULL DEFAULT '',
+  PRIMARY KEY (`media_item_id`),
+  KEY `content_type_id` (`content_type_id`,`object_id`,`media_type`,`position`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `messages`
+--
+
+DROP TABLE IF EXISTS `messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `messages` (
+  `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `publication_id` int(10) unsigned NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `feed_item_id` int(10) unsigned NOT NULL,
+  `confirmed` tinyint(4) DEFAULT '0',
+  `sent` tinyint(4) DEFAULT '0',
+  `date_created` datetime DEFAULT NULL,
+  PRIMARY KEY (`message_id`),
+  KEY `publication_id` (`publication_id`),
+  KEY `confirmed` (`confirmed`,`sent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `migrate_version`
+--
+
+DROP TABLE IF EXISTS `migrate_version`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrate_version` (
+  `repository_id` varchar(250) NOT NULL,
+  `repository_path` text,
+  `version` int(11) DEFAULT NULL,
+  PRIMARY KEY (`repository_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_accomplishment`
+--
+
+DROP TABLE IF EXISTS `org_accomplishment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_accomplishment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `header` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `link` varchar(200) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `org_accomplishment_578d5ab7` (`org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4040 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_alias`
+--
+
+DROP TABLE IF EXISTS `org_alias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_alias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `alias` varchar(200) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`alias`),
+  KEY `org_alias_578d5ab7` (`org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1888 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_donation`
+--
+
+DROP TABLE IF EXISTS `org_donation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_donation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `org_donation_578d5ab7` (`org_id`),
+  KEY `org_donation_fbfc09f1` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_issuessuggestedorgrelationship`
+--
+
+DROP TABLE IF EXISTS `org_issuessuggestedorgrelationship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_issuessuggestedorgrelationship` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `issue_id` int(11) NOT NULL,
+  `org_id` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `issue_id` (`issue_id`,`org_id`),
+  KEY `org_issuessuggestedorgrelationship_18752524` (`issue_id`),
+  KEY `org_issuessuggestedorgrelationship_578d5ab7` (`org_id`),
+  KEY `issue_rank` (`issue_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=794 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_method`
+--
+
+DROP TABLE IF EXISTS `org_method`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `method` varchar(200) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`method`),
+  KEY `org_method_578d5ab7` (`org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7508 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_org`
+--
+
+DROP TABLE IF EXISTS `org_org`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_org` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `handle` varchar(210) NOT NULL,
+  `mongo_id` varchar(24) NOT NULL,
+  `ein` varchar(12) DEFAULT NULL,
+  `email` varchar(75) NOT NULL,
+  `phone_number` varchar(50) NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `img_url` varchar(200) NOT NULL,
+  `year_founded` int(11) DEFAULT NULL,
+  `revenue` varchar(32) NOT NULL,
+  `vision_statement` varchar(250) NOT NULL,
+  `mission_statement` longtext NOT NULL,
+  `blog_url` varchar(200) NOT NULL,
+  `fb_last_updated` datetime DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `flagged` tinyint(1) NOT NULL,
+  `donation_enabled` tinyint(1) NOT NULL,
+  `last_donation_enabled_check` datetime DEFAULT NULL,
+  `is_seed` tinyint(1) NOT NULL,
+  `claim_token` varchar(32) NOT NULL,
+  `is_claimed` tinyint(1) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `fb_fetch_enabled` tinyint(1) NOT NULL,
+  `fb_last_fetched` varchar(24) NOT NULL,
+  `twitter_fetch_enabled` tinyint(1) NOT NULL,
+  `twitter_last_fetched` varchar(24) NOT NULL,
+  `twitter_id` varchar(64) NOT NULL,
+  `flickr_id` varchar(64) NOT NULL,
+  `vimeo_id` varchar(64) NOT NULL,
+  `youtube_id` varchar(64) NOT NULL,
+  `facebook_id` bigint(20) DEFAULT NULL,
+  `location_id` int(11) DEFAULT NULL,
+  `parent_org_id` int(11) DEFAULT NULL,
+  `social_mission` tinyint(1) DEFAULT NULL,
+  `is_501c3` tinyint(1) DEFAULT NULL,
+  `political_influence` tinyint(1) DEFAULT NULL,
+  `profit_seeking` tinyint(1) DEFAULT NULL,
+  `size` varchar(32) NOT NULL,
+  `recommended` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `handle` (`handle`),
+  KEY `org_org_319d859` (`location_id`),
+  KEY `org_org_bf2fe2f3` (`parent_org_id`),
+  KEY `mongo_id_index` (`mongo_id`),
+  KEY `org_org_9aef04d9` (`recommended`),
+  KEY `org_org_52094d6e` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=14155 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_org_admins`
+--
+
+DROP TABLE IF EXISTS `org_org_admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_org_admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`user_id`),
+  KEY `org_org_admins_578d5ab7` (`org_id`),
+  KEY `org_org_admins_fbfc09f1` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10515 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_org_ignored_related_orgs`
+--
+
+DROP TABLE IF EXISTS `org_org_ignored_related_orgs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_org_ignored_related_orgs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from_org_id` int(11) NOT NULL,
+  `to_org_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `from_org_id` (`from_org_id`,`to_org_id`),
+  KEY `org_org_ignored_related_orgs_742f431b` (`from_org_id`),
+  KEY `org_org_ignored_related_orgs_c3d1427e` (`to_org_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_org_working_locations`
+--
+
+DROP TABLE IF EXISTS `org_org_working_locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_org_working_locations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`location_id`),
+  KEY `location_id_refs_id_600e30fa` (`location_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=93932 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_orgissuerelationship`
+--
+
+DROP TABLE IF EXISTS `org_orgissuerelationship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_orgissuerelationship` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `issue_id` int(11) NOT NULL,
+  `rank` int(11) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`issue_id`),
+  KEY `org_orgissuerelationship_578d5ab7` (`org_id`),
+  KEY `org_orgissuerelationship_18752524` (`issue_id`),
+  KEY `org_rank` (`org_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=219051 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_usertoorgfollow`
+--
+
+DROP TABLE IF EXISTS `org_usertoorgfollow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_usertoorgfollow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `following` tinyint(1) NOT NULL,
+  `started_following` datetime NOT NULL,
+  `stopped_following` datetime DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `org_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`,`org_id`),
+  KEY `org_usertoorgfollow_930459fb` (`following`),
+  KEY `org_usertoorgfollow_fbfc09f1` (`user_id`),
+  KEY `org_usertoorgfollow_578d5ab7` (`org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3628113 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org_working_locations`
+--
+
+DROP TABLE IF EXISTS `org_working_locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org_working_locations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `org_id` int(10) unsigned NOT NULL,
+  `location_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_id` (`org_id`,`location_id`),
+  KEY `location_id` (`location_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=93939 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `orgs`
+--
+
+DROP TABLE IF EXISTS `orgs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orgs` (
+  `org_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `summary` varchar(255) NOT NULL DEFAULT '',
+  `handle` varchar(210) NOT NULL,
+  `ein` varchar(12) NOT NULL DEFAULT '',
+  `email` varchar(75) NOT NULL DEFAULT '',
+  `phone_number` varchar(50) NOT NULL DEFAULT '',
+  `img_large_url` varchar(200) NOT NULL DEFAULT '',
+  `img_small_url` varchar(200) NOT NULL DEFAULT '',
+  `year_founded` int(11) DEFAULT NULL,
+  `revenue` varchar(32) NOT NULL DEFAULT '',
+  `size` varchar(32) NOT NULL DEFAULT '',
+  `blog_url` varchar(200) NOT NULL DEFAULT '',
+  `site_url` varchar(200) NOT NULL DEFAULT '',
+  `facebook_id` bigint(20) DEFAULT NULL,
+  `twitter_id` varchar(64) NOT NULL DEFAULT '',
+  `youtube_id` varchar(64) NOT NULL DEFAULT '',
+  `flickr_id` varchar(64) NOT NULL DEFAULT '',
+  `location_id` int(11) DEFAULT NULL,
+  `is_vetted` tinyint(1) NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `donation_enabled` tinyint(1) NOT NULL DEFAULT '0',
+  `claim_token` varchar(32) NOT NULL DEFAULT '',
+  `is_claimed` tinyint(1) NOT NULL DEFAULT '0',
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `twitter_last_status_id` bigint(20) unsigned DEFAULT NULL,
+  `facebook_last_fetched` char(24) DEFAULT NULL,
+  PRIMARY KEY (`org_id`),
+  UNIQUE KEY `handle` (`handle`),
+  KEY `handle_2` (`handle`),
+  KEY `is_active` (`is_active`),
+  KEY `is_vetted` (`is_vetted`)
+) ENGINE=InnoDB AUTO_INCREMENT=14155 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `payments`
+--
+
+DROP TABLE IF EXISTS `payments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payments` (
+  `payment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `donation_id` int(10) unsigned NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT '',
+  `payment_date` datetime DEFAULT NULL,
+  `error_data` varchar(2000) NOT NULL DEFAULT '',
+  `did_succeed` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`payment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `pub_admins`
+--
+
+DROP TABLE IF EXISTS `pub_admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pub_admins` (
+  `pub_admin_id` int(11) NOT NULL AUTO_INCREMENT,
+  `publication_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`pub_admin_id`),
+  UNIQUE KEY `user_pub` (`user_id`,`publication_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `publications`
+--
+
+DROP TABLE IF EXISTS `publications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `publications` (
+  `publication_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT '',
+  `default_subject` varchar(255) DEFAULT '',
+  `is_staff_publication` tinyint(4) NOT NULL DEFAULT '0',
+  `user_settings_field` varchar(255) DEFAULT NULL,
+  `max_subscriber_emails` int(10) unsigned NOT NULL,
+  `subscriber_emails_sent` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`publication_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `related_orgs`
+--
+
+DROP TABLE IF EXISTS `related_orgs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `related_orgs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `org_id` int(11) NOT NULL,
+  `related_org_id` int(11) NOT NULL,
+  `rank` double NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `org_rank` (`org_id`,`rank`),
+  KEY `org_orgrelatedorgrelationship_578d5ab7` (`org_id`),
+  KEY `org_orgrelatedorgrelationship_baa2ebad` (`related_org_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=125973752 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sections`
+--
+
+DROP TABLE IF EXISTS `sections`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sections` (
+  `section_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`section_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `source_tagged_items`
+--
+
+DROP TABLE IF EXISTS `source_tagged_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `source_tagged_items` (
+  `source_tagged_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `item_type` varchar(255) NOT NULL,
+  `item_id` int(10) unsigned NOT NULL,
+  `tag_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`source_tagged_item_id`),
+  KEY `item_type` (`item_type`,`item_id`),
+  KEY `tag_id` (`tag_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `source_tags`
+--
+
+DROP TABLE IF EXISTS `source_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `source_tags` (
+  `source_tag_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tag` varchar(255) NOT NULL,
+  `tag_crc32` int(10) unsigned NOT NULL,
+  `is_active` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`source_tag_id`),
+  KEY `tag_crc32` (`tag_crc32`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sub_categories`
+--
+
+DROP TABLE IF EXISTS `sub_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sub_categories` (
+  `sub_category_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `top_category_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`sub_category_id`),
+  KEY `top_category_id` (`top_category_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `subscriptions`
+--
+
+DROP TABLE IF EXISTS `subscriptions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `subscriptions` (
+  `subscription_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `donor_id` int(10) unsigned DEFAULT NULL,
+  `publication_id` int(10) unsigned NOT NULL,
+  `subscribed` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`subscription_id`),
+  KEY `publication` (`publication_id`,`subscribed`),
+  KEY `donor` (`donor_id`,`publication_id`,`subscribed`),
+  KEY `user` (`user_id`,`publication_id`,`subscribed`)
+) ENGINE=InnoDB AUTO_INCREMENT=131252 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tastypie_apiaccess`
+--
+
+DROP TABLE IF EXISTS `tastypie_apiaccess`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tastypie_apiaccess` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `request_method` varchar(10) NOT NULL,
+  `accessed` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tastypie_apikey`
+--
+
+DROP TABLE IF EXISTS `tastypie_apikey`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tastypie_apikey` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `key` varchar(256) NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `temp_top_users`
+--
+
+DROP TABLE IF EXISTS `temp_top_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `temp_top_users` (
+  `user_id` int(11) NOT NULL,
+  `posts` int(11) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `timeline_items`
+--
+
+DROP TABLE IF EXISTS `timeline_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `timeline_items` (
+  `timeline_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content_type_id` int(10) unsigned NOT NULL,
+  `object_id` int(10) unsigned NOT NULL,
+  `year` int(10) unsigned NOT NULL,
+  `description` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  PRIMARY KEY (`timeline_item_id`),
+  KEY `entity` (`content_type_id`,`object_id`,`year`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `top_categories`
+--
+
+DROP TABLE IF EXISTS `top_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `top_categories` (
+  `top_category_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`top_category_id`),
+  KEY `rank` (`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `top_list_items`
+--
+
+DROP TABLE IF EXISTS `top_list_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `top_list_items` (
+  `list_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `list_id` int(10) unsigned NOT NULL,
+  `entity_content_type` int(10) unsigned NOT NULL,
+  `entity_type` enum('user','org','issue','campaign') NOT NULL,
+  `entity_id` int(10) unsigned NOT NULL,
+  `rank` int(10) unsigned NOT NULL,
+  `date_created` datetime NOT NULL,
+  `last_modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`list_item_id`),
+  KEY `list_id` (`list_id`,`rank`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `top_list_types`
+--
+
+DROP TABLE IF EXISTS `top_list_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `top_list_types` (
+  `list_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`list_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `top_lists`
+--
+
+DROP TABLE IF EXISTS `top_lists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `top_lists` (
+  `list_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(75) NOT NULL,
+  `is_current` tinyint(1) NOT NULL DEFAULT '0',
+  `section_id` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL,
+  `valid_from` date NOT NULL,
+  `valid_to` date DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `last_modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `is_current` (`is_current`,`section_id`,`position`),
+  KEY `section_id` (`section_id`,`is_current`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `unsubscribes`
+--
+
+DROP TABLE IF EXISTS `unsubscribes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `unsubscribes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) NOT NULL,
+  `publication_id` int(11) NOT NULL,
+  `date_created` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`publication_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3320 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_location`
+--
+
+DROP TABLE IF EXISTS `users_location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_location` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `raw_geodata` longtext NOT NULL,
+  `longitude` double DEFAULT NULL,
+  `latitude` double DEFAULT NULL,
+  `address` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `locality` varchar(255) NOT NULL,
+  `postal_code` varchar(255) NOT NULL,
+  `country_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52934 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_passwordresetrequest`
+--
+
+DROP TABLE IF EXISTS `users_passwordresetrequest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_passwordresetrequest` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `uid` varchar(36) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `users_passwordresetrequest_fbfc09f1` (`user_id`),
+  KEY `users_passwordresetrequest_ae39c432` (`uid`)
+) ENGINE=MyISAM AUTO_INCREMENT=3154 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_user`
+--
+
+DROP TABLE IF EXISTS `users_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_user` (
+  `user_ptr_id` int(11) NOT NULL,
+  `fb_access_token` varchar(128) NOT NULL,
+  `long_email` varchar(200) NOT NULL,
+  `enable_jumo_updates` tinyint(1) NOT NULL,
+  `enable_followed_notification` tinyint(1) NOT NULL,
+  `email_stream_frequency` int(10) unsigned NOT NULL,
+  `post_to_fb` tinyint(1) NOT NULL,
+  `mongo_id` varchar(24) NOT NULL,
+  `bio` longtext NOT NULL,
+  `picture` varchar(32) NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `blog_url` varchar(200) NOT NULL,
+  `gender` varchar(6) DEFAULT NULL,
+  `birth_year` smallint(5) unsigned DEFAULT NULL,
+  `location_id` int(11) DEFAULT NULL,
+  `next_email_time` date DEFAULT NULL,
+  `facebook_id` bigint(20) DEFAULT NULL,
+  `twitter_id` varchar(32) NOT NULL,
+  `flickr_id` varchar(32) NOT NULL,
+  `vimeo_id` varchar(32) NOT NULL,
+  `youtube_id` varchar(32) NOT NULL,
+  `thumb_img_url` varchar(200) NOT NULL DEFAULT '',
+  `orig_img_url` varchar(200) NOT NULL DEFAULT '',
+  `large_img_url` varchar(200) NOT NULL DEFAULT '',
+  `likely_org` tinyint(1) DEFAULT '0',
+  `org_probability` float DEFAULT '0',
+  `admin_classification` enum('user','org') DEFAULT NULL,
+  PRIMARY KEY (`user_ptr_id`),
+  UNIQUE KEY `long_email` (`long_email`),
+  KEY `users_user_319d859` (`location_id`),
+  KEY `users_user_8f0612a8` (`facebook_id`),
+  KEY `mongo_id_index` (`mongo_id`),
+  KEY `users_user_f2cd3cbe` (`next_email_time`),
+  KEY `users_user_fec6bd93` (`mongo_id`),
+  KEY `org_probability` (`org_probability`),
+  KEY `admin_classification` (`admin_classification`),
+  KEY `is_org` (`likely_org`,`org_probability`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `users_usertouserfollow`
+--
+
+DROP TABLE IF EXISTS `users_usertouserfollow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_usertouserfollow` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_following` tinyint(1) NOT NULL,
+  `started_following` datetime NOT NULL,
+  `stopped_following` datetime DEFAULT NULL,
+  `followed_id` int(11) NOT NULL,
+  `follower_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `followed_id` (`followed_id`,`follower_id`),
+  KEY `users_usertouserfollow_6c5f8441` (`is_following`),
+  KEY `users_usertouserfollow_586c89e8` (`followed_id`),
+  KEY `users_usertouserfollow_caa2b646` (`follower_id`),
+  KEY `followed` (`followed_id`,`is_following`,`follower_id`),
+  KEY `follower` (`follower_id`,`is_following`,`followed_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=998577 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-08-10 19:46:54

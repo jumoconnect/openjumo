@@ -1,0 +1,217 @@
+[
+ {
+  "pk": 193, 
+  "model": "issue.issue", 
+  "fields": {
+   "handle": "malaria", 
+   "name": "Malaria", 
+   "date_updated": "2011-07-26 16:15:28", 
+   "is_active": true, 
+   "img_small_url": "", 
+   "summary": "Malaria is a parasitic disease that is transmitted to people through the bites of infected mosquitoes. Although it is both preventable and curable, malaria is a global killer.  Insecticide-treated bed nets can reduce transmission as much as 90 percent in ", 
+   "location": null, 
+   "img_large_url": "", 
+   "date_created": "2011-07-05 18:03:45", 
+   "content_upgraded": true
+  }
+ }, 
+ {
+  "pk": 3, 
+  "model": "entity_items.advocate", 
+  "fields": {
+   "name": "United Against Malaria", 
+   "url": "", 
+   "twitter_id": "@UAMalaria", 
+   "object_id": 193, 
+   "date_updated": "2011-07-26 16:00:00", 
+   "user": null, 
+   "content_type": 21, 
+   "date_created": "2011-07-26 15:48:33"
+  }
+ }, 
+ {
+  "pk": 4, 
+  "model": "entity_items.advocate", 
+  "fields": {
+   "name": "Malaria No More", 
+   "url": "", 
+   "twitter_id": "@MalariaNoMore", 
+   "object_id": 193, 
+   "date_updated": "2011-07-26 16:00:00", 
+   "user": null, 
+   "content_type": 21, 
+   "date_created": "2011-07-26 15:48:33"
+  }
+ }, 
+ {
+  "pk": 5, 
+  "model": "entity_items.advocate", 
+  "fields": {
+   "name": "Fighting Malaria", 
+   "url": "", 
+   "twitter_id": "@FightingMalaria", 
+   "object_id": 193, 
+   "date_updated": "2011-07-26 16:00:00", 
+   "user": null, 
+   "content_type": 21, 
+   "date_created": "2011-07-26 15:48:33"
+  }
+ }, 
+ {
+  "pk": 46, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Pierre Joseph Pelletier and Joseph Bienaim\u00e9 Caventou extract quinine from the bark of the cinchona tree, which serves as a treatment for malaria.", 
+   "date_updated": "2011-07-26 15:45:20", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "year": 1820, 
+   "date_created": "2011-07-26 15:45:20"
+  }
+ }, 
+ {
+  "pk": 47, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Charles Louis Alphonse Laveran discovers parasites in the red blood cells of malaria victims and proposes that the parasite cause the disease", 
+   "date_updated": "2011-07-26 15:45:20", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "year": 1880, 
+   "date_created": "2011-07-26 15:45:20"
+  }
+ }, 
+ {
+  "pk": 48, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "Sir Ronald Ross proves that malaria is transmitted by mosquitos", 
+   "date_updated": "2011-07-26 15:45:20", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "year": 1898, 
+   "date_created": "2011-07-26 15:45:20"
+  }
+ }, 
+ {
+  "pk": 49, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "The first successful continuous in vitro malaria culture is established by William Trager and James B. Jensen, which facilitated research into the molecular biology of the parasite ", 
+   "date_updated": "2011-07-26 15:45:20", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "year": 1976, 
+   "date_created": "2011-07-26 15:45:20"
+  }
+ }, 
+ {
+  "pk": 50, 
+  "model": "entity_items.timelineitem", 
+  "fields": {
+   "description": "World Malaria Day is established by the World Health Assembly to be commemorated every year on April 25", 
+   "date_updated": "2011-07-26 15:45:20", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "year": 2007, 
+   "date_created": "2011-07-26 15:45:20"
+  }
+ }, 
+ {
+  "pk": 901, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Malaria is caused by a parasite spread to humans through the bite of infected mosquitos. If let untreated, it can cause sever complications and death. Malaria is prevalent in tropical and subtropical regions that receive significant amounts of rainfall and maintain warm temperatures year round. Worldwide malaria kills between 700,000 and 1,000,000 people every year. In the 1640's, Europeans used bark from the cinchona tree containing quinine to treat malaria, and in 1820 quinine was first extracted and isolated as an antimalarial drug. In the 20th century, cloroquine&nbsp;and artemisinins were also discovered to be effective at combatting malaria. However despite almost 400 years of innovation and scientific discovery in antimalarial medication, every 45 seconds a child in Africa will die from malaria.[1] &nbsp;  &nbsp;&nbsp;\r\nWho is affected by malaria?&nbsp;\r\nMalaria is a serious problem in parts of South America, Southeast Asia, and Africa. South of the Sahara in Africa, the most common mosquito is an incredibly effective carrier of malaria. Pregnant women and children are the biggest groups targeted. 90% of annual deaths from malaria occur in Africa, and 70% of deaths occurring in children under 5.[2] With 50% of the world's population at risk for infection, an estimate $12,000,000,000 is spent per year on costs related to malaria such as medicine, hospital visits, and funeral costs.[3] &nbsp;&nbsp;\r\n&nbsp;Why has malaria only been eradicated in parts of the world?&nbsp;\r\nIn the United States, Malaria has been eradicated since the 1950's. Barriers preventing eradication in areas with high infection, like Africa, include political instability and extreme poverty.   &nbsp;\r\n\r\nPolitical Instability: In countries plagued by war and political turmoil, ruling parties may be resistant to receiving foreign aid, even if that aid comes in the form of mosquito nets or antimalarial drugs. &nbsp;While key prevention techniques, such as sleeping under mosquito nets treated with pesticide, and treatment options are well known, areas with political instability are often unable to successfully implement strategies to curb malaria infection. &nbsp; &nbsp; &nbsp; &nbsp;\r\nPoverty: Many citizens living in areas with high risk of infection are unable to afford medication. In countries where families may live on less than $2 a day, even the seemingly negligible cost of $5 for a mosquito net that will save lives is unimaginable. Anti-malaria medication may cost even more than nets. While medication is often free of charge in public health clinics, estimates indicate that 60% of malaria patients in Sub-Saharan Africa buy their medication from the private sector.[4] Patients may be unable to take the work off necessary to travel to a health clinic, especially if they live in isolated, rural areas. Even if patients are able to receive treatment, 65% of malaria cases are treated without a diagnostic test, paving way for drug resistance.[5]&nbsp; &nbsp;\r\n\r\nWhile The World Health Organization estimates an increase from $1.5 billion to $1.8 billion in international funding for malaria control between 2009 and 2010, this number still falls short of the $6 billion needed for worldwide malaria control.&nbsp;\r\n&nbsp;", 
+   "title": "What's the problem?", 
+   "section": "center", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "position": 0, 
+   "rich_text_body": "<p>Malaria is caused by a parasite spread to humans through the bite of infected mosquitos. If let untreated, it can cause sever complications and death. Malaria is prevalent in tropical and subtropical regions that receive significant amounts of rainfall and maintain warm temperatures year round. Worldwide malaria kills between 700,000 and 1,000,000 people every year. <br /><br />In the 1640's, Europeans used bark from the cinchona tree containing quinine to treat malaria, and in 1820 quinine was first extracted and isolated as an antimalarial drug. In the 20th century, cloroquine&nbsp;and artemisinins were also discovered to be effective at combatting malaria. However despite almost 400 years of innovation and scientific discovery in antimalarial medication, every 45 seconds a child in Africa will die from malaria.<a href=\"#_ftn1\">[1]</a> &nbsp;  &nbsp;&nbsp;</p>\r\n<p><em>Who is affected by malaria?&nbsp;</em></p>\r\n<p>Malaria is a serious problem in parts of South America, Southeast Asia, and Africa. South of the Sahara in Africa, the most common mosquito is an incredibly effective carrier of malaria. Pregnant women and children are the biggest groups targeted. 90% of annual deaths from malaria occur in Africa, and 70% of deaths occurring in children under 5.<a href=\"#refs\">[2]</a> With 50% of the world's population at risk for infection, an estimate $12,000,000,000 is spent per year on costs related to malaria such as medicine, hospital visits, and funeral costs.<a href=\"#refs\">[3]</a> &nbsp;&nbsp;</p>\r\n<p><em>&nbsp;Why has malaria only been eradicated in parts of the world?&nbsp;</em></p>\r\n<p><em>In the United States, Malaria has been eradicated since the 1950's. Barriers preventing eradication in areas with high infection, like Africa, include political instability and extreme poverty.   &nbsp;</em></p>\r\n<ul>\r\n<li><strong>Political Instability:</strong> In countries plagued by war and political turmoil, ruling parties may be resistant to receiving foreign aid, even if that aid comes in the form of mosquito nets or antimalarial drugs. &nbsp;While key prevention techniques, such as sleeping under mosquito nets treated with pesticide, and treatment options are well known, areas with political instability are often unable to successfully implement strategies to curb malaria infection. &nbsp; &nbsp; &nbsp; &nbsp;</li>\r\n<li><strong>Poverty:</strong> Many citizens living in areas with high risk of infection are unable to afford medication. In countries where families may live on less than $2 a day, even the seemingly negligible cost of $5 for a mosquito net that will save lives is unimaginable. Anti-malaria medication may cost even more than nets. While medication is often free of charge in public health clinics, estimates indicate that 60% of malaria patients in Sub-Saharan Africa buy their medication from the private sector.<a href=\"#refs\">[4]</a> Patients may be unable to take the work off necessary to travel to a health clinic, especially if they live in isolated, rural areas. Even if patients are able to receive treatment, 65% of malaria cases are treated without a diagnostic test, paving way for drug resistance.<a href=\"#refs\">[5]</a>&nbsp; &nbsp;</li>\r\n</ul>\r\n<p>While The World Health Organization estimates an increase from $1.5 billion to $1.8 billion in international funding for malaria control between 2009 and 2010, this number still falls short of the $6 billion needed for worldwide malaria control.&nbsp;</p>\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 28553, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "\r\nMalaria causes 1,000,000 deaths per year\r\nThere are 300,000,000 to 500,000,000 cases worldwide per year\r\nMalaria causes 2.23% of deaths worldwide\r\n3,300,000,000 people in 106 countries are at risk of malaria\r\n\r\n", 
+   "title": "Statistics", 
+   "section": "left", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "position": 0, 
+   "rich_text_body": "<ul>\r\n<li>Malaria causes 1,000,000 deaths per year</li>\r\n<li>There are 300,000,000 to 500,000,000 cases worldwide per year</li>\r\n<li>Malaria causes 2.23% of deaths worldwide</li>\r\n<li>3,300,000,000 people in 106 countries are at risk of malaria</li>\r\n</ul>\r\n<!--EndFragment-->"
+  }
+ }, 
+ {
+  "pk": 28551, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "Three components are needed for successful malarial prevention and treatment:\r\n\r\nAffordable malaria medication: Many organizations are working with drug companies in the private sector to provide affordable malarial medication for developing countries. In countries where malaria can account for up to 40% of all public health expenditures, the need for a reliable and affordable source of medication is great &nbsp; &nbsp;\r\nInsecticide-treated nets (ITNs): ITNs have proven to be the most cost effective method of malaria prevention. Nets that emit insecticide are placed around beds to protect sleeping families. New technologies are emerging to create long lasting insecticide-treated nets (LLINs) that will emit insecticide for up to five years. In mid-2010, the World Health Organization estimated 40% of families in Africa owned at least one ITN.[6] While ITNs are highly effective, some distributing organizations fail to adequately provide the populations with the highest risk for malaria. &nbsp; &nbsp;\r\nAffordable diagnostic tests: Distribution of cheap and reliable diagnostic tests could increase scientist's ability to track different strains of malaria. Diagnostic tests can help reduce drug-resistance by determining the best course of treatment for individual patients&nbsp;\r\n\r\n&nbsp;\r\n&nbsp;", 
+   "title": "What can we do to solve the problem? ", 
+   "section": "center", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "position": 1, 
+   "rich_text_body": "<p>Three components are needed for successful malarial prevention and treatment:</p>\r\n<ol>\r\n<li><strong>Affordable malaria medication: </strong>Many organizations are working with drug companies in the private sector to provide affordable malarial medication for developing countries. In countries where malaria can account for up to 40% of all public health expenditures, the need for a reliable and affordable source of medication is great &nbsp; &nbsp;</li>\r\n<li>I<strong>nsecticide-treated nets (ITNs): </strong>ITNs have proven to be the most cost effective method of malaria prevention. Nets that emit insecticide are placed around beds to protect sleeping families. New technologies are emerging to create long lasting insecticide-treated nets (LLINs) that will emit insecticide for up to five years. In mid-2010, the World Health Organization estimated 40% of families in Africa owned at least one ITN.<a href=\"#refs\">[6]</a> While ITNs are highly effective, some distributing organizations fail to adequately provide the populations with the highest risk for malaria. &nbsp; &nbsp;</li>\r\n<li><strong>Affordable diagnostic tests: </strong>Distribution of cheap and reliable diagnostic tests could increase scientist's ability to track different strains of malaria. Diagnostic tests can help reduce drug-resistance by determining the best course of treatment for individual patients&nbsp;</li>\r\n</ol>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 28554, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "\r\n\ufeffWorld Health Organization, Malaria page: http://www.who.int/topics/malaria/en/\r\nCenter for Disease Control, Malaria page:&nbsp;http://www.cdc.gov/MALARIA/&nbsp;\r\nThe Global Fund; Malaria page: http://www.theglobalfund.org/en/malaria/?lang=en&nbsp;\r\nBill and Melinda Gates Foundation; progress against malaria: http://www.gatesfoundation.org/livingproofproject/Documents/progress-against-malaria.pdf\r\n", 
+   "title": "Outside Resources", 
+   "section": "center", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "position": 2, 
+   "rich_text_body": "<ul>\r\n<li>\ufeffWorld Health Organization, Malaria page: <a href=\"http://www.who.int/topics/malaria/en/\">http://www.who.int/topics/malaria/en/</a></li>\r\n<li>Center for Disease Control, Malaria page:&nbsp;<a href=\"http://www.cdc.gov/MALARIA/\">http://www.cdc.gov/MALARIA/</a>&nbsp;</li>\r\n<li>The Global Fund; Malaria page: <a href=\"http://www.theglobalfund.org/en/malaria/?lang=en\">http://www.theglobalfund.org/en/malaria/?lang=en</a>&nbsp;</li>\r\n<li>Bill and Melinda Gates Foundation; progress against malaria: <a href=\"http://www.gatesfoundation.org/livingproofproject/Documents/progress-against-malaria.pdf\">http://www.gatesfoundation.org/livingproofproject/Documents/progress-against-malaria.pdf</a></li>\r\n</ul>"
+  }
+ }, 
+ {
+  "pk": 28552, 
+  "model": "entity_items.contentitem", 
+  "fields": {
+   "body": "&nbsp;\r\n[1]&nbsp;WHO; http://www.who.int/mediacentre/factsheets/fs094/en/index.html&nbsp;\r\n[2]&nbsp;National Geographic; http://news.nationalgeographic.com/news/2003/06/0612_030612_malaria.html&nbsp;\r\n[3]&nbsp;CDC; http://www.cdc.gov/malaria/malaria_worldwide/impact.html&nbsp;\r\n[4]&nbsp;The Global Fund; http://www.theglobalfund.org/en/malaria/?lang=en&nbsp;\r\n[5]&nbsp;The Global Fund; http://www.theglobalfund.org/en/malaria/?lang=en&nbsp;\r\n[6]&nbsp;WHO; http://whqlibdoc.who.int/publications/2010/9789241564106_eng.pdf \ufeff\ufeff\r\n&nbsp;", 
+   "title": "References", 
+   "section": "center", 
+   "object_id": 193, 
+   "content_type": 21, 
+   "position": 3, 
+   "rich_text_body": "<p>&nbsp;</p>\r\n<p>[1]&nbsp;WHO; http://www.who.int/mediacentre/factsheets/fs094/en/index.html&nbsp;</p>\r\n<p>[2]&nbsp;National Geographic; http://news.nationalgeographic.com/news/2003/06/0612_030612_malaria.html&nbsp;</p>\r\n<p>[3]&nbsp;CDC; http://www.cdc.gov/malaria/malaria_worldwide/impact.html&nbsp;</p>\r\n<p>[4]&nbsp;The Global Fund; http://www.theglobalfund.org/en/malaria/?lang=en&nbsp;</p>\r\n<p>[5]&nbsp;The Global Fund; http://www.theglobalfund.org/en/malaria/?lang=en&nbsp;</p>\r\n<p>[6]&nbsp;WHO; http://whqlibdoc.who.int/publications/2010/9789241564106_eng.pdf \ufeff\ufeff</p>\r\n<p>&nbsp;</p>"
+  }
+ }, 
+ {
+  "pk": 15, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": null, 
+   "object_id": 901, 
+   "date_created": null, 
+   "caption": "", 
+   "thumbnail_url": "", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "pullquote", 
+   "img_url": "", 
+   "metadata": "{\"quote_text\" : \"\\\"Worldwide malaria kills between 700,000 and 1,000,000 people every year\\\"\"}"
+  }
+ }, 
+ {
+  "pk": 16, 
+  "model": "entity_items.mediaitem", 
+  "fields": {
+   "date_updated": "2011-07-22 13:19:17", 
+   "object_id": 28551, 
+   "date_created": null, 
+   "caption": "Why I work to stop Malaria", 
+   "thumbnail_url": "http://i.ytimg.com/vi/LSEt7-YG48A/1.jpg", 
+   "content_type": 67, 
+   "position": 0, 
+   "media_type": "video", 
+   "img_url": "", 
+   "metadata": "{\"source_id\": \"LSEt7-YG48A\", \"url\": \"http://www.youtube.com/watch?v=LSEt7-YG48A&feature=player_embedded\"}"
+  }
+ }
+]

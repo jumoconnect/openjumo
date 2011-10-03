@@ -1,0 +1,1091 @@
+/*
+  entity profile page -- currently used for user, org and issue profile pages
+  */
+
+/* overwrites base.css */
+html, body {
+    background: none;
+    padding:0px;
+    margin:0px;
+}
+
+#page-content {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0 0 8px 0px;
+    position: static;
+    width:100%;
+    overflow:visible;
+}
+
+#nav .logo_container {
+    margin-left: 74px;
+    width: 81px;
+}
+
+#nav .input_left {
+    margin-left:21px;
+}
+
+#nav, .content {
+    width:981px;
+    max-width: 981px;
+    min-width: 981px;
+}
+
+.container .left_spacer {
+    float:left;
+    width: 155px;
+
+    height: 100px;
+    display:block;
+}
+
+.main_content {
+    border-bottom: 1px solid #A3A3A3;
+    border-left: 1px solid #A3A3A3;
+    border-left: 1px solid #C3C3C3;
+    border-right: 1px solid #A3A3A3;
+    background:#fdfdfd;
+    float:left;
+}
+
+.main_content .border {
+    border-bottom: 1px solid #E3E3E3;
+    border-left: 0px solid #E3E3E3;
+    border-right: 1px solid #E3E3E3;
+    min-height: 525px;
+}
+
+/*
+  cs section
+  */
+.cs {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 1px;
+    padding: 32px 0 0 32px;
+    position: relative;
+    vertical-align: top;
+    width: 792px;
+}
+
+.cs h1 {
+    color: #333;
+    display:inline;
+    float:none;
+    font-weight: bold;
+    line-height: 138%;
+    margin: 0;
+    font-size: 24px;
+    padding: 2px 0px 4px 0;
+}
+
+.cs .jumo_approved {
+    display: inline;
+    float: none;
+    height: 26px;
+    margin-left: 4px;
+    margin-top: -4px;
+    padding: 0;
+    vertical-align: super;
+    width: 26px;
+}
+
+.cs .top_heading {
+    border-bottom: 4px double #C3C3C3;
+    float: left;
+    margin-bottom: 18px;
+    padding-bottom: 11px;
+    padding-right: 23px;
+    position: relative;
+    width: 516px;
+    z-index: 10;
+}
+
+.cs .sub_heading {
+    color: #999999;
+    display: block;
+    float: left;
+    font-style: italic;
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.cs .sub_heading a {
+    color:#607890;
+    font-style: italic;
+}
+
+.cs .sm_icon {
+    height:16px;
+    width:16px;
+    vertical-align:middle;
+}
+
+.cs .tags.body {
+    margin:0px;
+    padding:0px;
+    padding-bottom:3px;
+}
+
+.cs .issue_name, .cs .loc_name {
+    margin-right:2px;
+    line-height: 185%;
+    display:inline;
+}
+
+.cs .issue_name a, .cs .loc_name a, .cs .search_results li .body a, .related_search a {
+    padding:2px 4px;
+    background:#f3f3f3;
+    color:#607890;
+
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+.cs h2 {
+    display:block;
+    font-size:14px;
+    line-height:136%;
+    padding:0px;
+    margin: 5px 0 0;
+    width: 98%;
+    padding-bottom:4px;
+    float:left;
+}
+
+.cs .bottom_section .section.photos li {
+    display: block;
+    float: left;
+    max-height: 107px;
+    overflow: hidden;
+}
+
+.cs .bottom_section .section.photos {
+    margin-bottom:22px;
+}
+
+.cs .section.photos img {
+    height: auto; /*110px;*/
+    margin: 0px;
+    padding: 0px;
+    margin-right: 4px;
+    cursor: pointer;
+    width: 161px;
+    background-color: #EEE;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+}
+
+.cs .section .media_item {
+    float:right;
+    padding-left: 14px;
+    padding-bottom: 14px;
+    max-width:180px;
+}
+
+.cs .section .media_item blockquote {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-image: url('../img/quote.png');
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+
+    color: #606060;
+    font-size: 16px;
+    line-height: 142%;
+    padding-top: 25px;
+    text-align: left;
+}
+
+.cs .section .media_item .caption {
+    font-style:italic;
+}
+
+.cs.user .info.row {
+    border-bottom: 1px solid #DEDEDE;
+    display:block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.cs.user .info.row.first {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.cs.user .info.row.last, .cs.user .info.row:last-child {
+    padding-bottom:12px;
+    border-bottom: 0px solid #DEDEDE;
+}
+
+.cs.user .info li {
+    display: block;
+    width: 47%;
+    float:left;
+    vertical-align:top;
+}
+
+.cs.user .info li.odd {
+    border-right: 1px dotted #DEDEDE;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.cs.user .info li.last, .cs.user .info li:last-child {
+    border-bottom: 0px solid #BBBBBB;
+    padding-bottom:0px;
+}
+
+.cs.user .info li img {
+    height:50px;
+    width:50px;
+    padding-right:12px;
+}
+
+.cs.user .info li .name {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 142%;
+    padding-left: 0;
+    vertical-align: top;
+    display:block;
+}
+
+.cs.user .info li .body {
+    padding-top: 3px;
+    padding-bottom: 15px;
+    padding-left: 66px;
+    text-align: left;
+
+    border-bottom: 0px solid #E0E0E0;
+}
+
+.cs.user .info li .body.noimage {
+    padding-left: 0px;
+}
+
+.cs .section ul, .cs .section li, .cs .section ul .heading {
+    display:inline;
+}
+
+.cs .section ol li {
+    display:list-item;
+    margin-bottom: 12px;
+    margin-left: 21px;
+    margin-top: 6px;
+    list-style: decimal outside none;
+}
+
+.cs .section ul .heading {
+    font-wieght:bold;
+}
+
+.cs .section {
+    position:relative;
+    margin:7px;
+    margin-left:0px;
+    width:74%;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.rs ul.cont .section {
+    width:94%;
+}
+
+.cs .section .heading, #dsq-content .dsq-post-area h3 {
+    color: #111111;
+    display: block;
+    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.cs .section .body {
+    text-align: left;
+    word-wrap: break-word;
+    border-bottom: 1px solid #E0E0E0;
+/*    padding-bottom: 18px;*/
+}
+
+.cs .section .body.last, .cs .section.last .body, .cs .info.row .body {
+    border-bottom: 0px solid #E0E0E0;
+    padding-bottom: 0px;
+}
+
+.cs .section p {
+    margin-bottom:16px;
+}
+
+.cs .section .body ul {
+    width: 91%;
+    display:block;
+    margin: 0 0 9px;
+}
+
+.cs .section .body ul li {
+    list-style: disc outside none;
+    display:list-item;
+    margin-bottom: 6px;
+    margin-left: 16px;
+    margin-top: 6px;
+    text-align:left;
+}
+
+.cs .bottom_section .section .body ul li {
+    width: 96%;
+}
+
+.ie7 .cs .bottom_section .section .body ul li {
+    width: auto;
+}
+
+.cs .section .viewall, .ls .section .viewall {
+    text-align:center;
+    font-size:12px;
+    border:1px solid #dedede;
+    background:#f3f3f3;
+    display:block;
+    color:#666;
+    padding:3px;
+    margin-top:1px;
+    text-decoration:underline;
+}
+
+.cs .section .viewall:hover, .ls .section .viewall:hover {
+    color:#444;
+    border:1px solid #cecece;
+    background:#fafafa;
+
+}
+
+.rs .section .viewall {
+    margin-top:12px;
+}
+
+.cs .bottom_section {
+    float:left;
+    width: 67%;
+    position:static;
+    z-index:-1;
+}
+
+.cs.user .bottom_section {
+    float: left;
+/*    position: relative;*/
+    width: 65%;
+}
+
+.cs .bottom_section.noborder {
+    border-top: 0px solid #AAA;
+    margin:0px;
+    padding:0px;
+}
+
+.cs .bottom_section .section {
+    margin-bottom: 25px;
+    width: 93%;
+}
+
+.cs.user .bottom_section .section {
+    width:100%;
+}
+
+.cs .bottom_section .section.photos {
+    width: 100%;
+}
+
+.cs .bottom_section .section.last {
+/*    margin-bottom:0px;*/
+}
+
+.cs.org .bottom_section .section.last, .cs.issue .bottom_section .section.last {
+    margin-bottom:24px;
+}
+
+/*
+  end center section
+
+begin left section
+*/
+
+.ls {
+    margin-top: 0px;
+    width: 154px;
+    text-align: left;
+    vertical-align: top;
+    disply:block;
+    float:left;
+}
+
+.ls .box  {
+    left:0;
+    padding-bottom:1px;
+    text-align:left;
+    width: auto;
+}
+
+.ls .profile_img {
+    display:inline-block;
+}
+
+.ls .nophoto {
+    background:#f3f3f3;
+    border:1px solid #ddd;
+    border-right:0px solid;
+    border-top:0px solid;
+
+    height: 120px;
+    margin-bottom: 4px;
+    padding: 12px;
+}
+
+.ls .edit_button {
+    font-size:11px;
+    margin-left: -12px;
+}
+
+.ls .edit_button img {
+    height:14px;
+    width:14px;
+}
+
+.ls .profile_image {
+    width:100%;
+    margin-bottom:-4px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+    border-radius:0px;
+}
+
+.ls .advocates img {
+    height: 18px;
+    width: 18px;
+    display: inline;
+    vertical-align: top;
+}
+
+.ls .name_container {
+    display:inline-block;
+    vertical-align:top;
+    width:137px; /* should be a percent */
+}
+
+.ls .prop {
+    z-index:2;
+    color:#333;
+    font-weight:bold;
+
+    position:relative;
+    display:inline;
+    font-size:12px;
+
+    margin-top:0;
+    padding-bottom:2px;
+    padding-right:5px;
+    background: #FAFBFB;
+    text-transform: uppercase;
+}
+
+.ls .desc {
+    font-size:11px;
+    color:#555555;
+    line-height:142%;
+}
+
+.ls .back {
+    border-top: 1px solid #a3a3a3;
+    border-top: 1px solid #C3C3C3;
+    height: 1.5em;
+    left: 0;
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    z-index: 0;
+    left:0px;
+}
+
+
+.ls .showall {
+    color: #999999;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.ls .section span { display:block; }
+
+.ls ul li {
+    color: #444444;
+    height: auto;
+    padding: 4px 0 7px 0px;
+}
+
+.ls ul li:last-child, .ls ul li.last {
+    padding-bottom:0px;
+}
+
+
+.ls li.section {
+    margin-top: 18px;
+    padding: 0 18px 0 0;
+    position: relative;
+}
+
+.ls li.section.fb_section {
+    margin-top:0px;
+    margin-bottom:-18px;
+    height:32px;
+}
+
+.ls li.section .body {
+    margin-top:2px;
+}
+
+.ls ul.info li.not_shown {
+    display:none;
+}
+
+.ls ul {
+    padding:0;
+    width:100%;
+    font-size:12px;
+    position:relative;
+/*    margin-top:3px;*/
+}
+
+.ls ul.info {
+    overflow:hidden;
+    border: 0px solid #CCCCCC;
+    width: 100%;
+}
+
+.ls li.section ul li {
+    display: list-item;
+    padding-left:0px;
+    list-style: none outside none;
+}
+
+.ls .info li.link_list a {
+   font-weight:bold;
+}
+
+.ls ul .heading .showhide {
+    float:right;
+}
+
+.ls .info li.links {
+    margin-top:0px;
+    padding:8px;
+    padding-right:15px;
+    background:#f1f1f1;
+    border: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 0px solid #ddd;
+    text-align:right;
+}
+
+.ls li.links .arrow {
+    height: 100%;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+
+.ls li.links img {
+    height:22px;
+    width:22px;
+}
+
+.ls li.links ul li, .ie7 .ls li.links ul li {
+    list-style: none;
+    margin-left:0px;
+    display:inline;
+}
+
+.ls ul.social img {
+    height:36px;
+    width:36px;
+    vertical-align:text-bottom;
+}
+
+.ls .feedback {
+    font-weight:bold;
+
+    display:block;
+    width:100%;
+    /*
+    text-align:center;
+    background:#f1f1f1;
+    */
+
+}
+
+.ls .donate.button {
+    font-weight: bold;
+    text-align:center;
+    margin-top:8px;
+}
+
+/*
+  end left section
+
+begin right section
+*/
+.rs {
+    color: #333333;
+    display: block;
+    float: right;
+    margin: 0 -25px 0 0px;
+    vertical-align: bottom;
+    z-index: 3;
+    width: 278px;
+}
+
+.ls .follows img {
+    height:41px;
+    width:41px;
+}
+
+.ls .heading, .rs .heading {
+    background:#f1f1f1;
+    border: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+
+    color: #333333;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    width: 260px;
+    position:relative
+}
+
+.rs .heading {
+    width:233px;
+}
+
+.rs .heading:after {
+    background-image: url("../img/right_tri.png");
+    content: " ";
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 9px;
+}
+
+.rs .help_out {
+    background: #94C93D;
+    background:#f3f3f3;
+    padding: 11px 20px 20px;
+    width:210px;
+}
+
+.rs.user .help_out {
+    padding: 8px 20px 20px;
+}
+
+.rs .help_out p, .rs .help_out li {
+    font-size:14px;
+}
+
+.rs .help_out_container {
+    width:251px;
+    background: #FFFFFF;
+    border: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    margin-left: 0px;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+.rs .help_out .commitment_button .button:before, .rs .help_out .follow_button .button:before, .ls .button.donate:before {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    -moz-border-radius: 21px 21px 21px 21px;
+    -webkit-border-radius: 21px 21px 21px 21px;
+    border-radius: 21px 21px 21px 21px;
+
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.rs .commitment_button, .rs .commitment_button form, .rs .help_out .follow_button .button {
+    position:relative;
+}
+
+.rs .help_out .commitment_button .button, .ls .button.donate, .rs .help_out .follow_button .button {
+    position:relative;
+    background: #FFcc00;
+    border: 1px solid #BBBBBB;
+    color: #222;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.35);
+    white-space: nowrap;
+
+    -moz-border-radius: 21px 21px 21px 21px;
+    -webkit-border-radius: 21px 21px 21px 21px;
+    border-radius: 21px 21px 21px 21px;
+
+    margin: 15px 0px 0px 0px;
+    padding: 11px 26px;
+}
+
+.rs .help_out .commitment_button .button:hover, .ls .button.donate:hover,  .rs .help_out .follow_button .button:hover {
+    color:#555;
+
+    -moz-box-shadow:inset 0 1px 3px #aaa;
+    -webkit-box-shadow:inset 0 1px 3px #aaa;
+    box-shadow:inset 0 1px 3px #aaa;
+}
+
+.rs .help_out .button.unfollow, .rs .help_out .button.delete_commitment, .action_popup .action-list ul li a.button.delete_commit, .popup .item .button.unfollow, .popup .item .button.delete_commitment, .popup .item .button.view_actions {
+    background:#FFEFAD;
+    color:#555;
+
+    -moz-box-shadow:inset 0 1px 3px #d9cc96;
+    -webkit-box-shadow:inset 0 1px 3px #d9cc96;
+    box-shadow:inset 0 1px 3px #d9cc96;
+}
+
+.rs .help_out .title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 148%;
+    padding-bottom: 4px;
+    text-transform:uppercase;
+}
+
+.rs .help_out .title.nopadding {
+    padding-bottom:0px;
+}
+
+.rs .top_spacer {
+    margin-top: -5px;
+    height:30px;
+    position:relative;
+}
+
+.rs .comment {
+    font-weight:bold;
+    text-align:right;
+}
+
+.rs ul {
+    padding:0px;
+    margin:0px;
+    list-style: disc inside none;
+}
+
+.rs ul.cont {
+    color: #333333;
+    font-size: 14px;
+    line-height: 142%;
+    margin: 21px 0 0 21px;
+    padding: 0;
+    width: 87%;
+}
+
+.ie7 .rs ul.cont {
+    margin-left: 0;
+}
+
+.rs ul.rounded_box .org ul {
+    line-height:14px;
+}
+
+.rs ul ul {
+    padding:0px;
+}
+
+.rs .info {
+    margin-bottom: 8px;
+}
+
+.rs .section {
+    margin-top:16px;
+    margin-bottom: 8px;
+    position: relative;
+    background: #FDFDFD;
+}
+
+.rs .section li {
+    left: 0;
+    list-style: disc inside none;
+    margin: 0 0 13px;
+    padding: 0 0 2px;
+}
+
+.rs .section ul {
+    display: block;
+    margin-top: 8px;
+    vertical-align: top;
+    width: 99%;
+    position: relative;
+}
+
+.rs .section .body ul li {
+    margin-bottom:8
+    padding-bottom: 8px;
+}
+
+.rs .section .body {
+    border:0px solid;
+    padding-bottom:0px;
+}
+
+.rs .section li, .ls .section li.ent {
+    border-bottom: 1px dotted #CCCCCC;
+    display: block;
+/*    font-weight: bold;*/
+    list-style: none outside none;
+    margin-bottom: 9px;
+    padding-bottom: 9px;
+    position: relative;
+    text-align: left;
+    width: 101%;
+}
+
+.ie7 .rs .section li, .ie7 .ls .section li.ent {
+    width: auto;
+}
+
+.ls .section li.ent {
+    width:95%;
+}
+
+.rs .section li.last, .rs .section li:last-child, .ls .section li.ent.last, .ls .section li.ent:last-child {
+    border-bottom:0px solid;
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+
+.rs .section li.ent a.photo_container {
+    width:50px;
+    height:50px;
+    display:block;
+    float:left;
+    margin-right:9px;
+}
+
+.rs .section li .spacer {
+    display: block;
+    height: 7px;
+    padding:0px;
+    margin:0px;
+}
+
+.rs .section li .border {
+    border-bottom: 1px solid #dddddd;
+    display:block;
+    height:9px;
+}
+
+.ls .section li.ent .name {
+    font-weight:bold;
+}
+
+.ls .section li.ent .name a {
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 0;
+    vertical-align: top;
+    font-style:normal;
+    color:#19558D;
+    line-height: 132%;
+}
+
+.ls .section li.ent .name, .rs .section li.ent .name {
+    color: #444444;
+    display: inline;
+    font-size: 12px;
+    line-height: 142%;
+}
+
+.ls .section li.ent .desc, .rs .section li.ent .desc {
+    font-weight:normal;
+    font-size:12px;
+    line-height: 142%;
+}
+
+.ls .section li.ent .desc {
+    height: 19px;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow:hidden;
+    font-size:11px;
+    text-overflow: ellipsis;
+}
+
+.ls .section li.ent .desc.noimage {
+    padding-left: 0px;
+}
+
+.ls .section li.ent .photo {
+    max-height: 50px;
+    max-width: 50px;
+    padding: 0;
+    top: 0;
+    vertical-align: top;
+}
+
+.ls .section li.timeline {
+    padding-bottom:12px;
+}
+
+.ls .section li.timeline.last {
+    padding-bottom:0px;
+}
+
+.ls .section li.timeline .year {
+    float:left;
+    font-weight:bold;
+    padding-right:11px;
+}
+
+.rs .section li.timeline .year {
+    background: #E7F8C9;
+    color: #000000;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    padding: 5px 12px;
+    width: 42px;
+}
+
+.ls .section li.timeline .body {
+    font-size:12px;
+    line-height: 142%;
+    padding-left: 43px;
+}
+
+.ls .info li {
+    font-size: 13px;
+    height: auto;
+    padding: 5px 0 8px 0px;
+    display:block;
+    list-style: none outside none;
+    margin:0px;
+}
+
+.rs .info li img {
+    width: 16px;
+    height:16px;
+    display:block;
+    vertical-align:bottom;
+    margin-right:5px;
+    float:left;
+}
+
+.rs .info li .name {
+    display:block;
+    padding-left:21px;
+}
+
+.rs .info li .name.noimage {
+    padding-left:0px;
+}
+
+.rs .rounded_box {
+    padding:0px 0 6px 6px;
+    background:white;
+    border: 1px solid #CCCCCC;
+    margin-top: 6px;
+}
+
+.rs .rounded_box.info {
+    padding-top:0px;
+    margin-top: 4px;
+    padding-top: 1px;
+}
+
+
+/* DISQUS SPECIFIC STYLES */
+#dsq-comments {
+    display: block !important;
+}
+
+#dsq-content .dsq-comment-footer {
+    padding-bottom: 4px !important;
+    border-bottom: 1px solid #E0E0E0 !important; /* comment body bottom border */
+}
+
+#dsq-content .dsq-comment .dsq-header-avatar a.dsq-avatar img {
+    padding: 2px !important;
+}
+
+#dsq-content .dsq-header-avatar a.dsq-avatar {
+    padding: 1px 0 1px 1px !important;
+}
+
+#dsq-content .dsq-comment-header {
+    border: 0 !important;
+}
+
+/* should mimic .cs .section .heading  */
+/*
+  #dsq-content .dsq-post-area h3 {
+  font-size: 20px;
+  display: block;
+  line-height: 152%;
+  margin-bottom: 4px;
+  padding: 0;
+  }
+  */
+
+/* highlight color for new comments */
+#dsq-content .dsq-comment-outline .dsq-comment-header {
+    outline: 1px solid #94C93D !important;
+}
+
+/* background color of area when composing replies */
+#dsq-content .dsq-append-post {
+    background-color: #EDF7DE !important;
+}
+
+/* Hide other login options on DISQUS user login popup */
+/* note: contract stipulates we must keep disqus login? */
+#dsq-login-tab-yahoo, #dsq-login-tab-google, #dsq-login-tab-facebook,
+#dsq-login-tab-openid, #dsq-login-tab-twitter {
+    display: none !important;
+}
+
+#dsq-popup-message .dsq-popup .dsq-modal-tabs .dsq-login-tab-yahoo,
+#dsq-popup-message .dsq-popup .dsq-modal-tabs .dsq-login-tab-google,
+#dsq-popup-message .dsq-popup .dsq-modal-tabs .dsq-login-tab-facebook,
+#dsq-popup-message .dsq-popup .dsq-modal-tabs .dsq-login-tab-openid,
+#dsq-popup-message .dsq-popup .dsq-modal-tabs .dsq-login-tab-twitter {
+    display:none !important;
+}
+
