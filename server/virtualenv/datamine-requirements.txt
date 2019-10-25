@@ -10,7 +10,7 @@ pyyaml
 wsgiref==0.1.2
 
 # Datamine specific
-nltk==2.0.1rc1
+nltk==3.4.5
 numpy >= 1.6.1
 scipy >= 0.9.0
 
