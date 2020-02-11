@@ -1,4 +1,4 @@
-Django==1.2.4
+Django==1.11.28
 Fabric==1.0.0
 ipython
 MySQL-python==1.2.3
