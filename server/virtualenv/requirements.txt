@@ -4,7 +4,7 @@ BeautifulSoup==3.2.0
 bebop==0.0.6
 boto==2.0b4
 celery==2.2.4
-Django==1.2.4
+Django==2.2.24
 django-celery==2.2.4
 git+git://github.com/django-debug-toolbar/django-debug-toolbar.git@b2e0c98c51f33b43429849a09f0dcbf812c51571
 django-grappelli==2.3.2
