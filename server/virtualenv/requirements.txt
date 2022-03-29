@@ -23,7 +23,7 @@ logilab-common
 lxml>=2.2.3
 mock
 MySQL-python==1.2.3
-paramiko==1.7.6
+paramiko==2.10.1
 PIL==1.1.7
 pycrypto==2.3
 pyparsing==1.5.5
